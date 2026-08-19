@@ -1,0 +1,123 @@
+### Version 1: Using a Marker Array
+
+This version employs an additional array to mark the uniqueness of elements. If an element is found to be non-unique, its corresponding index in the marker array is set to indicate non-uniqueness.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], size, count[100] = {0};
+    int i, j;
+    
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    printf("\nEnter elements in array: \n");
+    for(i = 0; i < size; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    // Mark non-unique elements
+    for(i = 0; i < size; i++) {
+        for(j = i+1; j < size; j++) {
+            if(arr[i] == arr[j]) {
+                count[i]++;
+                count[j]++;
+            }
+        }
+    }
+
+    printf("\nAll unique elements in the array are: ");
+    for(i = 0; i < size; i++) {
+        if(count[i] == 0) {
+            printf("%d ", arr[i]);
+        }
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Inline Uniqueness Check
+
+This version performs an inline check for uniqueness by comparing each element against all other elements in the array. If an element is found to be unique, it is immediately printed.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], size;
+    int i, j, isUnique;
+    
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    printf("\nEnter elements in array: \n");
+    for(i = 0; i < size; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nAll unique elements in the array are: ");
+    for(i = 0; i < size; i++) {
+        isUnique = 1;
+        for(j = 0; j < size; j++) {
+            if(i != j && arr[i] == arr[j]) {
+                isUnique = 0;
+                break;
+            }
+        }
+        if(isUnique) {
+            printf("%d ", arr[i]);
+        }
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Shift and Reduce Size Method
+
+This version simplifies the removal process by shifting elements to the left when a non-unique element is found, thus avoiding the use of an additional array or direct printing of unique elements.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], size;
+    int i, j, k;
+    
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    printf("\nEnter elements in array: \n");
+    for(i = 0; i < size; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    // Process for identifying and removing non-unique elements
+    for(i = 0; i < size; i++) {
+        for(j = i + 1; j < size; j++) {
+            if(arr[i] == arr[j]) {
+                // Shift elements to the left
+                for(k = j; k < size - 1; k++) {
+                    arr[k] = arr[k + 1];
+                }
+                size--; // Reduce size of array
+                j--; // Decrement j to check at the new position
+            }
+        }
+    }
+
+    printf("\nAll unique elements in the array are: ");
+    for(i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+```
+
+These three versions demonstrate different methods of identifying and handling unique elements in an array without using advanced C features as per your constraints.

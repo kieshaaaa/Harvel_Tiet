@@ -1,0 +1,86 @@
+Certainly! Below are three different versions of the provided code that calculate and print all the triangular numbers within a given range, each with its own unique approach while adhering to your constraints.
+
+### Version 1: Using a While Loop to Find Triangular Numbers
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lower, upper;
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    int i = 1, triangularNumber = 1;
+
+    while (triangularNumber < lower) {
+        i++;
+        triangularNumber += i;
+    }
+
+    printf("Triangular numbers between %d and %d are:\n", lower, upper);
+
+    while (triangularNumber <= upper) {
+        printf("%d\n", triangularNumber);
+        i++;
+        triangularNumber += i;
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using a For Loop with a Direct Check
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int lower, upper;
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    printf("Triangular numbers between %d and %d are:\n", lower, upper);
+
+    for (int num = lower; num <= upper; num++) {
+        double n = (-1 + sqrt(1 + 8 * num)) / 2;
+        if (floor(n) == n) {
+            printf("%d\n", num);
+        }
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Incrementally Checking Each Number's Triangularity
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lower, upper, triangularNumber = 0, i = 1;
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    printf("Triangular numbers between %d and %d are:\n", lower, upper);
+
+    while (triangularNumber <= upper) {
+        triangularNumber = i * (i + 1) / 2;
+        if (triangularNumber >= lower && triangularNumber <= upper) {
+            printf("%d\n", triangularNumber);
+        }
+        i++;
+    }
+
+    return 0;
+}
+```
+
+Each version offers a different approach: using a while loop to directly generate triangular numbers within the range, using a for loop with a mathematical check to verify if a number is triangular, and incrementally calculating each triangular number and checking if it lies within the specified range.

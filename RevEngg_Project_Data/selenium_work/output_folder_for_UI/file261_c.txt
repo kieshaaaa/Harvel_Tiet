@@ -1,0 +1,88 @@
+### Version 1: Using a while loop instead of a for loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, mul = 0, count = 0;
+
+    printf("Enter first number:: ");
+    scanf("%d", &a);
+    printf("\nEnter second number:: ");
+    scanf("%d", &b);
+
+    while (count < b) {
+        mul += a;
+        count++;
+    }
+
+    printf("\nMultiplication of %d and %d is: %d\n", a, b, mul);
+    return 0;
+}
+```
+
+### Version 2: Handling negative numbers more explicitly
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, mul = 0, i, sign = 1;
+
+    printf("Enter first number:: ");
+    scanf("%d", &a);
+    printf("\nEnter second number:: ");
+    scanf("%d", &b);
+
+    if (a < 0 && b < 0) {
+        a = -a;
+        b = -b;
+    } else if (a < 0 || b < 0) {
+        sign = -1;
+        if (a < 0) a = -a;
+        else b = -b;
+    }
+
+    for (i = 0; i < b; i++) {
+        mul += a;
+    }
+    mul *= sign;
+
+    printf("\nMultiplication of entered numbers is: %d\n", mul);
+    return 0;
+}
+```
+
+### Version 3: Adding user input validation
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, mul = 0, i;
+    int result;
+
+    printf("Enter first number:: ");
+    result = scanf("%d", &a);
+    if (result != 1) {
+        printf("Invalid input!\n");
+        return 1; // Early exit due to invalid input
+    }
+
+    printf("\nEnter second number:: ");
+    result = scanf("%d", &b);
+    if (result != 1) {
+        printf("Invalid input!\n");
+        return 1; // Early exit due to invalid input
+    }
+
+    for (i = 0; i < b; i++) {
+        mul += a;
+    }
+
+    printf("\nMultiplication of %d and %d is: %d\n", a, b, mul);
+    return 0;
+}
+```
+
+Each version addresses a different aspect or potential improvement upon the initial implementation, while adhering to the constraints provided.

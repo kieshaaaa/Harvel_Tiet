@@ -1,0 +1,49 @@
+Here are three different versions of the provided code, modified according to your specifications. Each version uses `float` instead of `double` for variables, adheres to the restrictions you outlined, and presents a unique approach within the constraints.
+
+### Version 1: Basic Conversion with Defined Constant
+```c
+#include <stdio.h>
+
+int main() {
+    float radians, degrees;
+    const float PI = 3.14f;
+    printf("Enter angle in radians: ");
+    scanf("%f", &radians);
+    degrees = radians * (180.0f / PI);
+    printf("Angle in degrees: ");
+    printf("%.2f\n", degrees);
+    return 0;
+}
+```
+
+### Version 2: Inline Calculation with Explicit Casting
+```c
+#include <stdio.h>
+
+int main() {
+    float radians;
+    printf("Enter angle in radians: ");
+    scanf("%f", &radians);
+    printf("Angle in degrees: ");
+    printf("%.2f\n", (float)(radians * (180.0f / 3.14f)));
+    return 0;
+}
+```
+
+### Version 3: Using a Macro for PI
+```c
+#include <stdio.h>
+#define PI 3.14f
+
+int main() {
+    float radians, degrees;
+    printf("Enter angle in radians: ");
+    scanf("%f", &radians);
+    degrees = radians * (180.0f / PI);
+    printf("Angle in degrees: ");
+    printf("%.2f\n", degrees);
+    return 0;
+}
+```
+
+Each of these versions follows your guidelines and provides a method for converting radians to degrees using `float` for arithmetic operations. The first version introduces a constant for PI, the second performs an inline calculation with explicit casting to ensure type consistency, and the third leverages a preprocessor directive to define PI, simplifying the expression.

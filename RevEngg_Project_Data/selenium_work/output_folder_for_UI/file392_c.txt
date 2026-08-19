@@ -1,0 +1,51 @@
+Sure, I'll provide you with three different versions of the program that calculates the circumference of a circle, adhering to your constraints.
+
+### Version 1: Using a Different Variable for `2 * PI`
+```c
+#include <stdio.h>
+#define TWO_PI 6.28318
+
+int main() {
+    float radius, circumference;
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+    circumference = TWO_PI * radius;
+    printf("Circumference of the circle: ");
+    printf("%.2f\n", circumference);
+    return 0;
+}
+```
+
+### Version 2: Using Inline Calculation for `2 * PI` Without a Define Directive
+```c
+#include <stdio.h>
+
+int main() {
+    float radius, circumference;
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+    circumference = 2 * 3.14159 * radius;
+    printf("Circumference of the circle: ");
+    printf("%.2f\n", circumference);
+    return 0;
+}
+```
+
+### Version 3: Separating Input, Calculation, and Output into Different Sections
+```c
+#include <stdio.h>
+
+int main() {
+    float radius;
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+    
+    float circumference = 2 * 3.14159 * radius;
+    
+    printf("Circumference of the circle: ");
+    printf("%.2f\n", circumference);
+    return 0;
+}
+```
+
+Each version complies with the guidelines you've set: no additional functions, dynamic memory allocation, structures, unions, pointers, recursion, file handling, datatype modifications, or using `double` instead of `float`. The `printf` function calls are also separated as per your request to not perform operations or expressions inside them.

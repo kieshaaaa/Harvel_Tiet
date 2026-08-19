@@ -1,0 +1,130 @@
+Here are three different versions of your program that find Armstrong numbers in the range of 1 to `n`, adhering to your restrictions:
+
+### Version 1: Using `for` loop for digit extraction
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, i, originalNum, remainder, numDigits, tempNum;
+    int count = 0;
+    float sum;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    printf("Armstrong numbers between 1 and %d are: ", n);
+
+    for(i = 1; i <= n; i++) {
+        sum = 0;
+        originalNum = i;
+        tempNum = originalNum;
+        numDigits = 0;
+
+        while(tempNum != 0) {
+            tempNum /= 10;
+            numDigits++;
+        }
+
+        tempNum = originalNum;
+        while(tempNum != 0) {
+            remainder = tempNum % 10;
+            sum += pow(remainder, numDigits);
+            tempNum /= 10;
+        }
+
+        if((int)sum == i) {
+            printf("%d ", i);
+            count++;
+        }
+    }
+
+    printf("\nTotal Armstrong numbers between 1 and %d: %d\n", n, count);
+
+    return 0;
+}
+```
+
+### Version 2: Iterating in reverse (from `n` to 1)
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, i, originalNum, remainder, numDigits;
+    int count = 0;
+    float sum;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    printf("Armstrong numbers between 1 and %d are: ", n);
+
+    for(i = n; i >= 1; i--) {
+        sum = 0;
+        originalNum = i;
+        numDigits = (int)log10(i) + 1;
+
+        while(originalNum > 0) {
+            remainder = originalNum % 10;
+            sum += pow(remainder, numDigits);
+            originalNum /= 10;
+        }
+
+        if((int)sum == i) {
+            printf("%d ", i);
+            count++;
+        }
+    }
+
+    printf("\nCount of Armstrong numbers between 1 and %d: %d\n", n, count);
+
+    return 0;
+}
+```
+
+### Version 3: Avoiding `log10` function to calculate the number of digits
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, i, originalNum, remainder, numDigits, tempNum;
+    int count = 0;
+    float sum;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    printf("Armstrong numbers between 1 and %d are: ", n);
+
+    for(i = 1; i <= n; i++) {
+        sum = 0;
+        originalNum = i;
+        tempNum = originalNum;
+        numDigits = 0;
+
+        do {
+            numDigits++;
+            tempNum /= 10;
+        } while(tempNum != 0);
+
+        originalNum = i;
+        while(originalNum > 0) {
+            remainder = originalNum % 10;
+            sum += pow(remainder, numDigits);
+            originalNum /= 10;
+        }
+
+        if((int)sum == i) {
+            printf("%d ", i);
+            count++;
+        }
+    }
+
+    printf("\nTotal Armstrong numbers between 1 and %d: %d\n", n, count);
+
+    return 0;
+}
+```
+Each version maintains the core logic but differs slightly in the approach to calculating the number of digits, iterating through the numbers, and in one case, iterating in reverse order.

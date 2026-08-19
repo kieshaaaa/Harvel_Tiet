@@ -1,0 +1,3 @@
+remark: printNum.c:8:21: Could not analyze the loop bounds _XLX_SEP_ VITIS_LOOP_8_1 printNum.c:8:21 printNumbers 
+remark: printNum.c:11:22: Could not analyze the loop bounds _XLX_SEP_ VITIS_LOOP_11_2 printNum.c:11:22 printNumbers 
+remark: printNum.c:15:22: Could not analyze the loop bounds _XLX_SEP_ VITIS_LOOP_15_3 printNum.c:15:22 printNumbers 

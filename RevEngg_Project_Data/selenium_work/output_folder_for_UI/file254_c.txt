@@ -1,0 +1,74 @@
+### Version 1: Using `acos` to get π
+This version calculates π using `acos` function from `math.h`, which returns the arc cosine of the input. Since `acos(-1)` equals π, we utilize this to get the value of π instead of hardcoding it.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n;
+    float s, area;
+    float pi = acos(-1); // Calculating the value of π using acos
+
+    printf("Enter the number of sides: ");
+    scanf("%d", &n);
+    printf("Enter the length of one side: ");
+    scanf("%f", &s);
+
+    area = (n * s * s) / (4 * tan(pi / n));
+
+    printf("Area of the polygon: %.2f\n", area);
+
+    return 0;
+}
+```
+
+### Version 2: Simplifying the calculation
+In this version, the calculation of the area of the polygon is slightly altered to avoid directly using π by manipulating the `tan(pi / n)` expression. It simplifies the expression by using `tan(PI / n)` directly in the formula.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n;
+    float s, area;
+
+    printf("Enter the number of sides: ");
+    scanf("%d", &n);
+    printf("Enter the length of one side: ");
+    scanf("%f", &s);
+
+    area = (n * s * s) / (4 * tan(M_PI / n)); // Using M_PI for π
+
+    printf("Area of the polygon: %.2f\n", area);
+
+    return 0;
+}
+```
+
+### Version 3: Using `M_PI` for π and reducing variable scope
+In this approach, we directly use the predefined constant `M_PI` for the value of π and also reduce the scope of the `area` variable by declaring it at the point of computation. This version aims to make the code slightly more efficient in terms of variable scope.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n;
+    float s;
+
+    printf("Enter the number of sides: ");
+    scanf("%d", &n);
+    printf("Enter the length of one side: ");
+    scanf("%f", &s);
+
+    float area = (n * s * s) / (4 * tan(M_PI / n)); // Area calculation with M_PI and reduced scope for `area`
+
+    printf("Area of the polygon: %.2f\n", area);
+
+    return 0;
+}
+```
+
+Each version provides a slightly different approach to calculate and display the area of a polygon, adhering to the constraints specified.

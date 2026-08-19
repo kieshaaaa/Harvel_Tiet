@@ -1,0 +1,39 @@
+## Parag : 
+
+[Hoss22] Hosseini, I., & Dolan-Gavitt, B. (2022). 
+Beyond the c: Retargetable decompilation using neural machine translation. 
+https://arxiv.org/abs/2212.08950
+
+[Est24] Armengol-Estapé, J., Woodruff, J., Cummins, C., & O'Boyle, M. F. (2024, March). 
+Slade: A portable small language model decompiler for optimized assembly.
+https://ieeexplore.ieee.org/abstract/document/10444788
+In 2024 IEEE/ACM International Symposium on Code Generation and Optimization (CGO) (pp. 67-80). IEEE.
+
+[Sah24] Sahoo, P., Singh, A. K., Saha, S., Jain, V., Mondal, S., & Chadha, A. (2024). 
+A systematic survey of prompt engineering in large language models: Techniques and applications. 
+https://rotmandigital.ca/wp-content/uploads/2024/09/A-Systematic-Survey-of-Prompt-Engineering-in-Large-Language-Models.pdf
+
+[Wu23] Wu, X., Zhao, W., Tan, Z., Zhang, X., & Chen, W. (2023, August).
+Research and Implementation of Code Similarity Detection Technology Based on Deep Learning.
+https://ieeexplore.ieee.org/abstract/document/10262836
+In 2023 IEEE 9th International Conference on Cloud Computing and Intelligent Systems (CCIS) (pp. 235-239). IEEE
+
+## Hiren Thesis:
+
+[Bro10] Sorrel Brown. Likert scale examples for surveys.
+https://www.extension.iastate.edu/documents/anr/likertscaleexamplesforsurveys.pdf,
+2010.
+
+[Bro20] Tom B. Brown. Language models are few-shot learners.
+https://arxiv.org/pdf/2005.14165, 2020.
+
+[H+21] Michael H. et al. Hal – the missing piece of the puzzle: Formal hardware reverse en-gineering using gate-level abstraction. 
+https://eprint.iacr.org/2021/1278.pdf, 2021.
+
+[Seo18] Yezee Seo. Hardware trojan detection via opcode sequences from verilog. 
+https://www.ndss-symposium.org/wpcontent/uploads/2018/02/ndss2018posterspaper16.pdf, 
+2018.NDSSSymposiumP oster.
+
+[zf24] zhenyu fan. Hardware trojan database. 
+https://www.scidb.cn/en/detail?dataSetId=151ed5eb826e4cc9950e23999383202f,
+2024.

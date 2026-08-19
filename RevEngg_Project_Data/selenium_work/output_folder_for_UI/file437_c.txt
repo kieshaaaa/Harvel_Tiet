@@ -1,0 +1,97 @@
+Given your constraints, I will create three different versions of the C program to print the specified pattern. Each version will maintain the simplicity of the original code and comply with your restrictions.
+
+### Version 1: Simplifying the Loop Logic
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows;
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    if (rows < 1) {
+        printf("Invalid input. Please enter a positive number.\n");
+        return 0;
+    }
+
+    int cols = 2 * rows - 1;
+    printf("\n");
+
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= cols; j++) {
+            if (i == rows || j == rows - i + 1 || j == i + rows - 1)
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 2: Inverting the Loop Direction
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows;
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    if (rows < 1) {
+        printf("Invalid input. Please enter a positive number.\n");
+        return 0;
+    }
+
+    for (int i = rows; i > 0; i--) {
+        for (int j = 1; j <= rows * 2 - 1; j++) {
+            if (j == rows + 1 - i || j == rows - 1 + i || i == 1)
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 3: Using Modular Arithmetic for Spaces
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows;
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    if (rows < 1) {
+        printf("Invalid input. Please enter a positive number.\n");
+        return 0;
+    }
+
+    int cols = rows * 2 - 1;
+    for (int row = 1; row <= rows; row++) {
+        // Left Padding
+        for (int col = 1; col <= rows - row; col++) {
+            printf(" ");
+        }
+        // Stars and Internal Spaces
+        for (int col = 1; col <= (2 * row - 1); col++) {
+            if (col == 1 || col == 2 * row - 1 || row == rows) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+Each version provides a different way to achieve the printing of the specified pattern, adhering to the constraints you've listed, including avoiding certain programming constructs and focusing on using basic loops and conditionals.

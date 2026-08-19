@@ -1,0 +1,72 @@
+Sure, I will provide you with three different variations of the code you've provided, following your guidelines.
+
+### Version 1: Using separate variables for intermediate calculations
+
+```c
+#include <stdio.h>
+#define PI 3.14159265358979323846
+
+int main() {
+    float R, r, area, piSquared;
+    
+    printf("Enter the major radius (R) of the torus: ");
+    scanf("%f", &R);
+    printf("Enter the minor radius (r) of the torus: ");
+    scanf("%f", &r);
+
+    piSquared = PI * PI;
+    area = 4 * piSquared * R * r;
+
+    printf("Surface area of the torus: ");
+    printf("%.2f\n", area);
+
+    return 0;
+}
+```
+
+### Version 2: Direct calculation without additional variables
+
+```c
+#include <stdio.h>
+#define PI 3.14159265358979323846
+
+int main() {
+    float R, r;
+    
+    printf("Enter the major radius (R) of the torus: ");
+    scanf("%f", &R);
+    printf("Enter the minor radius (r) of the torus: ");
+    scanf("%f", &r);
+
+    printf("Surface area of the torus: ");
+    printf("%.2f\n", 4 * PI * PI * R * r);
+
+    return 0;
+}
+```
+
+### Version 3: Splitting the calculation into more steps for clarity
+
+```c
+#include <stdio.h>
+#define PI 3.14159265358979323846
+
+int main() {
+    float R, r, factor, surfaceArea;
+    
+    printf("Enter the major radius (R) of the torus: ");
+    scanf("%f", &R);
+    printf("Enter the minor radius (r) of the torus: ");
+    scanf("%f", &r);
+
+    factor = PI * PI;
+    surfaceArea = factor * 4 * R * r;
+
+    printf("Surface area of the torus: ");
+    printf("%.2f\n", surfaceArea);
+
+    return 0;
+}
+```
+
+Each version adheres to the constraints you've mentioned, offering slightly different ways of handling the calculation and presentation of the surface area of a torus.

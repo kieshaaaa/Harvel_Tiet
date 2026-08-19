@@ -1,0 +1,242 @@
+module entry_point (
+ ap_clk,
+ ap_rst,
+ ap_start,
+ ap_done,
+ ap_idle,
+ ap_ready,
+ a_i,
+ a_o,
+ a_o_ap_vld,
+ b_i,
+ b_o,
+ b_o_ap_vld,
+ temptemp1,
+ temptemp1_ap_vld,
+ temptemp2,
+ temptemp2_ap_vld,
+ temptemp3,
+ temptemp3_ap_vld,
+ ap_return
+);
+parameter ap_ST_fsm_state1 = 2'd1;
+parameter ap_ST_fsm_state2 = 2'd2;
+input ap_clk;
+input ap_rst;
+input ap_start;
+output ap_done;
+output ap_idle;
+output ap_ready;
+input [31:0] a_i;
+output [31:0] a_o;
+output a_o_ap_vld;
+input [31:0] b_i;
+output [31:0] b_o;
+output b_o_ap_vld;
+output [31:0] temptemp1;
+output temptemp1_ap_vld;
+output [31:0] temptemp2;
+output temptemp2_ap_vld;
+output [31:0] temptemp3;
+output temptemp3_ap_vld;
+output [31:0] ap_return;
+reg ap_done;
+reg ap_idle;
+reg ap_ready;
+reg[31:0] a_o;
+reg a_o_ap_vld;
+reg[31:0] b_o;
+reg b_o_ap_vld;
+reg temptemp1_ap_vld;
+reg temptemp2_ap_vld;
+reg temptemp3_ap_vld;
+(* fsm_encoding = "none" *) reg [1:0] ap_CS_fsm;
+wire ap_CS_fsm_state1;
+wire [31:0] sub_ln10_fu_119_p2;
+wire [0:0] tmp_fu_103_p3;
+wire [0:0] icmp_ln12_fu_126_p2;
+reg [0:0] icmp_ln12_reg_159;
+wire [31:0] sub_ln9_fu_111_p2;
+reg signed [31:0] ap_phi_mux_empty_phi_fu_84_p4;
+reg signed [31:0] empty_reg_81;
+reg signed [31:0] a_loc_0_reg_93;
+wire ap_CS_fsm_state2;
+wire [31:0] mul_ln12_fu_132_p2;
+reg [1:0] ap_NS_fsm;
+reg ap_ST_fsm_state1_blk;
+wire ap_ST_fsm_state2_blk;
+wire ap_ce_reg;
+initial begin
+#0 ap_CS_fsm = 2'd1;
+end
+entry_point_mul_32s_32s_32_1_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 1 ),
+ .din0_WIDTH( 32 ),
+ .din1_WIDTH( 32 ),
+ .dout_WIDTH( 32 ))
+mul_32s_32s_32_1_1_U1(
+ .din0(a_loc_0_reg_93),
+ .din1(empty_reg_81),
+ .dout(mul_ln12_fu_132_p2)
+);
+always @ (posedge ap_clk) begin
+ if (ap_rst == 1'b1) begin
+ ap_CS_fsm <= ap_ST_fsm_state1;
+ end else begin
+ ap_CS_fsm <= ap_NS_fsm;
+ end
+end
+always @ (posedge ap_clk) begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ if ((tmp_fu_103_p3 == 1'd0)) begin
+ a_loc_0_reg_93 <= a_i;
+ end else if ((tmp_fu_103_p3 == 1'd1)) begin
+ a_loc_0_reg_93 <= sub_ln10_fu_119_p2;
+ end
+ end
+end
+always @ (posedge ap_clk) begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ if ((tmp_fu_103_p3 == 1'd0)) begin
+ empty_reg_81 <= b_i;
+ end else if ((tmp_fu_103_p3 == 1'd1)) begin
+ empty_reg_81 <= sub_ln9_fu_111_p2;
+ end
+ end
+end
+always @ (posedge ap_clk) begin
+ if ((1'b1 == ap_CS_fsm_state1)) begin
+ icmp_ln12_reg_159 <= icmp_ln12_fu_126_p2;
+ end
+end
+always @ (*) begin
+ if (((ap_start == 1'b1) & (tmp_fu_103_p3 == 1'd1) & (1'b1 == ap_CS_fsm_state1))) begin
+ a_o = sub_ln10_fu_119_p2;
+ end else begin
+ a_o = a_i;
+ end
+end
+always @ (*) begin
+ if (((ap_start == 1'b1) & (tmp_fu_103_p3 == 1'd1) & (1'b1 == ap_CS_fsm_state1))) begin
+ a_o_ap_vld = 1'b1;
+ end else begin
+ a_o_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((ap_start == 1'b0)) begin
+ ap_ST_fsm_state1_blk = 1'b1;
+ end else begin
+ ap_ST_fsm_state1_blk = 1'b0;
+ end
+end
+assign ap_ST_fsm_state2_blk = 1'b0;
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state2)) begin
+ ap_done = 1'b1;
+ end else begin
+ ap_done = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
+ ap_idle = 1'b1;
+ end else begin
+ ap_idle = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state1)) begin
+ if ((tmp_fu_103_p3 == 1'd0)) begin
+ ap_phi_mux_empty_phi_fu_84_p4 = b_i;
+ end else if ((tmp_fu_103_p3 == 1'd1)) begin
+ ap_phi_mux_empty_phi_fu_84_p4 = sub_ln9_fu_111_p2;
+ end else begin
+ ap_phi_mux_empty_phi_fu_84_p4 = 'bx;
+ end
+ end else begin
+ ap_phi_mux_empty_phi_fu_84_p4 = 'bx;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state2)) begin
+ ap_ready = 1'b1;
+ end else begin
+ ap_ready = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((ap_start == 1'b1) & (tmp_fu_103_p3 == 1'd1) & (1'b1 == ap_CS_fsm_state1))) begin
+ b_o = sub_ln9_fu_111_p2;
+ end else begin
+ b_o = b_i;
+ end
+end
+always @ (*) begin
+ if (((ap_start == 1'b1) & (tmp_fu_103_p3 == 1'd1) & (1'b1 == ap_CS_fsm_state1))) begin
+ b_o_ap_vld = 1'b1;
+ end else begin
+ b_o_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state2)) begin
+ temptemp1_ap_vld = 1'b1;
+ end else begin
+ temptemp1_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ temptemp2_ap_vld = 1'b1;
+ end else begin
+ temptemp2_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state2)) begin
+ temptemp3_ap_vld = 1'b1;
+ end else begin
+ temptemp3_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ case (ap_CS_fsm)
+ ap_ST_fsm_state1 : begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ ap_NS_fsm = ap_ST_fsm_state2;
+ end else begin
+ ap_NS_fsm = ap_ST_fsm_state1;
+ end
+ end
+ ap_ST_fsm_state2 : begin
+ ap_NS_fsm = ap_ST_fsm_state1;
+ end
+ default : begin
+ ap_NS_fsm = 'bx;
+ end
+ endcase
+end
+assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+assign ap_return = 32'd0;
+assign icmp_ln12_fu_126_p2 = (($signed(ap_phi_mux_empty_phi_fu_84_p4) > $signed(32'd0)) ? 1'b1 : 1'b0);
+assign sub_ln10_fu_119_p2 = (32'd0 - a_i);
+assign sub_ln9_fu_111_p2 = (32'd0 - b_i);
+assign temptemp1 = a_loc_0_reg_93;
+assign temptemp2 = ap_phi_mux_empty_phi_fu_84_p4;
+assign temptemp3 = ((icmp_ln12_reg_159[0:0] == 1'b1) ? mul_ln12_fu_132_p2 : 32'd0);
+assign tmp_fu_103_p3 = b_i[32'd31];
+endmodule
+module entry_point_mul_32s_32s_32_1_1(din0, din1, dout);
+parameter ID = 1;
+parameter NUM_STAGE = 0;
+parameter din0_WIDTH = 14;
+parameter din1_WIDTH = 12;
+parameter dout_WIDTH = 26;
+input [din0_WIDTH - 1 : 0] din0; 
+input [din1_WIDTH - 1 : 0] din1; 
+output [dout_WIDTH - 1 : 0] dout;
+assign dout = $signed(din0) * $signed(din1);
+endmodule

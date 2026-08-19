@@ -1,0 +1,69 @@
+Certainly! Here are three variations of the given code, adhering to your restrictions:
+
+### Version 1: Changing Variable Names & Structure
+
+```c
+#include <stdio.h>
+
+int main() {
+    float base, h, vol;
+
+    printf("Enter base of the pyramid: ");
+    scanf("%f", &base);
+
+    printf("Enter height of the pyramid: ");
+    scanf("%f", &h);
+
+    vol = (base * base * h) / 3.0f;
+
+    printf("Pyramid volume: ");
+    printf("%.2f\n", vol);
+
+    return 0;
+}
+```
+
+### Version 2: Using a Single `scanf` Call
+
+```c
+#include <stdio.h>
+
+int main() {
+    float bLength, hgt, vlm;
+
+    printf("Enter base length and height of the pyramid separated by space: ");
+    scanf("%f %f", &bLength, &hgt);
+
+    vlm = (bLength * bLength * hgt) / 3.0f;
+
+    printf("Volume: ");
+    printf("%.2f\n", vlm);
+
+    return 0;
+}
+```
+
+### Version 3: Adjusting the Flow
+
+```c
+#include <stdio.h>
+
+int main() {
+    float baseSide, pyramidHeight, calculatedVolume;
+
+    printf("Base length? ");
+    scanf("%f", &baseSide);
+    
+    printf("Height? ");
+    scanf("%f", &pyramidHeight);
+
+    calculatedVolume = baseSide * baseSide * pyramidHeight / 3;
+
+    printf("The volume is ");
+    printf("%.2f\n", calculatedVolume);
+
+    return 0;
+}
+```
+
+Each version makes slight adjustments to variable names, the structure of the code, or how inputs are handled, while keeping the core functionality intact and following your constraints.

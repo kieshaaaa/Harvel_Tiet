@@ -1,0 +1,70 @@
+Certainly! Given the constraints, I'll provide you with three distinct versions of the original C program that calculates the difference between two numbers. Each version will vary slightly in its approach while respecting the stipulated limitations.
+
+### Version 1: Use of Ternary Operator
+
+This version utilizes the ternary operator to simplify the decision-making process when determining the difference between the two numbers.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, diff;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    diff = a > b ? a - b : b - a;
+
+    printf("\nDifference between %d and %d is = %d", a, b, diff);
+    return 0;
+}
+```
+
+### Version 2: Inline Calculation in the Difference Assignment
+
+This version directly calculates the difference in the assignment to `diff` without a separate conditional block or ternary operator.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, diff;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    diff = (a - b) * (a >= b) + (b - a) * (b > a);
+
+    printf("\nDifference between %d and %d is = %d", a, b, diff);
+    return 0;
+}
+```
+
+### Version 3: Subtract and Absolute
+
+This version introduces the use of the `abs` function to compute the absolute value of the difference, simplifying the logic to a single line. It requires including `stdlib.h` for the `abs` function.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int a, b, diff;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    diff = abs(a - b);
+
+    printf("\nDifference between %d and %d is = %d", a, b, diff);
+    return 0;
+}
+```
+
+Each of these versions adheres to your specifications, offering a different approach to achieving the same output.

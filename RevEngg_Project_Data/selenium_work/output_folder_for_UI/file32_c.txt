@@ -1,0 +1,70 @@
+### Version 1
+
+In this version, I introduce a direct approach but split the calculation into two steps to strictly adhere to the requirement of not performing operations inside the `printf` statement.
+
+```c
+#include <stdio.h>
+
+int main() {
+    float meters, feet, conversionFactor;
+
+    printf("Enter the length in meters: ");
+    scanf("%f", &meters);
+
+    conversionFactor = 3.28084f; // Directly using the inverse of 0.3048
+    feet = meters * conversionFactor;
+
+    printf("%.2f meters is equal to %.2f feet.\n", meters, feet);
+
+    return 0;
+}
+```
+
+### Version 2
+
+In this version, I introduce a constant for the conversion factor at the beginning of the program, making it clear what the conversion ratio is.
+
+```c
+#include <stdio.h>
+
+int main() {
+    const float conversionFactor = 3.280839895f; // Approximate value for 1 meter to feet conversion
+    float meters, feet;
+
+    printf("Enter the length in meters: ");
+    scanf("%f", &meters);
+
+    feet = meters * conversionFactor;
+
+    printf("%.2f meters is equal to %.2f feet.\n", meters, feet);
+
+    return 0;
+}
+```
+
+### Version 3
+
+In this version, I include an intermediary step that allows the user to convert from feet back to meters as well, showcasing a bidirectional conversion without using additional functions or complex data structures. 
+
+```c
+#include <stdio.h>
+
+int main() {
+    float meters, feet, backToMeters;
+    const float metersToFeet = 3.28084f;
+    const float feetToMeters = 0.3048f;
+
+    printf("Enter the length in meters: ");
+    scanf("%f", &meters);
+
+    feet = meters * metersToFeet;
+    backToMeters = feet * feetToMeters;
+
+    printf("%.2f meters is equal to %.2f feet.\n", meters, feet);
+    printf("Verifying conversion, %.2f feet is equal to %.2f meters.\n", feet, backToMeters);
+
+    return 0;
+}
+```
+
+Each version adheres to the constraints provided and introduces a small variation to demonstrate different ways to achieve the conversion with basic programming constructs.

@@ -1,0 +1,74 @@
+Sure, I'll create three different versions of the code you provided. Each version will swap the values of two variables without using the specific restrictions you mentioned. 
+
+### Version 1: Using Multiplication and Division
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+
+    // Ensure b is not 0 to avoid division by zero
+    if (b != 0) {
+        a = a * b;
+        b = a / b;
+        a = a / b;
+    }
+
+    printf("a => %d, b => %d \n", a, b);
+
+    return 0;
+}
+```
+
+### Version 2: Using Bitwise XOR
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+
+    // Swapping using XOR
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+
+    printf("a => %d, b => %d \n", a, b);
+
+    return 0;
+}
+```
+
+### Version 3: Using a Temporary Variable
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, temp;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+
+    // Swapping using a temporary variable
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("a => %d, b => %d \n", a, b);
+
+    return 0;
+}
+```
+
+Each version uses a different technique for swapping values without resorting to the restrictions you've outlined.

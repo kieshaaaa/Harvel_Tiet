@@ -1,0 +1,103 @@
+### Version 1: Minor Adjustments for Clarity and Efficiency
+
+```c
+#include <stdio.h>
+
+int main() {
+    int array[20], number_of_elements, temp, current_index, compare_index;
+    printf("Enter the number of elements: ");
+    scanf("%d", &number_of_elements);
+
+    for(current_index = 0; current_index < number_of_elements; current_index++) {
+        printf("Enter element %d: ", current_index + 1);
+        scanf("%d", &array[current_index]);
+    }
+
+    for(current_index = 1; current_index < number_of_elements; current_index++) {
+        temp = array[current_index];
+        compare_index = current_index - 1;
+
+        while(compare_index >= 0 && array[compare_index] > temp) {
+            array[compare_index + 1] = array[compare_index];
+            compare_index--;
+        }
+        array[compare_index + 1] = temp;
+    }
+
+    printf("Sorted array: ");
+    for(current_index = 0; current_index < number_of_elements; current_index++) {
+        printf("%d ", array[current_index]);
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+
+### Version 2: Using a For Loop for Insertion
+
+```c
+#include <stdio.h>
+
+int main() {
+    int elements[20], total, swap, i, j;
+    printf("Enter the number of elements: ");
+    scanf("%d", &total);
+
+    for(i = 0; i < total; i++) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &elements[i]);
+    }
+
+    for(i = 1; i < total; i++) {
+        for(j = i; j > 0 && elements[j - 1] > elements[j]; j--) {
+            swap = elements[j];
+            elements[j] = elements[j - 1];
+            elements[j - 1] = swap;
+        }
+    }
+
+    printf("Sorted elements: ");
+    for(i = 0; i < total; i++) {
+        printf("%d ", elements[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+
+### Version 3: Enhanced Readability and Simplicity
+
+```c
+#include <stdio.h>
+
+int main() {
+    int nums[20], count, temp, x, y;
+    printf("Total number of elements: ");
+    scanf("%d", &count);
+
+    for(x = 0; x < count; x++) {
+        printf("Input element %d: ", x + 1);
+        scanf("%d", &nums[x]);
+    }
+
+    for(x = 1; x < count; x++) {
+        temp = nums[x];
+        for(y = x; y > 0 && nums[y - 1] > temp; y--) {
+            nums[y] = nums[y - 1];
+        }
+        nums[y] = temp;
+    }
+
+    printf("Array after sorting: ");
+    for(x = 0; x < count; x++) {
+        printf("%d ", nums[x]);
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+
+Each of these versions modifies the original program to enhance different aspects such as readability, simplicity, or efficiency, while adhering to the constraints you provided.

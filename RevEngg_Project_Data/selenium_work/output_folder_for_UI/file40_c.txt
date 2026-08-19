@@ -1,0 +1,65 @@
+### Version 1: Direct Call
+
+This version directly calls the function without using a function pointer.
+
+```c
+#include <stdio.h>
+
+int addTwoNumbers(int x, int y) {
+    return x + y;
+}
+
+int main() {
+    int a = 10, b = 20, sum;
+    
+    sum = addTwoNumbers(a, b);
+    
+    int result = sum;
+    printf("Sum is: %d\n", result);
+
+    return 0;
+}
+```
+
+### Version 2: Using a Variable for Result
+
+This version uses an additional variable to store the result before printing.
+
+```c
+#include <stdio.h>
+
+int addTwoNumbers(int x, int y) {
+    return x + y;
+}
+
+int main() {
+    int a = 10, b = 20;
+    
+    int result = addTwoNumbers(a, b);
+    printf("Sum is: %d\n", result);
+
+    return 0;
+}
+```
+
+### Version 3: Inline Initialization
+
+This version initializes variables `a` and `b` inline with their declaration.
+
+```c
+#include <stdio.h>
+
+int addTwoNumbers(int x, int y) {
+    return x + y;
+}
+
+int main() {
+    int sum = addTwoNumbers(10, 20);
+    
+    printf("Sum is: %d\n", sum);
+
+    return 0;
+}
+```
+
+Each version maintains the functionality of the original code but varies in how it calls the function or handles its variables, respecting the constraints you've provided.

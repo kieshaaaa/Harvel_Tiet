@@ -1,0 +1,80 @@
+Here are three alternative versions of the provided code, adhering to the specified constraints. Each version checks whether a given number is a perfect square or not, without using the restrictions you've mentioned.
+
+### Version 1: Using `floor()` and `ceil()`
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num;
+    float root;
+
+    printf("\nEnter any number :: ");
+    scanf("%d", &num);
+
+    root = sqrt((float)num);
+
+    if (floor(root) == ceil(root))
+        printf("\nThe Entered Number [ %d ] is a Perfect Square.\n", num);
+    else
+        printf("\nThe Entered Number [ %d ] is not a Perfect Square.\n", num);
+
+    return 0;
+}
+```
+
+### Version 2: Using Square of Rounded Value
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num;
+    float root;
+    int squaredRoot;
+
+    printf("\nEnter any number :: ");
+    scanf("%d", &num);
+
+    root = sqrt((float)num);
+    squaredRoot = round(root);
+
+    if (num == squaredRoot * squaredRoot)
+        printf("\nThe Entered Number [ %d ] is a Perfect Square.\n", num);
+    else
+        printf("\nThe Entered Number [ %d ] is not a Perfect Square.\n", num);
+
+    return 0;
+}
+```
+
+### Version 3: Manual Square Root Calculation
+This version avoids the math library's `sqrt` function and instead tries a manual approach to check if a number is a perfect square. It's less efficient but adheres to your constraints.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, i;
+    int found = 0;
+
+    printf("\nEnter any number :: ");
+    scanf("%d", &num);
+
+    for (i = 0; i * i <= num; i++) {
+        if (i * i == num) {
+            found = 1;
+            break;
+        }
+    }
+
+    if (found == 1)
+        printf("\nThe Entered Number [ %d ] is a Perfect Square.\n", num);
+    else
+        printf("\nThe Entered Number [ %d ] is not a Perfect Square.\n", num);
+
+    return 0;
+}
+```
+
+Each version adheres to your restrictions, providing different approaches to check for a perfect square, with varying dependencies on the standard library functions.

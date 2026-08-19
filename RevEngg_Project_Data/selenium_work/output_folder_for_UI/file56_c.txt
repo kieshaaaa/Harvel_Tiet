@@ -1,0 +1,51 @@
+### Version 1: Inline Conversion
+```c
+#include <stdio.h>
+#define CONVERT_FACTOR (3.14 / 200.0)
+
+int main() {
+    float grad, rad;
+    printf("Enter angle in gradians: ");
+    scanf("%f", &grad);
+    rad = grad * CONVERT_FACTOR;
+    printf("Angle in radians: ");
+    printf("%f\n", rad);
+    return 0;
+}
+```
+
+### Version 2: Using a Different Constant
+Instead of defining PI, we directly use the conversion factor.
+```c
+#include <stdio.h>
+
+int main() {
+    float gradians, radians;
+    printf("Enter angle in gradians: ");
+    scanf("%f", &gradians);
+    radians = gradians * (3.14159 / 200.0); // Direct use of Pi value for conversion
+    printf("Equivalent in radians: ");
+    printf("%f\n", radians);
+    return 0;
+}
+```
+
+### Version 3: Interactive Prompt Change
+This version changes the user interaction slightly for variety.
+```c
+#include <stdio.h>
+#define PI 3.14159 // Slightly more precise PI
+
+int main() {
+    float gradians, radians;
+    printf("Gradians to Radians Converter\n");
+    printf("Input gradians: ");
+    scanf("%f", &gradians);
+    radians = gradians * (PI / 200);
+    printf("Converted to radians: ");
+    printf("%f\n", radians);
+    return 0;
+}
+```
+
+Each version respects the restrictions and modifies the approach to defining constants, the way the prompt is presented to the user, and the precision of PI used, while still using only `float` for floating-point operations.

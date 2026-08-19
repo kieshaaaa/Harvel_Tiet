@@ -1,0 +1,71 @@
+Certainly! Below are three variations of the given program, adhering to your guidelines:
+
+### Version 1
+
+```c
+#include <stdio.h>
+
+int main() {
+    int N, i;
+    float sum = 0.0, term;
+
+    printf("\nEnter total number of terms :: ");
+    scanf("%d", &N);
+
+    for(i = 1; i <= 2 * N; i += 2) {
+        term = i / (float)(i * i);
+        sum += term;
+    }
+
+    printf("\nSum of the series is :: %f\n", sum);
+
+    return 0;
+}
+```
+
+### Version 2
+
+```c
+#include <stdio.h>
+
+int main() {
+    int N;
+    float sum = 0.0;
+    printf("\nEnter total number of terms :: ");
+    scanf("%d", &N);
+
+    for(int num = 1; num <= N; ++num) {
+        int odd = 2 * num - 1;
+        sum += 1.0 / odd;
+    }
+
+    printf("\nSum of the series is :: %f\n", sum);
+
+    return 0;
+}
+```
+
+### Version 3
+
+```c
+#include <stdio.h>
+
+int main() {
+    int N, i;
+    float sum = 0.0;
+
+    printf("\nEnter total number of terms :: ");
+    scanf("%d", &N);
+
+    for(i = 1; i <= N; i++) {
+        float odd = 2 * i - 1;
+        sum += odd / (odd * odd);
+    }
+
+    printf("\nSum of the series is :: %f\n", sum);
+
+    return 0;
+}
+```
+
+Each of these versions calculates the sum of a series in a slightly different way while adhering to your constraints. Note that while the series' formula appears similar across versions, subtle adjustments in how terms are calculated or iterated through can lead to different underlying code structures, offering a variety of approaches to solving the same problem.

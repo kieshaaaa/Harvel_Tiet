@@ -1,0 +1,117 @@
+### Version 1: Iterative Approach with Array
+
+```c
+#include<stdio.h>
+
+int main() {
+    int num;
+    printf("Enter any number :: ");
+    scanf("%d", &num);
+
+    // Handling 0 explicitly
+    if (num == 0) {
+        printf("zero ");
+        return 0;
+    }
+
+    int reverse = 0;
+    // Reverse the number to print in correct order
+    while (num != 0) {
+        reverse = reverse * 10 + (num % 10);
+        num /= 10;
+    }
+
+    while (reverse != 0) {
+        int digit = reverse % 10;
+        switch (digit) {
+            case 0: printf("zero "); break;
+            case 1: printf("one "); break;
+            case 2: printf("two "); break;
+            case 3: printf("three "); break;
+            case 4: printf("four "); break;
+            case 5: printf("five "); break;
+            case 6: printf("six "); break;
+            case 7: printf("seven "); break;
+            case 8: printf("eight "); break;
+            case 9: printf("nine "); break;
+        }
+        reverse /= 10;
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using a Direct Mapping Array
+
+```c
+#include<stdio.h>
+
+int main() {
+    int num;
+    printf("Enter any number :: ");
+    scanf("%d", &num);
+
+    if (num == 0) {
+        printf("zero ");
+        return 0;
+    }
+
+    // Direct mapping of digits to their word representations
+    char *words[10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    int reversed = 0, n = num;
+
+    // Reverse the number
+    while (n > 0) {
+        reversed = reversed * 10 + n % 10;
+        n /= 10;
+    }
+
+    // Iterate through the reversed number, mapping digits to words
+    while (reversed > 0) {
+        printf("%s ", words[reversed % 10]);
+        reversed /= 10;
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Iterative Approach Without Reversing
+
+```c
+#include<stdio.h>
+
+int main() {
+    int num, digitCount = 0, n;
+    printf("Enter any number :: ");
+    scanf("%d", &num);
+
+    n = num;
+    // Count the number of digits
+    while (n > 0) {
+        digitCount++;
+        n /= 10;
+    }
+
+    // Array to hold the words for each digit
+    char *words[10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    int digits[digitCount];
+    n = num;
+
+    // Extract digits and store them
+    for (int i = 0; i < digitCount; i++) {
+        digits[digitCount - 1 - i] = n % 10;
+        n /= 10;
+    }
+
+    // Print words for each digit
+    for (int i = 0; i < digitCount; i++) {
+        printf("%s ", words[digits[i]]);
+    }
+
+    return 0;
+}
+```
+
+These versions provide different approaches to solving the problem without using recursion, dynamic memory allocation, structures, unions, pointers, or modifying the input data types.

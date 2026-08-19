@@ -1,0 +1,108 @@
+### Version 1: Simplified with Post-Search Message
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], size, i, num, found = 0;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    for(i = 0; i < size; ++i) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Search element: ");
+    scanf("%d", &num);
+
+    for(i = 0; i < size && !found; ++i) {
+        if(arr[i] == num) {
+            found = 1;
+            printf("%d found at position %d\n", num, i + 1);
+        }
+    }
+
+    if(!found) {
+        printf("%d not found\n", num);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Loop Optimization with Early Exit
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], size, i, num, foundPos = -1;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    for(i = 0; i < size; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Search element: ");
+    scanf("%d", &num);
+
+    for(i = 0; i < size; i++) {
+        if(arr[i] == num) {
+            foundPos = i;
+            break;
+        }
+    }
+
+    if(foundPos != -1) {
+        printf("%d found at position %d\n", num, foundPos + 1);
+    } else {
+        printf("%d not found\n", num);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Introducing Search Count
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], size, i, num, count = 0;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    for(i = 0; i < size; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Search element: ");
+    scanf("%d", &num);
+
+    for(i = 0; i < size; i++) {
+        if(arr[i] == num) {
+            printf("%d found at position %d\n", num, i + 1);
+            count++;
+            break; // Remove this break to count all occurrences instead of just the first one.
+        }
+    }
+
+    if(count == 0) {
+        printf("%d not found\n", num);
+    } else {
+        printf("Total occurrences: %d\n", count);
+    }
+
+    return 0;
+}
+```
+
+Each version modifies the original program structure in different ways to demonstrate various aspects of searching within an array in C, while adhering to your constraints.

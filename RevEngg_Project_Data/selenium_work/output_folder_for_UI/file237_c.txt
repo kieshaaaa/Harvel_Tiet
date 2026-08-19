@@ -1,0 +1,99 @@
+Certainly! Below are three variations of the given C program, each checking if a number is prime or not, adhering to your constraints.
+
+### Version 1: Using a while loop instead of a for loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 2;
+    int number;
+    unsigned char isPrime = 1; // Assume number is prime initially
+
+    printf("Enter an integer number : ");
+    scanf("%d", &number);
+
+    while (i <= number / 2) {
+        if (number % i == 0) {
+            isPrime = 0; // Number is not prime
+            break;
+        }
+        i++;
+    }
+
+    if (isPrime)
+        printf("\n%d is a prime number.", number);
+    else
+        printf("\n%d is not a prime number.", number);
+
+    return 0;
+}
+```
+
+### Version 2: Checking up to the square root of the number
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int number;
+    unsigned char isPrime = 1;
+    float limit;
+
+    printf("Enter an integer number : ");
+    scanf("%d", &number);
+
+    limit = sqrt(number);
+
+    for (int i = 2; i <= limit; i++) {
+        if (number % i == 0) {
+            isPrime = 0;
+            break;
+        }
+    }
+
+    if (isPrime && number > 1)
+        printf("\n%d is a prime number.", number);
+    else
+        printf("\n%d is not a prime number.", number);
+
+    return 0;
+}
+```
+
+### Version 3: Increment by 2 for odd numbers after checking divisibility by 2
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    unsigned char isPrime = 1; // Assume number is prime
+
+    printf("Enter an integer number : ");
+    scanf("%d", &number);
+
+    if (number == 2) {
+        isPrime = 1;
+    } else if (number < 2 || number % 2 == 0) {
+        isPrime = 0;
+    } else {
+        for (int i = 3; i <= number / 2; i += 2) {
+            if (number % i == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+    }
+
+    if (isPrime)
+        printf("\n%d is a prime number.", number);
+    else
+        printf("\n%d is not a prime number.", number);
+
+    return 0;
+}
+```
+
+Each of these versions provides a different way of determining if a number is prime, adhering to your guidelines.

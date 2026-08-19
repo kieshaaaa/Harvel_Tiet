@@ -1,0 +1,103 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "multiplyMatrix",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/coss01\/vitis_hls_demo_c\/matrix_mul\/matrix_mul\/solution2\/directives.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "multiplyMatrix"
+              }]
+          }
+        },
+        {
+          "functionName": "multiplyMatrix",
+          "label": "",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "\/home\/coss01\/vitis_hls_demo_c\/matrix_mul\/matrix_mul\/solution2\/directives.tcl",
+          "sourceLine": "7",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "complete",
+                "value": ""
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              },
+              {
+                "name": "variable",
+                "value": "mat1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "multiplyMatrix",
+          "label": "",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "\/home\/coss01\/vitis_hls_demo_c\/matrix_mul\/matrix_mul\/solution2\/directives.tcl",
+          "sourceLine": "8",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "complete",
+                "value": ""
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              },
+              {
+                "name": "variable",
+                "value": "result"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "multiplyMatrix",
+          "label": "multiplyMatrix_label0",
+          "functionLabel": "",
+          "id": "4",
+          "sourceFile": "\/home\/coss01\/vitis_hls_demo_c\/matrix_mul\/matrix_mul\/solution2\/directives.tcl",
+          "sourceLine": "9",
+          "pragma": {"name": "UNROLL"}
+        },
+        {
+          "functionName": "multiplyMatrix",
+          "label": "multiplyMatrix_label1",
+          "functionLabel": "",
+          "id": "5",
+          "sourceFile": "\/home\/coss01\/vitis_hls_demo_c\/matrix_mul\/matrix_mul\/solution2\/directives.tcl",
+          "sourceLine": "10",
+          "pragma": {"name": "PIPELINE"}
+        },
+        {
+          "functionName": "multiplyMatrix",
+          "label": "",
+          "functionLabel": "",
+          "id": "6",
+          "sourceFile": "\/home\/coss01\/vitis_hls_demo_c\/matrix_mul\/matrix_mul\/solution2\/csynth.tcl",
+          "sourceLine": "17",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "multiplyMatrix"
+              }]
+          }
+        }
+      ]
+    }]}

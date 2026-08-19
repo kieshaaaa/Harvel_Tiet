@@ -1,0 +1,87 @@
+<dict>
+  <key>main-file</key>
+  <string>/home/virubuntu/Change_tcl_xilinx/multiple_operator/solution1/.autopilot/db/array.pp.0.c</string>
+  <key>diagnostics</key>
+  <array>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/home/virubuntu/Change_tcl_xilinx/multiple_operator/solution1/csynth.tcl</string>
+      <key>line</key>
+      <integer>14</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=processArray_XLX_SEP_ PragmaOptions=name=processArray_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/home/virubuntu/Change_tcl_xilinx/multiple_operator/solution1/directives.tcl</string>
+      <key>line</key>
+      <integer>6</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=processArray_XLX_SEP_ PragmaOptions=name=processArray_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/home/virubuntu/Change_tcl_xilinx/multiple_operator/solution1/directives.tcl</string>
+      <key>line</key>
+      <integer>7</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=processArray_XLX_SEP_ PragmaOptions=complete dim=1 variable=arr_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/home/virubuntu/Change_tcl_xilinx/multiple_operator/solution1/directives.tcl</string>
+      <key>line</key>
+      <integer>8</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=processArray_XLX_SEP_ PragmaOptions=complete dim=1 variable=arr2_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/home/virubuntu/Change_tcl_xilinx/multiple_operator/solution1/directives.tcl</string>
+      <key>line</key>
+      <integer>9</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=processArray_XLX_SEP_ PragmaOptions=complete dim=1 variable=arr3_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+  </array>
+</dict>

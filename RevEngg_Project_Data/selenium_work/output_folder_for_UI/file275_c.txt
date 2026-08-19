@@ -1,0 +1,81 @@
+Sure, I'll provide three variations of the code based on your specifications. Each version will calculate and print the nth triangular number, following the constraints you've outlined.
+
+### Version 1: Using a For Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int sum = 0;
+    printf("Enter a positive integer (n) to find the nth triangular number: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+
+    for (i = 1; i <= n; i++) {
+        sum += i;
+    }
+
+    printf("The %dth triangular number is: %d\n", n, sum);
+
+    return 0;
+}
+```
+
+### Version 2: Using a While Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    int sum = 0;
+    int counter = 1;
+    printf("Enter a positive integer (n) to find the nth triangular number: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+
+    while (counter <= n) {
+        sum += counter;
+        counter++;
+    }
+
+    printf("The %dth triangular number is: %d\n", n, sum);
+
+    return 0;
+}
+```
+
+### Version 3: Direct Calculation with a Slight Variation
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    float nthTriangular;
+    printf("Enter a positive integer (n) to find the nth triangular number: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+
+    nthTriangular = 0.5f * n * (n + 1); // Use of float for demonstration, though output is casted to int
+
+    printf("The %dth triangular number is: %d\n", n, (int)nthTriangular);
+
+    return 0;
+}
+```
+
+In these variations, I've introduced different approaches (for loop, while loop, and a direct calculation with a minor type change) to demonstrate how the problem can be solved in multiple ways within the constraints you've provided.

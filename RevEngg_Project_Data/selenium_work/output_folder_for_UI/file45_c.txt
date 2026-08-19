@@ -1,0 +1,71 @@
+Certainly! Following your guidelines, I'll provide three alternative versions of the original code to calculate the volume of a rectangular pyramid without modifying the datatype, using extra functions, or implementing advanced programming concepts:
+
+### Version 1: Simplified Variable Declarations
+
+```c
+#include <stdio.h>
+
+int main() {
+    float l, w, h, area, vol;
+
+    printf("Enter the length of the base (l): ");
+    scanf("%f", &l);
+    printf("Enter the width of the base (w): ");
+    scanf("%f", &w);
+    printf("Enter the height of the pyramid (H): ");
+    scanf("%f", &h);
+
+    area = l * w;
+    vol = (area * h) / 3.0f;
+
+    printf("The volume of the rectangular pyramid is: ");
+    printf("%.2f\n", vol);
+
+    return 0;
+}
+```
+
+### Version 2: Inline Variable Initialization
+
+```c
+#include <stdio.h>
+
+int main() {
+    float l, w, h;
+    printf("Enter the length, width, and height of the pyramid: ");
+    scanf("%f %f %f", &l, &w, &h);
+
+    float area = l * w;
+    float vol = area * h / 3.0f;
+
+    printf("The volume of the rectangular pyramid is: ");
+    printf("%.2f\n", vol);
+
+    return 0;
+}
+```
+
+### Version 3: Direct Calculation
+
+```c
+#include <stdio.h>
+
+int main() {
+    float l, w, h;
+    printf("Enter the length of the base: ");
+    scanf("%f", &l);
+    printf("Enter the width of the base: ");
+    scanf("%f", &w);
+    printf("Enter the height of the pyramid: ");
+    scanf("%f", &h);
+
+    float vol = (l * w * h) / 3.0f;
+
+    printf("The volume of the rectangular pyramid is: ");
+    printf("%.2f\n", vol);
+
+    return 0;
+}
+```
+
+Each version adheres to the specified restrictions and provides an alternative approach to reading input, processing the calculation, and outputting the result.

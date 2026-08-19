@@ -1,0 +1,109 @@
+Below are three different versions of the provided C program to find and count prime numbers within a given range. Each version optimizes or changes the approach slightly, while adhering to the constraints you've mentioned.
+
+### Version 1: Simplified Loop and Condition Checks
+This version uses a more streamlined logic to check for prime numbers, reducing unnecessary steps.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number1, number2, i, j, count = 0;
+    
+    printf("Enter the value of Number1 and Number2: ");
+    scanf("%d %d", &number1, &number2);
+
+    for(i = number1; i <= number2; i++) {
+        if(i < 2) continue;
+        int isPrime = 1;
+        for(j = 2; j*j <= i; j++) {
+            if(i % j == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+        if(isPrime) {
+            printf("%d\n", i);
+            count++;
+        }
+    }
+
+    printf("Number of primes between %d & %d = %d\n", number1, number2, count);
+    return 0;
+}
+```
+
+### Version 2: Skip Even Numbers Efficiently
+This version ensures that after checking 2 as a prime, all even numbers are skipped efficiently, reducing the number of iterations.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number1, number2, count = 0;
+    printf("Enter the value of Number1 and Number2: ");
+    scanf("%d %d", &number1, &number2);
+
+    if(number1 <= 2) {
+        printf("2\n");
+        number1 = 3;
+        count++;
+    }
+    if(number1 % 2 == 0) number1++;
+
+    for(int i = number1; i <= number2; i += 2) {
+        int flag = 0;
+        for(int j = 3; j*j <= i; j += 2) {
+            if(i % j == 0) {
+                flag = 1;
+                break;
+            }
+        }
+        if(!flag) {
+            printf("%d\n", i);
+            count++;
+        }
+    }
+
+    printf("Number of primes between %d & %d = %d\n", number1, number2, count);
+    return 0;
+}
+```
+
+### Version 3: Use of the `break` More Strategically
+In this version, the loop breaks more strategically to avoid unnecessary checks once a non-prime is identified.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number1, number2, i, j, count = 0, isPrime;
+    
+    printf("Enter the value of Number1 and Number2: ");
+    scanf("%d %d", &number1, &number2);
+
+    if(number1 <= 2) {
+        printf("2\n");
+        count = 1;
+        number1 = 3;
+    }
+
+    for(i = number1; i <= number2; i += (i % 2 == 0) ? 1 : 2) { // Skip even numbers after 2
+        isPrime = 1; // Assume number is prime until proven otherwise
+        for(j = 3; j*j <= i; j += 2) { // Only check odd divisors
+            if(i % j == 0) {
+                isPrime = 0; // Not a prime number
+                break;
+            }
+        }
+        if(isPrime) {
+            printf("%d\n", i);
+            count++;
+        }
+    }
+
+    printf("Number of primes between %d & %d = %d\n", number1, number2, count);
+    return 0;
+}
+```
+
+Each of these versions introduces a slight variation in the approach to finding prime numbers, aiming for efficiency or clarity.

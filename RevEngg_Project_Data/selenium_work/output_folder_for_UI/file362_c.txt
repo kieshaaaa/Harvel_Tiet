@@ -1,0 +1,64 @@
+Sure, here are three different versions of the given code that meet your requirements:
+
+### Version 1: Using a while loop
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int sum = 0, i = 1;
+    while (i <= 400) {
+        if (i % 8 == 0) {
+            sum++;
+        }
+        i++;
+    }
+    printf("The sum of the multiples of 8 is ");
+    printf("%i\n", sum);
+    return 0;
+}
+```
+
+### Version 2: Counting without checking each number
+
+This version takes advantage of the fact that every eighth number is a multiple of 8, starting from 8 itself.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int sum = 0;
+    // First multiple of 8 within the range
+    int first = 8; 
+    // Last multiple of 8 within the range
+    int last = 400 - (400 % 8);
+    // Calculate the count of multiples directly
+    sum = (last - first) / 8 + 1;
+    printf("The sum of the multiples of 8 is ");
+    printf("%i\n", sum);
+    return 0;
+}
+```
+
+### Version 3: For loop, changing the iteration step
+
+This version changes the step of the for loop to skip directly to the next multiple of 8.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int sum = 0;
+    for (int i = 8; i <= 400; i += 8) {
+        sum++;
+    }
+    printf("The sum of the multiples of 8 is ");
+    printf("%i\n", sum);
+    return 0;
+}
+```
+
+Each of these versions accomplishes the same task as your original code, but they use different approaches to iterate over the range and count the multiples of 8.

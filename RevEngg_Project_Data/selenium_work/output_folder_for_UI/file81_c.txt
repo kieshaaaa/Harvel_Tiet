@@ -1,0 +1,54 @@
+Certainly! I'll create three different versions of the given program, adhering to your requirements.
+
+### Version 1
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, surfaceArea, sqrt3;
+    printf("Enter the side length of the triangular pyramid: ");
+    scanf("%f", &a);
+    sqrt3 = sqrt(3);
+    surfaceArea = sqrt3 * a * a;
+    printf("Surface area of the triangular pyramid: ");
+    printf("%.2f\n", surfaceArea);
+    return 0;
+}
+```
+
+### Version 2
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float sideLength, area, halfSqrt3;
+    printf("Enter the side length of the triangular pyramid: ");
+    scanf("%f", &sideLength);
+    halfSqrt3 = sqrt(3) / 2;
+    area = 2 * halfSqrt3 * sideLength * sideLength;
+    printf("Surface area of the triangular pyramid: ");
+    printf("%.2f\n", area);
+    return 0;
+}
+```
+
+### Version 3
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float baseSide, totalSurfaceArea, sqrtThreeTimesFour;
+    printf("Enter the side length of the triangular pyramid: ");
+    scanf("%f", &baseSide);
+    sqrtThreeTimesFour = sqrt(3) * 4;
+    totalSurfaceArea = (sqrtThreeTimesFour / 4) * baseSide * baseSide;
+    printf("Surface area of the triangular pyramid: ");
+    printf("%.2f\n", totalSurfaceArea);
+    return 0;
+}
+```
+
+Each version modifies the approach slightly, either by changing the way `sqrt(3)` is utilized, adjusting the formula structure, or altering variable names for clarity, all while avoiding the constraints you specified.

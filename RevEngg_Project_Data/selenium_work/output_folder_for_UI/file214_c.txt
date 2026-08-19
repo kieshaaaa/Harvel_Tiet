@@ -1,0 +1,75 @@
+Given your constraints, I'll create three alternative versions of the original program, which calculates the sum of two numbers, without using function pointers, dynamic memory allocation, structures, unions, recursion, file handling, modifying existing data types, or including `const` qualifiers. The `double` data type will be replaced with `float` if it appears, though your original code does not require this change.
+
+### Version 1: Direct Function Call
+
+```c
+#include <stdio.h>
+
+// Function to add two numbers
+int addTwoNumbers(int x, int y) {
+    return x + y;
+}
+
+int main() {
+    int a = 10, b = 20, sum;
+
+    // Directly calling the function
+    sum = addTwoNumbers(a, b);
+
+    printf("Sum is: ");
+    printf("%d\n", sum);
+
+    return 0;
+}
+```
+
+### Version 2: Using a Different Approach for Addition
+
+This version introduces a small variation by adding numbers using increment and decrement operators, just to show a different way of achieving the addition without directly using `+`. This is more of a creative workaround rather than a practical approach.
+
+```c
+#include <stdio.h>
+
+// Function to add two numbers without directly using the + operator
+int addTwoNumbers(int x, int y) {
+    while (y != 0) {
+        x++;
+        y--;
+    }
+    return x;
+}
+
+int main() {
+    int a = 10, b = 20, sum;
+
+    // Calling the modified addition function
+    sum = addTwoNumbers(a, b);
+
+    printf("Sum is: ");
+    printf("%d\n", sum);
+
+    return 0;
+}
+```
+
+### Version 3: Inline Calculation
+
+This version eliminates the function altogether and performs the addition directly in the `main` function, simplifying the code further.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 20, sum;
+
+    // Inline calculation of sum
+    sum = a + b;
+
+    printf("Sum is: ");
+    printf("%d\n", sum);
+
+    return 0;
+}
+```
+
+Each of these versions adheres to your constraints and offers a slightly different way of achieving the task at hand.

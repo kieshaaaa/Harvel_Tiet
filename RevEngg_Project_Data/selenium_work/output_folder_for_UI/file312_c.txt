@@ -1,0 +1,124 @@
+### Version 1: Using a Slightly Different Approach for Word Reversal
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100], rev[100];
+    int len, i, start, end, count = 0;
+
+    printf("\nEnter any Sentence :: ");
+    fgets(str, sizeof(str), stdin);
+    len = strlen(str);
+    str[len - 1] = '\0'; // Remove newline character
+
+    for (i = len - 1; i >= 0; i--) {
+        if (str[i] == ' ' || i == 0) {
+            if (i == 0) {
+                start = i;
+            } else {
+                start = i + 1;
+            }
+            for (end = start; str[end] != ' ' && str[end] != '\0'; end++) {
+                rev[count++] = str[end];
+            }
+            rev[count++] = ' ';
+        }
+    }
+    rev[count - 1] = '\0'; // Remove extra space at the end
+    printf("\nReversed Sentence :: %s\n", rev);
+
+    return 0;
+}
+```
+
+### Version 2: Incrementing Indexes Instead of Decrementing
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100], rev[100];
+    int i, j, k, len;
+
+    printf("\nEnter any Sentence :: ");
+    fgets(str, sizeof(str), stdin);
+    len = strlen(str) - 1; // Adjust for newline character
+    str[len] = '\0'; // Null-terminate the string properly
+
+    // Initialize indices
+    i = len - 1;
+    j = 0;
+
+    // Traverse the string backwards
+    while (i >= 0) {
+        // Find the start of a word
+        if (str[i] == ' ' || i == 0) {
+            if (i == 0) {
+                k = i;
+            } else {
+                k = i + 1;
+            }
+            // Copy the word
+            while (str[k] != ' ' && str[k] != '\0') {
+                rev[j++] = str[k++];
+            }
+            // Add a space after the word
+            if (i != 0) {
+                rev[j++] = ' ';
+            }
+        }
+        i--;
+    }
+    rev[j] = '\0'; // Null-terminate the reversed string
+    printf("\nReversed Sentence :: %s\n", rev);
+
+    return 0;
+}
+```
+
+### Version 3: Flipping Characters Instead of Words
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int i, j, temp, len;
+
+    printf("\nEnter any Sentence :: ");
+    fgets(str, sizeof(str), stdin);
+    len = strlen(str) - 1; // Adjust for the newline character
+    str[len] = '\0'; // Ensure the string is properly null-terminated
+
+    // Reverse entire string character-wise
+    for (i = 0, j = len - 1; i < j; i++, j--) {
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+    }
+
+    // Now, reverse each word in the reversed string
+    for (i = 0; i < len;) {
+        int start = i;
+        while (str[i] != ' ' && i < len) i++;
+        int end = i - 1;
+        while (start < end) {
+            temp = str[start];
+            str[start] = str[end];
+            str[end] = temp;
+            start++;
+            end--;
+        }
+        i++;
+    }
+    printf("\nReversed Sentence :: %s\n", str);
+
+    return 0;
+}
+```
+
+These three versions employ different strategies to achieve the task of reversing each word in a sentence without changing the original order of the characters within the words.

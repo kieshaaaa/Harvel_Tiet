@@ -1,0 +1,105 @@
+Certainly, I will create three different versions of the program that meet your requirements. Each version will read 10 numbers from the user, find the largest and smallest numbers, and print their values along with their indices.
+
+### Version 1: Simplified Initialization and Conditional Checks
+
+```c
+#include <stdio.h> 
+
+int main() {
+    int numbers[10], i;
+    int minIndex = 0, maxIndex = 0;
+    
+    printf("\n Enter 10 numbers: ");
+    for(i = 0; i < 10; i++) {
+        scanf("%d", &numbers[i]);
+    }
+    
+    for(i = 1; i < 10; i++) {
+        if(numbers[i] < numbers[minIndex]) {
+            minIndex = i;
+        }
+        if(numbers[i] > numbers[maxIndex]) {
+            maxIndex = i;
+        }
+    }
+    
+    printf("\n The smallest number: %d", numbers[minIndex]); 
+    printf("\n Index of the smallest number: %d", minIndex);
+    
+    printf("\n The largest number: %d", numbers[maxIndex]); 
+    printf("\n Index of the largest number: %d\n", maxIndex);
+    return 0;
+}
+```
+
+### Version 2: Using Separate Loops for Clarity
+
+```c
+#include <stdio.h> 
+
+int main() {
+    int nums[10];
+    int minIndex, maxIndex, i;
+    printf("\n Enter 10 numbers: ");
+    for(i = 0; i < 10; i++) {
+        scanf("%d", &nums[i]);
+    }
+    
+    minIndex = maxIndex = 0; // Initialize indices to the first element
+    
+    // Find index of minimum value
+    for(i = 1; i < 10; i++) {
+        if(nums[i] < nums[minIndex]) minIndex = i;
+    }
+    
+    // Find index of maximum value
+    for(i = 1; i < 10; i++) {
+        if(nums[i] > nums[maxIndex]) maxIndex = i;
+    }
+    
+    printf("\n The smallest number: %d", nums[minIndex]); 
+    printf("\n Index of the smallest number: %d", minIndex);
+    
+    printf("\n The largest number: %d", nums[maxIndex]); 
+    printf("\n Index of the largest number: %d\n", maxIndex);
+    return 0;
+}
+```
+
+### Version 3: Simplifying Input Loop with Immediate Comparison
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[10], i, minVal, maxVal, minPos, maxPos;
+
+    printf("\n Enter 10 numbers: ");
+    for(i = 0; i < 10; i++) {
+        scanf("%d", &arr[i]);
+        
+        if(i == 0) { // Initialize min and max with the first element
+            minVal = maxVal = arr[i];
+            minPos = maxPos = 0;
+        } else {
+            if(arr[i] < minVal) {
+                minVal = arr[i];
+                minPos = i;
+            }
+            if(arr[i] > maxVal) {
+                maxVal = arr[i];
+                maxPos = i;
+            }
+        }
+    }
+    
+    printf("\n The smallest number: %d", minVal); 
+    printf("\n Index of the smallest number: %d", minPos);
+    
+    printf("\n The largest number: %d", maxVal); 
+    printf("\n Index of the largest number: %d\n", maxPos);
+    return 0;
+}
+```
+
+Each version adheres to your guidelines, offering a unique approach to solving the problem without using advanced features or altering the program structure significantly.

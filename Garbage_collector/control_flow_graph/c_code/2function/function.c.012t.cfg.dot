@@ -1,0 +1,183 @@
+digraph "function.c.012t.cfg" {
+overlap=false;
+subgraph "cluster_findLargest" {
+	style="dashed";
+	color="black";
+	label="findLargest ()";
+	subgraph cluster_0_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|if\ (i\ \<\ size)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|_1\ =\ (long\ unsigned\ int)\ i;\l\
+|_2\ =\ _1\ *\ 4;\l\
+|_3\ =\ arr\ +\ _2;\l\
+|_4\ =\ *_3;\l\
+|if\ (largest\ \<\ _4)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|_5\ =\ (long\ unsigned\ int)\ i;\l\
+|_6\ =\ _5\ *\ 4;\l\
+|_7\ =\ arr\ +\ _6;\l\
+|largest\ =\ *_7;\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|largest\ =\ *arr;\l\
+|i\ =\ 1;\l\
+goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|D.2340\ =\ largest;\l\
+}"];
+
+	fn_0_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|\<L5\>:\l\
+|return\ D.2340;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_6:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_5:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_6:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_7:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_8:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_findSmallest" {
+	style="dashed";
+	color="black";
+	label="findSmallest ()";
+	subgraph cluster_1_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_1_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|if\ (i\ \<\ size)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|_1\ =\ (long\ unsigned\ int)\ i;\l\
+|_2\ =\ _1\ *\ 4;\l\
+|_3\ =\ arr\ +\ _2;\l\
+|_4\ =\ *_3;\l\
+|if\ (smallest\ \>\ _4)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|_5\ =\ (long\ unsigned\ int)\ i;\l\
+|_6\ =\ _5\ *\ 4;\l\
+|_7\ =\ arr\ +\ _6;\l\
+|smallest\ =\ *_7;\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|smallest\ =\ *arr;\l\
+|i\ =\ 1;\l\
+goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|D.2344\ =\ smallest;\l\
+}"];
+
+	fn_1_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|\<L5\>:\l\
+|return\ D.2344;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_6:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_4:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_5:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_6:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_1_basic_block_6:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_6:s -> fn_1_basic_block_7:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_7:s -> fn_1_basic_block_8:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_1_basic_block_8:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|numbers[0]\ =\ 45;\l\
+|numbers[1]\ =\ 12;\l\
+|numbers[2]\ =\ 67;\l\
+|numbers[3]\ =\ 23;\l\
+|numbers[4]\ =\ 9;\l\
+|numbers[5]\ =\ 56;\l\
+|numbers[6]\ =\ 89;\l\
+|numbers[7]\ =\ 34;\l\
+|size\ =\ 8;\l\
+|largest\ =\ findLargest\ (&numbers,\ size);\l\
+|smallest\ =\ findSmallest\ (&numbers,\ size);\l\
+|printf\ (\"Largest\ element:\ %d\\n\",\ largest);\l\
+|printf\ (\"Smallest\ element:\ %d\\n\",\ smallest);\l\
+|D.2346\ =\ 0;\l\
+|numbers\ =\ \{CLOBBER\};\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.2346;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+}

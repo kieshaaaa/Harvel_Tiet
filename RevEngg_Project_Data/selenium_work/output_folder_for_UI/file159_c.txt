@@ -1,0 +1,97 @@
+Certainly! I'll create three different versions of the given C program, following your guidelines. Each version will demonstrate the use of global and local variables in various ways.
+
+### Version 1: Change in Variable Names and Values
+
+```c
+#include <stdio.h>
+
+int x=15; // global variable
+
+void display();
+
+int main() {
+    int x=25; // local to main
+    int y=35; // local to main
+
+    printf("In main()  x=%d, y=%d\n", x, y);
+    display();
+    printf("In main() after calling display() ~ y=%d\n", y);
+    return 0;
+}
+
+void display() {
+    int y=45; // local to display
+
+    printf("In display()  x= %d\n", x);
+    printf("In display()  y= %d\n", y);
+}
+```
+
+### Version 2: Introduction of a Third Function and Variable
+
+```c
+#include <stdio.h>
+
+int g=5; // global variable
+
+void test();
+void showcase();
+
+int main() {
+    int g=10; // local to main
+    int h=20; // local to main
+
+    printf("In main()  g=%d, h=%d\n", g, h);
+    test();
+    showcase();
+    printf("In main() after calling test() and showcase() ~ h=%d\n", h);
+    return 0;
+}
+
+void test() {
+    int h=30; // local to test
+
+    printf("In test()  g= %d\n", g);
+    printf("In test()  h= %d\n", h);
+}
+
+void showcase() {
+    int i=50; // local to showcase
+    printf("In showcase()  g= %d\n", g);
+    printf("In showcase()  i= %d\n", i);
+}
+```
+
+### Version 3: Reusing `a` and `b` with Different Scopes and a Calculation
+
+```c
+#include <stdio.h>
+
+int a=7; // global variable
+
+void process();
+
+int main() {
+    int a=12; // local to main
+    int b=22; // local to main
+    int sum;
+
+    sum = a + b;
+    printf("In main()  a=%d, b=%d, sum=%d\n", a, b, sum);
+    process();
+    sum = b - a;
+    printf("In main() after calling process() ~ sum=%d\n", sum);
+    return 0;
+}
+
+void process() {
+    int b=32; // local to process
+    int diff;
+
+    diff = b - a;
+    printf("In process()  a= %d\n", a);
+    printf("In process()  b= %d, diff=%d\n", b, diff);
+}
+```
+
+Each version modifies the original code to demonstrate global and local scope with varying variable names, values, and the addition of simple computations or an extra function to illustrate different scenarios.

@@ -1,0 +1,72 @@
+Certainly! Here are three variations of your code, each adhering to your constraints:
+
+### Version 1: Using separate variables for each side
+
+```c
+#include <stdio.h>
+
+int main() {
+    float sideA;
+    float sideB;
+    float sideC;
+    float sideD;
+    float perimeter;
+
+    printf("Enter the side length of the square: ");
+    scanf("%f", &sideA);
+
+    sideB = sideA;
+    sideC = sideA;
+    sideD = sideA;
+
+    perimeter = sideA + sideB + sideC + sideD;
+
+    printf("Perimeter of the square: ");
+    printf("%.2f\n", perimeter);
+
+    return 0;
+}
+```
+
+### Version 2: Introducing arithmetic in variable assignment for perimeter
+
+```c
+#include <stdio.h>
+
+int main() {
+    float side;
+    float perimeter;
+
+    printf("Enter the side length of the square: ");
+    scanf("%f", &side);
+
+    perimeter = side + side + side + side;
+
+    printf("Perimeter of the square: ");
+    printf("%.2f\n", perimeter);
+
+    return 0;
+}
+```
+
+### Version 3: Simplifying input and output operations
+
+```c
+#include <stdio.h>
+
+int main() {
+    float side, perimeter;
+
+    printf("Enter side length: ");
+    scanf("%f", &side);
+
+    perimeter = side * 4;
+
+    printf("Perimeter: ");
+    printf("%.2f\n", perimeter);
+
+    return 0;
+}
+```
+
+Each version avoids modifying the existing data types, using pointers, recursion, file handling, dynamic memory allocation, and stays within the constraints you've outlined, while also presenting slightly different approaches to achieving the same task.

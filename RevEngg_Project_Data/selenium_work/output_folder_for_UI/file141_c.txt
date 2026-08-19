@@ -1,0 +1,58 @@
+Certainly, here are three different versions of the given code with the constraints you've mentioned:
+
+### Version 1: Using a different macro name for PI
+```c
+#include <stdio.h>
+#define PI_VALUE 3.14159
+
+int main() {
+    float radius, area;
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+    area = PI_VALUE * radius * radius;
+    printf("Area of the circle: ");
+    printf("%.2f\n", area);
+    return 0;
+}
+```
+
+### Version 2: Using an additional variable for the radius squared
+```c
+#include <stdio.h>
+#define PI 3.14159
+
+int main() {
+    float radius, radius_squared, area;
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+    radius_squared = radius * radius;
+    area = PI * radius_squared;
+    printf("Area of the circle: ");
+    printf("%.2f\n", area);
+    return 0;
+}
+```
+
+### Version 3: Separating the input, calculation, and output into blocks
+```c
+#include <stdio.h>
+#define PI 3.14159
+
+int main() {
+    float radius, area;
+    // Input block
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+
+    // Calculation block
+    area = PI * radius * radius;
+
+    // Output block
+    printf("Area of the circle: ");
+    printf("%.2f\n", area);
+
+    return 0;
+}
+```
+
+Each of these versions adheres to your constraints, offering slight variations in how the calculation of a circle's area is performed or structured within the code.

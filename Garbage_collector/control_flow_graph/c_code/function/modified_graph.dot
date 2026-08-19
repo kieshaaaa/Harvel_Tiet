@@ -1,0 +1,179 @@
+digraph "function.c.012t.cfg" {
+	graph [overlap=false];
+	subgraph cluster_findLargest {
+		graph [color=black,
+			label="findLargest ()",
+			style=dashed
+		];
+		subgraph fn_0_basic_block_5 {
+			graph [label="{\<bb\ 5\>:\l|i\ =\ i\ +\ 1;\l}"];
+		}
+		subgraph fn_0_basic_block_3 {
+			graph [label="{\<bb\ 3\>:\l|_1\ =\ (long\ unsigned\ int)\ i;\l|_2\ =\ _1\ *\ 4;\l|_3\ =\ arr\ +\ _2;\l|_4\ =\ *_3;\l|if\ (largest\ \<\ _4)\l\ \ \
+goto\ \<bb\ 4\>;\ [INV]\lelse\l\ \ goto\ \<bb\ 5\>;\ [INV]\l}"];
+		}
+		subgraph fn_0_basic_block_4 {
+			graph [label="{\<bb\ 4\>:\l|_5\ =\ (long\ unsigned\ int)\ i;\l|_6\ =\ _5\ *\ 4;\l|_7\ =\ arr\ +\ _6;\l|largest\ =\ *_7;\l}"];
+		}
+		subgraph cluster_0_1 {
+			graph [color=darkgreen,
+				fillcolor=grey88,
+				label="loop 1",
+				labeljust=l,
+				penwidth=2,
+				style=filled
+			];
+		}
+		subgraph fn_0_basic_block_0 {
+			graph [label=ENTRY];
+		}
+		subgraph fn_0_basic_block_6 {
+			graph [label="{\<bb\ 6\>:\l|_8\ =\ (long\ unsigned\ int)\ i;\l|_9\ =\ _8\ *\ 4;\l|_10\ =\ arr\ +\ _9;\l|_11\ =\ *_10;\l|if\ (_11\ !=\ -1)\l\ \ \
+goto\ \<bb\ 3\>;\ [INV]\lelse\l\ \ goto\ \<bb\ 7\>;\ [INV]\l}"];
+		}
+		subgraph fn_0_basic_block_1 {
+			graph [label=EXIT];
+		}
+		subgraph fn_0_basic_block_2 {
+			graph [label="{\<bb\ 2\>:\l|largest\ =\ *arr;\l|i\ =\ 1;\lgoto\ \<bb\ 6\>;\ [INV]\l}"];
+		}
+		subgraph fn_0_basic_block_7 {
+			graph [label="{\<bb\ 7\>:\l|D.2328\ =\ largest;\l}"];
+		}
+		subgraph fn_0_basic_block_8 {
+			graph [label="{\<bb\ 8\>:\l|\<L5\>:\l|return\ D.2328;\l}"];
+		}
+	}
+	subgraph cluster_main {
+		graph [color=black,
+			label="main ()",
+			style=dashed
+		];
+		subgraph fn_1_basic_block_0 {
+			graph [label=ENTRY];
+		}
+		subgraph fn_1_basic_block_1 {
+			graph [label=EXIT];
+		}
+		subgraph fn_1_basic_block_2 {
+			graph [label="{\<bb\ 2\>:\l|array[0]\ =\ 4;\l|array[1]\ =\ 8;\l|array[2]\ =\ 2;\l|array[3]\ =\ 10;\l|array[4]\ =\ 6;\l|array[5]\ =\ 12;\l|array[\
+6]\ =\ -1;\l|result\ =\ findLargest\ (&array);\l|printf\ (\"The\ largest\ element\ in\ the\ array\ is:\ %d\\n\",\ result);\l|D.2330\ =\ \
+0;\l|array\ =\ \{CLOBBER\};\l}"];
+		}
+		subgraph fn_1_basic_block_3 {
+			graph [label="{\<bb\ 3\>:\l|\<L1\>:\l|return\ D.2330;\l}"];
+		}
+	}
+	fn_0_basic_block_6	[fillcolor=lightgrey,
+		label="{\<bb\ 6\>:\l|_8\ =\ (long\ unsigned\ int)\ i;\l|_9\ =\ _8\ *\ 4;\l|_10\ =\ arr\ +\ _9;\l|_11\ =\ *_10;\l|if\ (_11\ !=\ -1)\l\ \ \
+goto\ \<bb\ 3\>;\ [INV]\lelse\l\ \ goto\ \<bb\ 7\>;\ [INV]\l}",
+		shape=record,
+		style=filled];
+	fn_0_basic_block_3	[fillcolor=lightgrey,
+		label="{\<bb\ 3\>:\l|_1\ =\ (long\ unsigned\ int)\ i;\l|_2\ =\ _1\ *\ 4;\l|_3\ =\ arr\ +\ _2;\l|_4\ =\ *_3;\l|if\ (largest\ \<\ _4)\l\ \ \
+goto\ \<bb\ 4\>;\ [INV]\lelse\l\ \ goto\ \<bb\ 5\>;\ [INV]\l}",
+		shape=record,
+		style=filled];
+	fn_0_basic_block_6:s -> fn_0_basic_block_3:n	[color=black,
+		constraint=true,
+		style="solid,bold",
+		weight=10];
+	fn_0_basic_block_7	[fillcolor=lightgrey,
+		label="{\<bb\ 7\>:\l|D.2328\ =\ largest;\l}",
+		shape=record,
+		style=filled];
+	fn_0_basic_block_6:s -> fn_0_basic_block_7:n	[color=black,
+		constraint=true,
+		style="solid,bold",
+		weight=10];
+	fn_0_basic_block_4	[fillcolor=lightgrey,
+		label="{\<bb\ 4\>:\l|_5\ =\ (long\ unsigned\ int)\ i;\l|_6\ =\ _5\ *\ 4;\l|_7\ =\ arr\ +\ _6;\l|largest\ =\ *_7;\l}",
+		shape=record,
+		style=filled];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n	[color=black,
+		constraint=true,
+		style="solid,bold",
+		weight=10];
+	fn_0_basic_block_5	[fillcolor=lightgrey,
+		label="{\<bb\ 5\>:\l|i\ =\ i\ +\ 1;\l}",
+		shape=record,
+		style=filled];
+	fn_0_basic_block_3:s -> fn_0_basic_block_5:n	[color=black,
+		constraint=true,
+		style="solid,bold",
+		weight=10];
+	fn_0_basic_block_8	[fillcolor=lightgrey,
+		label="{\<bb\ 8\>:\l|\<L5\>:\l|return\ D.2328;\l}",
+		shape=record,
+		style=filled];
+	fn_0_basic_block_7:s -> fn_0_basic_block_8:n	[color=blue,
+		constraint=true,
+		style="solid,bold",
+		weight=100];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n	[color=blue,
+		constraint=true,
+		style="solid,bold",
+		weight=100];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n	[color=blue,
+		constraint=false,
+		style="dotted,bold",
+		weight=10];
+	fn_0_basic_block_0	[fillcolor=white,
+		label=ENTRY,
+		shape=Mdiamond,
+		style=filled];
+	fn_0_basic_block_1	[fillcolor=white,
+		label=EXIT,
+		shape=Mdiamond,
+		style=filled];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n	[constraint=true,
+		style=invis];
+	fn_0_basic_block_2	[fillcolor=lightgrey,
+		label="{\<bb\ 2\>:\l|largest\ =\ *arr;\l|i\ =\ 1;\lgoto\ \<bb\ 6\>;\ [INV]\l}",
+		shape=record,
+		style=filled];
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n	[color=blue,
+		constraint=true,
+		style="solid,bold",
+		weight=100];
+	fn_0_basic_block_2:s -> fn_0_basic_block_6:n	[color=blue,
+		constraint=true,
+		style="solid,bold",
+		weight=100];
+	fn_0_basic_block_8:s -> fn_0_basic_block_1:n	[color=black,
+		constraint=true,
+		style="solid,bold",
+		weight=10];
+	fn_1_basic_block_0	[fillcolor=white,
+		label=ENTRY,
+		shape=Mdiamond,
+		style=filled];
+	fn_1_basic_block_1	[fillcolor=white,
+		label=EXIT,
+		shape=Mdiamond,
+		style=filled];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n	[constraint=true,
+		style=invis];
+	fn_1_basic_block_2	[fillcolor=lightgrey,
+		label="{\<bb\ 2\>:\l|array[0]\ =\ 4;\l|array[1]\ =\ 8;\l|array[2]\ =\ 2;\l|array[3]\ =\ 10;\l|array[4]\ =\ 6;\l|array[5]\ =\ 12;\l|array[\
+6]\ =\ -1;\l|result\ =\ findLargest\ (&array);\l|printf\ (\"The\ largest\ element\ in\ the\ array\ is:\ %d\\n\",\ result);\l|D.2330\ =\ \
+0;\l|array\ =\ \{CLOBBER\};\l}",
+		shape=record,
+		style=filled];
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n	[color=blue,
+		constraint=true,
+		style="solid,bold",
+		weight=100];
+	fn_1_basic_block_3	[fillcolor=lightgrey,
+		label="{\<bb\ 3\>:\l|\<L1\>:\l|return\ D.2330;\l}",
+		shape=record,
+		style=filled];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n	[color=blue,
+		constraint=true,
+		style="solid,bold",
+		weight=100];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n	[color=black,
+		constraint=true,
+		style="solid,bold",
+		weight=10];
+}

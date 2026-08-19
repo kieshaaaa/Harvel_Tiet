@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="if_else.c" path="/home/coss01/vitis_hls_demo_c/if_else/nested/if_else.c"/>
+  </source>
+  <testbench>
+    <originFiles name="main.c" path="/home/coss01/vitis_hls_demo_c/if_else/nested/main.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

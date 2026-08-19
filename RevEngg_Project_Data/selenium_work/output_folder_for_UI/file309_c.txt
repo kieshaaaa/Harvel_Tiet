@@ -1,0 +1,55 @@
+Sure, I'll create three different versions of the program that converts speed from kilometers per hour to knots, adhering to your constraints. Each version will slightly modify the approach or structure while keeping the core functionality intact.
+
+### Version 1: Direct Conversion in scanf
+
+```c
+#include <stdio.h>
+
+int main() {
+    float kmph, knots;
+    printf("Enter speed in kilometers per hour: ");
+    scanf("%f", &kmph);
+    knots = kmph / 1.852;
+    printf("The speed in knots is ");
+    printf("%f\n", knots);
+    return 0;
+}
+```
+
+### Version 2: Intermediate Variable for Conversion Factor
+
+```c
+#include <stdio.h>
+
+int main() {
+    float kmph, knots, conversionFactor;
+    conversionFactor = 1.852;
+    printf("Enter speed in kilometers per hour: ");
+    scanf("%f", &kmph);
+    knots = kmph / conversionFactor;
+    printf("The speed in knots is ");
+    printf("%f\n", knots);
+    return 0;
+}
+```
+
+### Version 3: Separate Variables for Input and Output Messages
+
+```c
+#include <stdio.h>
+
+int main() {
+    float kmph, knots;
+    char inputMsg[] = "Enter speed in kilometers per hour: ";
+    char outputMsg[] = "The speed in knots is ";
+    
+    printf("%s", inputMsg);
+    scanf("%f", &kmph);
+    knots = kmph / 1.852;
+    printf("%s", outputMsg);
+    printf("%f\n", knots);
+    return 0;
+}
+```
+
+Each of these versions adheres to the guidelines you provided: avoiding the use of additional functions, dynamic memory allocation, structures, unions, pointers, recursion, file handling, modifications to existing data types, and the double datatype, as well as ensuring no operations are performed inside the `printf` statement.

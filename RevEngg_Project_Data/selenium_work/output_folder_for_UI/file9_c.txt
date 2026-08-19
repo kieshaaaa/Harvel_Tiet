@@ -1,0 +1,81 @@
+Certainly! Here are three different versions of the program that count uppercase, lowercase, and special characters in a string, adhering to your guidelines:
+
+### Version 1: Simplified Conditions
+```c
+#include <stdio.h>
+
+int main() {
+    char text[100];
+    int countU = 0, countL = 0, countS = 0;
+
+    printf("Enter any string: ");
+    scanf("%[^\n]s", text);
+
+    for(int i = 0; text[i] != '\0'; i++) {
+        if(text[i] >= 'A' && text[i] <= 'Z') countU++;
+        else if(text[i] >= 'a' && text[i] <= 'z') countL++;
+        else countS++;
+    }
+
+    printf("\nUpper case characters: [ %d ]", countU);
+    printf("\nLower case characters: [ %d ]", countL);
+    printf("\nSpecial characters: [ %d ]", countS);
+
+    return 0;
+}
+```
+
+### Version 2: Using `isupper()` and `islower()` from `<ctype.h>`
+```c
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char text[100];
+    int countU = 0, countL = 0, countS = 0;
+
+    printf("Enter any string: ");
+    scanf("%[^\n]s", text);
+
+    for(int i = 0; text[i] != '\0'; i++) {
+        if(isupper(text[i])) countU++;
+        else if(islower(text[i])) countL++;
+        else countS++;
+    }
+
+    printf("\nUpper case characters: [ %d ]", countU);
+    printf("\nLower case characters: [ %d ]", countL);
+    printf("\nSpecial characters: [ %d ]", countS);
+
+    return 0;
+}
+```
+
+### Version 3: Counting Digits as a Separate Category
+```c
+#include <stdio.h>
+
+int main() {
+    char text[100];
+    int countU = 0, countL = 0, countS = 0, countD = 0;
+
+    printf("Enter any string: ");
+    scanf("%[^\n]s", text);
+
+    for(int i = 0; text[i] != '\0'; i++) {
+        if(text[i] >= 'A' && text[i] <= 'Z') countU++;
+        else if(text[i] >= 'a' && text[i] <= 'z') countL++;
+        else if(text[i] >= '0' && text[i] <= '9') countD++;
+        else countS++;
+    }
+
+    printf("\nUpper case characters: [ %d ]", countU);
+    printf("\nLower case characters: [ %d ]", countL);
+    printf("\nDigits: [ %d ]", countD);
+    printf("\nSpecial characters: [ %d ]", countS);
+
+    return 0;
+}
+```
+
+Each version offers a slight variation in approach or functionality while respecting the constraints you've set, including no use of additional functions, dynamic memory, structs, unions, pointers, recursion, or file handling.

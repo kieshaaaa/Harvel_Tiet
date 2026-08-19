@@ -1,0 +1,77 @@
+Certainly! Below are three variations of the program that copies the elements of one array into another, following your guidelines.
+
+### Version 1: Using a Single Loop for Copying and Displaying
+This version combines copying and displaying the copied array into a single loop to streamline the process.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int originalArray[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int copyArray[10];
+    int i;
+
+    printf("\nCopy the elements of one array into another array\n\n");
+    
+    for (i = 0; i < 10; i++) {
+        copyArray[i] = originalArray[i];
+        printf("Original: %d, Copied: %d\n", originalArray[i], copyArray[i]);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using a Different Loop Variable Name
+This version uses a different loop variable name to showcase that the choice of variable name (as long as it is not a keyword) does not affect the functionality.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int original[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    int copied[10];
+    int j; // Using 'j' instead of 'i'
+
+    printf("\nCopying elements...\n\n");
+    
+    for (j = 0; j < 10; j++) {
+        copied[j] = original[j];
+    }
+
+    printf("Arrays have been copied.\n");
+
+    for (j = 0; j < 10; j++) {
+        printf("Copied array element %d: %d\n", j + 1, copied[j]);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using Reverse Order for Copying
+This version copies the elements in reverse order, showcasing that the loop can iterate in different directions.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int sourceArray[10] = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
+    int destinationArray[10];
+    int k;
+
+    printf("\nCopying elements in reverse order...\n\n");
+    
+    for (k = 9; k >= 0; k--) {
+        destinationArray[9 - k] = sourceArray[k]; // Copy in reverse order
+    }
+
+    for (k = 0; k < 10; k++) {
+        printf("Element at index %d in destination array: %d\n", k, destinationArray[k]);
+    }
+
+    return 0;
+}
+```
+
+Each version maintains the simplicity of the original code while demonstrating different aspects of array manipulation and loop control in C.

@@ -1,0 +1,51 @@
+Sure, here are three different versions of the code you provided, adhering to your restrictions. Each version performs an operation on an integer input by the user and prints the result, but the operation performed is different in each version.
+
+### Version 1: Bitwise AND with a fixed number
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, result;
+    printf("Enter an integer (a): ");
+    scanf("%d", &a);
+    result = a & 3; // Bitwise AND with the number 3
+    printf("The result is ");
+    printf("%d\n", result);
+    return 0;
+}
+```
+
+### Version 2: Arithmetic addition with a fixed number
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, result;
+    printf("Enter an integer (a): ");
+    scanf("%d", &a);
+    result = a + 10; // Adds 10 to the user input
+    printf("The result is ");
+    printf("%d\n", result);
+    return 0;
+}
+```
+
+### Version 3: Bitwise OR with a fixed number
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, result;
+    printf("Enter an integer (a): ");
+    scanf("%d", &a);
+    result = a | 1; // Bitwise OR with the number 1
+    printf("The result is ");
+    printf("%d\n", result);
+    return 0;
+}
+```
+
+These versions adhere to the restrictions you mentioned, such as avoiding the use of pointers, dynamic memory allocation, functions, and certain data types. Each performs a simple operation on the input integer and prints the result.

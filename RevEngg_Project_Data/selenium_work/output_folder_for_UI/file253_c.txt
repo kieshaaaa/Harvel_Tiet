@@ -1,0 +1,64 @@
+### Version 1: Simplified Ternary Operation
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    char *sign = num > 0 ? "Positive" : "Negative";
+    char *parity = num % 2 == 0 ? "Even" : "Odd";
+    
+    printf("The number is %s and %s.\n", sign, parity);
+    
+    return 0;
+}
+```
+
+### Version 2: Separate Variable Assignment and Print Statements
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    char *signStatus;
+    char *parityStatus;
+    
+    signStatus = num > 0 ? "positive" : "negative";
+    parityStatus = num % 2 == 0 ? "even" : "odd";
+    
+    printf("The number is %s.\n", signStatus);
+    printf("It is also %s.\n", parityStatus);
+    
+    return 0;
+}
+```
+
+### Version 3: Using Conditional Operator Inside Variable Initialization
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    // Directly initializing the status messages based on conditions
+    char *status = num > 0 ? "Positive" : "Negative";
+    char *evenOddStatus = (num % 2 == 0) ? "Even" : "Odd";
+    
+    printf("Number status: %s\n", status);
+    printf("Number parity: %s\n", evenOddStatus);
+    
+    return 0;
+}
+```
+
+Each of these versions adheres to the constraints provided, avoiding the use of structures, unions, pointers, recursion, file handling, modification of existing data types, and the `double` data type. Additionally, they don't perform operations or call functions inside `printf` statements, sticking to straightforward ternary operations for logic determination.

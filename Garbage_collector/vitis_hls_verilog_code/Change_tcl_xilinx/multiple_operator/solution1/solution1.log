@@ -1,0 +1,222 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu11p-flga2577-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu11p-flga2577-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./multiple_operator/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.03 seconds. CPU system time: 0.03 seconds. Elapsed time: 10.07 seconds; current allocated memory: 756.309 MB.
+INFO: [HLS 200-10] Analyzing design file '../Array_main/Array/multiple_operator/array.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'arr2' (../Array_main/Array/multiple_operator/array.c:6:82)
+WARNING: [HLS 207-5292] unused parameter 'arr3' (../Array_main/Array/multiple_operator/array.c:6:95)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.39 seconds. CPU system time: 0.47 seconds. Elapsed time: 0.89 seconds; current allocated memory: 756.309 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.83 seconds. CPU system time: 0.58 seconds. Elapsed time: 4.44 seconds; current allocated memory: 756.691 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 756.691 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 757.090 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 757.168 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 777.574 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 777.574 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'processArray' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'processArray' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.21 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.25 seconds; current allocated memory: 777.574 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.42 seconds. CPU system time: 0 seconds. Elapsed time: 0.42 seconds; current allocated memory: 777.574 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'processArray' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'processArray' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr2_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr2_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr2_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr2_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr2_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr2_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr2_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr2_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'processArray/arr3_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr3_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr3_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr3_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr3_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr3_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr3_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'processArray/arr3_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'processArray/arr3_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'processArray/arr3_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu11p-flga2577-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu11p-flga2577-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./multiple_operator/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name processArray processArray 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -dim 1 -type complete processArray arr 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -dim 1 -type complete processArray arr2 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -dim 1 -type complete processArray arr3 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0.03 seconds. Elapsed time: 10.07 seconds; current allocated memory: 756.004 MB.
+INFO: [HLS 200-10] Analyzing design file '../Array_main/Array/multiple_operator/array.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.47 seconds. CPU system time: 0.42 seconds. Elapsed time: 0.89 seconds; current allocated memory: 756.004 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-248] Applying array_partition to 'arr': Complete partitioning on dimension 1. (../Array_main/Array/multiple_operator/array.c:6:0)
+INFO: [HLS 214-248] Applying array_partition to 'arr2': Complete partitioning on dimension 1. (../Array_main/Array/multiple_operator/array.c:6:0)
+INFO: [HLS 214-248] Applying array_partition to 'arr3': Complete partitioning on dimension 1. (../Array_main/Array/multiple_operator/array.c:6:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.98 seconds. CPU system time: 0.45 seconds. Elapsed time: 4.43 seconds; current allocated memory: 757.266 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 757.266 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 757.691 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 757.805 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 778.527 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 778.527 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'processArray' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'processArray' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.26 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.3 seconds; current allocated memory: 778.527 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.47 seconds. CPU system time: 0 seconds. Elapsed time: 0.47 seconds; current allocated memory: 778.527 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'processArray' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_0' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_6' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_9' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr2_0' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr2_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr2_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr2_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr2_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr2_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr2_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr2_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr2_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr2_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr3_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr3_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr3_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr3_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr3_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr3_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr3_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr3_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr3_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'processArray/arr3_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'processArray' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'processArray/arr2_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'processArray/arr3_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'processArray/arr3_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101]==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================

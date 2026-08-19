@@ -1,0 +1,73 @@
+Sure, I will generate three different versions of the provided C program that calculates simple interest without using the restrictions you mentioned. Here are the variations:
+
+### Version 1: Using Separate Input and Output Functions
+
+```c
+#include <stdio.h>
+
+void getInput(float *amount, float *rate, float *time) {
+    printf("Enter principal (Amount): ");
+    scanf("%f", amount);
+    printf("Enter rate: ");
+    scanf("%f", rate);
+    printf("Enter time (in years): ");
+    scanf("%f", time);
+}
+
+void calculateAndPrintSI(float amount, float rate, float time) {
+    float si = (amount * rate * time) / 100;
+    printf("\nSimple Interest is = %f", si);
+}
+
+int main() {
+    float amount, rate, time;
+    getInput(&amount, &rate, &time);
+    calculateAndPrintSI(amount, rate, time);
+    return 0;
+}
+```
+
+### Version 2: Using Single Scanf Call for Input
+
+```c
+#include <stdio.h>
+
+int main() {
+    float amount, rate, time, si;
+
+    printf("Enter principal (Amount), rate and time (in years) separated by space: ");
+    scanf("%f %f %f", &amount, &rate, &time);
+
+    si = (amount * rate * time) / 100;
+
+    printf("\nSimple Interest is = %f", si);
+
+    return 0;
+}
+```
+
+### Version 3: Reusing Variables for Calculation
+
+```c
+#include <stdio.h>
+
+int main() {
+    float amount, rate, time;
+
+    printf("Enter principal (Amount): ");
+    scanf("%f", &amount);
+    printf("Enter rate: ");
+    scanf("%f", &rate);
+    printf("Enter time (in years): ");
+    scanf("%f", &time);
+
+    // Use 'amount' variable to hold the result of simple interest to save memory.
+    amount = (amount * rate * time) / 100;
+
+    printf("\nSimple Interest is = %f", amount);
+
+    return 0;
+}
+```
+
+Each version provides a unique approach to read inputs and calculate simple interest, adhering to your constraints.

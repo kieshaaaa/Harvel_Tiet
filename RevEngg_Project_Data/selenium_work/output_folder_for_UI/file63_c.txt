@@ -1,0 +1,68 @@
+Given your constraints, here are three different versions of the original C program, which prints characters A, B, C, and D without using format specifiers. Each version adheres to your guidelines, offering a unique approach within the specified limitations.
+
+### Version 1: Using putchar()
+
+```c
+#include <stdio.h>
+
+int main() {
+    putchar(65); // ASCII value for 'A'
+    putchar('\n');
+
+    putchar(66); // ASCII value for 'B'
+    putchar('\n');
+
+    putchar(67); // ASCII value for 'C'
+    putchar('\n');
+
+    putchar(68); // ASCII value for 'D'
+    putchar('\n');
+
+    return 0;
+}
+```
+
+### Version 2: Using Character Arrays
+
+```c
+#include <stdio.h>
+
+int main() {
+    char chars[] = {'A', '\n', 'B', '\n', 'C', '\n', 'D', '\n'};
+    for(int i = 0; i < sizeof(chars); i++) {
+        putchar(chars[i]);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using Switch Case inside a Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    for(int i = 1; i <= 4; i++) {
+        switch(i) {
+            case 1: 
+                putchar('A'); 
+                break;
+            case 2: 
+                putchar('B'); 
+                break;
+            case 3: 
+                putchar('C'); 
+                break;
+            case 4: 
+                putchar('D'); 
+                break;
+        }
+        putchar('\n');
+    }
+
+    return 0;
+}
+```
+
+Each of these versions offers a different method of achieving the task without violating the specified constraints. They illustrate the versatility of C in solving problems in multiple ways even with numerous restrictions.

@@ -1,0 +1,99 @@
+Certainly! Here are three variations of the provided program, which multiplies two numbers using the `+` operator. Each version adheres to the constraints you specified, using different logic or structure while maintaining the core functionality.
+
+### Version 1: Using a While Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    int mul = 0;
+    int count = 0;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    while (count < b) {
+        mul += a;
+        count++;
+    }
+
+    printf("Multiplication of %d and %d is: %d\n", a, b, mul);
+
+    return 0;
+}
+```
+
+### Version 2: Handling Negative Numbers
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    int mul = 0;
+    int loop;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    if (b < 0) {
+        b = -b;
+        a = -a;
+    }
+
+    for (loop = 1; loop <= b; loop++) {
+        mul += a;
+    }
+
+    printf("Multiplication of %d and %d is: %d\n", a, b, mul);
+
+    return 0;
+}
+```
+
+### Version 3: Using Absolute Values for Multiplication
+
+```c
+#include <stdio.h>
+#include <stdlib.h> // For abs() function
+
+int main() {
+    int a, b;
+    int mul = 0;
+    int loop;
+    int positiveResult = 1;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    if (a < 0) {
+        a = abs(a);
+        positiveResult = !positiveResult;
+    }
+    if (b < 0) {
+        b = abs(b);
+        positiveResult = !positiveResult;
+    }
+
+    for (loop = 1; loop <= b; loop++) {
+        mul += a;
+    }
+
+    if (!positiveResult) {
+        mul = -mul;
+    }
+
+    printf("Multiplication of %d and %d is: %d\n", a, b, mul);
+
+    return 0;
+}
+```
+
+Each version offers a different approach or handles a different aspect of multiplication using the `+` operator. The first version uses a while loop, the second one adapts to negative numbers more explicitly, and the third one uses absolute values to simplify the multiplication process before adjusting the sign of the result if necessary.

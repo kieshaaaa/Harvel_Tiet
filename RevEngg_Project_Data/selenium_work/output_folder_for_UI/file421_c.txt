@@ -1,0 +1,65 @@
+Certainly! Below are three variations of your original program that convert seconds to hours, minutes, and seconds format without using the constraints you've mentioned.
+
+### Version 1: Simplified Calculation
+```c
+#include <stdio.h>
+
+int main() {
+    int seconds, hours, minutes, remainder;
+    printf("Enter the time in seconds: ");
+    scanf("%d", &seconds);
+
+    hours = seconds / 3600;
+    remainder = seconds % 3600;
+    minutes = remainder / 60;
+    seconds = remainder % 60;
+
+    printf("%d hours : %d minutes : %d seconds\n", hours, minutes, seconds);
+    return 0;
+}
+```
+
+### Version 2: Using Constants for Time Units
+```c
+#include <stdio.h>
+
+int main() {
+    const int secondsInHour = 3600;
+    const int secondsInMinute = 60;
+    int totalSeconds, hours, minutes, seconds;
+
+    printf("Enter the time in seconds: ");
+    scanf("%d", &totalSeconds);
+
+    hours = totalSeconds / secondsInHour;
+    totalSeconds %= secondsInHour;
+    minutes = totalSeconds / secondsInMinute;
+    seconds = totalSeconds % secondsInMinute;
+
+    printf("%d hours : %d minutes : %d seconds\n", hours, minutes, seconds);
+    return 0;
+}
+```
+
+### Version 3: Interactive Time Conversion
+```c
+#include <stdio.h>
+
+int main() {
+    int inputSeconds;
+    int hours, minutes, seconds;
+
+    printf("Enter the time in seconds: ");
+    scanf("%d", &inputSeconds);
+
+    hours = inputSeconds / 3600;
+    inputSeconds = inputSeconds % 3600;
+    minutes = inputSeconds / 60;
+    seconds = inputSeconds % 60;
+
+    printf("%d hours : %d minutes : %d seconds\n", hours, minutes, seconds);
+    return 0;
+}
+```
+
+Each version performs the conversion from seconds to the hh:mm:ss format, adhering to the constraints you specified, such as not creating a user-defined function, avoiding pointers, dynamic memory allocation, and so on.

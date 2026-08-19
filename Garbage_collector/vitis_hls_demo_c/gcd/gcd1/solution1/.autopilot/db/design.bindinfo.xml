@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln5_fu_77_p2" SOURCE="gcd.c:5" VARIABLE="icmp_ln5" MODULE="gcd" LOOP="VITIS_LOOP_5_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op srem" ID="" IMPL="auto" LATENCY="35" OPTYPE="srem" PRAGMA="" RTLNAME="srem_32ns_32ns_32_36_1_U1" SOURCE="gcd.c:7" VARIABLE="srem_ln7" MODULE="gcd" LOOP="VITIS_LOOP_5_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="adapter" DISPLAY="bind_adapter axilite" ID="" IMPL="" LATENCY="" OPTYPE="" PRAGMA="yes" RTLNAME="control_s_axi_U" SOURCE="" VARIABLE="" MODULE="gcd" LOOP="" BUNDLEDNAME="control" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

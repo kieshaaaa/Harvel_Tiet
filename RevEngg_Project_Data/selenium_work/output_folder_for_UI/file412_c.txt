@@ -1,0 +1,79 @@
+Given the constraints, here are three variations of the provided C program to check whether a number is even or odd, adhering to your guidelines:
+
+### Version 1: Using the Ternary Operator
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    int result;
+
+    printf("Enter an integer number :: ");
+    scanf("%d", &num);
+
+    result = (num % 2 == 0) ? 1 : 0;
+
+    if (result == 1) {
+        printf("\n%d is an EVEN number.", num);
+    } else {
+        printf("\n%d is an ODD number.", num);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using Bitwise AND Operator
+
+The bitwise AND operation can be used because the least significant bit (LSB) of an even number is 0, and for an odd number, it's 1.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    int isEven;
+
+    printf("Enter an integer number :: ");
+    scanf("%d", &num);
+
+    isEven = (num & 1) == 0;
+
+    if (isEven) {
+        printf("\n%d is an EVEN number.", num);
+    } else {
+        printf("\n%d is an ODD number.", num);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using Addition and Subtraction
+
+This method uses addition and subtraction to determine the parity without directly using the modulus operator.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    int isOdd;
+
+    printf("Enter an integer number :: ");
+    scanf("%d", &num);
+
+    isOdd = ((num + 1) - num) != 1;
+
+    if (!isOdd) {
+        printf("\n%d is an EVEN number.", num);
+    } else {
+        printf("\n%d is an ODD number.", num);
+    }
+
+    return 0;
+}
+```
+
+Each of these versions introduces a different way of determining whether a number is even or odd while respecting the constraints you've outlined.

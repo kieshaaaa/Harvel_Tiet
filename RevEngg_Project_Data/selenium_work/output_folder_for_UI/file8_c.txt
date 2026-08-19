@@ -1,0 +1,77 @@
+Sure, based on your requirements and constraints, here are three different versions of the provided C program. Each version accomplishes a different simple task without using pointers, dynamic memory allocation, structs, unions, recursion, or file handling.
+
+### Version 1: Calculate the Average of Array Elements
+
+```c
+#include <stdio.h>
+
+void calculateAverage() {
+    int numbers[5] = {4, 7, 8, 9, 10};
+    int sum = 0;
+    double average;
+    int i;
+
+    for (i = 0; i < 5; i++) {
+        sum += numbers[i];
+    }
+
+    average = sum / 5.0;
+    printf("The average is: %.2f\n", average);
+}
+
+int main() {
+    calculateAverage();
+    return 0;
+}
+```
+
+### Version 2: Find the Minimum Element in an Array
+
+```c
+#include <stdio.h>
+
+void findMinimum() {
+    int array[6] = {22, 45, 3, 8, 19, 12};
+    int min = array[0];
+    int i;
+
+    for (i = 1; i < 6; i++) {
+        if (array[i] < min) {
+            min = array[i];
+        }
+    }
+
+    printf("The minimum element is: %d\n", min);
+}
+
+int main() {
+    findMinimum();
+    return 0;
+}
+```
+
+### Version 3: Check if a Number is Even or Odd
+
+```c
+#include <stdio.h>
+
+void checkEvenOdd() {
+    int numbers[3] = {23, 42, 57};
+    int i;
+
+    for (i = 0; i < 3; i++) {
+        if (numbers[i] % 2 == 0) {
+            printf("%d is even.\n", numbers[i]);
+        } else {
+            printf("%d is odd.\n", numbers[i]);
+        }
+    }
+}
+
+int main() {
+    checkEvenOdd();
+    return 0;
+}
+```
+
+Each of these versions adheres to your instructions by not using advanced features such as pointers, recursion, dynamic memory, structs, unions, or file handling. They provide basic functionalities: calculating an average, finding a minimum value, and checking for even or odd numbers, all using different array-based logic.

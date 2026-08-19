@@ -1,0 +1,83 @@
+### Version 1: Using a while loop instead of a for loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int limit, first = 0, second = 1, next, i = 0;
+
+    printf("Enter the limit for the Fibonacci series: ");
+    scanf("%d", &limit);
+
+    printf("Fibonacci Series:\n");
+    while (i < limit) {
+        if (i <= 1) next = i;
+        else {
+            next = first + second;
+            first = second;
+            second = next;
+        }
+        printf("%d ", next);
+        i++;
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 2: Introducing a `swap` technique without using a temporary variable
+
+```c
+#include <stdio.h>
+
+int main() {
+    int limit, first = 0, second = 1, i = 0;
+
+    printf("Enter the limit for the Fibonacci series: ");
+    scanf("%d", &limit);
+
+    printf("Fibonacci Series:\n");
+    while (i < limit) {
+        if (i <= 1) {
+            printf("%d ", i);
+        } else {
+            printf("%d ", first + second);
+            // Swap technique without a temporary variable
+            second += first; // second becomes the sum
+            first = second - first; // update first to the old second
+        }
+        i++;
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 3: Introducing the use of `float` for Fibonacci numbers, with a simplified logic
+
+```c
+#include <stdio.h>
+
+int main() {
+    int limit, i = 0;
+    float first = 0, second = 1, next;
+
+    printf("Enter the limit for the Fibonacci series: ");
+    scanf("%d", &limit);
+
+    printf("Fibonacci Series:\n");
+    for (; i < limit; i++) {
+        if (i <= 1) next = (float)i;
+        else {
+            next = first + second;
+            first = second;
+            second = next;
+        }
+        printf("%.0f ", next); // Using float, but printed without decimal places
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+These versions introduce slight modifications and alternative approaches to the original problem, keeping within the constraints you provided.

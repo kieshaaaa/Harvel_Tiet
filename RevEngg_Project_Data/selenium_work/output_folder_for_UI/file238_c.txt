@@ -1,0 +1,102 @@
+Given your constraints, I'll create three distinct versions of the provided code. These versions will adhere to the specified guidelines, including avoiding specific programming practices and data types.
+
+### Version 1: While Loop Implementation
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lower, upper;
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    int i = lower;
+    while(i <= upper) {
+        int fact = 1;
+        int j = 2;
+        while(j <= i) {
+            fact *= j;
+            if (fact < 0) {
+                fact = -1;
+                break;
+            }
+            j++;
+        }
+        if(fact > 0 && fact <= upper) {
+            printf("Factorial of %d is %d\n", i, fact);
+        } else {
+            break;
+        }
+        i++;
+    }
+    return 0;
+}
+```
+
+### Version 2: Modified Checking Conditions
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lower, upper;
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    for(int i = lower; i <= upper && i >= 0; i++) {
+        int fact = 1;
+        for(int j = 2; j <= i; j++) {
+            fact *= j;
+            if (fact <= 0) {
+                break; // Breaking on first sign of overflow or invalid factorial
+            }
+        }
+        if (fact > 0) {
+            printf("Factorial of %d is %d\n", i, fact);
+        }
+        if(fact <= 0) {
+            break;
+        }
+    }
+    return 0;
+}
+```
+
+### Version 3: Simplified Conditionals and Limited Range
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lower, upper;
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    for(int i = lower; i <= upper; i++) {
+        if(i < 0) break; // Early exit for negative values
+        
+        int fact = (i == 0) ? 1 : i;
+        for(int j = i - 1; j > 1; j--) {
+            fact *= j;
+            if (fact <= 0) {
+                fact = -1; // Mark as overflow
+                break;
+            }
+        }
+        if (fact > 0) {
+            printf("Factorial of %d is %d\n", i, fact);
+        } else {
+            break; // Exit on overflow or when factorial becomes invalid
+        }
+    }
+    return 0;
+}
+```
+
+Each version offers a slightly different approach while adhering to your constraints. The core functionality remains, with variations in loop structures, conditional checks, and how factorial calculations are approached.

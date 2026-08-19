@@ -1,0 +1,4 @@
+obj/main.o: \
+  ../../../../../Array_with_pragma/Array/3array_elements_index/main.c \
+  /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/etc/autopilot_ssdm_op.h \
+  ../../../../../Array_with_pragma/Array/3array_elements_index/array.h

@@ -1,0 +1,61 @@
+### Version 1: Simplifying Variable Initialization
+
+```c
+#include <stdio.h>
+
+int main() {
+    float radius;
+    const float PI = 3.14159; // Using const for pi
+
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    float volume = (4.0/3.0) * PI * radius * radius * radius;
+
+    printf("Volume of the sphere: ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+### Version 2: Using `double` for Increased Precision
+
+```c
+#include <stdio.h>
+
+int main() {
+    double radius;
+    double volume;
+    double pi = 3.141592653589793; // More precise value of pi
+
+    printf("Enter the radius of the sphere: ");
+    scanf("%lf", &radius); // %lf for reading double
+
+    volume = (4.0/3.0) * pi * radius * radius * radius;
+
+    printf("Volume of the sphere: ");
+    printf("%.2lf\n", volume); // %.2lf for printing double with two decimals
+
+    return 0;
+}
+```
+
+### Version 3: Minimizing Variables Usage
+
+```c
+#include <stdio.h>
+
+int main() {
+    float radius;
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    printf("Volume of the sphere: ");
+    printf("%.2f\n", (4.0f/3.0f) * 3.14159f * radius * radius * radius);
+
+    return 0;
+}
+```
+
+In these versions, the focus was on introducing slight variations such as the use of `const` for constants, using `double` for higher precision in calculations, and minimizing the use of variables to streamline the code. Each adheres to your constraints but offers a different approach to organizing and performing the calculation.

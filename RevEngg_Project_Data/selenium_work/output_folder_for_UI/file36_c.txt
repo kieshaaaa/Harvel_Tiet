@@ -1,0 +1,55 @@
+### Version 1: Simplified Variable Names and Direct Conversion
+```c
+#include <stdio.h>
+
+int main() {
+    float w, hp;
+
+    printf("Enter power in Watts: ");
+    scanf("%f", &w);
+
+    hp = w / 746.0f;
+
+    printf("Watts: %.2f = Horsepower: %.2f\n", w, hp);
+
+    return 0;
+}
+```
+
+### Version 2: Adding a Greeting Message
+```c
+#include <stdio.h>
+
+int main() {
+    float inputWatts, outputHorsepower;
+
+    printf("Welcome to the Power Conversion Tool!\n");
+    printf("Please enter the power in Watts: ");
+    scanf("%f", &inputWatts);
+
+    outputHorsepower = inputWatts / 746.0f;
+
+    printf("Equivalent Horsepower: %.2f\n", outputHorsepower);
+
+    return 0;
+}
+```
+
+### Version 3: Using Intermediate Conversion Constant
+```c
+#include <stdio.h>
+
+int main() {
+    float powerWatts, powerHorsepower;
+    float conversionFactor = 746.0f;
+
+    printf("Power Converter:\nEnter power in Watts: ");
+    scanf("%f", &powerWatts);
+
+    powerHorsepower = powerWatts / conversionFactor;
+
+    printf("Power in Horsepower: %.2f\n", powerHorsepower);
+
+    return 0;
+}
+```

@@ -1,0 +1,86 @@
+Sure, I'll create three different versions of the code that demonstrate global and local variable scopes without using the restrictions you've mentioned.
+
+### Version 1: Swapping the Usage of Variables
+
+```c
+#include <stdio.h>
+
+int x = 50; // Global variable
+
+void display();
+
+int main() {
+    int x = 25; // Local to main
+    int y = 35; // Local to main
+
+    printf("In main() x=%d, y=%d\n", x, y);
+    display();
+    printf("Back in main() y=%d\n", y);
+    return 0;
+}
+
+void display() {
+    int y = 45; // Local to display
+
+    printf("In display() x=%d\n", x);
+    printf("In display() y=%d\n", y);
+}
+```
+
+### Version 2: Using Different Variable Names
+
+```c
+#include <stdio.h>
+
+int globalNum = 100; // Global variable
+
+void testFunction();
+
+int main() {
+    int localMainNum = 200; // Local to main
+    int anotherLocalMainNum = 300; // Local to main
+
+    printf("In main() localMainNum=%d, anotherLocalMainNum=%d\n", localMainNum, anotherLocalMainNum);
+    testFunction();
+    printf("In main() after calling testFunction() anotherLocalMainNum=%d\n", anotherLocalMainNum);
+    return 0;
+}
+
+void testFunction() {
+    int localTestNum = 400; // Local to testFunction
+
+    printf("In testFunction() globalNum=%d\n", globalNum);
+    printf("In testFunction() localTestNum=%d\n", localTestNum);
+}
+```
+
+### Version 3: Using Functions to Modify Global Variables
+
+```c
+#include <stdio.h>
+
+int counter = 5; // Global variable
+
+void incrementCounter();
+
+int main() {
+    int localCounter = 10; // Local to main
+    int anotherCounter = 15; // Local to main
+
+    printf("In main() localCounter=%d, anotherCounter=%d\n", localCounter, anotherCounter);
+    incrementCounter();
+    printf("In main() global counter is now=%d\n", counter);
+    printf("In main() anotherCounter=%d\n", anotherCounter);
+    return 0;
+}
+
+void incrementCounter() {
+    // Here, we directly modify the global variable
+    counter += 5;
+    int tempCounter = 20; // Local to incrementCounter
+    printf("In incrementCounter() tempCounter=%d\n", tempCounter);
+    printf("In incrementCounter() incremented global counter=%d\n", counter);
+}
+```
+
+Each version demonstrates the use of global and local variables in different scenarios, adhering to your guidelines.

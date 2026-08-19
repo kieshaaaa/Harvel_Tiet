@@ -1,0 +1,370 @@
+
+
+================================================================
+== Vitis HLS Report for 'processArray'
+================================================================
+* Date:           Wed Jul 26 17:00:52 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        change_array_element_index
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu11p-flga2577-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       15|       15|  0.150 us|  0.150 us|   16|   16|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 16
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 17 [1/1] (1.00ns)   --->   "%arr_5_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %arr_5" [../Array_with_pragma/Array/array_elements_index/array.c:6]   --->   Operation 17 'read' 'arr_5_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 122 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 18 [1/1] (1.00ns)   --->   "%arr_4_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %arr_4" [../Array_with_pragma/Array/array_elements_index/array.c:6]   --->   Operation 18 'read' 'arr_4_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 122 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 19 [1/1] (1.00ns)   --->   "%arr_3_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %arr_3" [../Array_with_pragma/Array/array_elements_index/array.c:6]   --->   Operation 19 'read' 'arr_3_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 122 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 20 [1/1] (1.00ns)   --->   "%arr_2_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %arr_2" [../Array_with_pragma/Array/array_elements_index/array.c:6]   --->   Operation 20 'read' 'arr_2_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 122 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 21 [1/1] (1.00ns)   --->   "%arr_1_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %arr_1" [../Array_with_pragma/Array/array_elements_index/array.c:6]   --->   Operation 21 'read' 'arr_1_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 122 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 22 [1/1] (1.00ns)   --->   "%arr_0_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %arr_0" [../Array_with_pragma/Array/array_elements_index/array.c:6]   --->   Operation 22 'read' 'arr_0_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 122 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%trunc_ln9 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %arr_0_read, i32 2, i32 63" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 23 'partselect' 'trunc_ln9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%sext_ln9 = sext i62 %trunc_ln9" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 24 'sext' 'sext_ln9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%gmem_0_addr = getelementptr i32 %gmem_0, i64 %sext_ln9" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 25 'getelementptr' 'gmem_0_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %arr_1_read, i32 2, i32 63" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 26 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%sext_ln10 = sext i62 %trunc_ln" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 27 'sext' 'sext_ln10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%gmem_1_addr = getelementptr i32 %gmem_1, i64 %sext_ln10" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 28 'getelementptr' 'gmem_1_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%trunc_ln1 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %arr_2_read, i32 2, i32 63" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 29 'partselect' 'trunc_ln1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%sext_ln11 = sext i62 %trunc_ln1" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 30 'sext' 'sext_ln11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%gmem_2_addr = getelementptr i32 %gmem_2, i64 %sext_ln11" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 31 'getelementptr' 'gmem_2_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%trunc_ln2 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %arr_3_read, i32 2, i32 63" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 32 'partselect' 'trunc_ln2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%sext_ln12 = sext i62 %trunc_ln2" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 33 'sext' 'sext_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%gmem_3_addr = getelementptr i32 %gmem_3, i64 %sext_ln12" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 34 'getelementptr' 'gmem_3_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%trunc_ln3 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %arr_4_read, i32 2, i32 63" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 35 'partselect' 'trunc_ln3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%sext_ln13 = sext i62 %trunc_ln3" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 36 'sext' 'sext_ln13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%gmem_4_addr = getelementptr i32 %gmem_4, i64 %sext_ln13" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 37 'getelementptr' 'gmem_4_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%trunc_ln4 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %arr_5_read, i32 2, i32 63" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 38 'partselect' 'trunc_ln4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%sext_ln14 = sext i62 %trunc_ln4" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 39 'sext' 'sext_ln14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%gmem_5_addr = getelementptr i32 %gmem_5, i64 %sext_ln14" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 40 'getelementptr' 'gmem_5_addr' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 7.30>
+ST_2 : Operation 41 [7/7] (7.30ns)   --->   "%gmem_0_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_0_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 41 'readreq' 'gmem_0_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 42 [7/7] (7.30ns)   --->   "%gmem_1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_1_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 42 'readreq' 'gmem_1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 43 [7/7] (7.30ns)   --->   "%gmem_2_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_2_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 43 'readreq' 'gmem_2_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 44 [7/7] (7.30ns)   --->   "%gmem_3_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_3_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 44 'readreq' 'gmem_3_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 45 [7/7] (7.30ns)   --->   "%gmem_4_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_4_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 45 'readreq' 'gmem_4_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 46 [7/7] (7.30ns)   --->   "%gmem_5_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_5_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 46 'readreq' 'gmem_5_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 7.30>
+ST_3 : Operation 47 [6/7] (7.30ns)   --->   "%gmem_0_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_0_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 47 'readreq' 'gmem_0_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 48 [6/7] (7.30ns)   --->   "%gmem_1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_1_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 48 'readreq' 'gmem_1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 49 [6/7] (7.30ns)   --->   "%gmem_2_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_2_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 49 'readreq' 'gmem_2_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 50 [6/7] (7.30ns)   --->   "%gmem_3_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_3_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 50 'readreq' 'gmem_3_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 51 [6/7] (7.30ns)   --->   "%gmem_4_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_4_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 51 'readreq' 'gmem_4_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 52 [6/7] (7.30ns)   --->   "%gmem_5_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_5_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 52 'readreq' 'gmem_5_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 7.30>
+ST_4 : Operation 53 [5/7] (7.30ns)   --->   "%gmem_0_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_0_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 53 'readreq' 'gmem_0_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 54 [5/7] (7.30ns)   --->   "%gmem_1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_1_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 54 'readreq' 'gmem_1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 55 [5/7] (7.30ns)   --->   "%gmem_2_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_2_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 55 'readreq' 'gmem_2_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 56 [5/7] (7.30ns)   --->   "%gmem_3_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_3_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 56 'readreq' 'gmem_3_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 57 [5/7] (7.30ns)   --->   "%gmem_4_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_4_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 57 'readreq' 'gmem_4_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 58 [5/7] (7.30ns)   --->   "%gmem_5_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_5_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 58 'readreq' 'gmem_5_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 7.30>
+ST_5 : Operation 59 [4/7] (7.30ns)   --->   "%gmem_0_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_0_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 59 'readreq' 'gmem_0_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 60 [4/7] (7.30ns)   --->   "%gmem_1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_1_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 60 'readreq' 'gmem_1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 61 [4/7] (7.30ns)   --->   "%gmem_2_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_2_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 61 'readreq' 'gmem_2_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 62 [4/7] (7.30ns)   --->   "%gmem_3_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_3_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 62 'readreq' 'gmem_3_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 63 [4/7] (7.30ns)   --->   "%gmem_4_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_4_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 63 'readreq' 'gmem_4_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 64 [4/7] (7.30ns)   --->   "%gmem_5_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_5_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 64 'readreq' 'gmem_5_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 7.30>
+ST_6 : Operation 65 [3/7] (7.30ns)   --->   "%gmem_0_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_0_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 65 'readreq' 'gmem_0_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 66 [3/7] (7.30ns)   --->   "%gmem_1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_1_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 66 'readreq' 'gmem_1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 67 [3/7] (7.30ns)   --->   "%gmem_2_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_2_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 67 'readreq' 'gmem_2_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 68 [3/7] (7.30ns)   --->   "%gmem_3_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_3_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 68 'readreq' 'gmem_3_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 69 [3/7] (7.30ns)   --->   "%gmem_4_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_4_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 69 'readreq' 'gmem_4_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 70 [3/7] (7.30ns)   --->   "%gmem_5_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_5_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 70 'readreq' 'gmem_5_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 7.30>
+ST_7 : Operation 71 [2/7] (7.30ns)   --->   "%gmem_0_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_0_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 71 'readreq' 'gmem_0_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 72 [2/7] (7.30ns)   --->   "%gmem_1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_1_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 72 'readreq' 'gmem_1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 73 [2/7] (7.30ns)   --->   "%gmem_2_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_2_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 73 'readreq' 'gmem_2_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 74 [2/7] (7.30ns)   --->   "%gmem_3_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_3_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 74 'readreq' 'gmem_3_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 75 [2/7] (7.30ns)   --->   "%gmem_4_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_4_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 75 'readreq' 'gmem_4_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 76 [2/7] (7.30ns)   --->   "%gmem_5_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_5_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 76 'readreq' 'gmem_5_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 7.30>
+ST_8 : Operation 77 [1/7] (7.30ns)   --->   "%gmem_0_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_0_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 77 'readreq' 'gmem_0_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 78 [1/7] (7.30ns)   --->   "%gmem_1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_1_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 78 'readreq' 'gmem_1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 79 [1/7] (7.30ns)   --->   "%gmem_2_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_2_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 79 'readreq' 'gmem_2_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 80 [1/7] (7.30ns)   --->   "%gmem_3_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_3_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 80 'readreq' 'gmem_3_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 81 [1/7] (7.30ns)   --->   "%gmem_4_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_4_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 81 'readreq' 'gmem_4_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 82 [1/7] (7.30ns)   --->   "%gmem_5_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_5_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 82 'readreq' 'gmem_5_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 7.30>
+ST_9 : Operation 83 [1/1] (7.30ns)   --->   "%gmem_0_addr_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_0_addr" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 83 'read' 'gmem_0_addr_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 84 [1/1] (7.30ns)   --->   "%gmem_1_addr_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_1_addr" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 84 'read' 'gmem_1_addr_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 85 [1/1] (7.30ns)   --->   "%gmem_2_addr_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_2_addr" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 85 'read' 'gmem_2_addr_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 86 [1/1] (7.30ns)   --->   "%gmem_3_addr_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_3_addr" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 86 'read' 'gmem_3_addr_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 87 [1/1] (7.30ns)   --->   "%gmem_4_addr_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_4_addr" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 87 'read' 'gmem_4_addr_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 88 [1/1] (7.30ns)   --->   "%gmem_5_addr_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_5_addr" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 88 'read' 'gmem_5_addr_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 7.30>
+ST_10 : Operation 89 [1/1] (1.14ns)   --->   "%add_ln9 = add i32 %gmem_0_addr_read, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 89 'add' 'add_ln9' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 90 [1/1] (7.30ns)   --->   "%gmem_0_addr_req = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P1A, i32 %gmem_0_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 90 'writereq' 'gmem_0_addr_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 91 [1/1] (1.14ns)   --->   "%add_ln10 = add i32 %gmem_1_addr_read, i32 2" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 91 'add' 'add_ln10' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 92 [1/1] (7.30ns)   --->   "%gmem_1_addr_req = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P1A, i32 %gmem_1_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 92 'writereq' 'gmem_1_addr_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 93 [1/1] (1.14ns)   --->   "%add_ln11 = add i32 %gmem_2_addr_read, i32 3" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 93 'add' 'add_ln11' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 94 [1/1] (7.30ns)   --->   "%gmem_2_addr_req = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P1A, i32 %gmem_2_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 94 'writereq' 'gmem_2_addr_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 95 [1/1] (1.14ns)   --->   "%add_ln12 = add i32 %gmem_3_addr_read, i32 4" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 95 'add' 'add_ln12' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 96 [1/1] (7.30ns)   --->   "%gmem_3_addr_req = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P1A, i32 %gmem_3_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 96 'writereq' 'gmem_3_addr_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 97 [1/1] (1.14ns)   --->   "%add_ln13 = add i32 %gmem_4_addr_read, i32 5" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 97 'add' 'add_ln13' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 98 [1/1] (7.30ns)   --->   "%gmem_4_addr_req = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P1A, i32 %gmem_4_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 98 'writereq' 'gmem_4_addr_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 99 [1/1] (1.14ns)   --->   "%add_ln14 = add i32 %gmem_5_addr_read, i32 6" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 99 'add' 'add_ln14' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 100 [1/1] (7.30ns)   --->   "%gmem_5_addr_req = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P1A, i32 %gmem_5_addr, i32 1" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 100 'writereq' 'gmem_5_addr_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 7.30>
+ST_11 : Operation 101 [1/1] (7.30ns)   --->   "%write_ln9 = write void @_ssdm_op_Write.m_axi.i32P1A, i32 %gmem_0_addr, i32 %add_ln9, i4 15" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 101 'write' 'write_ln9' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 102 [1/1] (7.30ns)   --->   "%write_ln10 = write void @_ssdm_op_Write.m_axi.i32P1A, i32 %gmem_1_addr, i32 %add_ln10, i4 15" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 102 'write' 'write_ln10' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 103 [1/1] (7.30ns)   --->   "%write_ln11 = write void @_ssdm_op_Write.m_axi.i32P1A, i32 %gmem_2_addr, i32 %add_ln11, i4 15" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 103 'write' 'write_ln11' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 104 [1/1] (7.30ns)   --->   "%write_ln12 = write void @_ssdm_op_Write.m_axi.i32P1A, i32 %gmem_3_addr, i32 %add_ln12, i4 15" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 104 'write' 'write_ln12' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 105 [1/1] (7.30ns)   --->   "%write_ln13 = write void @_ssdm_op_Write.m_axi.i32P1A, i32 %gmem_4_addr, i32 %add_ln13, i4 15" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 105 'write' 'write_ln13' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 106 [1/1] (7.30ns)   --->   "%write_ln14 = write void @_ssdm_op_Write.m_axi.i32P1A, i32 %gmem_5_addr, i32 %add_ln14, i4 15" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 106 'write' 'write_ln14' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 11> <Delay = 7.30>
+ST_12 : Operation 107 [5/5] (7.30ns)   --->   "%gmem_0_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_0_addr" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 107 'writeresp' 'gmem_0_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 108 [5/5] (7.30ns)   --->   "%gmem_1_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_1_addr" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 108 'writeresp' 'gmem_1_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 109 [5/5] (7.30ns)   --->   "%gmem_2_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_2_addr" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 109 'writeresp' 'gmem_2_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 110 [5/5] (7.30ns)   --->   "%gmem_3_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_3_addr" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 110 'writeresp' 'gmem_3_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 111 [5/5] (7.30ns)   --->   "%gmem_4_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_4_addr" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 111 'writeresp' 'gmem_4_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 112 [5/5] (7.30ns)   --->   "%gmem_5_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_5_addr" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 112 'writeresp' 'gmem_5_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 13 <SV = 12> <Delay = 7.30>
+ST_13 : Operation 113 [4/5] (7.30ns)   --->   "%gmem_0_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_0_addr" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 113 'writeresp' 'gmem_0_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 114 [4/5] (7.30ns)   --->   "%gmem_1_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_1_addr" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 114 'writeresp' 'gmem_1_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 115 [4/5] (7.30ns)   --->   "%gmem_2_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_2_addr" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 115 'writeresp' 'gmem_2_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 116 [4/5] (7.30ns)   --->   "%gmem_3_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_3_addr" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 116 'writeresp' 'gmem_3_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 117 [4/5] (7.30ns)   --->   "%gmem_4_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_4_addr" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 117 'writeresp' 'gmem_4_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 118 [4/5] (7.30ns)   --->   "%gmem_5_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_5_addr" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 118 'writeresp' 'gmem_5_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 14 <SV = 13> <Delay = 7.30>
+ST_14 : Operation 119 [3/5] (7.30ns)   --->   "%gmem_0_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_0_addr" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 119 'writeresp' 'gmem_0_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 120 [3/5] (7.30ns)   --->   "%gmem_1_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_1_addr" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 120 'writeresp' 'gmem_1_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 121 [3/5] (7.30ns)   --->   "%gmem_2_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_2_addr" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 121 'writeresp' 'gmem_2_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 122 [3/5] (7.30ns)   --->   "%gmem_3_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_3_addr" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 122 'writeresp' 'gmem_3_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 123 [3/5] (7.30ns)   --->   "%gmem_4_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_4_addr" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 123 'writeresp' 'gmem_4_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 124 [3/5] (7.30ns)   --->   "%gmem_5_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_5_addr" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 124 'writeresp' 'gmem_5_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 15 <SV = 14> <Delay = 7.30>
+ST_15 : Operation 125 [2/5] (7.30ns)   --->   "%gmem_0_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_0_addr" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 125 'writeresp' 'gmem_0_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 126 [2/5] (7.30ns)   --->   "%gmem_1_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_1_addr" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 126 'writeresp' 'gmem_1_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 127 [2/5] (7.30ns)   --->   "%gmem_2_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_2_addr" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 127 'writeresp' 'gmem_2_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 128 [2/5] (7.30ns)   --->   "%gmem_3_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_3_addr" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 128 'writeresp' 'gmem_3_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 129 [2/5] (7.30ns)   --->   "%gmem_4_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_4_addr" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 129 'writeresp' 'gmem_4_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 130 [2/5] (7.30ns)   --->   "%gmem_5_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_5_addr" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 130 'writeresp' 'gmem_5_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 16 <SV = 15> <Delay = 7.30>
+ST_16 : Operation 131 [1/1] (0.00ns)   --->   "%spectopmodule_ln6 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_14" [../Array_with_pragma/Array/array_elements_index/array.c:6]   --->   Operation 131 'spectopmodule' 'spectopmodule_ln6' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 132 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_0, void @empty_6, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_8, void @empty, void @empty_7, i32 16, i32 16, i32 16, i32 16, void @empty_7, void @empty_7, i32 4294967295, i32 0"   --->   Operation 132 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 133 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem_0"   --->   Operation 133 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 134 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_1, void @empty_6, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_0, void @empty, void @empty_7, i32 16, i32 16, i32 16, i32 16, void @empty_7, void @empty_7, i32 4294967295, i32 0"   --->   Operation 134 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 135 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem_1"   --->   Operation 135 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 136 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_2, void @empty_6, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_1, void @empty, void @empty_7, i32 16, i32 16, i32 16, i32 16, void @empty_7, void @empty_7, i32 4294967295, i32 0"   --->   Operation 136 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 137 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem_2"   --->   Operation 137 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 138 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_3, void @empty_6, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_3, void @empty, void @empty_7, i32 16, i32 16, i32 16, i32 16, void @empty_7, void @empty_7, i32 4294967295, i32 0"   --->   Operation 138 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 139 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem_3"   --->   Operation 139 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 140 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_4, void @empty_6, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_11, void @empty, void @empty_7, i32 16, i32 16, i32 16, i32 16, void @empty_7, void @empty_7, i32 4294967295, i32 0"   --->   Operation 140 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 141 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem_4"   --->   Operation 141 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 142 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_5, void @empty_6, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_4, void @empty, void @empty_7, i32 16, i32 16, i32 16, i32 16, void @empty_7, void @empty_7, i32 4294967295, i32 0"   --->   Operation 142 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 143 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem_5"   --->   Operation 143 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 144 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_0, void @empty_5, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_15, void @empty_16, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 144 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 145 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_0, void @empty_18, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_7, void @empty_7, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 145 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 146 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_1, void @empty_5, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_15, void @empty_9, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 146 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 147 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_1, void @empty_18, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_7, void @empty_7, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 147 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 148 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_2, void @empty_5, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_15, void @empty_10, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 148 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 149 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_2, void @empty_18, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_7, void @empty_7, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 149 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 150 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_3, void @empty_5, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_15, void @empty_12, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 150 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 151 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_3, void @empty_18, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_7, void @empty_7, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 151 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 152 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_4, void @empty_5, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_15, void @empty_2, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 152 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 153 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_4, void @empty_18, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_7, void @empty_7, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 153 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 154 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_5, void @empty_5, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_15, void @empty_13, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 154 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 155 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %arr_5, void @empty_18, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_7, void @empty_7, void @empty_7, i32 0, i32 0, i32 0, i32 0, void @empty_7, void @empty_17, i32 4294967295, i32 0"   --->   Operation 155 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 156 [1/5] (7.30ns)   --->   "%gmem_0_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_0_addr" [../Array_with_pragma/Array/array_elements_index/array.c:9]   --->   Operation 156 'writeresp' 'gmem_0_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 157 [1/5] (7.30ns)   --->   "%gmem_1_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_1_addr" [../Array_with_pragma/Array/array_elements_index/array.c:10]   --->   Operation 157 'writeresp' 'gmem_1_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 158 [1/5] (7.30ns)   --->   "%gmem_2_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_2_addr" [../Array_with_pragma/Array/array_elements_index/array.c:11]   --->   Operation 158 'writeresp' 'gmem_2_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 159 [1/5] (7.30ns)   --->   "%gmem_3_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_3_addr" [../Array_with_pragma/Array/array_elements_index/array.c:12]   --->   Operation 159 'writeresp' 'gmem_3_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 160 [1/5] (7.30ns)   --->   "%gmem_4_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_4_addr" [../Array_with_pragma/Array/array_elements_index/array.c:13]   --->   Operation 160 'writeresp' 'gmem_4_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 161 [1/5] (7.30ns)   --->   "%gmem_5_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_5_addr" [../Array_with_pragma/Array/array_elements_index/array.c:14]   --->   Operation 161 'writeresp' 'gmem_5_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 162 [1/1] (0.00ns)   --->   "%ret_ln15 = ret" [../Array_with_pragma/Array/array_elements_index/array.c:15]   --->   Operation 162 'ret' 'ret_ln15' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read operation ('arr_5_read', ../Array_with_pragma/Array/array_elements_index/array.c:6) on port 'arr_5' (../Array_with_pragma/Array/array_elements_index/array.c:6) [38]  (1 ns)
+
+ <State 2>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('gmem_0_load_req', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [47]  (7.3 ns)
+
+ <State 3>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('gmem_0_load_req', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [47]  (7.3 ns)
+
+ <State 4>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('gmem_0_load_req', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [47]  (7.3 ns)
+
+ <State 5>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('gmem_0_load_req', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [47]  (7.3 ns)
+
+ <State 6>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('gmem_0_load_req', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [47]  (7.3 ns)
+
+ <State 7>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('gmem_0_load_req', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [47]  (7.3 ns)
+
+ <State 8>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('gmem_0_load_req', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [47]  (7.3 ns)
+
+ <State 9>: 7.3ns
+The critical path consists of the following:
+	bus read operation ('gmem_0_addr_read', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [48]  (7.3 ns)
+
+ <State 10>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('gmem_0_addr_req', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [50]  (7.3 ns)
+
+ <State 11>: 7.3ns
+The critical path consists of the following:
+	bus write operation ('write_ln9', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [51]  (7.3 ns)
+
+ <State 12>: 7.3ns
+The critical path consists of the following:
+	bus response operation ('gmem_0_addr_resp', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [52]  (7.3 ns)
+
+ <State 13>: 7.3ns
+The critical path consists of the following:
+	bus response operation ('gmem_0_addr_resp', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [52]  (7.3 ns)
+
+ <State 14>: 7.3ns
+The critical path consists of the following:
+	bus response operation ('gmem_0_addr_resp', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [52]  (7.3 ns)
+
+ <State 15>: 7.3ns
+The critical path consists of the following:
+	bus response operation ('gmem_0_addr_resp', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [52]  (7.3 ns)
+
+ <State 16>: 7.3ns
+The critical path consists of the following:
+	bus response operation ('gmem_0_addr_resp', ../Array_with_pragma/Array/array_elements_index/array.c:9) on port 'gmem_0' (../Array_with_pragma/Array/array_elements_index/array.c:9) [52]  (7.3 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,83 @@
+Certainly, here are three different versions of the original C program you provided, each performing the same arithmetic operations with minor variations in style and structure.
+
+### Version 1: Using Single `printf` for Output
+
+```c
+#include<stdio.h>
+
+int main() {
+    int a, b, addition, subtraction, multiplication, division, modulus;
+    
+    printf("Enter the first number: ");
+    scanf("%d", &a);
+    
+    printf("Enter the second number: ");
+    scanf("%d", &b);
+    
+    addition = a + b;
+    subtraction = a - b;
+    multiplication = a * b;
+    division = a / b;
+    modulus = a % b;
+    
+    printf("Addition: %d, Subtraction: %d, Multiplication: %d, Division: %d, Modulus: %d\n", addition, subtraction, multiplication, division, modulus);
+    
+    return 0;
+}
+```
+
+### Version 2: Using Inline Calculation
+
+```c
+#include<stdio.h>
+
+int main() {
+    int a, b;
+    
+    printf("Enter two numbers separated by space: ");
+    scanf("%d %d", &a, &b);
+    
+    printf("The result of Addition is: %d\n", a + b);
+    printf("The result of Subtraction is: %d\n", a - b);
+    printf("The result of Multiplication is: %d\n", a * b);
+    printf("The result of Division is: %d\n", a / b);
+    printf("The result of Modulus is: %d\n", a % b);
+    
+    return 0;
+}
+```
+
+### Version 3: Simplifying Input
+
+```c
+#include<stdio.h>
+
+int main() {
+    int a, b, result;
+    
+    printf("Enter two integers (a b): ");
+    scanf("%d %d", &a, &b);
+    
+    result = a + b;
+    printf("Addition: %d\n", result);
+    
+    result = a - b;
+    printf("Subtraction: %d\n", result);
+    
+    result = a * b;
+    printf("Multiplication: %d\n", result);
+    
+    if(b != 0) {
+        result = a / b;
+        printf("Division: %d\n", result);
+        result = a % b;
+        printf("Modulus: %d\n", result);
+    } else {
+        printf("Division and Modulus not possible with b = 0\n");
+    }
+    
+    return 0;
+}
+```
+
+In these versions, I've made minor adjustments to the structure and presentation of the program to fulfill the request for variations. Each version maintains the core functionality of performing arithmetic operations while adjusting aspects like input gathering, result calculation, or output formatting.

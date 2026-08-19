@@ -1,0 +1,117 @@
+### Version 1: Simplified Date Validation and Inline Weekday Calculation
+
+This version simplifies the date validation logic and incorporates the weekday calculation directly in the `main` function without calling an external function. It also replaces `double` with `float` if needed, though in this context, floating-point numbers are not used.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int day, month, year, wDayNo;
+    char *dayNames[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    int monthLengths[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    printf("Input date (DD-MM-YYYY): ");
+    scanf("%d-%d-%d", &day, &month, &year);
+
+    // Adjust February for leap years
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        monthLengths[1] = 29;
+
+    // Validate the date
+    if (year >= 1800 && year <= 2999 && month >= 1 && month <= 12 && day >= 1 && day <= monthLengths[month - 1]) {
+        printf("Date is correct [%02d/%02d/%02d].\n", day, month, year);
+
+        // Calculate weekday
+        if (month < 3) {
+            month += 12;
+            year -= 1;
+        }
+        wDayNo = (day + 2 * month + 3 * (month + 1) / 5 + year + year / 4 - year / 100 + year / 400) % 7;
+        
+        printf("week day is: %s\n", dayNames[wDayNo]);
+    } else {
+        printf("Date is incorrect.\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Modified Date Validation and Simplified Weekday Logic
+
+This version again tweaks the date validation process and simplifies the weekday calculation, focusing on minimizing the complexity and number of lines.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int day, month, year, wDayNo;
+    char *dayNames[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+
+    printf("Input date (DD-MM-YYYY): ");
+    scanf("%d-%d-%d", &day, &month, &year);
+
+    // Simple leap year check
+    int isLeap = year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+    // Validate the date
+    int isValid = day > 0 && month > 0 && month < 13 && year >= 1800 && year <= 2999 &&
+                  ((month == 2 && isLeap && day <= 29) || (month == 2 && !isLeap && day <= 28) ||
+                   ((month == 4 || month == 6 || month == 9 || month == 11) && day <= 30) ||
+                   (day <= 31));
+
+    if (isValid) {
+        printf("Date is correct [%02d/%02d/%02d].\n", day, month, year);
+
+        // Simplified weekday calculation
+        if (month < 3) {
+            month += 12;
+            year--;
+        }
+        wDayNo = (day + (13 * (month + 1) / 5) + year + (year / 4) - (year / 100) + (year / 400)) % 7;
+        
+        printf("week day is: %s\n", dayNames[wDayNo]);
+    } else {
+        printf("Date is incorrect.\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Condensed Validation and Direct Weekday Calculation
+
+This final version further condenses the code, making the date validation more straightforward and integrating the weekday calculation directly where it's needed, without additional checks for leap years outside the main logic.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int day, month, year;
+    printf("Input date (DD-MM-YYYY): ");
+    scanf("%d-%d-%d", &day, &month, &year);
+
+    // Validate and calculate in one go
+    if ((year >= 1800 && year <= 2999) &&
+        (month >= 1 && month <= 12) &&
+        (day >= 1 && (((month == 4 || month == 6 || month == 9 || month == 11) && day <= 30) ||
+                      (month != 2 && day <= 31) ||
+                      (month == 2 && day <= 28 + ((year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 1 : 0))))) {
+        printf("Date is correct [%02d/%02d/%02d].\n", day, month, year);
+        
+        // Inline weekday calculation
+        char *dayNames[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+        if (month < 3) {
+            month += 12;
+            year -= 1;
+        }
+        int wDayNo = (day + 2 * month + 3 * (month + 1) / 5 + year + year / 4 - year / 100 + year / 400) % 7;
+        printf("week day is: %s\n", dayNames[wDayNo]);
+    } else {
+        printf("Date is incorrect.\n");
+    }
+
+    return 0;
+}
+```
+
+Each version aims to streamline different aspects of the validation and calculation process, while adhering to your constraints.

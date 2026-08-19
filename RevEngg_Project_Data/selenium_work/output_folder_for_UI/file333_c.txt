@@ -1,0 +1,100 @@
+Certainly! Below are three different versions of the provided code that collect grades, determine the number of passing grades (assuming a pass is a score of 70 or above), and calculate the percentage of passing grades. Each version maintains simplicity and follows your guidelines.
+
+### Version 1: Basic Loop Enhancement
+
+This version simplifies the input loop and removes unnecessary variables.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int grade, passCount = 0, totalCount = 0;
+    float passPercentage;
+    
+    while (1) {
+        printf("Enter a test score (-1 to quit): ");
+        scanf("%d", &grade);
+        if (grade == -1) break;
+        
+        if (grade >= 70 && grade <= 100) passCount++;
+        if (grade >= 0 && grade <= 100) totalCount++;
+    }
+    
+    if (totalCount > 0) {
+        passPercentage = (float)passCount / totalCount * 100;
+    } else {
+        passPercentage = 0;
+    }
+    
+    printf("\nPercentage of passing scores: %f\n", passPercentage);
+    return 0;
+}
+```
+
+### Version 2: Early Input Request
+
+This version moves the initial prompt for a grade outside of the loop for clarity and user instruction.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int grade, passCount = 0, totalCount = 0;
+    float passPercentage;
+    
+    printf("Enter a test score (-1 to quit): ");
+    scanf("%d", &grade);
+    
+    while (grade != -1) {
+        if (grade >= 70 && grade <= 100) {
+            passCount++;
+        }
+        
+        if (grade >= 0 && grade <= 100) {
+            totalCount++;
+        }
+        
+        printf("Enter a test score (-1 to quit): ");
+        scanf("%d", &grade);
+    }
+    
+    passPercentage = totalCount > 0 ? (float)passCount / totalCount * 100 : 0;
+    
+    printf("\nPercentage of passing scores: %f\n", passPercentage);
+    return 0;
+}
+```
+
+### Version 3: Input Validation Enhancement
+
+This version adds basic input validation to ensure that the user can only enter valid grade values or -1 to quit.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int grade, passCount = 0, totalCount = 0;
+    float passPercentage;
+    
+    while (1) {
+        printf("Enter a test score (0-100, -1 to quit): ");
+        scanf("%d", &grade);
+        if (grade == -1) break;
+        
+        if (grade < 0 || grade > 100) {
+            printf("Invalid score, please enter a value between 0 and 100 or -1 to quit.\n");
+            continue;
+        }
+        
+        if (grade >= 70) passCount++;
+        totalCount++;
+    }
+    
+    passPercentage = totalCount > 0 ? (float)passCount / totalCount * 100 : 0;
+    
+    printf("\nPercentage of passing scores: %f\n", passPercentage);
+    return 0;
+}
+```
+
+Each version adheres to your guidelines, avoiding the use of advanced features and focusing on fundamental C programming concepts.

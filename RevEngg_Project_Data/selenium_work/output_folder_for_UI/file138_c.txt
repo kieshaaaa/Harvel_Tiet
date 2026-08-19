@@ -1,0 +1,66 @@
+Certainly! Below are three distinct versions of the provided C program, adhering to your constraints. Each version offers a different approach to determine if a number is even or odd, without using the methods you've asked to avoid.
+
+### Version 1: Using the Ternary Operator
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    printf("Enter a positive integer number: ");
+    scanf("%d", &number);
+
+    int remainder = number % 2;
+    printf("%d is an ", number);
+    remainder == 0 ? printf("EVEN") : printf("ODD");
+    printf(" number.\n");
+
+    return 0;
+}
+```
+
+### Version 2: Using if-else Statement
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    printf("Enter a positive integer number: ");
+    scanf("%d", &number);
+
+    if (number % 2 == 0) {
+        printf("%d is an EVEN number.\n", number);
+    } else {
+        printf("%d is an ODD number.\n", number);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using Bitwise AND Operator
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    printf("Enter a positive integer number: ");
+    scanf("%d", &number);
+
+    // Using bitwise AND operation to check even or odd
+    // If the last bit is 0, the number is even. If it's 1, the number is odd.
+    int result = number & 1;
+
+    if (result == 0) {
+        printf("%d is an EVEN number.\n", number);
+    } else {
+        printf("%d is an ODD number.\n", number);
+    }
+
+    return 0;
+}
+```
+
+Each version adheres to the constraints you've set, offering a unique way to solve the problem while maintaining the simplicity and limitations specified.

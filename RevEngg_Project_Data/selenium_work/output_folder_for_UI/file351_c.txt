@@ -1,0 +1,71 @@
+### Version 1: Bitwise Shift in a Single Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    unsigned int num = 0x4, revNum = 0;
+    unsigned char totalBits = sizeof(num) * 8;
+
+    for (int i = 0; i < totalBits; i++) {
+        revNum <<= 1;
+        revNum |= (num >> i) & 1;
+    }
+
+    printf("\n");
+    printf("%u", revNum);
+    return 0;
+}
+```
+
+### Version 2: Using XOR Swap and Bit Mask
+
+```c
+#include <stdio.h>
+
+int main() {
+    unsigned int num = 0x4;
+    unsigned char totalBits = sizeof(num) * 8;
+    unsigned int mask1 = 1, mask2 = (1 << (totalBits - 1)), temp;
+
+    for (int i = 0; i < totalBits / 2; i++) {
+        if ((num & mask1) != (num & mask2)) {
+            num ^= mask1;
+            num ^= mask2;
+        }
+        mask1 <<= 1;
+        mask2 >>= 1;
+    }
+
+    printf("\n");
+    printf("%u", num);
+    return 0;
+}
+```
+
+### Version 3: Reversing Bits with Half Iteration and Swapping
+
+```c
+#include <stdio.h>
+
+int main() {
+    unsigned int num = 0x4, revNum = 0;
+    unsigned char half = sizeof(num) * 4; // Half the total bits
+    unsigned int left, right;
+
+    for (int i = 0; i < half; i++) {
+        left = (num >> (half + i)) & 1;
+        right = (num >> i) & 1;
+
+        if (left != right) {
+            revNum |= (1 << i) | (1 << (half + i));
+        }
+    }
+
+    printf("\n");
+    printf("%u", revNum);
+    return 0;
+}
+```
+
+Each version takes a different approach to reverse the bits of an integer without utilizing additional functions, dynamic memory allocation, structures, unions, pointers, recursion, file handling, or modifying the existing data types.

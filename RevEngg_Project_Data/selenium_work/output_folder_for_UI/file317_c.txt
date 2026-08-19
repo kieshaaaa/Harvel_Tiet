@@ -1,0 +1,86 @@
+### Version 1: Using While Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[10];
+    int sum = 0, product = 1, i = 0;
+
+    printf("\nEnter elements:\n");
+    while(i < 10) {
+        printf("Enter arr[%d]: ", i);
+        scanf("%d", &arr[i]);
+        i++;
+    }
+
+    i = 0;
+    while(i < 10) {
+        sum += arr[i];
+        product *= arr[i];
+        i++;
+    }
+
+    printf("\nSum of array is: %d", sum);
+    printf("\nProduct of array is: %d\n", product);
+
+    return 0;
+}
+```
+
+### Version 2: Using Do-While Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[10];
+    int sum = 0, product = 1, i = 0;
+
+    printf("\nEnter elements:\n");
+    do {
+        printf("Enter arr[%d]: ", i);
+        scanf("%d", &arr[i]);
+        i++;
+    } while(i < 10);
+
+    i = 0;
+    do {
+        sum += arr[i];
+        product *= arr[i];
+        i++;
+    } while(i < 10);
+
+    printf("\nSum of array is: %d", sum);
+    printf("\nProduct of array is: %d\n", product);
+
+    return 0;
+}
+```
+
+### Version 3: Integrating Calculation within Input Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[10];
+    int sum = 0, product = 1, i;
+
+    printf("\nEnter elements:\n");
+    for(i = 0; i < 10; i++) {
+        printf("Enter arr[%d]: ", i);
+        scanf("%d", &arr[i]);
+        // Perform calculations while reading the input
+        sum += arr[i];
+        product *= arr[i];
+    }
+
+    printf("\nSum of array is: %d", sum);
+    printf("\nProduct of array is: %d\n", product);
+
+    return 0;
+}
+```
+
+Each of these versions demonstrates a different approach to iterating through the array, either by using `while`, `do-while`, or integrating the calculation directly into the input loop, while adhering to the constraints provided.

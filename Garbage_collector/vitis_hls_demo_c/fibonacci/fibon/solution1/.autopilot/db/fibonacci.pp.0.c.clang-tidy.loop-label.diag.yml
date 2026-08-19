@@ -1,0 +1,13 @@
+---
+MainSourceFile:  /home/coss01/vitis_hls_demo_c/fibo/fibon/solution1/.autopilot/db/fibonacci.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_9_1:  '
+    FileOffset:      9
+    FilePath:        fibonacci.c
+    Replacements:    
+      - FilePath:        /home/coss01/vitis_hls_demo_c/fibo/fibon/solution1/.autopilot/db/fibonacci.pp.0.c
+        Offset:          24513
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_9_1: '
+...

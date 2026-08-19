@@ -1,0 +1,44 @@
+### Version 1: Right Shift Operation with Variable Input
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, shiftedValue;
+    printf("Input a number: ");
+    scanf("%d", &num);
+    shiftedValue = num >> 2;
+    printf("Shifted result: %d\n", shiftedValue);
+    return 0;
+}
+```
+
+### Version 2: Left Shift Operation and Addition
+
+```c
+#include <stdio.h>
+
+int main() {
+    int input, shiftResult;
+    printf("Enter a number: ");
+    scanf("%d", &input);
+    shiftResult = (input << 1) + 5;
+    printf("Result after shift and addition: %d\n", shiftResult);
+    return 0;
+}
+```
+
+### Version 3: Bitwise AND Operation Following Right Shift
+
+```c
+#include <stdio.h>
+
+int main() {
+    int value, processedValue;
+    printf("Enter your value: ");
+    scanf("%d", &value);
+    processedValue = (value >> 4) & 1;
+    printf("Processed result is: %d\n", processedValue);
+    return 0;
+}
+```

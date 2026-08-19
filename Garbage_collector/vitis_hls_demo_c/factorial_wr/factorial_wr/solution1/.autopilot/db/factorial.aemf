@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1686206406536">
+  <ports id="1" name="n" type="PortType" originalName="n" coreId="0" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="11" name="ap_return" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <edges id="35" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="36" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="37" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="39" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="40" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="41" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="44" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="48" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="51" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="52" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="53" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="54" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="55" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="56" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="57" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="60" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="61" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="62" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="63" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="64" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="65" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="66" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="111" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="112" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="113" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="114" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="115" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="116" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="117" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="118" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="119" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="120" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="121" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges source_obj="//@blocks.1/@node_objs.1" sink_obj="//@ports.1"/>
+  <blocks id="12" name="entry" type="BlockType">
+    <controlOutputObjs>while.body</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="2" name="result" originalName="result" coreId="1667592275" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="3" name="n_assign" originalName="n" coreId="543252781" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="n_read" lineNumber="3" originalName="n" fileName="factorial.c" fileDirectory=".." coreId="1679850272" contextFuncName="factorial" bitwidth="32" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="factorial.c" linenumber="3" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+      <dataInputObjs>n</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="n_assign_write_ln7" lineNumber="7" fileName="factorial.c" fileDirectory=".." coreId="770229998" contextFuncName="factorial" opcode="store" m_display="0" m_delay="0.46" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="factorial.c" linenumber="7" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="result_write_ln7" lineNumber="7" fileName="factorial.c" fileDirectory=".." coreId="176" contextFuncName="factorial" opcode="store" m_display="0" m_delay="0.46" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="factorial.c" linenumber="7" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="br_ln7" lineNumber="7" fileName="factorial.c" fileDirectory=".." coreId="0" contextFuncName="factorial" opcode="br" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="factorial.c" linenumber="7" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+      <controlInputObjs>while.body</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="factorial.c">
+      <validLinenumbers>3</validLinenumbers>
+      <validLinenumbers>7</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="29" name="while.end.loopexit" type="BlockType">
+    <controlInputObjs>while.body</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="result_load_1" lineNumber="12" fileName="factorial.c" fileDirectory=".." coreId="575620686" contextFuncName="factorial" bitwidth="32" opcode="load" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="factorial.c" linenumber="12" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataOutputObjs>ret</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="_ln12" lineNumber="12" fileName="factorial.c" fileDirectory=".." coreId="3668663488" contextFuncName="factorial" opcode="ret" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="factorial.c" linenumber="12" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>ap_return</dataOutputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="factorial.c">
+      <validLinenumbers>12</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" iiViolation="" id="99" pipe_depth="1" RegionName="VITIS_LOOP_7_1">
+    <basic_blocks id="18" name="while.body" type="BlockType">
+      <controlInputObjs>entry</controlInputObjs>
+      <controlInputObjs>while.body.split</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>while.body.split</controlOutputObjs>
+      <controlOutputObjs>while.end.loopexit</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="n_assign_load" lineNumber="7" originalName="n" fileName="factorial.c" fileDirectory=".." coreId="0" contextFuncName="factorial" bitwidth="32" opcode="load" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="factorial.c" linenumber="7" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="tmp" lineNumber="7" fileName="factorial.c" fileDirectory=".." rtlName="tmp_fu_63_p4" coreId="0" contextFuncName="factorial" bitwidth="31" opcode="partselect" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="factorial.c" linenumber="7" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="icmp_ln7" lineNumber="7" fileName="factorial.c" fileDirectory=".." rtlName="icmp_ln7_fu_73_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="factorial" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.81" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="factorial.c" linenumber="7" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="br_ln7" lineNumber="7" fileName="factorial.c" fileDirectory=".." coreId="1702043697" contextFuncName="factorial" opcode="br" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="factorial.c" linenumber="7" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>while.end.loopexit</controlInputObjs>
+        <controlInputObjs>while.body.split</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="factorial.c">
+        <validLinenumbers>7</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="26" name="while.body.split" type="BlockType">
+      <controlInputObjs>while.body</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>while.body</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="result_load" lineNumber="8" fileName="factorial.c" fileDirectory=".." coreId="3527760480" contextFuncName="factorial" bitwidth="32" opcode="load" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="factorial.c" linenumber="8" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="result_1" lineNumber="8" originalName="result" fileName="factorial.c" fileDirectory=".." rtlName="mul_32s_32s_32_1_1_U1" coreName="Multiplier" implIndex="auto" control="no" opType="mul" coreId="3" contextFuncName="factorial" bitwidth="32" opcode="mul" m_display="0" m_delay="3.9" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="factorial.c" linenumber="8" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="add_ln9" lineNumber="9" originalName="n" fileName="factorial.c" fileDirectory=".." rtlName="add_ln9_fu_88_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="factorial" bitwidth="32" opcode="add" m_display="0" m_delay="1.14" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="factorial.c" linenumber="9" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="n_assign_write_ln7" lineNumber="7" fileName="factorial.c" fileDirectory=".." coreId="1835363429" contextFuncName="factorial" opcode="store" m_display="0" m_delay="0.46" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="factorial.c" linenumber="7" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="result_write_ln7" lineNumber="7" fileName="factorial.c" fileDirectory=".." coreId="1818849280" contextFuncName="factorial" opcode="store" m_display="0" m_delay="0.46" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="factorial.c" linenumber="7" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+        <dataInputObjs>mul</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="br_ln7" lineNumber="7" fileName="factorial.c" fileDirectory=".." coreId="770191905" contextFuncName="factorial" opcode="br" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="factorial.c" linenumber="7" fileDirectory="/home/virubuntu/improve_mistake/factorial_wr" functionName="factorial"/>
+        <controlInputObjs>while.body</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="factorial.c">
+        <validLinenumbers>8</validLinenumbers>
+        <validLinenumbers>9</validLinenumbers>
+        <validLinenumbers>7</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <regnodes realName="result_reg_107">
+    <nodeIds>2</nodeIds>
+  </regnodes>
+  <regnodes realName="n_assign_reg_115">
+    <nodeIds>3</nodeIds>
+  </regnodes>
+  <expressionNodes realName="n_assign_fu_40">
+    <nodeIds>3</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_fu_63">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln7_fu_73">
+    <nodeIds>16</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="result_1_fu_82">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="result_fu_36">
+    <nodeIds>2</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln9_fu_88">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="store_ln7_store_fu_50">
+    <nodeIds>9</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln7_store_fu_94">
+    <nodeIds>23</nodeIds>
+  </ioNodes>
+  <ioNodes realName="n_assign_load_load_fu_60">
+    <nodeIds>13</nodeIds>
+  </ioNodes>
+  <ioNodes realName="result_load_1_load_fu_104">
+    <nodeIds>27</nodeIds>
+  </ioNodes>
+  <ioNodes realName="result_load_load_fu_79">
+    <nodeIds>19</nodeIds>
+  </ioNodes>
+  <ioNodes realName="n_read_read_fu_44">
+    <nodeIds>8</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln7_store_fu_55">
+    <nodeIds>10</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln7_store_fu_99">
+    <nodeIds>24</nodeIds>
+  </ioNodes>
+  <ioPorts name="n">
+    <contents name="read">
+      <nodeIds>8</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return">
+    <contents name="ret">
+      <nodeIds>28</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="2" stage="1" latency="1"/>
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="factorial" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>12</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_7_1" mII="1" mDepth="1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mType="1">
+      <basicBlocks>18</basicBlocks>
+      <basicBlocks>26</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>29</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

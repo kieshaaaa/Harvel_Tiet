@@ -1,0 +1,76 @@
+Sure, I'll create three different versions of the given program to generate Fibonacci series, following your instructions.
+
+### Version 1: Using `for` Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lim_up, A = 0, B = 1, C = 0;
+
+    printf("\nEnter Limit upto which you want: ");
+    scanf("%d", &lim_up);
+
+    printf("\nGenerating Fibonacci Series Below:\n\n");
+    for (int i = 0; A <= lim_up; i++) {
+        printf(" %d ", A);
+        C = A + B;
+        A = B;
+        B = C;
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Incorporating `if` Statement for First Two Numbers
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lim_up, A = 0, B = 1, C, i = 0;
+
+    printf("\nEnter Limit upto which you want: ");
+    scanf("%d", &lim_up);
+
+    printf("\nGenerating Fibonacci Series Below:\n\n");
+    while (B <= lim_up) {
+        if (i <= 1) {
+            C = i;
+        } else {
+            C = A + B;
+            A = B;
+            B = C;
+        }
+        printf(" %d ", A);
+        i++;
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Simplifying the Update of Series
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lim_up, A = 0, B = 1;
+
+    printf("\nEnter Limit upto which you want: ");
+    scanf("%d", &lim_up);
+
+    printf("\nGenerating Fibonacci Series Below:\n\n");
+    while (A <= lim_up) {
+        printf(" %d ", A);
+        B = B + A;
+        A = B - A;
+    }
+
+    return 0;
+}
+```
+
+In these versions, I've used different approaches to achieve the same goal while adhering to your constraints. The first version replaces the `while` loop with a `for` loop, the second introduces an `if` statement to handle the first two numbers of the series, and the third simplifies the update mechanism for the Fibonacci numbers.

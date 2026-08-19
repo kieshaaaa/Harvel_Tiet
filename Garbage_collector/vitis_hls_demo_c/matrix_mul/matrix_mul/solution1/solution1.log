@@ -1,0 +1,205 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 1ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.5ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu5p-flva2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcvu5p-flva2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 1 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 1ns.
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 0.5 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 10.03 seconds; current allocated memory: 302.395 MB.
+INFO: [HLS 200-10] Analyzing design file 'mat_mul.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.33 seconds. CPU system time: 0.24 seconds. Elapsed time: 0.59 seconds; current allocated memory: 302.395 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+WARNING: [HLS 214-368] interface mode 'ap_none' with wrong type '[3 x i32]*' (mat_mul.c:7:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.87 seconds. CPU system time: 0.28 seconds. Elapsed time: 4.22 seconds; current allocated memory: 303.520 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 303.520 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 304.062 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 304.125 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_11_2' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_11_2' (mat_mul.c:8) in function 'multiplyMatrix' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_13_3' (mat_mul.c:8) in function 'multiplyMatrix' completely with a factor of 3.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.04 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.08 seconds; current allocated memory: 325.992 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_10_1' (mat_mul.c:8:9) in function 'multiplyMatrix'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 316.738 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'multiplyMatrix' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-1015] Estimated delay Estimated delay (2.03ns)  of 'mul' operation ('mul_ln14', mat_mul.c:14) exceeds the target cycle time (target cycle time: 1ns, clock uncertainty: 0.5ns, effective cycle time: 0.5ns).
+
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_10_1_VITIS_LOOP_11_2'.
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'VITIS_LOOP_10_1_VITIS_LOOP_11_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation ('add_ln11_1', mat_mul.c:11) and 'icmp' operation ('icmp_ln11', mat_mul.c:11).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'VITIS_LOOP_10_1_VITIS_LOOP_11_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'add' operation ('add_ln11_1', mat_mul.c:11) and 'icmp' operation ('icmp_ln11', mat_mul.c:11).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'VITIS_LOOP_10_1_VITIS_LOOP_11_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'add' operation ('add_ln11_1', mat_mul.c:11) and 'icmp' operation ('icmp_ln11', mat_mul.c:11).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'VITIS_LOOP_10_1_VITIS_LOOP_11_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'VITIS_LOOP_10_1_VITIS_LOOP_11_2'): Unable to enforce a carried dependence constraint (II = 130, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'VITIS_LOOP_10_1_VITIS_LOOP_11_2'): Unable to enforce a carried dependence constraint (II = 145, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'VITIS_LOOP_10_1_VITIS_LOOP_11_2'): Unable to enforce a carried dependence constraint (II = 149, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'VITIS_LOOP_10_1_VITIS_LOOP_11_2'): Unable to enforce a carried dependence constraint (II = 151, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 152, Depth = 160, loop 'VITIS_LOOP_10_1_VITIS_LOOP_11_2'
+WARNING: [HLS 200-871] Estimated clock period (2.028ns) exceeds the target (target clock period: 1ns, clock uncertainty: 0.5ns, effective delay budget: 0.5ns).
+WARNING: [HLS 200-1016] The critical path in module 'multiplyMatrix' consists of the following:	'mul' operation ('mul_ln14', mat_mul.c:14) [90]  (2.03 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.76 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.79 seconds; current allocated memory: 318.559 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.86 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.87 seconds; current allocated memory: 319.012 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500]==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu5p-flva2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcvu5p-flva2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: source ./matrix_mul/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 10.02 seconds; current allocated memory: 302.465 MB.
+INFO: [HLS 200-10] Analyzing design file 'mat_mul.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.32 seconds. CPU system time: 0.23 seconds. Elapsed time: 0.55 seconds; current allocated memory: 302.465 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+WARNING: [HLS 214-368] interface mode 'ap_none' with wrong type '[3 x i32]*' (mat_mul.c:7:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.58 seconds. CPU system time: 0.29 seconds. Elapsed time: 3.87 seconds; current allocated memory: 303.504 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 303.504 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 304.062 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 304.121 MB.
+INFO: [XFORM 203-510] Pipelining loop 'multiplyMatrix_label0' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'multiplyMatrix_label0' (mat_mul.c:8) in function 'multiplyMatrix' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' completely with a factor of 3.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 325.719 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'multiplyMatrix_label1' (mat_mul.c:8:9) in function 'multiplyMatrix'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 316.715 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'multiplyMatrix' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'multiplyMatrix_label1_multiplyMatrix_label0'.
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 130, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 145, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 147, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 148, Depth = 149, loop 'multiplyMatrix_label1_multiplyMatrix_label0'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.48 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.53 seconds; current allocated memory: 318.785 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.73 seconds. CPU system time: 0 seconds. Elapsed time: 0.73 seconds; current allocated memory: 318.785 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/mat1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/mat2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/result' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'multiplyMatrix' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'mat1', 'mat2', 'result' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_2_1': 3 instance(s).
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 2ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu5p-flva2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcvu5p-flva2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 2 
+INFO: [HLS 200-1510] Running: source ./matrix_mul/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 10.03 seconds; current allocated memory: 302.113 MB.
+INFO: [HLS 200-10] Analyzing design file 'mat_mul.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.34 seconds. CPU system time: 0.2 seconds. Elapsed time: 0.54 seconds; current allocated memory: 302.336 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+WARNING: [HLS 214-368] interface mode 'ap_none' with wrong type '[3 x i32]*' (mat_mul.c:7:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.6 seconds. CPU system time: 0.29 seconds. Elapsed time: 3.89 seconds; current allocated memory: 303.566 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 303.566 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 304.109 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 304.168 MB.
+INFO: [XFORM 203-510] Pipelining loop 'multiplyMatrix_label0' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'multiplyMatrix_label0' (mat_mul.c:8) in function 'multiplyMatrix' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' completely with a factor of 3.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 325.770 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'multiplyMatrix_label1' (mat_mul.c:8:9) in function 'multiplyMatrix'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 316.766 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'multiplyMatrix' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'multiplyMatrix_label1_multiplyMatrix_label0'.
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 130, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 145, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+WARNING: [HLS 200-880] The II Violation in module 'multiplyMatrix' (loop 'multiplyMatrix_label1_multiplyMatrix_label0'): Unable to enforce a carried dependence constraint (II = 147, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) and bus request operation ('gmem_load_req', mat_mul.c:10) on port 'gmem' (mat_mul.c:10).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 148, Depth = 150, loop 'multiplyMatrix_label1_multiplyMatrix_label0'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.51 seconds. CPU system time: 0 seconds. Elapsed time: 0.52 seconds; current allocated memory: 318.887 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.73 seconds. CPU system time: 0 seconds. Elapsed time: 0.74 seconds; current allocated memory: 318.887 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/mat1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/mat2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/result' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'multiplyMatrix' to 's_axilite & ap_ctrl_chain'.
+INFO

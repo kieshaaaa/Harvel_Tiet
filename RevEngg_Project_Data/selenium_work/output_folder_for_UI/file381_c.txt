@@ -1,0 +1,96 @@
+Certainly! Below are three alternative versions of the provided C program, each converting a decimal number to hexadecimal without using the restricted features you mentioned.
+
+### Version 1: Using an Array of Characters for Hexadecimal Conversion
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number, index = 0;
+    char hex[32];
+    char hexDigits[] = "0123456789ABCDEF";
+
+    printf("Enter decimal number: ");
+    scanf("%d", &number);
+
+    while (number > 0) {
+        int remainder = number % 16;
+        hex[index] = hexDigits[remainder];
+        number /= 16;
+        index++;
+    }
+
+    printf("Hexadecimal value is: ");
+    for (int i = index - 1; i >= 0; i--) {
+        printf("%c", hex[i]);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Simplifying the Case Statements
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number, index = 0;
+    char hex[32];
+
+    printf("Enter decimal number: ");
+    scanf("%d", &number);
+
+    while (number != 0) {
+        int temp = 0;
+        temp = number % 16;
+
+        if(temp < 10) {
+            hex[index] = temp + 48;
+        } else {
+            hex[index] = temp + 55;
+        }
+
+        number = number / 16;
+        index++;
+    }
+
+    printf("Hexadecimal value is: ");
+    for(int i = index - 1; i >= 0; i--) {
+        printf("%c", hex[i]);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using a Fixed-size Array for Direct Mapping
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number, index = 0;
+    char hex[32];
+    char digits[] = {'0', '1', '2', '3', '4', '5', '6', '7',
+                     '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+
+    printf("Enter decimal number: ");
+    scanf("%d", &number);
+
+    while (number != 0) {
+        int rem = number % 16;
+        hex[index++] = digits[rem];
+        number /= 16;
+    }
+
+    printf("Hexadecimal value is: ");
+    for (int i = index - 1; i >= 0; --i) {
+        printf("%c", hex[i]);
+    }
+
+    return 0;
+}
+```
+
+Each of these versions adheres to your constraints, providing a different approach to converting a decimal number to its hexadecimal representation.

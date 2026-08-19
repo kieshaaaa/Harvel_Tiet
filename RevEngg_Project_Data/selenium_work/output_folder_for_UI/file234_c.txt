@@ -1,0 +1,104 @@
+### Version 1: Swapping Inside Main
+
+This version performs the swapping operation directly inside the `main` function without calling any other functions.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int array_1[5] = {0, 1, 2, 3, 4};
+    int array_2[5] = {5, 6, 7, 8, 9};
+    int temp, i;
+    
+    for(i = 0; i < 5; i++) {
+        temp = array_1[i];
+        array_1[i] = array_2[i];
+        array_2[i] = temp;
+    }
+    
+    printf("\nThe arrays after swap are..\n");
+    
+    for(i = 0; i < 5; i++) {
+        printf("\narray_1 [%d] : %d", i, array_1[i]);
+    }
+    
+    printf("\n");
+    
+    for(i = 0; i < 5; i++) {
+        printf("\narray_2 [%d] : %d", i, array_2[i]);
+    }
+    
+    return 0;
+}
+```
+
+### Version 2: Using a Separate Swapping Mechanism for Each Element
+
+This version manually swaps each element of the arrays, avoiding any looping constructs.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int array_1[5] = {0, 1, 2, 3, 4};
+    int array_2[5] = {5, 6, 7, 8, 9};
+    int temp;
+    
+    // Manual swapping
+    temp = array_1[0]; array_1[0] = array_2[0]; array_2[0] = temp;
+    temp = array_1[1]; array_1[1] = array_2[1]; array_2[1] = temp;
+    temp = array_1[2]; array_1[2] = array_2[2]; array_2[2] = temp;
+    temp = array_1[3]; array_1[3] = array_2[3]; array_2[3] = temp;
+    temp = array_1[4]; array_1[4] = array_2[4]; array_2[4] = temp;
+    
+    printf("\nThe arrays after swap are..\n");
+    
+    for(int i = 0; i < 5; i++) {
+        printf("\narray_1 [%d] : %d", i, array_1[i]);
+    }
+    
+    printf("\n");
+    
+    for(int i = 0; i < 5; i++) {
+        printf("\narray_2 [%d] : %d", i, array_2[i]);
+    }
+    
+    return 0;
+}
+```
+
+### Version 3: Using XOR for Swapping
+
+This version utilizes the XOR bitwise operation to swap the elements of the arrays without using a temporary variable.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int array_1[5] = {0, 1, 2, 3, 4};
+    int array_2[5] = {5, 6, 7, 8, 9};
+    int i;
+    
+    for(i = 0; i < 5; i++) {
+        array_1[i] = array_1[i] ^ array_2[i];
+        array_2[i] = array_1[i] ^ array_2[i];
+        array_1[i] = array_1[i] ^ array_2[i];
+    }
+    
+    printf("\nThe arrays after swap are..\n");
+    
+    for(i = 0; i < 5; i++) {
+        printf("\narray_1 [%d] : %d", i, array_1[i]);
+    }
+    
+    printf("\n");
+    
+    for(i = 0; i < 5; i++) {
+        printf("\narray_2 [%d] : %d", i, array_2[i]);
+    }
+    
+    return 0;
+}
+```
+
+Each version provides a unique approach to achieving the task of swapping elements between two arrays without using functions, pointers, recursion, dynamic memory allocation, or other restricted features.

@@ -1,0 +1,103 @@
+Certainly! Here are three distinct versions of the Fibonacci sequence calculator you've provided, adhering to your constraints:
+
+### Version 1: Using a while loop instead of a for loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, i = 2, prev = 0, curr = 1, next;
+    printf("Enter the value of n to find the nth Fibonacci number: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Please enter a non-negative integer.\n");
+        return 1;
+    }
+
+    if (n == 0) {
+        printf("The 0th Fibonacci number is: 0\n");
+        return 0;
+    } else if (n == 1) {
+        printf("The 1st Fibonacci number is: 1\n");
+        return 0;
+    }
+
+    while (i <= n) {
+        next = prev + curr;
+        prev = curr;
+        curr = next;
+        i++;
+    }
+
+    printf("Fibonacci number is: %d\n", curr);
+    return 0;
+}
+```
+
+### Version 2: Unrolling the first two conditions into the loop initialization
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, prev = 0, curr = 1, next, i;
+    printf("Enter the value of n to find the nth Fibonacci number: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Please enter a non-negative integer.\n");
+        return 1;
+    }
+
+    for (i = 0; i < n; i++) {
+        if (i == 0) {
+            next = 0;
+        } else if (i == 1) {
+            next = curr;
+        } else {
+            next = prev + curr;
+            prev = curr;
+            curr = next;
+        }
+    }
+
+    printf("Fibonacci number is: %d\n", next);
+    return 0;
+}
+```
+
+### Version 3: Simplifying condition checks by direct computation for first two Fibonacci numbers
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the value of n to find the nth Fibonacci number: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Please enter a non-negative integer.\n");
+        return 1;
+    }
+
+    if (n == 0) {
+        printf("The 0th Fibonacci number is: 0\n");
+        return 0;
+    }
+
+    int fib[n+1]; // Allocate an array of size n+1
+    fib[0] = 0; // F_0
+    fib[1] = 1; // F_1
+
+    for (int i = 2; i <= n; i++) {
+        fib[i] = fib[i-1] + fib[i-2]; // Compute Fibonacci number
+    }
+
+    printf("Fibonacci number is: %d\n", fib[n]);
+    return 0;
+}
+```
+
+Each version maintains the core logic of calculating Fibonacci numbers but utilizes different control structures or initial conditions to provide a unique approach.

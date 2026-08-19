@@ -1,0 +1,70 @@
+Sure, I'll provide three different versions of the program you've shared, following your instructions.
+
+### Version 1 - Iterative Approach
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int limit, count = 0, i = 1;
+    printf("Enter a positive integer: ");
+    scanf("%d", &limit);
+    
+    while (i * i <= limit) {
+        count++;
+        i++;
+    }
+    
+    printf("The number of square (perfect square) numbers up to %d is: ", limit);
+    printf("%d\n", count);
+    return 0;
+}
+```
+
+### Version 2 - Subtracting Consecutive Odd Numbers
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int limit, count = 0, squareSum = 0, odd = 1;
+    printf("Enter a positive integer: ");
+    scanf("%d", &limit);
+
+    while (squareSum + odd <= limit) {
+        squareSum += odd;
+        odd += 2; // The difference between consecutive squares is an odd number
+        count++;
+    }
+    
+    printf("The number of square (perfect square) numbers up to %d is: ", limit);
+    printf("%d\n", count);
+    return 0;
+}
+```
+
+### Version 3 - Using Float and ceil Function
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int limit, count;
+    float limitFloat;
+    printf("Enter a positive integer: ");
+    scanf("%d", &limit);
+    limitFloat = (float)limit;
+
+    // Adjust count to not exceed limit when square root rounds up
+    count = (int)ceil(sqrtf(limitFloat)) - 1;
+
+    printf("The number of square (perfect square) numbers up to %d is: ", limit);
+    printf("%d\n", count);
+    return 0;
+}
+```
+
+Each version approaches the problem from a different angle while adhering to your constraints.

@@ -1,0 +1,66 @@
+Certainly! Here are three different versions of the code based on the criteria you provided. Each version calculates the length of a string input by the user without using the restrictions you mentioned.
+
+### Version 1: Using `scanf` with a `%s` format specifier
+
+```c
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int length = 0;
+    scanf("%s", str);
+    while(str[length] != '\0') {
+        length++;
+    }
+    printf("The length of the string is: ");
+    printf("%d\n", length);
+    return 0;
+}
+```
+
+### Version 2: Using `getchar` in a loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    char ch;
+    int length = 0;
+    int i = 0;
+    while((ch = getchar()) != '\n' && ch != EOF) {
+        str[i++] = ch;
+    }
+    str[i] = '\0'; // Ensure the string is properly terminated
+    while(str[length] != '\0') {
+        length++;
+    }
+    printf("The length of the string is: ");
+    printf("%d\n", length);
+    return 0;
+}
+```
+
+### Version 3: Using `scanf` to read character by character into a loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int length = 0;
+    while(scanf("%c", &str[length]) && str[length] != '\n') {
+        length++;
+    }
+    str[length] = '\0'; // Null-terminate the string
+    length = 0; // Reset length for reuse
+    while(str[length] != '\0') {
+        length++;
+    }
+    printf("The length of the string is: ");
+    printf("%d\n", length);
+    return 0;
+}
+```
+
+Each of these versions respects the constraints you've outlined. They avoid using pointers directly, recursion, dynamic memory allocation, structs, unions, modifying the given data types, or operations within the `printf` function.

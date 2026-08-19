@@ -1,0 +1,13 @@
+---
+MainSourceFile:  /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_13_1:  '
+    FileOffset:      13
+    FilePath:        mat_mul.c
+    Replacements:    
+      - FilePath:        /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c
+        Offset:          7332
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_13_1: '
+...

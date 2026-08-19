@@ -1,0 +1,44 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution2/csynth.tcl:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="multiplyMatrix" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=multiplyMatrix" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution2/directives.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="multiplyMatrix" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=multiplyMatrix" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution2/directives.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="multiplyMatrix" ARG_PragmaIsValid="1" ARG_PragmaOptions="complete dim=1 variable=mat1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution2/directives.tcl:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="multiplyMatrix" ARG_PragmaIsValid="1" ARG_PragmaOptions="complete dim=1 variable=result" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution2/directives.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="multiplyMatrix" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution2/directives.tcl:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="multiplyMatrix" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="mat_mul.c:11:31" msg_body="Loop 'multiplyMatrix_label0' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="multiplyMatrix_label0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="mat_mul.c:13:30" msg_body="Loop 'VITIS_LOOP_13_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_13_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="mat_mul.c:7:0" msg_body="Unrolling loop 'multiplyMatrix_label0' (mat_mul.c:11:31) in function 'multiplyMatrix' completely with a factor of 3">
+        <args Factor="3" LoopLoc="mat_mul.c:11:31" LoopName="multiplyMatrix_label0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="mat_mul.c:7:0" msg_body="Unrolling loop 'VITIS_LOOP_13_1' (mat_mul.c:13:30) in function 'multiplyMatrix' completely with a factor of 3">
+        <args Factor="3" LoopLoc="mat_mul.c:13:30" LoopName="VITIS_LOOP_13_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mat_mul.c:7:0" msg_body="Applying array_partition to 'mat1': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="mat1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mat_mul.c:7:0" msg_body="Applying array_partition to 'result': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="result"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-356" msg_severity="WARNING" msg_loc="mat_mul.c:12:13" msg_body="Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer."/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-356" msg_severity="WARNING" msg_loc="mat_mul.c:14:33" msg_body="Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer."/>
+    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-368" msg_severity="WARNING" msg_loc="mat_mul.c:7:0" msg_body="interface mode 'ap_none' with wrong type '[3 x i32]*'">
+        <args Type="[3 x i32]*"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

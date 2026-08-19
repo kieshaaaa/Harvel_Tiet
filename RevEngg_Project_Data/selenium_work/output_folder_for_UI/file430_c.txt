@@ -1,0 +1,110 @@
+Certainly! Below are three different versions of the C program to validate a date, adhering to the constraints you've mentioned. Each version takes a different approach to structure the condition checking but ultimately achieves the same goal.
+
+### Version 1: Using Nested if-else with Lesser Else Statements
+
+```c
+#include <stdio.h>
+
+int main() {
+    int dd, mm, yy;
+    int isLeapYear = 0;
+    int isValidDate = 0;
+
+    printf("Enter date (DD/MM/YYYY format): ");
+    scanf("%d/%d/%d", &dd, &mm, &yy);
+
+    if (yy >= 1900 && yy <= 9999) {
+        if (mm >= 1 && mm <= 12) {
+            if (mm == 2) {
+                isLeapYear = yy % 400 == 0 || (yy % 4 == 0 && yy % 100 != 0);
+                if (dd >= 1 && ((dd <= 28) || (dd == 29 && isLeapYear))) {
+                    isValidDate = 1;
+                }
+            } else if (mm == 4 || mm == 6 || mm == 9 || mm == 11) {
+                if (dd >= 1 && dd <= 30) {
+                    isValidDate = 1;
+                }
+            } else if (dd >= 1 && dd <= 31) {
+                isValidDate = 1;
+            }
+        }
+    }
+
+    if (isValidDate) {
+        printf("Date is valid.\n");
+    } else {
+        printf("Date is not valid.\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using Switch Case for Month Validation
+
+```c
+#include <stdio.h>
+
+int main() {
+    int dd, mm, yy;
+    int isValidDate = 0;
+
+    printf("Enter date (DD/MM/YYYY format): ");
+    scanf("%d/%d/%d", &dd, &mm, &yy);
+
+    if (yy >= 1900 && yy <= 9999) {
+        switch (mm) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                isValidDate = dd >= 1 && dd <= 31;
+                break;
+            case 4: case 6: case 9: case 11:
+                isValidDate = dd >= 1 && dd <= 30;
+                break;
+            case 2:
+                isValidDate = (dd >= 1 && dd <= 28) || (dd == 29 && (yy % 400 == 0 || (yy % 4 == 0 && yy % 100 != 0)));
+                break;
+            default:
+                isValidDate = 0;
+        }
+    }
+
+    if (isValidDate) {
+        printf("Date is valid.\n");
+    } else {
+        printf("Date is not valid.\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Flattening the if-else Structure
+
+```c
+#include <stdio.h>
+
+int main() {
+    int dd, mm, yy;
+    int isValid = 0;
+
+    printf("Enter date (DD/MM/YYYY format): ");
+    scanf("%d/%d/%d", &dd, &mm, &yy);
+
+    if ((yy >= 1900 && yy <= 9999) &&
+        ((mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12) && (dd >= 1 && dd <= 31)) ||
+        ((mm == 4 || mm == 6 || mm == 9 || mm == 11) && (dd >= 1 && dd <= 30)) ||
+        ((mm == 2) && ((dd >= 1 && dd <= 28) || (dd == 29 && (yy % 400 == 0 || (yy % 4 == 0 && yy % 100 != 0)))))) {
+        isValid = 1;
+    }
+
+    if (isValid) {
+        printf("Date is valid.\n");
+    } else {
+        printf("Date is not valid.\n");
+    }
+
+    return 0;
+}
+```
+
+Each of these versions respects your constraints and offers a unique way of implementing the date validation logic in C, without the use of advanced programming constructs.

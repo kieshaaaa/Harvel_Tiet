@@ -1,0 +1,51 @@
+Certainly! Below are three different versions of the program that follow your guidelines, each performing a different bitwise operation (AND, OR, and left shift) instead of XOR, using `int` and `float` where applicable.
+
+### Version 1: Bitwise AND
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, result;
+    printf("Enter the first integer (a): ");
+    scanf("%d", &a);
+    printf("Enter the second integer (b): ");
+    scanf("%d", &b);
+    result = a & b;
+    printf("The result is %d\n", result);
+    return 0;
+}
+```
+
+### Version 2: Bitwise OR
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, result;
+    printf("Enter the first integer (a): ");
+    scanf("%d", &a);
+    printf("Enter the second integer (b): ");
+    scanf("%d", &b);
+    result = a | b;
+    printf("The result is %d\n", result);
+    return 0;
+}
+```
+
+### Version 3: Left Shift Operation
+```c
+#include <stdio.h>
+
+int main() {
+    int a, shift;
+    printf("Enter an integer (a): ");
+    scanf("%d", &a);
+    printf("Enter the number of positions to left shift (shift): ");
+    scanf("%d", &shift);
+    int result = a << shift;
+    printf("The result is %d\n", result);
+    return 0;
+}
+```
+
+Each version adheres to your constraints: no use of pointers, dynamic memory allocation, structs, unions, recursion, file handling, modifying data types, or replacing `int` with any other numeric type except for `float` when required. Additionally, operations are not performed inside `printf` statements.

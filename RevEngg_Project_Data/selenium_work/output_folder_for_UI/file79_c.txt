@@ -1,0 +1,70 @@
+Given your constraints, let's create three different versions of the program that demonstrate the size of various data types without using pointers, dynamic memory allocation, structs, unions, recursion, file handling, modifying data types, or including the double data type.
+
+### Version 1: Basic Types
+
+This version focuses on the sizes of basic data types.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int size_char = sizeof(char);
+    int size_int = sizeof(int);
+    int size_float = sizeof(float);
+    int size_long_int = sizeof(long int);
+
+    printf("Size of char: %d\n", size_char);
+    printf("Size of int: %d\n", size_int);
+    printf("Size of float: %d\n", size_float);
+    printf("Size of long int: %d\n", size_long_int);
+
+    return 0;
+}
+```
+
+### Version 2: Array Types
+
+This version demonstrates the size of array types of different data types.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int size_char_array = sizeof(char[10]);
+    int size_int_array = sizeof(int[10]);
+    int size_float_array = sizeof(float[10]);
+    int size_long_int_array = sizeof(long int[10]);
+
+    printf("Size of 10 char array: %d\n", size_char_array);
+    printf("Size of 10 int array: %d\n", size_int_array);
+    printf("Size of 10 float array: %d\n", size_float_array);
+    printf("Size of 10 long int array: %d\n", size_long_int_array);
+
+    return 0;
+}
+```
+
+### Version 3: Using Arithmetic to Show Size
+
+This version creatively uses arithmetic operations to show the size of different data types, assuming the size of `char` is 1 byte for arithmetic purposes.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int base_size = 1; // Assuming size of char is 1 byte
+    int size_char = base_size;
+    int size_int = sizeof(int) / size_char;
+    int size_float = sizeof(float) / size_char;
+    int size_long_int = sizeof(long int) / size_char;
+
+    printf("Size of char in char: %d\n", size_char);
+    printf("Size of int in char: %d\n", size_int);
+    printf("Size of float in char: %d\n", size_float);
+    printf("Size of long int in char: %d\n", size_long_int);
+
+    return 0;
+}
+```
+
+Each version adheres to the constraints you've provided, showcasing the sizes of various data types without the use of pointers or other excluded features.

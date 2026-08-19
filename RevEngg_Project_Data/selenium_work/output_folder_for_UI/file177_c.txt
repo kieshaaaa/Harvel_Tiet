@@ -1,0 +1,72 @@
+Certainly! Below are three alternative versions of the code you provided. Each version generates a pattern based on the number of rows specified by the user but varies in its approach to creating the pattern. They follow the constraints you've set, such as not using functions, dynamic memory allocation, pointers, etc.
+
+### Version 1 - Reversed Pattern
+
+```c
+#include <stdio.h>
+
+int main() {
+    int maxRows;
+    printf("\nHow Many Rows => ");
+    scanf("%d", &maxRows);
+
+    for (int row = maxRows; row >= 1; row--) {
+        int numAtCol = row;
+        for (int col = 1; col <= row; col++) {
+            printf("%d", numAtCol);
+            numAtCol++;
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 2 - Square Pattern with Incremental Numbers
+
+```c
+#include <stdio.h>
+
+int main() {
+    int maxRows;
+    printf("\nHow Many Rows => ");
+    scanf("%d", &maxRows);
+
+    int num = 1;
+    for (int row = 1; row <= maxRows; row++) {
+        for (int col = 1; col <= maxRows; col++) {
+            printf("%d", num);
+            num++;  // Increment num for each column in the row
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 3 - Pyramid Pattern
+
+```c
+#include <stdio.h>
+
+int main() {
+    int maxRows;
+    printf("\nHow Many Rows => ");
+    scanf("%d", &maxRows);
+
+    for (int row = 1; row <= maxRows; row++) {
+        // Print leading spaces
+        for (int space = maxRows - row; space > 0; space--) {
+            printf(" ");
+        }
+        // Increment pattern
+        for (int col = 1; col <= row; col++) {
+            printf("%d ", row + col);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+Each of these versions creates a distinct pattern based on the input number of rows, differing from the initial approach you've shown while adhering to your constraints regarding language features and practices.

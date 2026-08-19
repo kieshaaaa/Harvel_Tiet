@@ -1,0 +1,63 @@
+Certainly! Here are three variations of the given program that calculate the perimeter of an octagon, following your constraints:
+
+### Version 1
+```c
+#include <stdio.h>
+
+int main() {
+    float side;
+    float perimeter;
+
+    printf("Enter side length: ");
+    scanf("%f", &side);
+
+    perimeter = side * 8;
+
+    printf("Octagon perimeter: ");
+    printf("%.2f\n", perimeter);
+
+    return 0;
+}
+```
+
+### Version 2
+```c
+#include <stdio.h>
+
+int main() {
+    float side_length;
+    float octagon_perimeter;
+
+    printf("Input the length of a side: ");
+    scanf("%f", &side_length);
+
+    octagon_perimeter = side_length * 8.0f;
+
+    printf("The perimeter is: ");
+    printf("%.2f\n", octagon_perimeter);
+
+    return 0;
+}
+```
+
+### Version 3
+```c
+#include <stdio.h>
+
+int main() {
+    float length;
+    float total_perimeter;
+
+    printf("Length of the octagon's side: ");
+    scanf("%f", &length);
+
+    total_perimeter = 8.0f * length;
+
+    printf("Total perimeter: ");
+    printf("%.2f\n", total_perimeter);
+
+    return 0;
+}
+```
+
+Each version slightly varies in the naming conventions and the structure but adheres to your guidelines, focusing on calculating the perimeter of an octagon with user input for the side length, using `float` for numerical values, and ensuring operations are not performed directly within the `printf` statements.

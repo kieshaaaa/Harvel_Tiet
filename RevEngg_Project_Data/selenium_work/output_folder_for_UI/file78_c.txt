@@ -1,0 +1,112 @@
+### Version 1: Basic Iteration with Odd Number Optimization
+
+```c
+#include <stdio.h>
+
+int main() {
+    int start, end, i, j, isPrime;
+
+    printf("Enter two numbers(intervals): ");
+    scanf("%d %d", &start, &end);
+
+    printf("Prime numbers between %d and %d are: ", start, end);
+
+    for(i = start; i <= end; i++) {
+        if (i == 1 || i == 0) continue; // Skip 0 and 1 as they are not prime
+        isPrime = 1; // Assume current number is prime
+
+        // Only check for divisors up to sqrt(i) for efficiency
+        for(j = 2; j*j <= i; j++) {
+            if(i % j == 0) {
+                isPrime = 0; // i is not prime
+                break;
+            }
+        }
+
+        if(isPrime == 1) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 2: Skipping Even Numbers After 2
+
+```c
+#include <stdio.h>
+
+int main() {
+    int start, end, i, j, isPrime, count = 0;
+
+    printf("Enter two numbers(intervals): ");
+    scanf("%d %d", &start, &end);
+
+    printf("Prime numbers between %d and %d are: ", start, end);
+
+    if (start <= 2) {
+        printf("2 ");
+        start = 3;
+        count++;
+    }
+    if (start % 2 == 0) start++;
+
+    for(i = start; i <= end; i += 2) {
+        isPrime = 1; // Assume i is prime
+
+        for(j = 3; j*j <= i; j += 2) {
+            if(i % j == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+
+        if(isPrime == 1) {
+            printf("%d ", i);
+            count++;
+        }
+    }
+
+    printf("\nTotal: %d primes found.\n", count);
+    return 0;
+}
+```
+
+### Version 3: Counting Prime Numbers without Explicit Skip for Even
+
+```c
+#include <stdio.h>
+
+int main() {
+    int start, end, i, j, primeFlag, primeCount = 0;
+
+    printf("Enter two numbers (intervals): ");
+    scanf("%d %d", &start, &end);
+
+    printf("Prime numbers between %d and %d are: ", start, end);
+
+    for(i = start; i <= end; i++) {
+        if (i <= 1) continue; // 0 and 1 are not prime numbers
+
+        primeFlag = 1; // Assuming i is prime
+        for(j = 2; j*j <= i; j++) {
+            if(i % j == 0) {
+                primeFlag = 0; // i is not prime
+                break;
+            }
+        }
+
+        if(primeFlag == 1) {
+            printf("%d ", i);
+            primeCount++;
+        }
+    }
+
+    printf("\nTotal: %d prime numbers found.\n", primeCount);
+    return 0;
+}
+```
+
+Each of these versions approaches the problem with a slightly different technique or optimization but adheres to the constraints given.

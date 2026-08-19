@@ -1,0 +1,7 @@
+sv work "glbl.v"
+sv xil_defaultlib "processArray.autotb.v"
+sv xil_defaultlib "processArray_sdiv_32ns_32ns_32_36_seq_1.v"
+sv xil_defaultlib "processArray.v"
+sv xil_defaultlib "processArray_mul_32s_32s_32_1_1.v"
+sv xil_defaultlib "dataflow_monitor.sv"
+

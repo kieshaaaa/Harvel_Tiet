@@ -1,0 +1,107 @@
+Certainly! Below are three variations of the provided code. Each version will follow your requirements, focusing on different stylistic or structural changes without using the restricted programming constructs.
+
+### Version 1: Using `while` Loops Instead of `for` Loops
+
+```c
+#include <stdio.h>
+
+int main() {
+    int start, end;
+    int i, j, sum;
+    int count = 0;
+
+    printf("Enter the starting number: ");
+    scanf("%d", &start);
+    printf("Enter the ending number: ");
+    scanf("%d", &end);
+
+    i = start;
+    while (i <= end) {
+        sum = 0;
+        j = 1;
+        while (j <= i / 2) {
+            if (i % j == 0) {
+                sum += j;
+            }
+            j++;
+        }
+        if (sum == i && i != 0) {
+            count++;
+        }
+        i++;
+    }
+
+    printf("Count of perfect numbers between is : %d \n", count);
+
+    return 0;
+}
+```
+
+### Version 2: Incorporating `do-while` Loop for Divisor Calculation
+
+```c
+#include <stdio.h>
+
+int main() {
+    int start, end;
+    int i, j, sum;
+    int count = 0;
+
+    printf("Enter the starting number: ");
+    scanf("%d", &start);
+    printf("Enter the ending number: ");
+    scanf("%d", &end);
+
+    for (i = start; i <= end; i++) {
+        sum = 0;
+        j = 1;
+        do {
+            if (i % j == 0) {
+                sum += j;
+            }
+            j++;
+        } while (j <= i / 2);
+
+        if (sum == i && i != 0) {
+            count++;
+        }
+    }
+
+    printf("Count of perfect numbers between is : %d \n", count);
+
+    return 0;
+}
+```
+
+### Version 3: Simplifying the Increment Operations
+
+```c
+#include <stdio.h>
+
+int main() {
+    int start, end;
+    int i, j, sum;
+    int count = 0;
+
+    printf("Enter the starting number: ");
+    scanf("%d", &start);
+    printf("Enter the ending number: ");
+    scanf("%d", &end);
+
+    i = start;
+    while (i <= end) {
+        sum = 0;
+        for (j = 1; j <= i / 2; j++) {
+            if (i % j == 0) sum += j; // More concise addition operation
+        }
+        if (sum == i && i != 0) count++; // Simplified increment for count
+        i++; // Increment i for the next iteration
+    }
+
+    printf("Count of perfect numbers between is : %d \n", count);
+
+    return 0;
+}
+```
+
+Each version of the code introduces minor changes in structure or syntax while maintaining the overall functionality and adhering to your restrictions.

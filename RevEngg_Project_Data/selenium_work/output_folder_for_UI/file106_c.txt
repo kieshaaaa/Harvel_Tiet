@@ -1,0 +1,54 @@
+Sure, based on your requirements, here are three different versions of the given C program for converting millimeters to inches, adhering to the specified constraints:
+
+### Version 1: Simplifying Constants
+
+```c
+#include <stdio.h>
+
+#define MM_IN_1_INCH 25.4
+
+int main() {
+    float mm, inches;
+    printf("\nEnter value in Millimeters to convert to Inches: ");
+    scanf("%f", &mm);
+    inches = mm / MM_IN_1_INCH;
+    printf("\n%f Millimeter = %f Inches\n", mm, inches);
+
+    return 0;
+}
+```
+
+### Version 2: Inline Calculation
+
+```c
+#include <stdio.h>
+
+int main() {
+    float mm, inches;
+    printf("\nEnter value in Millimeters to convert to Inches: ");
+    scanf("%f", &mm);
+    inches = mm / 25.4; // Direct conversion factor without macros
+    printf("\n%f Millimeter = %f Inches\n", mm, inches);
+
+    return 0;
+}
+```
+
+### Version 3: Using Division Assignment
+
+```c
+#include <stdio.h>
+
+int main() {
+    float mm, inches;
+    printf("\nEnter value in Millimeters to convert to Inches: ");
+    scanf("%f", &mm);
+    inches = mm;
+    inches /= 25.4; // Using division assignment for conversion
+    printf("\n%f Millimeter = %f Inches\n", mm, inches);
+
+    return 0;
+}
+```
+
+Each version adheres to your constraints and provides an alternative approach to achieving the same result: converting millimeters to inches.

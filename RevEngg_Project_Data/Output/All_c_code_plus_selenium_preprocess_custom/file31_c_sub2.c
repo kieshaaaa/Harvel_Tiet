@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int entry_point(int (*number), int (*temptemp1), int (*temptemp2)) {
+int result;
+;
+ if ((*number) % 7 == 0) {
+ result = (*number) + 1;
+ } else if ((*number) % 5 == 0) {
+ result = (*number) + 3;
+{
+(*temptemp1) = result ;
+;
+}
+ return 0;
+ } else {
+ result = (*number) + 2;
+ }
+{
+(*temptemp2) = result ;
+;
+}
+ return 0;
+}

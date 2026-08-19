@@ -1,0 +1,47 @@
+### Version 1: Using Addition Operation
+```c
+#include <stdio.h>
+
+int main() {
+    int x, sum;
+    printf("Enter an integer (x): ");
+    scanf("%d", &x);
+    sum = x + 5;
+    printf("The sum is ");
+    printf("%d", sum);
+    printf(" \n");
+    return 0;
+}
+```
+
+### Version 2: Using Subtraction Operation
+```c
+#include <stdio.h>
+
+int main() {
+    int y, difference;
+    printf("Enter an integer (y): ");
+    scanf("%d", &y);
+    difference = y - 3;
+    printf("The difference is ");
+    printf("%d", difference);
+    printf(" \n");
+    return 0;
+}
+```
+
+### Version 3: Using Multiplication Operation
+```c
+#include <stdio.h>
+
+int main() {
+    int z, product;
+    printf("Enter an integer (z): ");
+    scanf("%d", &z);
+    product = z * 2;
+    printf("The product is ");
+    printf("%d", product);
+    printf(" \n");
+    return 0;
+}
+```

@@ -1,0 +1,88 @@
+Certainly! Following your guidelines, here are three variations of the given program to print all negative elements in an array, with each iteration adding a slight modification or change in the approach within the specified constraints:
+
+### Version 1: Simplified Input and Output
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i;
+
+    printf("Size of the array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", arr + i);
+    }
+
+    printf("Negative elements:");
+    for(i = 0; i < n; i++) {
+        if(arr[i] < 0) {
+            printf(" %d", arr[i]);
+        }
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Including Zero as Non-Positive
+
+In this version, zero is considered non-positive, thus, it broadens the range of numbers printed, although it does not change the condition for negative numbers explicitly.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i;
+
+    printf("Size of the array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Negative and zero elements:");
+    for(i = 0; i < n; i++) {
+        if(arr[i] <= 0) {
+            printf(" %d", arr[i]);
+        }
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Inverted Loop for Element Entry
+
+This version changes the direction in which elements are entered into the array and subsequently checks them for negativity. This doesn't change the logic but offers a different perspective on iterating through arrays.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i;
+
+    printf("Size of the array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements in reverse order:\n");
+    for(i = n - 1; i >= 0; i--) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Negative elements, listed in the order of input:");
+    for(i = n - 1; i >= 0; i--) {
+        if(arr[i] < 0) {
+            printf(" %d", arr[i]);
+        }
+    }
+
+    return 0;
+}
+```
+
+Each version respects the constraints you've provided, offering a slightly different approach or perspective within those limitations.

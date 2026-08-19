@@ -1,0 +1,63 @@
+Certainly! Below are three variations of the original code you provided, each illustrating a different approach while adhering to your constraints:
+
+### Version 1: Call by Value with Addition
+
+```c
+#include<stdio.h>
+
+void add(int x, int y) {
+    x += 5;
+    y += 10;
+    printf("Inside function x = %d , y = %d\n", x, y);
+}
+
+int main() {
+    int a = 3, b = 2;
+    printf("Before calling the function, a = %d and b = %d\n", a, b);
+    add(a, b);
+    printf("After calling the function, a = %d and b = %d\n", a, b);
+    return 0;
+}
+```
+
+### Version 2: Call by Value with Multiplication
+
+```c
+#include<stdio.h>
+
+void multiply(int x, int y) {
+    x *= 2;
+    y *= 3;
+    printf("Inside function x = %d , y = %d\n", x, y);
+}
+
+int main() {
+    int a = 4, b = 5;
+    printf("Before calling the function, a = %d and b = %d\n", a, b);
+    multiply(a, b);
+    printf("After calling the function, a = %d and b = %d\n", a, b);
+    return 0;
+}
+```
+
+### Version 3: Call by Value with Subtraction
+
+```c
+#include<stdio.h>
+
+void subtract(int x, int y) {
+    x -= 1;
+    y -= 1;
+    printf("Inside function x = %d , y = %d\n", x, y);
+}
+
+int main() {
+    int a = 10, b = 20;
+    printf("Before calling the function, a = %d and b = %d\n", a, b);
+    subtract(a, b);
+    printf("After calling the function, a = %d and b = %d\n", a, b);
+    return 0;
+}
+```
+
+In each of these versions, the function modifies the variables in a unique way (addition, multiplication, subtraction) but does not alter the original values of `a` and `b` in the `main` function due to the nature of call by value, where a copy of the variable is passed to the function.

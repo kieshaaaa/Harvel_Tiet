@@ -1,0 +1,87 @@
+Here are three different versions of the program to print Fibonacci numbers within a given range, adhering to your constraints:
+
+### Version 1: Using `for` loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lower, upper, fib1 = 0, fib2 = 1, fibNext;
+
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    for (fibNext = fib1 + fib2; fibNext <= upper; fibNext = fib1 + fib2) {
+        if (fibNext >= lower) {
+            printf("%d\n", fibNext);
+        }
+        fib1 = fib2;
+        fib2 = fibNext;
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Compact Initialization
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lower, upper, fib1 = 0, fib2 = 1;
+
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    if (lower <= 0) printf("%d\n", fib1);
+    if (lower <= 1 && upper >= 1) printf("%d\n", fib2);
+
+    for (int fibNext = fib1 + fib2; fibNext <= upper; fib1 = fib2, fib2 = fibNext, fibNext = fib1 + fib2) {
+        if (fibNext >= lower) {
+            printf("%d\n", fibNext);
+        }
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using `do-while` Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lower, upper;
+    int fib1 = 0, fib2 = 1, fibNext = fib1 + fib2;
+
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    if (lower <= 0) {
+        printf("%d\n", fib1);
+        if (upper == 0) return 0;
+    }
+    if (lower <= 1 && upper != 0) printf("%d\n", fib2);
+
+    do {
+        if (fibNext >= lower) {
+            printf("%d\n", fibNext);
+        }
+        fib1 = fib2;
+        fib2 = fibNext;
+        fibNext = fib1 + fib2;
+    } while (fibNext <= upper);
+
+    return 0;
+}
+```
+
+Each version adheres to your constraints, avoiding the usage of extra functions, dynamic memory allocation, structures, unions, pointers, recursion, and file handling, while also ensuring no operations or function calls are made inside `printf` statements.

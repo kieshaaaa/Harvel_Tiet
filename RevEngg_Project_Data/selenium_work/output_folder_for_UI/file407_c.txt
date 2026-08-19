@@ -1,0 +1,47 @@
+Certainly! Below are three alternative versions of the provided C program that calculate the perimeter of a rhombus, adhering to your constraints:
+
+### Version 1: Using `scanf` Without Variable for `perimeter`
+```c
+#include <stdio.h>
+
+int main() {
+    float side;
+    printf("Enter the length of the side: ");
+    scanf("%f", &side);
+    float perimeter = 4 * side;
+    printf("Perimeter of the rhombus: ");
+    printf("%.2f\n", perimeter);
+    return 0;
+}
+```
+
+### Version 2: Reading Input Without Prompt in Code
+```c
+#include <stdio.h>
+
+int main() {
+    float side;
+    scanf("%f", &side);
+    float perimeter = 4 * side;
+    printf("Perimeter of the rhombus: ");
+    printf("%.2f\n", perimeter);
+    return 0;
+}
+```
+
+### Version 3: Declaring Variables at the Start
+```c
+#include <stdio.h>
+
+int main() {
+    float side, perimeter;
+    printf("Enter the length of the side: ");
+    scanf("%f", &side);
+    perimeter = 4 * side;
+    printf("Perimeter of the rhombus: ");
+    printf("%.2f\n", perimeter);
+    return 0;
+}
+```
+
+Each version makes slight adjustments to how input is handled or how variables are declared, but all adhere to the constraints provided, such as not using pointers, dynamic memory allocation, file handling, recursion, or altering the provided data types.

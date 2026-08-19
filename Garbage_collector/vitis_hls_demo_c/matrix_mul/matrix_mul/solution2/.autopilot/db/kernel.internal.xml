@@ -1,0 +1,59 @@
+<root versionMajor = "1" versionMinor = "5">
+  <kernel name="multiplyMatrix" language="c" vlnv="xilinx.com:hls:multiplyMatrix:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" compileOptions="" profileType="none" hwControlProtocol="ap_ctrl_chain">
+    <ports>
+      <port name="M_AXI_GMEM_0" portType="addressable" mode="master" base="0x0" range="0xFFFFFFFF" dataWidth="32"/>
+      <port name="M_AXI_GMEM_1" portType="addressable" mode="master" base="0x0" range="0xFFFFFFFF" dataWidth="32"/>
+      <port name="M_AXI_GMEM_2" portType="addressable" mode="master" base="0x0" range="0xFFFFFFFF" dataWidth="32"/>
+      <port name="M_AXI_GMEM" portType="addressable" mode="master" base="0x0" range="0xFFFFFFFF" dataWidth="512"/>
+      <port name="S_AXI_CONTROL" portType="addressable" mode="slave" base="0x0" range="0x64" dataWidth="32"/>
+    </ports>
+    <args>
+      <arg id="0" name="mat1_0" addressQualifier="1" port="M_AXI_GMEM_0" hostOffset="0x0" hostSize="0x8" offset="0x10" size="0x8" type="void*"/>
+      <arg id="1" name="mat1_1" addressQualifier="1" port="M_AXI_GMEM_1" hostOffset="0x0" hostSize="0x8" offset="0x1C" size="0x8" type="void*"/>
+      <arg id="2" name="mat1_2" addressQualifier="1" port="M_AXI_GMEM_2" hostOffset="0x0" hostSize="0x8" offset="0x28" size="0x8" type="void*"/>
+      <arg id="3" name="mat2" addressQualifier="1" port="M_AXI_GMEM" hostOffset="0x0" hostSize="0x8" offset="0x34" size="0x8" type="void*"/>
+      <arg id="4" name="result_0" addressQualifier="1" port="M_AXI_GMEM_0" hostOffset="0x0" hostSize="0x8" offset="0x40" size="0x8" type="void*"/>
+      <arg id="5" name="result_1" addressQualifier="1" port="M_AXI_GMEM_1" hostOffset="0x0" hostSize="0x8" offset="0x4C" size="0x8" type="void*"/>
+      <arg id="6" name="result_2" addressQualifier="1" port="M_AXI_GMEM_2" hostOffset="0x0" hostSize="0x8" offset="0x58" size="0x8" type="void*"/>
+    </args>
+    <arg-map>
+      <arg id="0" orig_id="0"/>
+      <arg id="1" orig_id="0"/>
+      <arg id="2" orig_id="0"/>
+      <arg id="3" orig_id="1"/>
+      <arg id="4" orig_id="2"/>
+      <arg id="5" orig_id="2"/>
+      <arg id="6" orig_id="2"/>
+    </arg-map>
+    <transforms>
+      <transform0>
+        <inputs>
+          <input id="0" variable-type="[3 x i32]*"/>
+        </inputs>
+        <layout-changes>
+          <array_partition type="Complete" dim="1"/>
+        </layout-changes>
+        <outputs>
+          <input id="0.0" variable-type="i32*"/>
+          <input id="0.1" variable-type="i32*"/>
+          <input id="0.2" variable-type="i32*"/>
+        </outputs>
+      </transform0>
+      <transform1>
+        <inputs>
+          <input id="2" variable-type="[3 x i32]*"/>
+        </inputs>
+        <layout-changes>
+          <array_partition type="Complete" dim="1"/>
+        </layout-changes>
+        <outputs>
+          <input id="2.0" variable-type="i32*"/>
+          <input id="2.1" variable-type="i32*"/>
+          <input id="2.2" variable-type="i32*"/>
+        </outputs>
+      </transform1>
+    </transforms>
+    <compileWorkGroupSize x="1" y="1" z="1"/>
+    <maxWorkGroupSize x="1" y="1" z="1"/>
+  </kernel>
+</root>

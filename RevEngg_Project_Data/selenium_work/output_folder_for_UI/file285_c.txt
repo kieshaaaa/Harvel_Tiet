@@ -1,0 +1,101 @@
+Certainly! Here are three different versions of your program, following your instructions. Each version will still accomplish the same task of finding the greatest of the three numbers.
+
+### Version 1: Using Nested if-else
+
+```c
+#include<stdio.h> 
+
+int main() {
+    int a, b, c;
+    
+    printf("Enter the First Number: ");
+    scanf("%d", &a);
+           
+    printf("Enter the second number: ");
+    scanf("%d", &b);
+    
+    printf("Enter the third number: ");
+    scanf("%d", &c);
+    
+    if(a >= b) {
+        if(a >= c) {
+            printf("a is the greatest.\n");
+        } else {
+            printf("c is the greatest.\n");
+        }
+    } else {
+        if(b >= c) {
+            printf("b is the greatest.\n");
+        } else {
+            printf("c is the greatest.\n");
+        }
+    }
+    return 0;
+}
+```
+
+### Version 2: Using Logical OR in Conditions
+
+```c
+#include<stdio.h> 
+
+int main() {
+    int a, b, c, largest;
+    
+    printf("Enter the First Number: ");
+    scanf("%d", &a);
+           
+    printf("Enter the second number: ");
+    scanf("%d", &b);
+    
+    printf("Enter the third number: ");
+    scanf("%d", &c);
+    
+    if((a >= b && a >= c) || (a == b && a == c)) {
+        largest = a;
+    } else if(b >= a && b >= c) {
+        largest = b;
+    } else {
+        largest = c;
+    }
+    
+    printf("%d is the greatest.\n", largest);
+    
+    return 0;
+}
+```
+
+### Version 3: Sequential Checks
+
+```c
+#include<stdio.h> 
+
+int main() {
+    int a, b, c, greatest;
+    
+    printf("Enter the First Number: ");
+    scanf("%d", &a);
+           
+    printf("Enter the second number: ");
+    scanf("%d", &b);
+    
+    printf("Enter the third number: ");
+    scanf("%d", &c);
+    
+    greatest = a; // Assume 'a' is the greatest initially
+    
+    if(b > greatest) {
+        greatest = b; // Update if 'b' is greater
+    }
+    
+    if(c > greatest) {
+        greatest = c; // Update if 'c' is greater
+    }
+    
+    printf("%d is the greatest.\n", greatest);
+    
+    return 0;
+}
+```
+
+Each version approaches the problem slightly differently but avoids the constraints you've specified.

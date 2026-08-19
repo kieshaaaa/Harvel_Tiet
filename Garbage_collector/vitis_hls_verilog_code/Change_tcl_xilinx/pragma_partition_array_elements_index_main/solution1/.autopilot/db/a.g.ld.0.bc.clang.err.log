@@ -1,0 +1,1 @@
+remark: ../Array_with_pragma/Array/array_elements_index_main_1/array.c:6:0: Applying array_partition to 'arr': Cyclic partitioning with factor 2 on dimension 1.

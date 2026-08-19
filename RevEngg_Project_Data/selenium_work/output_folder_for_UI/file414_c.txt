@@ -1,0 +1,85 @@
+Certainly! Below are three different versions of the program to calculate the sum and product of all digits in a given number, adhering to your specifications:
+
+### Version 1
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    int digit;
+    int sum = 0;
+    int product = 1;
+    
+    printf("Enter an integer number: ");
+    scanf("%d", &num);
+    
+    while (num > 0) {
+        digit = num % 10;
+        sum = sum + digit;
+        product = product * digit;
+        num = num / 10;
+    }
+    
+    printf("SUM of all digits is: %d\n", sum);
+    printf("PRODUCT of all digits: %d\n", product);
+    
+    return 0;
+}
+```
+
+### Version 2
+
+```c
+#include <stdio.h>
+
+int main() {
+    int inputNumber;
+    int currentDigit;
+    int totalSum = 0;
+    int totalProduct = 1;
+    
+    printf("Input an integer: ");
+    scanf("%d", &inputNumber);
+    
+    for (; inputNumber > 0; inputNumber /= 10) {
+        currentDigit = inputNumber % 10;
+        totalSum += currentDigit;
+        totalProduct *= currentDigit;
+    }
+    
+    printf("Sum of digits: %d\n", totalSum);
+    printf("Product of digits: %d\n", totalProduct);
+    
+    return 0;
+}
+```
+
+### Version 3
+
+```c
+#include <stdio.h>
+
+int main() {
+    int givenNumber;
+    int extractedDigit;
+    int digitsSum = 0;
+    int digitsProduct = 1;
+    
+    printf("Enter number: ");
+    scanf("%d", &givenNumber);
+    
+    for (; givenNumber != 0; givenNumber = givenNumber / 10) {
+        extractedDigit = givenNumber % 10;
+        digitsSum = digitsSum + extractedDigit;
+        digitsProduct = digitsProduct * extractedDigit;
+    }
+    
+    printf("Sum of the digits: %d\n", digitsSum);
+    printf("Product of the digits: %d\n", digitsProduct);
+    
+    return 0;
+}
+```
+
+Each of these versions accomplishes the task with slightly different variable names and structuring, but adheres to your constraints, such as not using recursion, dynamic memory, pointers, structures, unions, and so on.

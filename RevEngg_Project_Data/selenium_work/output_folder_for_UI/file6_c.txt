@@ -1,0 +1,62 @@
+Certainly! Here are three different versions of the C program to convert kilometers to miles, following your constraints and avoiding the specific elements you mentioned.
+
+### Version 1: Inline Calculation
+```c
+#include <stdio.h>
+
+int main() {
+    float miles, kilometers;
+    const float conversionFactor = 1.609344;
+
+    printf("Enter value in Kilometers: ");
+    scanf("%f", &kilometers);
+
+    miles = kilometers / conversionFactor;
+
+    printf("Kilometers: %.4f\n", kilometers);
+    printf("Miles: %.4f\n", miles);
+
+    return 0;
+}
+```
+
+### Version 2: Using Integer Input for Approximate Conversion
+```c
+#include <stdio.h>
+
+int main() {
+    int kilometers;
+    float miles;
+    printf("Enter value in Kilometers (integer): ");
+    scanf("%d", &kilometers);
+
+    // 1 km approximately equals 0.621371 miles
+    miles = kilometers * 0.621371;
+
+    printf("Kilometers: %d\n", kilometers);
+    printf("Miles: %.4f\n", miles);
+
+    return 0;
+}
+```
+
+### Version 3: User-Friendly Interface with Conversion Message
+```c
+#include <stdio.h>
+
+int main() {
+    double km, miles;
+    printf("Enter the distance in kilometers: ");
+    scanf("%lf", &km);
+
+    // Conversion factor from kilometers to miles
+    miles = km * 0.621371;
+
+    printf("Distance in Kilometers: %.2lf\n", km);
+    printf("Equivalent in Miles: %.4lf\n", miles);
+
+    return 0;
+}
+```
+
+Each version provides a unique way of presenting or calculating the conversion from kilometers to miles, but they all avoid using the elements and functionalities you specified.

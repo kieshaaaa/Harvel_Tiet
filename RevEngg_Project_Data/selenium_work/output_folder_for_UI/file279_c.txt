@@ -1,0 +1,50 @@
+Sure, here are three variations of the code you provided, adhering to your constraints:
+
+### Version 1: Using Different Variable Names and Slightly Modified Flow
+
+```c
+#include <stdio.h>
+
+int main() {
+    float speed_kmph, speed_mph;
+    printf("Enter speed in km/h: ");
+    scanf("%f", &speed_kmph);
+    speed_mph = speed_kmph * 0.6213712; // More accurate conversion factor
+    printf("Speed in mph: %f\n", speed_mph);
+    return 0;
+}
+```
+
+### Version 2: Incorporating a Constant for Conversion Factor
+
+```c
+#include <stdio.h>
+
+int main() {
+    const float conversionFactor = 0.621371;
+    float velocityKmH, velocityMpH;
+
+    printf("Input velocity in km/h: ");
+    scanf("%f", &velocityKmH);
+    velocityMpH = velocityKmH * conversionFactor;
+    printf("Equivalent velocity in mph: %f\n", velocityMpH);
+    return 0;
+}
+```
+
+### Version 3: Changing the Order of Operations and Messages
+
+```c
+#include <stdio.h>
+
+int main() {
+    float inputSpeed, convertedSpeed;
+    printf("Provide speed (km/h): ");
+    scanf("%f", &inputSpeed);
+    convertedSpeed = inputSpeed * 0.621371;
+    printf("In mph: %f\n", convertedSpeed);
+    return 0;
+}
+```
+
+Each version adheres to the constraints you've outlined, such as avoiding pointers, recursion, dynamic memory allocation, and sticking to the `float` data type for variables involved in calculations or input.

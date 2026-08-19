@@ -1,0 +1,90 @@
+Certainly! I'll provide you with three variations of the C program to find the roots of a quadratic equation, adhering to your guidelines.
+
+### Version 1: Simplified Condition Checks
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int a, b, c;
+    float discriminant, root1, root2;
+    printf("Enter coefficients a, b and c: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    discriminant = b*b - 4*a*c;
+
+    if (discriminant > 0) {
+        root1 = (-b + sqrt(discriminant)) / (2*a);
+        root2 = (-b - sqrt(discriminant)) / (2*a);
+        printf("Roots are: %.2f and %.2f\n", root1, root2);
+    } else if (discriminant == 0) {
+        root1 = -b / (2.0*a);
+        printf("Root is: %.2f\n", root1);
+    } else {
+        printf("Roots are imaginary.\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using `float` for Coefficients
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, b, c, discriminant, root1, root2;
+    printf("Enter coefficients a, b and c: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    discriminant = b*b - 4*a*c;
+
+    if (discriminant > 0) {
+        root1 = (-b + sqrt(discriminant)) / (2*a);
+        root2 = (-b - sqrt(discriminant)) / (2*a);
+        printf("Roots are real and different.\n");
+        printf("Root 1 = %.2f\n", root1);
+        printf("Root 2 = %.2f\n", root2);
+    } else if (discriminant == 0) {
+        root1 = -b / (2*a);
+        printf("Roots are real and the same.\n");
+        printf("Root = %.2f\n", root1);
+    } else {
+        printf("No real roots.\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Compact Error Handling
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int a, b, c;
+    float discriminant, root1, root2;
+    printf("Enter values of a, b, c: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    discriminant = b*b - 4*a*c;
+
+    if (discriminant >= 0) {
+        root1 = (-b + sqrt(discriminant)) / (2*a);
+        root2 = (-b - sqrt(discriminant)) / (2*a);
+        if (discriminant > 0) {
+            printf("Two distinct real roots: %.2f and %.2f\n", root1, root2);
+        } else {
+            printf("Two equal and real roots: %.2f\n", root1);
+        }
+    } else {
+        printf("No real roots, roots are imaginary.\n");
+    }
+
+    return 0;
+}
+```
+
+These versions offer different ways of organizing the program logic and presenting the output while meeting the constraints you've specified.

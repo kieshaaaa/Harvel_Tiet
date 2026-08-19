@@ -1,0 +1,91 @@
+Certainly! I'll provide you with three alternative versions of the given C program that implement a ticket booking application with the specified constraints and modifications.
+
+### Version 1: Using a float for price and adjusting the concession calculation
+
+```c
+#include <stdio.h>
+
+int main() {
+    char name[20];
+    int age;
+    float price = 600.0f, discount = 0.7f; // Using float instead of int for price
+    
+    printf("Enter your name: ");
+    scanf("%s", name);
+    
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    
+    if (age < 6 || age >= 60) {
+        price *= discount; // Apply discount if eligible
+        printf("You are eligible for the concession!!\n");
+    }
+    
+    printf("Your Ticket is Booked\n");
+    printf("Your ticket price is %.2f\n\n", price); // Using float for price display
+    
+    return 0;
+}
+```
+
+### Version 2: Inlining the discount calculation and avoiding extra variables
+
+```c
+#include <stdio.h>
+
+int main() {
+    char name[20];
+    int age;
+    float price = 600.0f; // Original ticket price
+    
+    printf("Enter your name: ");
+    scanf("%s", name);
+    
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    
+    if (age < 6 || age >= 60) {
+        price = 420.0f; // Directly setting the discounted price
+        printf("You are eligible for the concession!!\n");
+    }
+    
+    printf("Your Ticket is Booked\n");
+    printf("Your ticket price is %.2f\n\n", price);
+    
+    return 0;
+}
+```
+
+### Version 3: Modifying the program to include a separate variable for indicating concession eligibility
+
+```c
+#include <stdio.h>
+
+int main() {
+    char name[20];
+    int age, isEligibleForConcession = 0;
+    float price = 600.0f;
+    
+    printf("Enter your name: ");
+    scanf("%s", name);
+    
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    
+    if (age < 6 || age >= 60) {
+        isEligibleForConcession = 1; // Marking eligibility for concession
+    }
+    
+    if (isEligibleForConcession) {
+        price *= 0.7f; // Applying concession if eligible
+        printf("You are eligible for the concession!!\n");
+    }
+    
+    printf("Your Ticket is Booked\n");
+    printf("Your ticket price is %.2f\n\n", price);
+    
+    return 0;
+}
+```
+
+Each of these versions adheres to the constraints you've specified, using `if` statements for logic, avoiding specific programming features, and using `float` for the ticket price representation.

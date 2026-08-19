@@ -1,0 +1,71 @@
+Certainly! Below are three different versions of the given program to reverse an integer, each maintaining the constraints you specified.
+
+### Version 1
+This version uses a `for` loop instead of a `while` loop for iteration.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, revNumber = 0, dig;
+    printf("Enter an integer number : ");
+    scanf("%d", &n);
+    for (; n > 0; n /= 10) {
+        dig = n % 10;
+        revNumber = revNumber * 10 + dig;
+    }
+    printf("Reverse Number is : ");
+    printf("%d\n", revNumber);
+    return 0;
+}
+```
+
+### Version 2
+This version introduces a `do-while` loop for cases where the number might be 0 or positive, ensuring the loop runs at least once.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, revNumber = 0, dig;
+    printf("Enter an integer number : ");
+    scanf("%d", &n);
+    if (n <= 0) {
+        printf("Reverse Number is : 0\n"); // Assuming reverse of 0 and negative numbers as a special case
+    } else {
+        do {
+            dig = n % 10;
+            revNumber = revNumber * 10 + dig;
+            n /= 10;
+        } while (n > 0);
+        printf("Reverse Number is : ");
+        printf("%d\n", revNumber);
+    }
+    return 0;
+}
+```
+
+### Version 3
+This version adds a slight modification by initializing the `revNumber` inside the loop conditionally.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, dig;
+    printf("Enter an integer number : ");
+    scanf("%d", &n);
+    int revNumber = 0; // Initialization moved here for clarity
+    while (n > 0) {
+        dig = n % 10;
+        revNumber *= 10;
+        revNumber += dig;
+        n /= 10;
+    }
+    printf("Reverse Number is : ");
+    printf("%d\n", revNumber);
+    return 0;
+}
+```
+
+Each version adheres to the constraints you've mentioned, varying slightly in the control structure used for iteration or in the initialization and operation style on the variables involved.

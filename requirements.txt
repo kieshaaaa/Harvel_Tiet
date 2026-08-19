@@ -1,0 +1,10 @@
+#usage: pip install -r Requirments.txt
+torch
+omegaconf
+hydra-core
+numpy
+bitarray
+tensorboardX
+tqdm
+scikit-learn
+sacrebleu

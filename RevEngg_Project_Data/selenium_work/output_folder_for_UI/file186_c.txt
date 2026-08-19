@@ -1,0 +1,75 @@
+Certainly, here are three variations of the provided C program, each maintaining the original requirements and constraints:
+
+### Version 1: Compact User Input
+
+```c
+#include <stdio.h>
+
+int main() {
+    float sides[4], perimeter = 0;
+    int i;
+
+    for (i = 0; i < 4; i++) {
+        printf("Enter the length of side %d: ", i+1);
+        scanf("%f", &sides[i]);
+        perimeter += sides[i];
+    }
+
+    printf("Perimeter of the quadrilateral: %.2f\n", perimeter);
+
+    return 0;
+}
+```
+
+### Version 2: Separate Variable Declarations
+
+```c
+#include <stdio.h>
+
+int main() {
+    float side1, side2, side3, side4;
+    float perimeter;
+
+    printf("Enter the length of the first side: ");
+    scanf("%f", &side1);
+
+    printf("Enter the length of the second side: ");
+    scanf("%f", &side2);
+
+    printf("Enter the length of the third side: ");
+    scanf("%f", &side3);
+
+    printf("Enter the length of the fourth side: ");
+    scanf("%f", &side4);
+
+    perimeter = side1 + side2 + side3 + side4;
+
+    printf("Perimeter of the quadrilateral: %.2f\n", perimeter);
+
+    return 0;
+}
+```
+
+### Version 3: Using a While Loop for Input
+
+```c
+#include <stdio.h>
+
+int main() {
+    float side, perimeter = 0;
+    int i = 0;
+
+    while (i < 4) {
+        printf("Enter the length of side %d: ", i + 1);
+        scanf("%f", &side);
+        perimeter += side;
+        i++;
+    }
+
+    printf("Perimeter of the quadrilateral: %.2f\n", perimeter);
+
+    return 0;
+}
+```
+
+Each version adheres to the provided constraints and offers a slightly different approach to obtaining user input and calculating the perimeter of a quadrilateral.

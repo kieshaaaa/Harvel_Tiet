@@ -1,0 +1,39 @@
+Thu Jul 27 14:02:00 2023: Running xcd server. This server was built by gradle.
+Thu Jul 27 14:02:00 2023: Server was asked to start on port: '42245'
+Thu Jul 27 14:02:00 2023: Server is using token UUID: '5446e12d-8a80-4254-b656-6be68ed40891'
+Thu Jul 27 14:02:00 2023: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Thu Jul 27 14:02:00 2023: Attempting to start server on port '42245'
+Thu Jul 27 14:02:00 2023: XCD main fifo: created main fifo '/tmp/xcdmain5446e12d-8a80-4254-b656-6be68ed40891', fd read = 13
+Thu Jul 27 14:02:00 2023: Running Dispatch Server
+Thu Jul 27 14:02:00 2023: Version 2.2.0
+Thu Jul 27 14:02:08 2023: Dispatch Server: Accepted socket connection from client
+Thu Jul 27 14:02:08 2023: Starting Socket connection
+Thu Jul 27 14:02:08 2023: EXCHANGE_TOKEN received, server token: 5446e12d-8a80-4254-b656-6be68ed40891, passed token: 5446e12d-8a80-4254-b656-6be68ed40891
+Thu Jul 27 14:02:08 2023: SESSION_MGR: creating session with session uuid: '6118831b-2746-494f-95d5-918b42dd9993' and name 'vitis_hls'
+Thu Jul 27 14:02:08 2023: KERNEL_SVC: creating session with uuid: '6118831b-2746-494f-95d5-918b42dd9993' and name 'vitis_hls'
+Thu Jul 27 14:02:08 2023: GUIDANCE_SMGR: creating guidance session with uuid: '6118831b-2746-494f-95d5-918b42dd9993' and name 'vitis_hls'
+Thu Jul 27 14:02:17 2023: STOP_SERVER received, server token: 5446e12d-8a80-4254-b656-6be68ed40891, passed token: 5446e12d-8a80-4254-b656-6be68ed40891
+Thu Jul 27 14:02:17 2023: Socket received request to stop server.
+Thu Jul 27 14:02:17 2023: Dispatch Server: do_await_stop
+Thu Jul 27 14:02:17 2023: Dispatch Server: stopping mainFifo_
+Thu Jul 27 14:02:17 2023: XCD main fifo: Stopping
+Thu Jul 27 14:02:17 2023: XCD main fifo: do_read error code: Operation canceled
+Thu Jul 27 14:02:17 2023: XCD main fifo: bytes_transferred: 0
+Thu Jul 27 14:02:17 2023: SERVER: destructor for server bound to port 42245
+Thu Jul 27 14:02:17 2023: XCD main fifo: Good unlink of /tmp/xcdmain5446e12d-8a80-4254-b656-6be68ed40891
+Thu Jul 27 14:02:17 2023: Server exiting with status 0.
+Thu Jul 27 14:02:17 2023: Closing log file.
+Thu Jul 27 14:07:34 2023: Running xcd server. This server was built by gradle.
+Thu Jul 27 14:07:34 2023: Server was asked to start on port: '41341'
+Thu Jul 27 14:07:34 2023: Server is using token UUID: '9976e695-658b-4e0d-a822-e79fd8deacee'
+Thu Jul 27 14:07:34 2023: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Thu Jul 27 14:07:34 2023: Attempting to start server on port '41341'
+Thu Jul 27 14:07:34 2023: XCD main fifo: created main fifo '/tmp/xcdmain9976e695-658b-4e0d-a822-e79fd8deacee', fd read = 13
+Thu Jul 27 14:07:34 2023: Running Dispatch Server
+Thu Jul 27 14:07:34 2023: Version 2.2.0
+Thu Jul 27 14:07:42 2023: Dispatch Server: Accepted socket connection from client
+Thu Jul 27 14:07:42 2023: Starting Socket connection
+Thu Jul 27 14:07:42 2023: EXCHANGE_TOKEN received, server token: 9976e695-658b-4e0d-a822-e79fd8deacee, passed token: 9976e695-658b-4e0d-a822-e79fd8deacee
+Thu Jul 27 14:07:42 2023: SESSION_MGR: creating session with session uuid: '243dc19f-a9e3-4619-bb75-8afb6e9a507f' and name 'vitis_hls'
+Thu Jul 27 14:07:42 2023: KERNEL_SVC: creating session with uuid: '243dc19f-a9e3-4619-bb75-8afb6e9a507f' and name 'vitis_hls'
+Thu Jul 27 14:07:42 2023: GUIDANCE_SMGR: creating guidance session with uuid: '243dc19f-a9e3-4619-bb75-8afb6e9a507f' and name 'vitis_hls'

@@ -1,0 +1,95 @@
+Certainly! Here are three different versions of the C program to print the specified pattern, following your constraints:
+
+### Version 1: Simplified Loop Conditions
+```c
+#include <stdio.h>
+
+int main() {
+    int rows;
+    printf("\nHow Many Rows => ");
+    scanf("%d", &rows);
+
+    if (rows < 1) {
+        printf("\n!!! Invalid Input, Please Enter Positive Number....\n");
+        return 0;
+    }
+
+    int cols = rows * 3;
+    printf("\n");
+
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= cols; j++) {
+            if (j == rows + 1 - i || j == rows - 1 + i || j == rows * 2 + 2 - i || j == rows * 2 + i) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 2: Compact Conditions
+```c
+#include <stdio.h>
+
+int main() {
+    int rows;
+    printf("\nHow Many Rows => ");
+    scanf("%d", &rows);
+
+    if (rows < 1) {
+        printf("\n!!! Invalid Input, Please Enter Positive Number....\n");
+        return 0;
+    }
+
+    int cols = rows * 3;
+    printf("\n");
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if (j == rows - i - 1 || j == rows + i - 1 || j == 2 * rows + i - 2 || j == 2 * rows - i - 2) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 3: Reducing Variable Scope
+```c
+#include <stdio.h>
+
+int main() {
+    printf("\nHow Many Rows => ");
+    int rows;
+    scanf("%d", &rows);
+
+    if (rows < 1) {
+        printf("\n!!! Invalid Input, Please Enter Positive Number....\n");
+        return 0;
+    }
+
+    printf("\n");
+
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= rows * 3; j++) {
+            if (j == rows + 1 - i || j == rows - 1 + i || j == rows * 2 + 2 - i || j == rows * 2 + i) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+Each version adheres to your guidelines, varying slightly in approach or syntax to demonstrate different ways of achieving the same output pattern.

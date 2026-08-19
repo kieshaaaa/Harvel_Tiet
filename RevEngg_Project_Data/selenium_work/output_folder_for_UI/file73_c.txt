@@ -1,0 +1,96 @@
+Certainly, I'll provide you with three variations of the provided C program to evaluate a polynomial using Horner's method, adhering to your constraints.
+
+### Version 1: Simplified Input Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    float a[100], x, sum = 0;
+    int n, i;
+
+    printf("Enter degree of the polynomial X: ");
+    scanf("%d", &n);
+
+    for (i = 0; i <= n; i++) {
+        printf("Enter coefficient of [X^%d]: ", n - i);
+        scanf("%f", &a[i]);
+    }
+
+    printf("Enter the value of X: ");
+    scanf("%f", &x);
+
+    for (i = 0; i < n; i++) {
+        sum = (sum + a[i]) * x;
+    }
+    sum += a[n];
+
+    printf("Value of the polynomial is: %f\n", sum);
+
+    return 0;
+}
+```
+
+### Version 2: Reverse Order of Coefficient Entry
+
+```c
+#include <stdio.h>
+
+int main() {
+    float coefficients[100], x, result = 0;
+    int degree, index;
+
+    printf("Enter degree of polynomial: ");
+    scanf("%d", &degree);
+
+    for (index = 0; index <= degree; index++) {
+        printf("Enter coefficient for [X^%d]: ", index);
+        scanf("%f", &coefficients[degree - index]);
+    }
+
+    printf("Enter the value of X: ");
+    scanf("%f", &x);
+
+    for (index = degree; index > 0; index--) {
+        result = (result + coefficients[index]) * x;
+    }
+    result += coefficients[0];
+
+    printf("Polynomial value: %f\n", result);
+
+    return 0;
+}
+```
+
+### Version 3: Interactive Coefficient Entry
+
+```c
+#include <stdio.h>
+
+int main() {
+    float coefs[100], valX, polyVal = 0;
+    int deg, j;
+
+    printf("Degree of polynomial X: ");
+    scanf("%d", &deg);
+
+    for (j = deg; j >= 0; j--) {
+        printf("Coefficient [X^%d]: ", j);
+        scanf("%f", &coefs[deg - j]);
+    }
+
+    printf("Value of X: ");
+    scanf("%f", &valX);
+
+    for (j = 0; j < deg; j++) {
+        polyVal = (polyVal + coefs[j]) * valX;
+    }
+    polyVal += coefs[deg];
+
+    printf("Polynomial value = %f\n", polyVal);
+
+    return 0;
+}
+```
+
+Each version respects your constraints, offering a slightly different approach to reading coefficients, iterating through the polynomial calculation, or presenting the user interface.

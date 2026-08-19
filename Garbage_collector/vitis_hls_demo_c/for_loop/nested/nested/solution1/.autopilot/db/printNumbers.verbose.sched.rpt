@@ -1,0 +1,147 @@
+
+
+================================================================
+== Vitis HLS Report for 'printNumbers'
+================================================================
+* Date:           Thu Jun  1 18:28:34 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        for_nested2
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu5p-flva2104-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.864 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_5_1  |        ?|        ?|         ?|          -|          -|     ?|        no|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.46>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%j = alloca i32 1"   --->   Operation 4 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%spectopmodule_ln4 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [printNum.c:4]   --->   Operation 5 'spectopmodule' 'spectopmodule_ln4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %start_r"   --->   Operation 6 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %start_r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %end_r"   --->   Operation 8 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %end_r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%end_r_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %end_r" [printNum.c:4]   --->   Operation 10 'read' 'end_r_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%start_r_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %start_r" [printNum.c:4]   --->   Operation 11 'read' 'start_r_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.46ns)   --->   "%store_ln5 = store i32 %start_r_read, i32 %j" [printNum.c:5]   --->   Operation 12 'store' 'store_ln5' <Predicate = true> <Delay = 0.46>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%br_ln5 = br void %for.body4.lr.ph" [printNum.c:5]   --->   Operation 13 'br' 'br_ln5' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.86>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%i_2 = load i32 %j" [printNum.c:5]   --->   Operation 14 'load' 'i_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.80ns)   --->   "%icmp_ln5 = icmp_sgt  i32 %i_2, i32 %end_r_read" [printNum.c:5]   --->   Operation 15 'icmp' 'icmp_ln5' <Predicate = true> <Delay = 0.80> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln5 = br i1 %icmp_ln5, void %for.body4.lr.ph.split, void %for.end16.loopexit" [printNum.c:5]   --->   Operation 16 'br' 'br_ln5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [2/2] (2.06ns)   --->   "%call_ln5 = call void @printNumbers_Pipeline_VITIS_LOOP_6_2, i32 %i_2, i32 %end_r_read" [printNum.c:5]   --->   Operation 17 'call' 'call_ln5' <Predicate = (!icmp_ln5)> <Delay = 2.06> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 18 [1/1] (1.14ns)   --->   "%i = add i32 %i_2, i32 1" [printNum.c:5]   --->   Operation 18 'add' 'i' <Predicate = (!icmp_ln5)> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (0.46ns)   --->   "%store_ln5 = store i32 %i, i32 %j" [printNum.c:5]   --->   Operation 19 'store' 'store_ln5' <Predicate = (!icmp_ln5)> <Delay = 0.46>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%ret_ln15 = ret" [printNum.c:15]   --->   Operation 20 'ret' 'ret_ln15' <Predicate = (icmp_ln5)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%specloopname_ln5 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3" [printNum.c:5]   --->   Operation 21 'specloopname' 'specloopname_ln5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/2] (0.00ns)   --->   "%call_ln5 = call void @printNumbers_Pipeline_VITIS_LOOP_6_2, i32 %i_2, i32 %end_r_read" [printNum.c:5]   --->   Operation 22 'call' 'call_ln5' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln5 = br void %for.body4.lr.ph" [printNum.c:5]   --->   Operation 23 'br' 'br_ln5' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0.46ns
+The critical path consists of the following:
+	'alloca' operation ('j') [3]  (0 ns)
+	'store' operation ('store_ln5', printNum.c:5) of variable 'start', printNum.c:4 on local variable 'j' [11]  (0.46 ns)
+
+ <State 2>: 2.86ns
+The critical path consists of the following:
+	'load' operation ('i', printNum.c:5) on local variable 'j' [14]  (0 ns)
+	'call' operation ('call_ln5', printNum.c:5) to 'printNumbers_Pipeline_VITIS_LOOP_6_2' [19]  (2.06 ns)
+	blocking operation 0.802 ns on control path)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

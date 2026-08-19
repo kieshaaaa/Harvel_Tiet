@@ -1,0 +1,78 @@
+Sure, I'll provide you with three different versions of the given program with the specified constraints. Each version will have a unique twist to handle the logic or output in a slightly different manner, adhering to the restrictions you've mentioned.
+
+### Version 1: Using a ternary operator for concise logic
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number, result, divisible;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    divisible = (number % 3 == 0) ? 1 : 0;
+    result = number + (divisible ? 1 : 2);
+
+    if (divisible) {
+        printf("%d is divisible by 3.\n", result);
+    } else {
+        printf("%d is not divisible by 3.\n", result);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Switch-case for divisibility check
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number, result;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    switch (number % 3) {
+        case 0:
+            result = number + 1;
+            printf("%d is divisible by 3.\n", result);
+            break;
+        default:
+            result = number + 2;
+            printf("%d is not divisible by 3.\n", result);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Adjusting the output message within the conditional logic
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number, result, isDivisible;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    isDivisible = (number % 3 == 0);
+    if (isDivisible) {
+        result = number + 1;
+    } else {
+        result = number + 2;
+    }
+
+    printf("%d ", result);
+    if (isDivisible) {
+        printf("is divisible by 3.\n");
+    } else {
+        printf("is not divisible by 3.\n");
+    }
+
+    return 0;
+}
+```
+
+Each version follows the guidelines you provided, such as avoiding pointers, dynamic memory allocation, file handling, recursion, and specific data type constraints.

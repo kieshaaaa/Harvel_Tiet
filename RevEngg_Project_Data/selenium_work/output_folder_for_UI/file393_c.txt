@@ -1,0 +1,102 @@
+### Version 1: Using a Single Loop for Conversion and Printing (Backwards)
+
+```c
+#include <stdio.h>
+
+int main() {
+    int decimal, index = 0;
+    char binary[32]; // Using a char array to store binary digits as characters
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+    
+    // Directly converting and printing in reverse order
+    if (decimal == 0) {
+        printf("Binary number is: 0\n");
+    } else {
+        printf("Binary number is: ");
+        while (decimal > 0) {
+            binary[index++] = (decimal % 2) + '0'; // Convert integer to char
+            decimal /= 2;
+        }
+        
+        for (int j = index - 1; j >= 0; j--) {
+            putchar(binary[j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+```
+
+### Version 2: Using Bitwise Operations for Conversion
+
+```c
+#include <stdio.h>
+
+int main() {
+    int decimal, binary[32], bitsCount = 0;
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+    
+    // Calculating the number of bits needed for binary representation
+    int temp = decimal;
+    while (temp > 0) {
+        bitsCount++;
+        temp >>= 1;
+    }
+
+    // If decimal is 0, then bitsCount will be 0. Manually set it to 1 for correct processing.
+    if (decimal == 0) bitsCount = 1;
+
+    for (int i = bitsCount - 1; i >= 0; i--) {
+        binary[i] = (decimal & 1); // Extracting the last bit and storing it
+        decimal >>= 1; // Shifting decimal right by 1 bit to process the next bit
+    }
+    
+    printf("Binary number is: ");
+    for (int i = 0; i < bitsCount; i++) {
+        printf("%d", binary[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+
+### Version 3: Compact Version with On-the-fly Calculation and Printing
+
+```c
+#include <stdio.h>
+
+int main() {
+    int decimal;
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+    
+    // Find highest power of 2 within the decimal
+    int highestBit = 31; // Assuming a 32-bit integer for simplicity
+    while (highestBit >= 0 && !(decimal & (1 << highestBit))) {
+        highestBit--;
+    }
+    
+    printf("Binary number is: ");
+    if (highestBit == -1) {
+        printf("0"); // If decimal is 0
+    } else {
+        for (int i = highestBit; i >= 0; i--) {
+            if (decimal & (1 << i)) {
+                printf("1");
+            } else {
+                printf("0");
+            }
+        }
+    }
+    printf("\n");
+    
+    return 0;
+}
+```
+
+Each of these versions approaches the problem from a different angle, adhering to your constraints and avoiding the mentioned programming concepts and techniques.

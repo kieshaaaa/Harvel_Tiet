@@ -1,0 +1,91 @@
+### Version 1: Iterative Approach Using a Loop
+
+This version uses a simple `for` loop to generate the Fibonacci series up to n terms. It avoids recursion, dynamic memory allocation, structures, unions, pointers, file handling, and modifies the type of floating-point variables as requested.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int n, first = 0, second = 1, next;
+    printf("Enter value of N :: ");
+    scanf("%d", &n);
+
+    printf("\nFibonacci Series upto [ %d ] Numbers are :: \n\n", n);
+
+    for (int i = 0; i < n; i++) {
+        if (i <= 1) {
+            next = i;
+        } else {
+            next = first + second;
+            first = second;
+            second = next;
+        }
+        printf("%d   ", next);
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 2: While Loop with Counter
+
+This version leverages a `while` loop and manually manages the iteration and swapping process to generate the Fibonacci sequence.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int n, first = 0, second = 1, next, count = 0;
+    printf("Enter value of N :: ");
+    scanf("%d", &n);
+
+    printf("\nFibonacci Series upto [ %d ] Numbers are :: \n\n", n);
+
+    while (count < n) {
+        if (count <= 1) {
+            next = count;
+        } else {
+            next = first + second;
+            first = second;
+            second = next;
+        }
+        printf("%d   ", next);
+        count++;
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 3: Fibonacci Using an Array
+
+This approach stores each Fibonacci number in an array as it calculates them. It's a bit more memory-intensive but avoids the restrictions specified.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int n;
+    printf("Enter value of N :: ");
+    scanf("%d", &n);
+
+    // Assuming the sequence does not go beyond 100 elements for simplicity
+    int fib[100];
+    fib[0] = 0;
+    fib[1] = 1;
+
+    printf("\nFibonacci Series upto [ %d ] Numbers are :: \n\n", n);
+
+    for (int i = 2; i < n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("%d   ", fib[i]);
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+Each of these versions successfully generates the Fibonacci series up to n terms without using recursion, pointers, dynamic memory allocation, structures, unions, file handling, or modifying the data types beyond the restrictions specified.

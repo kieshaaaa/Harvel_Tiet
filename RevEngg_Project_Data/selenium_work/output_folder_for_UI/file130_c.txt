@@ -1,0 +1,70 @@
+Sure, I'll provide three different versions of the provided code to convert an octal number to a decimal number, adhering to your constraints.
+
+### Version 1: Using a for-loop instead of a while-loop
+```c
+#include <stdio.h>
+
+int main() {
+    int octal, decimal = 0, base = 1;
+    printf("Enter an octal number: ");
+    scanf("%d", &octal);
+
+    for (; octal; octal /= 10) {
+        decimal += (octal % 10) * base;
+        base *= 8;
+    }
+
+    printf("Decimal number: %d\n", decimal);
+    return 0;
+}
+```
+
+### Version 2: Reversing the octal number first
+```c
+#include <stdio.h>
+
+int main() {
+    int octal, reverse = 0, decimal = 0, base = 1;
+    printf("Enter an octal number: ");
+    scanf("%d", &octal);
+
+    // Reverse the octal number
+    while (octal != 0) {
+        reverse = reverse * 10 + (octal % 10);
+        octal /= 10;
+    }
+
+    // Convert to decimal
+    while (reverse != 0) {
+        decimal += (reverse % 10) * base;
+        base *= 8;
+        reverse /= 10;
+    }
+
+    printf("Decimal number: %d\n", decimal);
+    return 0;
+}
+```
+
+### Version 3: Using a single while-loop with direct calculations
+```c
+#include <stdio.h>
+
+int main() {
+    int octal, decimal = 0, base = 1, last_digit;
+    printf("Enter an octal number: ");
+    scanf("%d", &octal);
+
+    while (octal != 0) {
+        last_digit = octal % 10;
+        octal /= 10;
+        decimal += last_digit * base;
+        base *= 8;
+    }
+
+    printf("Decimal number: %d\n", decimal);
+    return 0;
+}
+```
+
+Each of these versions adheres to the constraints you've provided, avoiding the use of recursion, pointers, dynamic memory allocation, file handling, and using `float` in place of `double` (though none required floating-point arithmetic in this specific case).

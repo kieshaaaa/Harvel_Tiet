@@ -1,0 +1,82 @@
+Certainly! Below are three different versions of the program to calculate the sum of the first N natural numbers, each using a distinct approach as per your constraints.
+
+### Version 1: Using the `do-while` Loop
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n, sum = 0;
+    printf("\nEnter N to Calculate Sum of First N Natural Numbers => ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("!!! Invalid Input .....");
+        exit(0);
+    }
+
+    int i = 1;
+    do {
+        sum += i;
+        i++;
+    } while (i <= n);
+
+    printf("\nSum of First %d Natural Numbers => %d", n, sum);
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 2: Using the `while` Loop
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n, sum = 0;
+    printf("\nEnter N to Calculate Sum of First N Natural Numbers => ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("!!! Invalid Input .....");
+        exit(0);
+    }
+
+    int i = 1;
+    while (i <= n) {
+        sum += i;
+        i++;
+    }
+
+    printf("\nSum of First %d Natural Numbers => %d", n, sum);
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 3: Using the Direct Formula
+Note: This approach uses an integer for the sum calculation. Be mindful of potential overflow with very large numbers.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    printf("\nEnter N to Calculate Sum of First N Natural Numbers => ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("!!! Invalid Input .....");
+        exit(0);
+    }
+
+    int sum = n * (n + 1) / 2;
+
+    printf("\nSum of First %d Natural Numbers => %d", n, sum);
+    printf("\n");
+    return 0;
+}
+```
+
+Each of these versions calculates the sum of the first N natural numbers, using different control structures to achieve the result.

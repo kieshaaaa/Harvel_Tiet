@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="arr_0_o" SOURCE="../Array_main/Array/array_elements_index/array.c:9" VARIABLE="add_ln9" MODULE="processArray" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="arr_1_o" SOURCE="../Array_main/Array/array_elements_index/array.c:10" VARIABLE="add_ln10" MODULE="processArray" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="arr_2_o" SOURCE="../Array_main/Array/array_elements_index/array.c:11" VARIABLE="add_ln11" MODULE="processArray" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="arr_3_o" SOURCE="../Array_main/Array/array_elements_index/array.c:12" VARIABLE="add_ln12" MODULE="processArray" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="arr_4_o" SOURCE="../Array_main/Array/array_elements_index/array.c:13" VARIABLE="add_ln13" MODULE="processArray" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="arr_5_o" SOURCE="../Array_main/Array/array_elements_index/array.c:14" VARIABLE="add_ln14" MODULE="processArray" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

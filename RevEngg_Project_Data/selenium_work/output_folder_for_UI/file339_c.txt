@@ -1,0 +1,98 @@
+Certainly! Below are three different versions of the program to cyclically swap three numbers without using pointers, dynamic memory allocation, structures, unions, recursion, file handling, `const` or modifying existing data types, avoiding double for float, and ensuring no operations are performed inside `printf` statements.
+
+### Version 1: Using Temporary Variables
+
+```c
+#include <stdio.h>
+
+int main() {
+    float a, b, c;
+    float temp1, temp2;
+
+    printf("Enter a: ");
+    scanf("%f", &a);
+    printf("Enter b: ");
+    scanf("%f", &b);
+    printf("Enter c: ");
+    scanf("%f", &c);
+
+    printf("\nValues Before swapping:\n");
+    printf("a = %.2f\tb = %.2f\tc = %.2f\n", a, b, c);
+
+    // Swapping in cyclic order using two temporary variables
+    temp1 = b;
+    temp2 = c;
+    b = a;
+    c = temp1;
+    a = temp2;
+
+    printf("\nValues After swapping:\n");
+    printf("a = %.2f\tb = %.2f\tc = %.2f\n", a, b, c);
+
+    return 0;
+}
+```
+
+### Version 2: Single Temporary Variable
+
+```c
+#include <stdio.h>
+
+int main() {
+    float a, b, c, temp;
+
+    printf("Enter a: ");
+    scanf("%f", &a);
+    printf("Enter b: ");
+    scanf("%f", &b);
+    printf("Enter c: ");
+    scanf("%f", &c);
+
+    printf("\nValues Before swapping:\n");
+    printf("a = %.2f\tb = %.2f\tc = %.2f\n", a, b, c);
+
+    // Swapping in cyclic order using a single temporary variable
+    temp = a;
+    a = b;
+    b = c;
+    c = temp;
+
+    printf("\nValues After swapping:\n");
+    printf("a = %.2f\tb = %.2f\tc = %.2f\n", a, b, c);
+
+    return 0;
+}
+```
+
+### Version 3: Arithmetic Swap
+
+```c
+#include <stdio.h>
+
+int main() {
+    float a, b, c;
+
+    printf("Enter a: ");
+    scanf("%f", &a);
+    printf("Enter b: ");
+    scanf("%f", &b);
+    printf("Enter c: ");
+    scanf("%f", &c);
+
+    printf("\nValues Before swapping:\n");
+    printf("a = %.2f\tb = %.2f\tc = %.2f\n", a, b, c);
+
+    // Swapping using arithmetic operations (Note: This method could introduce rounding errors for non-integer values)
+    a = a + b + c;
+    c = a - (b + c);
+    b = a - (b + c);
+    a = a - (b + c);
+
+    printf("\nValues After swapping:\n");
+    printf("a = %.2f\tb = %.2f\tc = %.2f\n", a, b, c);
+
+    return 0;
+}
+```
+
+Each version accomplishes the task of cyclically swapping the values of `a`, `b`, and `c` with slightly different approaches, adhering to your constraints.

@@ -1,0 +1,89 @@
+Sure, here are three different versions of the program that checks if a number is divisible by two other numbers, adhering to your restrictions:
+
+### Version 1: Inline in `main()`
+```c
+#include <stdio.h>
+
+int main() {
+    int number, A, B;
+    
+    printf("Enter any integer number : ");
+    scanf("%d", &number);
+    
+    printf("Enter first divisor : ");
+    scanf("%d", &A);
+    
+    printf("Enter second divisor : ");
+    scanf("%d", &B);
+    
+    int divisibleByA = number % A == 0;
+    int divisibleByB = number % B == 0;
+    
+    if(divisibleByA && divisibleByB) {
+        printf("%d is divisible by %d and %d\n", number, A, B);
+    } else {
+        printf("%d is not divisible by %d and %d\n", number, A, B);
+    }
+    
+    return 0;
+}
+```
+
+### Version 2: Use `goto` for flow control
+```c
+#include <stdio.h>
+
+int main() {
+    int number, A, B;
+    
+    printf("Enter any integer number : ");
+    scanf("%d", &number);
+    
+    printf("Enter first divisor : ");
+    scanf("%d", &A);
+    
+    printf("Enter second divisor : ");
+    scanf("%d", &B);
+    
+    if(number % A != 0 || number % B != 0) goto not_divisible;
+    
+    printf("%d is divisible by %d and %d\n", number, A, B);
+    goto end;
+    
+not_divisible:
+    printf("%d is not divisible by %d and %d\n", number, A, B);
+    
+end:
+    return 0;
+}
+```
+
+### Version 3: Simplify the logic further
+```c
+#include <stdio.h>
+
+int main() {
+    int number, A, B, isDivisible;
+    
+    printf("Enter any integer number : ");
+    scanf("%d", &number);
+    
+    printf("Enter first divisor : ");
+    scanf("%d", &A);
+    
+    printf("Enter second divisor : ");
+    scanf("%d", &B);
+    
+    isDivisible = (number % A == 0) && (number % B == 0) ? 1 : 0;
+    
+    if(isDivisible == 1) {
+        printf("%d is divisible by %d and %d\n", number, A, B);
+    } else {
+        printf("%d is not divisible by %d and %d\n", number, A, B);
+    }
+    
+    return 0;
+}
+```
+
+Each version follows the constraints you've outlined, with different styles of implementing the logic to check divisibility.

@@ -1,0 +1,4 @@
+test_fibo_output/fibo_dowhile
+test_fibo_output/fibo_for
+test_fibo_output/fibo_iterative
+test_fibo_output/fibo_while

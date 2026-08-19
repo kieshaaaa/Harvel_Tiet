@@ -1,0 +1,65 @@
+Certainly! Below are three variations of the provided code, following your instructions and restrictions. Each version prints a value in Decimal, Octal, and Hexadecimal format, using `printf` in C.
+
+### Version 1
+This version uses a `float` variable for demonstration, even though typically, we use integer types for bit representation tasks like octal and hexadecimal. It's just to adhere to the rule of using `float` instead of `double`.
+
+```c
+#include <stdio.h>
+
+int main() {
+    float value = 255; // Using float, though unusual for this context
+    
+    int intValue = (int)value; // Convert float to int for the printing purposes
+    printf("Decimal value is: %d\n", intValue);
+    printf("Octal value is: %o\n", intValue);
+    printf("Hexadecimal value is (Alphabet in small letters): %x\n", intValue);
+    printf("Hexadecimal value is (Alphabet in capital letters): %X\n", intValue);
+    
+    return 0;   
+}
+```
+
+### Version 2
+This version introduces a new variable for each format. This doesn't add much in terms of efficiency or functionality but follows the instruction to create different versions without modifying the original's essence.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int value = 789;
+    
+    int decValue = value;
+    int octValue = value;
+    int hexValue = value;
+    
+    printf("Decimal value is: %d\n", decValue);
+    printf("Octal value is: %o\n", octValue);
+    printf("Hexadecimal value is (Alphabet in small letters): %x\n", hexValue);
+    printf("Hexadecimal value is (Alphabet in capital letters): %X\n", hexValue);
+    
+    return 0;
+}
+```
+
+### Version 3
+This version introduces a slight variation in the way variables are declared and initialized, using multiple variables to represent the same value in different bases directly.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int decValue = 1024;
+    int octValue = 1024;
+    int hexValueSmall = 1024;
+    int hexValueCapital = 1024;
+    
+    printf("Decimal value is: %d\n", decValue);
+    printf("Octal value is: %o\n", octValue);
+    printf("Hexadecimal value is (Alphabet in small letters): %x\n", hexValueSmall);
+    printf("Hexadecimal value is (Alphabet in capital letters): %X\n", hexValueCapital);
+    
+    return 0;
+}
+```
+
+These variations adhere to the restrictions and guidelines you've provided, showcasing different ways to achieve similar output without using the restricted features or data types.

@@ -1,0 +1,101 @@
+Certainly! Below are three different versions of the provided C program, each one designed to classify a person as a boy, girl, woman, or man based on their gender and age, following your specifications.
+
+### Version 1
+```c
+#include <stdio.h>
+
+int main() {
+    int age;
+    char gender;
+
+    printf("Enter gender (M/F): ");
+    scanf(" %c", &gender); // Note the space before %c to catch any whitespace
+    printf("Enter age: ");
+    scanf("%d", &age);
+
+    if (gender == 'M' || gender == 'm') {
+        if (age < 18) {
+            printf("Boy\n");
+        } else {
+            printf("Man\n");
+        }
+    } else if (gender == 'F' || gender == 'f') {
+        if (age < 18) {
+            printf("Girl\n");
+        } else {
+            printf("Woman\n");
+        }
+    } else {
+        printf("Invalid gender input\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 2
+```c
+#include <stdio.h>
+
+int main() {
+    int age;
+    char gender;
+
+    printf("Input gender (M/F) and age: ");
+    scanf(" %c%d", &gender, &age);
+
+    switch(gender) {
+        case 'M':
+        case 'm':
+            if (age > 21) {
+                printf("Man\n");
+            } else {
+                printf("Boy\n");
+            }
+            break;
+        case 'F':
+        case 'f':
+            if (age > 21) {
+                printf("Woman\n");
+            } else {
+                printf("Girl\n");
+            }
+            break;
+        default:
+            printf("Incorrect gender\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 3
+```c
+#include <stdio.h>
+
+int main() {
+    int age;
+    char gender;
+
+    printf("Gender (M/F)? ");
+    scanf(" %c", &gender);
+    printf("Age? ");
+    scanf("%d", &age);
+
+    if ((gender == 'F' || gender == 'f') && age >= 18) {
+        printf("Woman\n");
+    } else if ((gender == 'F' || gender == 'f') && age < 18) {
+        printf("Girl\n");
+    } else if ((gender == 'M' || gender == 'm') && age >= 18) {
+        printf("Man\n");
+    } else if ((gender == 'M' || gender == 'm') && age < 18) {
+        printf("Boy\n");
+    } else {
+        printf("Invalid input\n");
+    }
+
+    return 0;
+}
+```
+
+Each version approaches the problem a bit differently, utilizing a combination of conditional statements and input handling techniques to ensure accurate categorization based on the inputted age and gender, while adhering to your constraints.

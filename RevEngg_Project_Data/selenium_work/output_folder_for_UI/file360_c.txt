@@ -1,0 +1,75 @@
+Sure, based on your constraints, here are three different versions of the program to calculate the employee and employer provident fund contributions:
+
+### Version 1: Using Separate Variables for Percentages
+
+```c
+#include <stdio.h>
+
+int main(){
+    float basicPay;
+    float employeeFund, employerFund;
+    float employeePercentage = 12.5f;
+    float employerPercentage = 12.0f;
+     
+    printf("Enter basic pay: ");
+    scanf("%f", &basicPay);
+     
+    employeeFund = (basicPay * employeePercentage) / 100;
+    employerFund = (basicPay * employerPercentage) / 100;
+     
+    printf("Basic Pay: %f\n", basicPay);
+    printf("Employee contribution: %f\n", employeeFund);
+    printf("Employer Contribution: %f\n", employerFund);
+     
+    return 0;   
+}
+```
+
+### Version 2: Inline Calculation without Separate Variables for Contributions
+
+```c
+#include <stdio.h>
+
+#define EMPLOYEE_PERCENTAGE 12.5f
+#define EMPLOYER_PERCENTAGE 12.0f
+
+int main(){
+    float basicPay;
+    float employeePercentage = EMPLOYEE_PERCENTAGE;
+    float employerPercentage = EMPLOYER_PERCENTAGE;
+     
+    printf("Enter basic pay: ");
+    scanf("%f", &basicPay);
+     
+    printf("Basic Pay: %f\n", basicPay);
+    printf("Employee contribution: %f\n", (basicPay * employeePercentage) / 100);
+    printf("Employer Contribution: %f\n", (basicPay * employerPercentage) / 100);
+     
+    return 0;   
+}
+```
+
+### Version 3: Constants Replaced by Direct Values in Calculations
+
+```c
+#include <stdio.h>
+
+int main(){
+    float basicPay;
+    float employeeFund, employerFund;
+     
+    printf("Enter basic pay: ");
+    scanf("%f", &basicPay);
+     
+    employeeFund = basicPay * 0.125; // Directly using 12.5% as 0.125
+    employerFund = basicPay * 0.12; // Directly using 12% as 0.12
+     
+    printf("Basic Pay: %f\n", basicPay);
+    printf("Employee contribution: %f\n", employeeFund);
+    printf("Employer Contribution: %f\n", employerFund);
+     
+    return 0;   
+}
+```
+
+Each version follows your constraints while providing a unique approach to calculating the provident fund contributions.

@@ -1,0 +1,138 @@
+### Version 1: Iterative Factorial Inside nCr and nPr Functions
+
+```c
+#include <stdio.h>
+
+long find_ncr(int n, int r) {
+    long n_fact = 1, r_fact = 1, n_r_fact = 1;
+    int i;
+
+    for (i = 1; i <= n; i++) {
+        n_fact *= i;
+        if (i <= r) r_fact *= i;
+        if (i <= n - r) n_r_fact *= i;
+    }
+
+    return n_fact / (r_fact * n_r_fact);
+}
+
+long find_npr(int n, int r) {
+    long n_fact = 1, n_r_fact = 1;
+    int i;
+
+    for (i = 1; i <= n; i++) {
+        n_fact *= i;
+        if (i <= n - r) n_r_fact *= i;
+    }
+
+    return n_fact / n_r_fact;
+}
+
+int main() {
+    int n, r;
+    long ncr, npr;
+
+    printf("Enter the value of n :: ");
+    scanf("%d", &n);
+    printf("\nEnter the value of r :: ");
+    scanf("%d", &r);
+
+    ncr = find_ncr(n, r);
+    npr = find_npr(n, r);
+
+    printf("\n%dC%d = %ld\n", n, r, ncr);
+    printf("\n%dP%d = %ld\n", n, r, npr);
+
+    return 0;
+}
+```
+
+### Version 2: Simplified Factorial Calculation within nCr and nPr
+
+```c
+#include <stdio.h>
+
+long find_ncr(int n, int r) {
+    long result = 1;
+    int i;
+
+    // Calculate nCr as (n! / r!(n-r)!) directly
+    for (i = 1; i <= r; ++i) {
+        result *= n - r + i;
+        result /= i;
+    }
+
+    return result;
+}
+
+long find_npr(int n, int r) {
+    long result = 1;
+    int i;
+
+    // Calculate nPr as (n! / (n-r)!) directly
+    for (i = 0; i < r; ++i) {
+        result *= n - i;
+    }
+
+    return result;
+}
+
+int main() {
+    int n, r;
+    long ncr, npr;
+
+    printf("Enter the value of n :: ");
+    scanf("%d", &n);
+    printf("\nEnter the value of r :: ");
+    scanf("%d", &r);
+
+    ncr = find_ncr(n, r);
+    npr = find_npr(n, r);
+
+    printf("\n%dC%d = %ld\n", n, r, ncr);
+    printf("\n%dP%d = %ld\n", n, r, npr);
+
+    return 0;
+}
+```
+
+### Version 3: Using a Single Function for Both nCr and nPr
+
+```c
+#include <stdio.h>
+
+void calculate_npr_ncr(int n, int r, long *ncr, long *npr) {
+    *ncr = 1;
+    *npr = 1;
+    int i;
+
+    for (i = 1; i <= n; ++i) {
+        if (i <= r) {
+            *npr *= n - r + i;
+            *ncr *= n - r + i;
+            *ncr /= i;
+        } else if (i <= n - r) {
+            *npr *= i;
+        }
+    }
+}
+
+int main() {
+    int n, r;
+    long ncr, npr;
+
+    printf("Enter the value of n :: ");
+    scanf("%d", &n);
+    printf("\nEnter the value of r :: ");
+    scanf("%d", &r);
+
+    calculate_npr_ncr(n, r, &ncr, &npr);
+
+    printf("\n%dC%d = %ld\n", n, r, ncr);
+    printf("\n%dP%d = %ld\n", n, r, npr);
+
+    return 0;
+}
+```
+
+These versions avoid recursion, pointers (other than for returning multiple values in Version 3), dynamic memory allocation, structs, unions, file handling, and they use `long` for calculations as specified. They also use `float` instead of `double`, though it's not necessary for integer calculations in these examples.

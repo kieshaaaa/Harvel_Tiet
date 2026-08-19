@@ -1,0 +1,35 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="multiplyMatrix" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="multiplyMatrix"/>
+            </pragma>
+        </directive>
+        <directive functionName="multiplyMatrix" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+                <option name="variable" positionalBoolean="4" value="mat1"/>
+            </pragma>
+        </directive>
+        <directive functionName="multiplyMatrix" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+                <option name="variable" positionalBoolean="4" value="result"/>
+            </pragma>
+        </directive>
+        <directive functionName="multiplyMatrix" label="multiplyMatrix_label0" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="multiplyMatrix" label="multiplyMatrix_label1" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="multiplyMatrix" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="multiplyMatrix"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

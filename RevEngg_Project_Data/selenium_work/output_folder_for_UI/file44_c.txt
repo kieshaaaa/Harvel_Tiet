@@ -1,0 +1,55 @@
+Certainly, here are three different versions of your provided code, each adhering to your specifications:
+
+### Version 1: Explicit Conversion Factor
+
+```c
+#include <stdio.h>
+
+int main() {
+    float speedMPS, speedKnots;
+    printf("Enter speed in meters per second: ");
+    scanf("%f", &speedMPS);
+    speedKnots = speedMPS * 1.94384; // More precise conversion factor
+    printf("Speed in knots: ");
+    printf("%f", speedKnots);
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 2: Using a Variable for the Conversion Factor
+
+```c
+#include <stdio.h>
+
+int main() {
+    float speedInMetersPerSecond, speedInKnots, conversionFactor;
+    conversionFactor = 1.94384; // Using a variable for conversion factor
+    printf("Enter speed in meters per second: ");
+    scanf("%f", &speedInMetersPerSecond);
+    speedInKnots = speedInMetersPerSecond * conversionFactor;
+    printf("Speed in knots: ");
+    printf("%f", speedInKnots);
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 3: Separating Input, Calculation, and Output
+
+```c
+#include <stdio.h>
+
+int main() {
+    float mps, knots;
+    printf("Enter speed in meters per second: ");
+    scanf("%f", &mps);
+    knots = mps * 1.94384; // Slightly more accurate conversion
+    printf("The equivalent speed in knots is: ");
+    printf("%f", knots);
+    printf("\n");
+    return 0;
+}
+```
+
+Each version follows your guidelines, including not using additional functions, dynamic memory allocation, structures, unions, pointers, recursion, or file handling. Additionally, all calculations and operations are kept outside of the `printf` statements, and data types have not been altered from your specifications.

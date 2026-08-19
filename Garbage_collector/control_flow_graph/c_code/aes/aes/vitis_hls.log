@@ -1,0 +1,222 @@
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'virubuntu' on host 'virubuntu.myguest.virtualbox.org' (Linux_x86_64 version 5.19.0-43-generic) on Fri Jun 09 14:39:11 IST 2023
+INFO: [HLS 200-10] On os Ubuntu 22.04.2 LTS
+INFO: [HLS 200-10] In directory '/home/virubuntu/CHStone/aes'
+Sourcing Tcl script '/home/virubuntu/CHStone/aes/aes_header_porject/solution1/cosim.tcl'
+INFO: [HLS 200-1510] Running: source /home/virubuntu/CHStone/aes/aes_header_porject/solution1/cosim.tcl
+INFO: [HLS 200-1510] Running: open_project aes_header_porject 
+INFO: [HLS 200-10] Opening project '/home/virubuntu/CHStone/aes/aes_header_porject'.
+INFO: [HLS 200-1510] Running: set_top aes_main 
+INFO: [HLS 200-1510] Running: add_files aes.c 
+INFO: [HLS 200-10] Adding design file 'aes.c' to the project
+INFO: [HLS 200-1510] Running: add_files -tb main.c -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'main.c' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/virubuntu/CHStone/aes/aes_header_porject/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu11p-flga2577-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu11p-flga2577-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./aes_header_porject/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name aes_main aes_main 
+INFO: [HLS 200-1510] Running: cosim_design 
+Running Dispatch Server on port: 35767
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/bin/g++"
+   Compiling apatb_aes_main.cpp
+   Compiling (apcc) aes.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'virubuntu' on host 'virubuntu.myguest.virtualbox.org' (Linux_x86_64 version 5.19.0-43-generic) on Fri Jun 09 14:39:32 IST 2023
+INFO: [HLS 200-10] On os Ubuntu 22.04.2 LTS
+INFO: [HLS 200-10] In directory '/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_virubuntu/39541686301772957907
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 3.5 seconds. Total CPU system time: 0.21 seconds. Total elapsed time: 4.41 seconds; peak allocated memory: 98.961 MB.
+   Compiling (apcc) main.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'virubuntu' on host 'virubuntu.myguest.virtualbox.org' (Linux_x86_64 version 5.19.0-43-generic) on Fri Jun 09 14:39:38 IST 2023
+INFO: [HLS 200-10] On os Ubuntu 22.04.2 LTS
+INFO: [HLS 200-10] In directory '/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_virubuntu/40111686301778637746
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 1.83 seconds. Total CPU system time: 0.13 seconds. Total elapsed time: 1.81 seconds; peak allocated memory: 98.961 MB.
+   Compiling apatb_aes_main_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+encrypted message 	3925841d02dc09fbdc118597196a0b32
+decrypto message	3243f6a8885a308d313198a2e0370734
+0
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_aes_main_top glbl -Oenable_linking_all_libraries -prj aes_main.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_20 -L floating_point_v7_1_15 --lib ieee_proposed=./ieee_proposed -s aes_main 
+Multi-threading is on. Using 3 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_statemt_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_statemt_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_InversShiftRow_ByteSub.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_InversShiftRow_ByteSub
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_encrypt_Pipeline_VITIS_LOOP_138_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_encrypt_Pipeline_VITIS_LOOP_138_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_ByteSub_ShiftRow.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_ByteSub_ShiftRow
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_encrypt_Pipeline_VITIS_LOOP_534_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_encrypt_Pipeline_VITIS_LOOP_534_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_decrypt_Pipeline_VITIS_LOOP_134_3_out_dec_statemt_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_decrypt_Pipeline_VITIS_LOOP_134_3_out_dec_statemt_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_encrypt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_encrypt
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_ByteSub_ShiftRow_Sbox_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_ByteSub_ShiftRow_Sbox_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_mul_9s_9s_9_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_mul_9s_9s_9_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_encrypt_Pipeline_VITIS_LOOP_534_12.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_encrypt_Pipeline_VITIS_LOOP_534_12
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_AddRoundKey_InversMixColumn_Pipeline_VITIS_LOOP_446_2_VITIS_LOOP_447_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_AddRoundKey_InversMixColumn_Pipeline_VITIS_LOOP_446_2_VITIS_LOOP_447_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_encrypt_Pipeline_VITIS_LOOP_138_3_Rcon0_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_encrypt_Pipeline_VITIS_LOOP_138_3_Rcon0_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_MixColumn_AddRoundKey_ret_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_MixColumn_AddRoundKey_ret_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_encrypt_Pipeline_VITIS_LOOP_138_3_Sbox_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_encrypt_Pipeline_VITIS_LOOP_138_3_Sbox_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_decrypt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_decrypt
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_AddRoundKey_InversMixColumn_ret_RAM_1WNR_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_AddRoundKey_InversMixColumn_ret_RAM_1WNR_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_AddRoundKey_InversMixColumn_Pipeline_VITIS_LOOP_439_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_AddRoundKey_InversMixColumn_Pipeline_VITIS_LOOP_439_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_key_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_key_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_decrypt_Pipeline_VITIS_LOOP_534_13.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_decrypt_Pipeline_VITIS_LOOP_534_13
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_decrypt_Pipeline_VITIS_LOOP_134_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_decrypt_Pipeline_VITIS_LOOP_134_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_decrypt_Pipeline_VITIS_LOOP_138_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_decrypt_Pipeline_VITIS_LOOP_138_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_aes_main_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_encrypt_Pipeline_VITIS_LOOP_127_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_encrypt_Pipeline_VITIS_LOOP_127_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_MixColumn_AddRoundKey_Pipeline_VITIS_LOOP_372_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_MixColumn_AddRoundKey_Pipeline_VITIS_LOOP_372_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_AddRoundKey_InversMixColumn_Pipeline_VITIS_LOOP_500_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_AddRoundKey_InversMixColumn_Pipeline_VITIS_LOOP_500_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_word_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_word_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_decrypt_Pipeline_VITIS_LOOP_534_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_decrypt_Pipeline_VITIS_LOOP_534_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_InversShiftRow_ByteSub_invSbox_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_InversShiftRow_ByteSub_invSbox_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_MixColumn_AddRoundKey.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_MixColumn_AddRoundKey
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_MixColumn_AddRoundKey_Pipeline_VITIS_LOOP_422_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_MixColumn_AddRoundKey_Pipeline_VITIS_LOOP_422_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_encrypt_Pipeline_VITIS_LOOP_132_1_VITIS_LOOP_133_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_encrypt_Pipeline_VITIS_LOOP_132_1_VITIS_LOOP_133_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_AddRoundKey_InversMixColumn.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_AddRoundKey_InversMixColumn
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_encrypt_Pipeline_VITIS_LOOP_127_3_out_enc_statemt_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_encrypt_Pipeline_VITIS_LOOP_127_3_out_enc_statemt_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main_decrypt_Pipeline_VITIS_LOOP_132_1_VITIS_LOOP_133_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aes_main_decrypt_Pipeline_VITIS_LOOP_132_1_VITIS_LOOP_133_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.aes_main_key_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.aes_main_word_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.aes_main_statemt_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.aes_main_flow_control_loop_pipe_...
+Compiling module xil_defaultlib.aes_main_encrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_encrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_encrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_encrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_encrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_ByteSub_ShiftRow_Sbox_R...
+Compiling module xil_defaultlib.aes_main_ByteSub_ShiftRow
+Compiling module xil_defaultlib.aes_main_MixColumn_AddRoundKey_r...
+Compiling module xil_defaultlib.aes_main_MixColumn_AddRoundKey_P...
+Compiling module xil_defaultlib.aes_main_MixColumn_AddRoundKey_P...
+Compiling module xil_defaultlib.aes_main_mul_9s_9s_9_1_1(NUM_STA...
+Compiling module xil_defaultlib.aes_main_MixColumn_AddRoundKey
+Compiling module xil_defaultlib.aes_main_encrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_encrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_encrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_encrypt
+Compiling module xil_defaultlib.aes_main_decrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_decrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_decrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_InversShiftRow_ByteSub_...
+Compiling module xil_defaultlib.aes_main_InversShiftRow_ByteSub
+Compiling module xil_defaultlib.aes_main_AddRoundKey_InversMixCo...
+Compiling module xil_defaultlib.aes_main_AddRoundKey_InversMixCo...
+Compiling module xil_defaultlib.aes_main_AddRoundKey_InversMixCo...
+Compiling module xil_defaultlib.aes_main_AddRoundKey_InversMixCo...
+Compiling module xil_defaultlib.aes_main_AddRoundKey_InversMixCo...
+Compiling module xil_defaultlib.aes_main_decrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_decrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_decrypt_Pipeline_VITIS_...
+Compiling module xil_defaultlib.aes_main_decrypt
+Compiling module xil_defaultlib.aes_main
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=16)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.upc_loop_intf
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_aes_main_top
+Compiling module work.glbl
+Built simulation snapshot aes_main
+
+****** xsim v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/aes_main/xsim_script.tcl
+# xsim {aes_main} -autoloadwcfg -tclbatch {aes_main.tcl}
+Time resolution is 1 ps
+source aes_main.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "125000"
+// RTL Simulation : 1 / 1 [n/a] @ "17875000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 17935 ns : File "/home/virubuntu/CHStone/aes/aes_header_porject/solution1/sim/verilog/aes_main.autotb.v" Line 200
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Jun  9 14:40:18 2023...
+INFO: [COSIM 212-316] Starting C post checking ...
+
+0
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 33.05 seconds. CPU system time: 3.64 seconds. Elapsed time: 55.22 seconds; current allocated memory: 4.512 MB.
+INFO: [HLS 200-112] Total CPU user time: 35.55 seconds. Total CPU system time: 4.05 seconds. Total elapsed time: 68.15 seconds; peak allocated memory: 776.645 MB.

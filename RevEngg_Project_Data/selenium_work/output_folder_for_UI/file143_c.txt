@@ -1,0 +1,65 @@
+Certainly! Here are three variations of the code you provided, adhering to your constraints:
+
+**Version 1: Simplified Input Prompts**
+```c
+#include <stdio.h>
+
+int main() {
+    float length, width, height, volume;
+
+    printf("Length, width, height: ");
+    scanf("%f %f %f", &length, &width, &height);
+
+    volume = (length * width * height) / 3.0f;
+
+    printf("Pyramid volume: %.2f\n", volume);
+
+    return 0;
+}
+```
+
+**Version 2: Inline Calculation**
+```c
+#include <stdio.h>
+
+int main() {
+    float length, width, height;
+
+    printf("Base length: ");
+    scanf("%f", &length);
+    printf("Base width: ");
+    scanf("%f", &width);
+    printf("Height: ");
+    scanf("%f", &height);
+
+    printf("Volume: %.2f\n", (length * width * height) / 3.0f);
+
+    return 0;
+}
+```
+
+**Version 3: Adding a Greeting Message**
+```c
+#include <stdio.h>
+
+int main() {
+    float length, width, height, volume;
+
+    printf("Welcome to the Pyramid Volume Calculator!\n");
+
+    printf("Enter base length: ");
+    scanf("%f", &length);
+    printf("Enter base width: ");
+    scanf("%f", &width);
+    printf("Enter pyramid height: ");
+    scanf("%f", &height);
+
+    volume = (length * width * height) / 3;
+
+    printf("The pyramid's volume is: %.2f cubic units.\n", volume);
+
+    return 0;
+}
+```
+
+Each version sticks to the guidelines you've set, such as avoiding the use of additional functions, dynamic memory allocation, structures, unions, pointers, recursion, file handling, and not modifying the existing data types or using data types other than `float` for floating-point numbers.

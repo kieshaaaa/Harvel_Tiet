@@ -1,0 +1,131 @@
+### Version 1: Simplified with `float` and Minor Adjustments
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, i;
+    float sum = 0, mean, variance = 0, stdDeviation, kurtosis, sumOfQuads = 0;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    float arr[n];
+
+    for(i = 0; i < n; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%f", &arr[i]);
+        sum += arr[i];
+    }
+
+    mean = sum / n;
+
+    for(i = 0; i < n; i++) {
+        variance += pow(arr[i] - mean, 2);
+    }
+    variance /= n;
+    stdDeviation = sqrt(variance);
+
+    for(i = 0; i < n; i++) {
+        sumOfQuads += pow(arr[i] - mean, 4);
+    }
+    kurtosis = (n * (n + 1) * sumOfQuads) / ((n - 1) * (n - 2) * (n - 3) * pow(stdDeviation, 4)) - (3 * pow(n - 1, 2)) / ((n - 2) * (n - 3));
+
+    printf("Mean = %.2f\n", mean);
+    printf("Variance = %.2f\n", variance);
+    printf("Standard Deviation = %.2f\n", stdDeviation);
+    printf("Kurtosis = %.2f\n", kurtosis);
+
+    return 0;
+}
+```
+
+### Version 2: Using `for` Loop for Input and Calculations Together
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, i;
+    float sum = 0, mean, sumSquaredDiff = 0, variance, stdDeviation, sumOfQuads = 0, kurtosis;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    float arr[n];
+
+    for(i = 0; i < n; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%f", &arr[i]);
+        sum += arr[i];
+    }
+
+    mean = sum / n;
+
+    for(i = 0; i < n; i++) {
+        float diff = arr[i] - mean;
+        sumSquaredDiff += diff * diff;
+        sumOfQuads += diff * diff * diff * diff;
+    }
+
+    variance = sumSquaredDiff / n;
+    stdDeviation = sqrt(variance);
+    kurtosis = (n * (n + 1) * sumOfQuads) / ((n - 1) * (n - 2) * (n - 3) * pow(stdDeviation, 4)) - (3 * pow(n - 1, 2)) / ((n - 2) * (n - 3));
+
+    printf("Mean = %.2f\n", mean);
+    printf("Variance = %.2f\n", variance);
+    printf("Standard Deviation = %.2f\n", stdDeviation);
+    printf("Kurtosis = %.2f\n", kurtosis);
+
+    return 0;
+}
+```
+
+### Version 3: Further Simplification by Merging Loops
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, i;
+    float mean, variance, stdDeviation, kurtosis;
+    float sum = 0, sumOfQuads = 0, diff;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    float arr[n];
+
+    for(i = 0; i < n; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%f", &arr[i]);
+        sum += arr[i];
+    }
+
+    mean = sum / n;
+
+    sum = 0; // Reusing sum variable for variance calculation for better memory usage
+
+    for(i = 0; i < n; i++) {
+        diff = arr[i] - mean;
+        sum += diff * diff; // Now sum holds the sum of squared differences
+        sumOfQuads += pow(diff, 4);
+    }
+
+    variance = sum / n;
+    stdDeviation = sqrt(variance);
+    kurtosis = (n * (n + 1) * sumOfQuads) / ((n - 1) * (n - 2) * (n - 3) * pow(stdDeviation, 4)) - (3 * pow(n - 1, 2)) / ((n - 2) * (n - 3));
+
+    printf("Mean = %.2f\n", mean);
+    printf("Variance = %.2f\n", variance);
+    printf("Standard Deviation = %.2f\n", stdDeviation);
+    printf("Kurtosis = %.2f\n", kurtosis);
+
+    return 0;
+}
+```
+
+These versions implement the requested changes, replacing `double` with `float`, and each has its own minor adjustments for simplifying or altering the flow of the program without introducing any of the disallowed programming constructs or changing the variable types significantly.

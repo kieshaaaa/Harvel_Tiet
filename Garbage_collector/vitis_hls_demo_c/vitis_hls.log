@@ -1,0 +1,42 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+  **** SW Build 3670227 on Oct 13 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source /root/Downloads/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
+[1mSYNTAX [0m
+  [1mvitis_hls[0m <[1mtclscripts[0m> [OPTIONS]
+
+[1mDESCRIPTION[0m
+  Vitis HLS command line
+
+[1mOPTIONS[0m
+  [1mtclscripts[0m :  <string> 
+    TCL file
+  [1m-eval[0m <string> 
+    Run TCL commands
+  [1m-f[0m[=true|[4mfalse[0m]
+    start in shell mode
+  [1m-i[0m[=true|[4mfalse[0m]
+    start in interactive mode
+  [1m-l[0m <string:[4mvitis_hls.log[0m> 
+    log file
+  [1m-n[0m[=true|[4mfalse[0m]
+    do not show splash screen
+  [1m-nolog[0m[=true|[4mfalse[0m]
+    Disable log file creation
+  [1m-nosplash[0m[=true|[4mfalse[0m]
+    do not show splash screen
+  [1m-p[0m <string> 
+    project name
+  [1m-terse[0m[=true|[4mfalse[0m]
+    Filter stdout to only show status INFO and WARNING messages, log file will contain all messages
+  [1m-version[0m[=true|[4mfalse[0m]
+    show product version
+
+[1mSEE ALSO[0m
+  www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=vitis+doc;d=wic1584802485878.html
+
+INFO: [HLS 200-112] Total CPU user time: 0.98 seconds. Total CPU system time: 0.07 seconds. Total elapsed time: 0.81 seconds; peak allocated memory: 98.938 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Thu Jun  1 17:05:28 2023...

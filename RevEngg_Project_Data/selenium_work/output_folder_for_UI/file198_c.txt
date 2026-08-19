@@ -1,0 +1,75 @@
+Certainly! Here are three different versions of the C program to read and display time in HH:MM:SS format, following the restrictions you've specified:
+
+### Version 1: Using `float` for Input Validation
+
+```c
+#include <stdio.h>
+
+int main() {
+    float hour, minute, second;
+    
+    printf("Enter time (in HH:MM:SS) ");
+    scanf("%f:%f:%f", &hour, &minute, &second);
+    
+    if(hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59 && second >= 0 && second <= 59) {
+        printf("Entered time is %02d:%02d:%02d\n", (int)hour, (int)minute, (int)second);
+    } else {
+        printf("Invalid time entered.\n");
+    }
+    
+    return 0;
+}
+```
+
+### Version 2: Requesting Time Components Individually
+
+```c
+#include <stdio.h>
+
+int main() {
+    int hour, minute, second;
+    
+    printf("Enter hour (HH): ");
+    scanf("%d", &hour);
+    
+    printf("Enter minute (MM): ");
+    scanf("%d", &minute);
+    
+    printf("Enter second (SS): ");
+    scanf("%d", &second);
+    
+    if(hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59 && second >= 0 && second <= 59) {
+        printf("Entered time is %02d:%02d:%02d\n", hour, minute, second);
+    } else {
+        printf("Invalid time entered.\n");
+    }
+    
+    return 0;
+}
+```
+
+### Version 3: Using `float` for Time Entry and Displaying with a Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    float timeParts[3]; // 0: hour, 1: minute, 2: second
+    const char *labels[] = {"hour (HH)", "minute (MM)", "second (SS)"};
+    
+    for(int i = 0; i < 3; i++) {
+        printf("Enter %s: ", labels[i]);
+        scanf("%f", &timeParts[i]);
+    }
+    
+    if(timeParts[0] >= 0 && timeParts[0] <= 23 && timeParts[1] >= 0 && timeParts[1] <= 59 && timeParts[2] >= 0 && timeParts[2] <= 59) {
+        printf("Entered time is %02d:%02d:%02d\n", (int)timeParts[0], (int)timeParts[1], (int)timeParts[2]);
+    } else {
+        printf("Invalid time entered.\n");
+    }
+    
+    return 0;
+}
+```
+
+Each version respects the constraints you've specified, like avoiding pointers, structures, dynamic memory allocation, recursion, file handling, and the use of `const` or `double` data types.

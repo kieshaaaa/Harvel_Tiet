@@ -1,0 +1,10 @@
+remark: mat_mul.c:13:30: Sequential read of length 3 has been inferred _XLX_SEP_ OldID=for.inc.load.5,  _XLX_SEP_ scevgepseq mat1 gmem VITIS_LOOP_13_1 mat_mul.c:13:30 multiplyMatrix 
+remark: mat_mul.c:14:46: Stride is incompatible _XLX_SEP_ for.inc.load.7 mat2 gmem VITIS_LOOP_13_1 mat_mul.c:13:30 multiplyMatrix 
+remark: mat_mul.c:13:30: Stride is incompatible _XLX_SEP_ scevgepseq mat1 gmem multiplyMatrix_label0 mat_mul.c:11:31 multiplyMatrix 
+remark: mat_mul.c:12:26: Access is clobbered by store _XLX_SEP_ VITIS_LOOP_13_1.store.3 result gmem multiplyMatrix 
+remark: mat_mul.c:14:30: Access is clobbered by store _XLX_SEP_ for.inc21.store.2 result gmem multiplyMatrix 
+remark: mat_mul.c:13:30: Could not widen since type i32 size is greater than or equal to alignment 4(bytes) _XLX_SEP_ scevgepseq mat1 gmem VITIS_LOOP_13_1 mat_mul.c:13:30 multiplyMatrix 
+warning: mat_mul.c:7:0: interface mode 'ap_none' with wrong type '[3 x i32]*'
+warning: mat_mul.c:7:0: interface mode 'ap_none' with wrong type '[3 x i32]*'
+warning: mat_mul.c:7:0: interface mode 'ap_none' with wrong type '[3 x i32]*'
+remark: mat_mul.c:13:30: Could not burst due to multiple potential reads to the same bundle in the same region. _XLX_SEP_ seq  gmem multiplyMatrix 

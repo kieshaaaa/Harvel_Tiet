@@ -1,0 +1,78 @@
+Certainly! Here are three versions of the code that compute the nth hexagonal number, adhering to your constraints. Each version varies slightly in its approach or structure but maintains the core functionality.
+
+### Version 1: Simplified Expression
+
+This version simplifies the expression for calculating the hexagonal number directly in the assignment to `nthHexagonal`.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, nthHexagonal;
+    printf("Enter a positive integer (n) to find the nth hexagonal number: ");
+    scanf("%d", &n);
+
+    if (n > 0) {
+        nthHexagonal = 2 * n * n - n;
+        printf("The %dth hexagonal number is: %d\n", n, nthHexagonal);
+    } else {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using For Loop
+
+This version introduces a loop to calculate the hexagonal number, which, while not the most efficient for this particular calculation, demonstrates an alternative approach.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+    printf("Enter a positive integer (n) to find the nth hexagonal number: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+
+    for (int i = 1; i <= n; ++i) {
+        sum += (4 * i - 2);
+    }
+    printf("The %dth hexagonal number is: %d\n", n, sum);
+
+    return 0;
+}
+```
+
+### Version 3: Conditional Operator for Input Validation
+
+This version uses a conditional operator for input validation, offering a more compact way to handle the input check.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, nthHexagonal;
+    printf("Enter a positive integer (n) to find the nth hexagonal number: ");
+    scanf("%d", &n);
+
+    nthHexagonal = (n > 0) ? 2 * n * n - n : -1;
+
+    if (nthHexagonal == -1) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    } else {
+        printf("The %dth hexagonal number is: %d\n", n, nthHexagonal);
+    }
+
+    return 0;
+}
+```
+
+Each version adheres to your guidelines and provides a different way to approach the problem or structure the code.

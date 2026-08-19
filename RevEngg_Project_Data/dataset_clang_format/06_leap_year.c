@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int entry_point ( int ( *year )  ,  int ( *temptemp1 )  ,  int ( *temptemp2 )  )   { 
+   ; 
+  switch  (  (  ( *year )  % 400 == 0 )  ||  (  ( *year )  % 100 &&  ( *year )  % 4 == 0 )  )   { 
+    case 0:  { 
+       ( *temptemp1 )  =  ( *year )  ; 
+       ; 
+     }  break ; 
+    case 1:  { 
+       ( *temptemp2 )  =  ( *year )  ; 
+       ; 
+     }  break ; 
+   }  ; 
+  return 0 ; 
+ } 

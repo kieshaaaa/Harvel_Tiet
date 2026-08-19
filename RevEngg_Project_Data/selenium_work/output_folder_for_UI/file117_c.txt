@@ -1,0 +1,62 @@
+### Version 1
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num1, shiftedValue;
+
+    printf("Enter an integer: ");
+    scanf("%d", &num1);
+
+    shiftedValue = num1 << 3; // Shifting left instead of right, by 3 bits
+
+    printf("Shifted value is: ");
+    printf("%d", shiftedValue);
+    printf(" \n");
+
+    return 0;
+}
+```
+
+### Version 2
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, shifted;
+
+    printf("Input an integer: ");
+    scanf("%d", &num);
+
+    shifted = num >> 2; // Right shift by 2 bits
+
+    printf("After shifting: ");
+    printf("%d", shifted);
+    printf(" \n");
+
+    return 0;
+}
+```
+
+### Version 3
+
+```c
+#include <stdio.h>
+
+int main() {
+    int inputValue, resultShift;
+
+    printf("Provide an integer: ");
+    scanf("%d", &inputValue);
+
+    resultShift = inputValue << 1; // Left shift by 1 bit
+
+    printf("Resulting value: ");
+    printf("%d", resultShift);
+    printf(" \n");
+
+    return 0;
+}
+```

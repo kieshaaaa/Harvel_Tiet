@@ -1,0 +1,105 @@
+Certainly, I will provide three different versions of the code to generate the specified pattern, adhering to the constraints mentioned:
+
+### Version 1: Straightforward Loop Adjustment
+This version simplifies the loop logic for a direct and easy-to-understand pattern generation.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("\nHow Many Rows => ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("\n!!! Invalid Input, Please Enter Positive Number....");
+        return 0;
+    }
+
+    puts("\n--------------------------------------------\n");
+
+    for (int row = 0; row < n; row++) {
+        for (int space = 0; space < row; space++) {
+            printf(" ");
+        }
+        for (int star = 0; star < (2 * (n - row) - 1); star++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using While Loops
+This version uses while loops instead of for loops to achieve the same pattern, offering a slightly different coding approach.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("\nHow Many Rows => ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("\n!!! Invalid Input, Please Enter Positive Number....");
+        return 0;
+    }
+
+    puts("\n--------------------------------------------\n");
+
+    int row = 0;
+    while (row < n) {
+        int space = 0;
+        while (space < row) {
+            printf(" ");
+            space++;
+        }
+        int star = (2 * (n - row) - 1);
+        while (star > 0) {
+            printf("*");
+            star--;
+        }
+        printf("\n");
+        row++;
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Mirroring Approach with Inverted Logic
+This version inverts the logic, essentially counting down instead of up for rows and spaces, creating an inverted pyramid effect.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("\nHow Many Rows => ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("\n!!! Invalid Input, Please Enter Positive Number....");
+        return 0;
+    }
+
+    puts("\n--------------------------------------------\n");
+
+    for (int row = n; row > 0; row--) {
+        for (int space = n; space > row; space--) {
+            printf(" ");
+        }
+        for (int star = 1; star <= (2 * row - 1); star++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+Each of these versions adheres to your requirements: avoiding extra functions, dynamic memory allocation, structs, unions, pointers, recursion, and file handling, and not performing operations within `printf` statements.

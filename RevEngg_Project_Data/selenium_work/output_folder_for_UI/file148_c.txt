@@ -1,0 +1,77 @@
+### Version 1: Using a for loop for cubic calculation
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int nthCubic = 1; // Start with 1 because multiplying by 0 gives 0
+    printf("Enter a positive integer (n) to find the nth cubic number: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+
+    for (i = 0; i < 3; ++i) {
+        nthCubic *= n;
+    }
+
+    printf("The %dth cubic number is: %d\n", n, nthCubic);
+    return 0;
+}
+```
+
+### Version 2: Using a while loop instead of direct multiplication
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;
+    int nthCubic = 1; // Initialize to 1 for multiplication
+    printf("Enter a positive integer (n) to find the nth cubic number: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+
+    while (count < 3) {
+        nthCubic *= n;
+        count++;
+    }
+
+    printf("The %dth cubic number is: %d\n", n, nthCubic);
+    return 0;
+}
+```
+
+### Version 3: Using temporary variable and manual multiplication
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    int temp1, temp2, nthCubic;
+    printf("Enter a positive integer (n) to find the nth cubic number: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1;
+    }
+
+    temp1 = n * n; // Square of n
+    temp2 = temp1 * n; // Cubic of n by multiplying the square with n
+    nthCubic = temp2;
+
+    printf("The %dth cubic number is: %d\n", n, nthCubic);
+    return 0;
+}
+```
+
+Each of these versions achieves the task of calculating the nth cubic number in a slightly different manner, adhering to your constraints and avoiding the specified features and data types.

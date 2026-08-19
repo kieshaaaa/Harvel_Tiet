@@ -1,0 +1,81 @@
+Sure, here are three different versions of the given C program, which swap the values of two `int` variables without using bitwise XOR and adhering to your constraints:
+
+### Version 1: Using Temporary Variable
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, temp;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+    printf("\n\n>>>>>>>>>>> Before Swapping <<<<<<<<<<<\n");
+    printf("a => %d, b => %d\n", a, b);
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("\n\n>>>>>>>>>>> After Swapping <<<<<<<<<<<\n");
+    printf("a => %d, b => %d\n", a, b);
+
+    return 0;
+}
+```
+
+### Version 2: Using Addition and Subtraction
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+    printf("\n\n>>>>>>>>>>> Before Swapping <<<<<<<<<<<\n");
+    printf("a => %d, b => %d\n", a, b);
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("\n\n>>>>>>>>>>> After Swapping <<<<<<<<<<<\n");
+    printf("a => %d, b => %d\n", a, b);
+
+    return 0;
+}
+```
+
+### Version 3: Using Multiplication and Division
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+    printf("\n\n>>>>>>>>>>> Before Swapping <<<<<<<<<<<\n");
+    printf("a => %d, b => %d\n", a, b);
+
+    // Ensure b is not 0 to avoid division by zero error
+    if(b != 0) {
+        a = a * b;
+        b = a / b;
+        a = a / b;
+    }
+
+    printf("\n\n>>>>>>>>>>> After Swapping <<<<<<<<<<<\n");
+    printf("a => %d, b => %d\n", a, b);
+
+    return 0;
+}
+```
+
+Note: The multiplication and division method (Version 3) could potentially cause overflow issues if the values of `a` and `b` are too large, and it also assumes `b` is not zero to avoid division by zero errors.

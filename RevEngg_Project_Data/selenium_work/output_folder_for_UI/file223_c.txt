@@ -1,0 +1,103 @@
+Sure, I'll provide you with three variations of the given program to compare two strings without using the library functions and adhering to your constraints.
+
+### Version 1: Simplified Logic
+This version simplifies the comparison logic to break early if a mismatch is found and ensures strings are equal only if the end of both strings is reached.
+
+```c
+#include <stdio.h>
+
+int main() {
+    char str1[20], str2[20];
+    int i, equal = 1;
+
+    printf("\nEnter first string: ");
+    scanf("%19s", str1);
+    printf("Enter second string: ");
+    scanf("%19s", str2);
+
+    for (i = 0; str1[i] != '\0' || str2[i] != '\0'; i++) {
+        if (str1[i] != str2[i]) {
+            equal = 0;
+            break;
+        }
+    }
+
+    if (equal && str1[i] == '\0' && str2[i] == '\0') {
+        printf("\nStrings are equal.\n");
+    } else {
+        printf("\nStrings are not equal\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Early Length Check
+This version adds an early length check to avoid unnecessary comparison if the strings are of different lengths.
+
+```c
+#include <stdio.h>
+
+int main() {
+    char str1[20], str2[20];
+    int i, length1 = 0, length2 = 0;
+
+    printf("\nEnter first string: ");
+    scanf("%19s", str1);
+    printf("Enter second string: ");
+    scanf("%19s", str2);
+
+    for (i = 0; str1[i] != '\0'; i++) length1++;
+    for (i = 0; str2[i] != '\0'; i++) length2++;
+
+    if (length1 != length2) {
+        printf("\nStrings are not equal\n");
+        return 0;
+    }
+
+    for (i = 0; i < length1; i++) {
+        if (str1[i] != str2[i]) {
+            printf("\nStrings are not equal\n");
+            return 0;
+        }
+    }
+
+    printf("\nStrings are equal.\n");
+    return 0;
+}
+```
+
+### Version 3: Single Loop with Length Check
+This version combines length checking and character comparison in a single loop to optimize the code further.
+
+```c
+#include <stdio.h>
+
+int main() {
+    char str1[20], str2[20];
+    int i = 0, diff = 0;
+
+    printf("\nEnter first string: ");
+    scanf("%19s", str1);
+    printf("Enter second string: ");
+    scanf("%19s", str2);
+
+    while (str1[i] != '\0' || str2[i] != '\0') {
+        if (str1[i] != str2[i]) {
+            diff = 1;
+            break;
+        }
+        i++;
+    }
+
+    if (!diff && str1[i] == '\0' && str2[i] == '\0') {
+        printf("\nStrings are equal.\n");
+    } else {
+        printf("\nStrings are not equal\n");
+    }
+
+    return 0;
+}
+```
+
+These versions maintain the original program's integrity by avoiding the use of dynamic memory allocation, pointers, recursion, file handling, and modifying data types as per your constraints.

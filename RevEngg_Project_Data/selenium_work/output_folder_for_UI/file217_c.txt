@@ -1,0 +1,63 @@
+Certainly! Below are three different variations of the provided C program to print a pyramid of multiplication tables. Each version adheres to the constraints you've mentioned.
+
+### Version 1: Using While Loop
+
+```c
+#include<stdio.h>
+
+int main() {
+    int i = 1, j, product;
+
+    while (i <= 10) {
+        j = 1;
+        while (j <= i) {
+            product = i * j;
+            printf("%d  ", product);
+            j++;
+        }
+        printf("\n");
+        i++;
+    }
+    return 0;
+}
+```
+
+### Version 2: Changing Loop Variables
+
+```c
+#include<stdio.h>
+
+int main() {
+    int row, col, product;
+
+    for (row = 1; row <= 10; row++) {
+        for (col = 1; col <= row; col++) {
+            product = row * col;
+            printf("%d  ", product);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 3: Introducing an Intermediate Variable for Readability
+
+```c
+#include<stdio.h>
+
+int main() {
+    int base, multiplier, result;
+
+    for (base = 1; base <= 10; base++) {
+        for (multiplier = 1; multiplier <= base; multiplier++) {
+            result = base * multiplier;
+            printf("%d  ", result);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+Each of these versions generates the pyramid of multiplication tables in a slightly different manner but achieves the same outcome. They all use `int` for variable declaration, avoid modifying the existing data type, do not include any of the exclusions you've listed, and use `printf` outside of any expressions or operations, fulfilling the constraints provided.

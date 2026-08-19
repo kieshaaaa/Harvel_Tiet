@@ -1,0 +1,64 @@
+### Version 1
+In this version, the code directly converts degrees to radians using a single statement for the conversion and prints the result. The usage of `float` instead of `double` is adhered to as per the instructions.
+
+```c
+#include <stdio.h>
+
+#define PI 3.14f
+
+int main() {
+    float degrees, radians;
+    printf("Enter angle in degrees: ");
+    scanf("%f", &degrees);
+    radians = degrees * (PI / 180.0f);
+    printf("Angle in radians: ");
+    printf("%f\n", radians);
+    return 0;
+}
+```
+
+### Version 2
+This version incorporates a slightly different approach by calculating the conversion factor ahead of the actual conversion operation, aiming for clarity in what the code does at each step.
+
+```c
+#include <stdio.h>
+
+#define PI 3.14f
+
+int main() {
+    float degrees, radians, conversionFactor;
+    conversionFactor = PI / 180.0f;
+    
+    printf("Enter angle in degrees: ");
+    scanf("%f", &degrees);
+    
+    radians = degrees * conversionFactor;
+    
+    printf("Angle in radians: ");
+    printf("%f\n", radians);
+    return 0;
+}
+```
+
+### Version 3
+This version changes the approach by first asking for the input and then performing all operations right before the output, with a focus on separating the input gathering from the calculation logic.
+
+```c
+#include <stdio.h>
+
+#define PI 3.14f
+
+int main() {
+    float degrees;
+    printf("Enter angle in degrees: ");
+    scanf("%f", &degrees);
+    
+    float radians = degrees * (PI / 180.0f);
+    
+    printf("Angle in radians: ");
+    printf("%f\n", radians);
+    return 0;
+}
+```
+
+Each of these versions respects the constraints you've listed, sticking to the use of `float` for numerical operations, avoiding the specified programming constructs, and separating the calculations and operations from the `printf` statements.

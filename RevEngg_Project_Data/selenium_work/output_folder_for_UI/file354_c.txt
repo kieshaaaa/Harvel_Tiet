@@ -1,0 +1,110 @@
+Sure, I'll provide you with three different versions of the given code to count the frequency of each element in an array. Each version will follow the constraints you've specified.
+
+### Version 1: Using a Separate Flag Array
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], freq[100], flag[100];
+    int size, i, j;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    for(i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+        freq[i] = 1; // Initialize frequency to 1
+        flag[i] = 0; // Initialize all elements of flag to 0
+    }
+
+    for(i = 0; i < size; i++) {
+        for(j = i + 1; j < size; j++) {
+            if(arr[i] == arr[j]) {
+                freq[i]++;
+                flag[j] = 1; // Mark duplicate elements
+            }
+        }
+    }
+
+    printf("\nFrequency of all elements of array:\n");
+    for(i = 0; i < size; i++) {
+        if(flag[i] == 0) {
+            printf("%d occurs %d times\n", arr[i], freq[i]);
+        }
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Simplified Version Without Using Frequency Array
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100];
+    int size, i, j, count;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    for(i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nFrequency of all elements of array:\n");
+    for(i = 0; i < size; i++) {
+        count = 1;
+        if(arr[i] != -1) { // Check if element has not been counted already
+            for(j = i + 1; j < size; j++) {
+                if(arr[i] == arr[j]) {
+                    count++;
+                    arr[j] = -1; // Mark duplicate elements as counted
+                }
+            }
+            printf("%d occurs %d times\n", arr[i], count);
+        }
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using a "Checked" Variable to Skip Counted Elements
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], checked[100];
+    int size, i, j, count;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    for(i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+        checked[i] = 0; // Initialize as unchecked
+    }
+
+    printf("\nFrequency of all elements of array:\n");
+    for(i = 0; i < size; i++) {
+        if(checked[i] == 1) continue; // Skip if already counted
+
+        count = 1;
+        for(j = i + 1; j < size; j++) {
+            if(arr[i] == arr[j]) {
+                count++;
+                checked[j] = 1; // Mark as counted
+            }
+        }
+        printf("%d occurs %d times\n", arr[i], count);
+    }
+
+    return 0;
+}
+```
+
+Each version adheres to the constraints provided: avoiding dynamic memory allocation, avoiding the use of structures, pointers, recursion, file handling, and modifying the existing data types.

@@ -1,0 +1,270 @@
+
+
+================================================================
+== Synthesis Summary Report of 'multiplyMatrix'
+================================================================
++ General Information: 
+    * Date:           Thu May 25 16:44:55 2023
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        matrix_mul
+    * Solution:       solution3 (Vitis Kernel Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu5p-flva2104-1-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+------------+-----+
+    |                   Modules                   | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |          |            |            |     |
+    |                   & Loops                   | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |    DSP   |     FF     |     LUT    | URAM|
+    +---------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+------------+-----+
+    |+ multiplyMatrix                             |     -|  0.00|     1451|  7.255e+03|         -|     1452|     -|        no|     -|  27 (~0%)|  9275 (~0%)|  14001 (2%)|    -|
+    | + multiplyMatrix_Pipeline_VITIS_LOOP_13_1   |     -|  0.00|       81|    405.000|         -|       81|     -|        no|     -|   3 (~0%)|   658 (~0%)|   822 (~0%)|    -|
+    |  o VITIS_LOOP_13_1                          |    II|  4.50|       79|    395.000|        76|        2|     3|       yes|     -|         -|           -|           -|    -|
+    | + multiplyMatrix_Pipeline_VITIS_LOOP_13_11  |     -|  0.00|       81|    405.000|         -|       81|     -|        no|     -|   3 (~0%)|   658 (~0%)|   822 (~0%)|    -|
+    |  o VITIS_LOOP_13_1                          |    II|  4.50|       79|    395.000|        76|        2|     3|       yes|     -|         -|           -|           -|    -|
+    | + multiplyMatrix_Pipeline_VITIS_LOOP_13_12  |     -|  0.00|       81|    405.000|         -|       81|     -|        no|     -|   3 (~0%)|   658 (~0%)|   822 (~0%)|    -|
+    |  o VITIS_LOOP_13_1                          |    II|  4.50|       79|    395.000|        76|        2|     3|       yes|     -|         -|           -|           -|    -|
+    | + multiplyMatrix_Pipeline_VITIS_LOOP_13_13  |     -|  0.00|       81|    405.000|         -|       81|     -|        no|     -|   3 (~0%)|   658 (~0%)|   822 (~0%)|    -|
+    |  o VITIS_LOOP_13_1                          |    II|  4.50|       79|    395.000|        76|        2|     3|       yes|     -|         -|           -|           -|    -|
+    | + multiplyMatrix_Pipeline_VITIS_LOOP_13_14  |     -|  0.00|       81|    405.000|         -|       81|     -|        no|     -|   3 (~0%)|   658 (~0%)|   822 (~0%)|    -|
+    |  o VITIS_LOOP_13_1                          |    II|  4.50|       79|    395.000|        76|        2|     3|       yes|     -|         -|           -|           -|    -|
+    | + multiplyMatrix_Pipeline_VITIS_LOOP_13_15  |     -|  0.00|       81|    405.000|         -|       81|     -|        no|     -|   3 (~0%)|   658 (~0%)|   822 (~0%)|    -|
+    |  o VITIS_LOOP_13_1                          |    II|  4.50|       79|    395.000|        76|        2|     3|       yes|     -|         -|           -|           -|    -|
+    | + multiplyMatrix_Pipeline_VITIS_LOOP_13_16  |     -|  0.00|       81|    405.000|         -|       81|     -|        no|     -|   3 (~0%)|   658 (~0%)|   822 (~0%)|    -|
+    |  o VITIS_LOOP_13_1                          |    II|  4.50|       79|    395.000|        76|        2|     3|       yes|     -|         -|           -|           -|    -|
+    | + multiplyMatrix_Pipeline_VITIS_LOOP_13_17  |     -|  0.00|       81|    405.000|         -|       81|     -|        no|     -|   3 (~0%)|   658 (~0%)|   822 (~0%)|    -|
+    |  o VITIS_LOOP_13_1                          |    II|  4.50|       79|    395.000|        76|        2|     3|       yes|     -|         -|           -|           -|    -|
+    | + multiplyMatrix_Pipeline_VITIS_LOOP_13_18  |     -|  0.00|       81|    405.000|         -|       81|     -|        no|     -|   3 (~0%)|   658 (~0%)|   822 (~0%)|    -|
+    |  o VITIS_LOOP_13_1                          |    II|  4.50|       79|    395.000|        76|        2|     3|       yes|     -|         -|           -|           -|    -|
+    +---------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface  | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_gmem | 32 -> 64   | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                                         |
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                                           |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                      |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                      |
+| s_axi_control | mat1_1   | 0x10   | 32    | W      | Data signal of mat1              |                                                                                    |
+| s_axi_control | mat1_2   | 0x14   | 32    | W      | Data signal of mat1              |                                                                                    |
+| s_axi_control | mat2_1   | 0x1c   | 32    | W      | Data signal of mat2              |                                                                                    |
+| s_axi_control | mat2_2   | 0x20   | 32    | W      | Data signal of mat2              |                                                                                    |
+| s_axi_control | result_1 | 0x28   | 32    | W      | Data signal of result            |                                                                                    |
+| s_axi_control | result_2 | 0x2c   | 32    | W      | Data signal of result            |                                                                                    |
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+---------------+-----------+
+| Interface | Type          | Ports     |
++-----------+---------------+-----------+
+| ap_clk    | clock         | ap_clk    |
+| ap_rst_n  | reset         | ap_rst_n  |
+| interrupt | interrupt     | interrupt |
+| ap_ctrl   | ap_ctrl_chain |           |
++-----------+---------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| mat1     | inout     | int*     |
+| mat2     | inout     | int*     |
+| result   | inout     | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+------------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                            |
++----------+---------------+-----------+----------+------------------------------------+
+| mat1     | m_axi_gmem    | interface |          |                                    |
+| mat1     | s_axi_control | register  | offset   | name=mat1_1 offset=0x10 range=32   |
+| mat1     | s_axi_control | register  | offset   | name=mat1_2 offset=0x14 range=32   |
+| mat2     | m_axi_gmem    | interface |          |                                    |
+| mat2     | s_axi_control | register  | offset   | name=mat2_1 offset=0x1c range=32   |
+| mat2     | s_axi_control | register  | offset   | name=mat2_2 offset=0x20 range=32   |
+| result   | m_axi_gmem    | interface |          |                                    |
+| result   | s_axi_control | register  | offset   | name=result_1 offset=0x28 range=32 |
+| result   | s_axi_control | register  | offset   | name=result_2 offset=0x2c range=32 |
++----------+---------------+-----------+----------+------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Bursts and Widening Missed
++--------------+----------+-----------------+------------------------------------------------------------------------------------+------------+-----------------+
+| HW Interface | Variable | Loop            | Problem                                                                            | Resolution | Location        |
++--------------+----------+-----------------+------------------------------------------------------------------------------------+------------+-----------------+
+| m_axi_gmem   | mat2     | VITIS_LOOP_13_1 | Stride is incompatible                                                             | 214-230    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat2     | VITIS_LOOP_13_1 | Stride is incompatible                                                             | 214-230    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat2     | VITIS_LOOP_13_1 | Stride is incompatible                                                             | 214-230    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat2     | VITIS_LOOP_13_1 | Stride is incompatible                                                             | 214-230    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat2     | VITIS_LOOP_13_1 | Stride is incompatible                                                             | 214-230    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat2     | VITIS_LOOP_13_1 | Stride is incompatible                                                             | 214-230    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat2     | VITIS_LOOP_13_1 | Stride is incompatible                                                             | 214-230    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat2     | VITIS_LOOP_13_1 | Stride is incompatible                                                             | 214-230    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat2     | VITIS_LOOP_13_1 | Stride is incompatible                                                             | 214-230    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat1     | VITIS_LOOP_13_1 | Sequential access length is not divisible by 2                                     | 214-234    | mat_mul.c:13:30 |
+| m_axi_gmem   | result   |                 | Could not widen since type i32 size is greater than or equal to alignment 4(bytes) | 214-307    | mat_mul.c:8:15  |
+| m_axi_gmem   | mat1     | VITIS_LOOP_13_1 | Sequential access length is not divisible by 2                                     | 214-234    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat1     | VITIS_LOOP_13_1 | Sequential access length is not divisible by 2                                     | 214-234    | mat_mul.c:13:30 |
+| m_axi_gmem   | result   |                 | Could not widen since type i32 size is greater than or equal to alignment 4(bytes) | 214-307    | mat_mul.c:8:15  |
+| m_axi_gmem   | mat1     | VITIS_LOOP_13_1 | Could not widen since type i32 size is greater than or equal to alignment 4(bytes) | 214-307    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat1     | VITIS_LOOP_13_1 | Could not widen since type i32 size is greater than or equal to alignment 4(bytes) | 214-307    | mat_mul.c:13:30 |
+| m_axi_gmem   | result   |                 | Could not widen since type i32 size is greater than or equal to alignment 4(bytes) | 214-307    | mat_mul.c:8:15  |
+| m_axi_gmem   | mat1     | VITIS_LOOP_13_1 | Could not widen since type i32 size is greater than or equal to alignment 4(bytes) | 214-307    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat1     | VITIS_LOOP_13_1 | Sequential access length is not divisible by 2                                     | 214-234    | mat_mul.c:13:30 |
+| m_axi_gmem   | result   |                 | Could not widen since type i32 size is greater than or equal to alignment 4(bytes) | 214-307    | mat_mul.c:8:15  |
+| m_axi_gmem   | mat1     | VITIS_LOOP_13_1 | Sequential access length is not divisible by 2                                     | 214-234    | mat_mul.c:13:30 |
+| m_axi_gmem   | mat1     | VITIS_LOOP_13_1 | Sequential access length is not divisible by 2                                     | 214-234    | mat_mul.c:13:30 |
++--------------+----------+-----------------+------------------------------------------------------------------------------------+------------+-----------------+
+
+    * Resolution URL: www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                                        | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++---------------------------------------------+-----+--------+-------------+-----+--------+---------+
+| + multiplyMatrix                            | 27  |        |             |     |        |         |
+|   add_ln14_fu_500_p2                        | -   |        | add_ln14    | add | fabric | 0       |
+|   add_ln8_fu_512_p2                         | -   |        | add_ln8     | add | fabric | 0       |
+|   add_ln8_1_fu_577_p2                       | -   |        | add_ln8_1   | add | fabric | 0       |
+|   add_ln14_4_fu_611_p2                      | -   |        | add_ln14_4  | add | fabric | 0       |
+|   add_ln13_fu_625_p2                        | -   |        | add_ln13    | add | fabric | 0       |
+|   add_ln8_2_fu_637_p2                       | -   |        | add_ln8_2   | add | fabric | 0       |
+|   add_ln8_3_fu_674_p2                       | -   |        | add_ln8_3   | add | fabric | 0       |
+|   add_ln8_4_fu_707_p2                       | -   |        | add_ln8_4   | add | fabric | 0       |
+|   add_ln8_5_fu_744_p2                       | -   |        | add_ln8_5   | add | fabric | 0       |
+|   add_ln13_1_fu_769_p2                      | -   |        | add_ln13_1  | add | fabric | 0       |
+|   add_ln8_6_fu_783_p2                       | -   |        | add_ln8_6   | add | fabric | 0       |
+|   add_ln8_7_fu_798_p2                       | -   |        | add_ln8_7   | add | fabric | 0       |
+|  + multiplyMatrix_Pipeline_VITIS_LOOP_13_1  | 3   |        |             |     |        |         |
+|    add_ln13_fu_190_p2                       | -   |        | add_ln13    | add | fabric | 0       |
+|    add_ln14_1_fu_174_p2                     | -   |        | add_ln14_1  | add | fabric | 0       |
+|    add_ln14_fu_278_p2                       | -   |        | add_ln14    | add | fabric | 0       |
+|    sub_ln14_fu_222_p2                       | -   |        | sub_ln14    | sub | fabric | 0       |
+|    add_ln14_2_fu_236_p2                     | -   |        | add_ln14_2  | add | fabric | 0       |
+|    add_ln14_25_fu_251_p2                    | -   |        | add_ln14_25 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U1                    | 3   |        | mul_ln14    | mul | auto   | 0       |
+|    add_ln14_3_fu_331_p2                     | -   |        | add_ln14_3  | add | fabric | 0       |
+|  + multiplyMatrix_Pipeline_VITIS_LOOP_13_11 | 3   |        |             |     |        |         |
+|    add_ln13_fu_190_p2                       | -   |        | add_ln13    | add | fabric | 0       |
+|    add_ln14_5_fu_174_p2                     | -   |        | add_ln14_5  | add | fabric | 0       |
+|    add_ln14_23_fu_278_p2                    | -   |        | add_ln14_23 | add | fabric | 0       |
+|    sub_ln14_fu_222_p2                       | -   |        | sub_ln14    | sub | fabric | 0       |
+|    add_ln14_6_fu_236_p2                     | -   |        | add_ln14_6  | add | fabric | 0       |
+|    add_ln14_24_fu_251_p2                    | -   |        | add_ln14_24 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U9                    | 3   |        | mul_ln14    | mul | auto   | 0       |
+|    add_ln14_7_fu_331_p2                     | -   |        | add_ln14_7  | add | fabric | 0       |
+|  + multiplyMatrix_Pipeline_VITIS_LOOP_13_12 | 3   |        |             |     |        |         |
+|    add_ln13_fu_190_p2                       | -   |        | add_ln13    | add | fabric | 0       |
+|    add_ln14_8_fu_174_p2                     | -   |        | add_ln14_8  | add | fabric | 0       |
+|    add_ln14_fu_278_p2                       | -   |        | add_ln14    | add | fabric | 0       |
+|    sub_ln14_fu_222_p2                       | -   |        | sub_ln14    | sub | fabric | 0       |
+|    add_ln14_9_fu_236_p2                     | -   |        | add_ln14_9  | add | fabric | 0       |
+|    add_ln14_22_fu_251_p2                    | -   |        | add_ln14_22 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U16                   | 3   |        | mul_ln14    | mul | auto   | 0       |
+|    add_ln14_10_fu_331_p2                    | -   |        | add_ln14_10 | add | fabric | 0       |
+|  + multiplyMatrix_Pipeline_VITIS_LOOP_13_13 | 3   |        |             |     |        |         |
+|    add_ln13_fu_190_p2                       | -   |        | add_ln13    | add | fabric | 0       |
+|    add_ln14_11_fu_174_p2                    | -   |        | add_ln14_11 | add | fabric | 0       |
+|    add_ln14_fu_278_p2                       | -   |        | add_ln14    | add | fabric | 0       |
+|    sub_ln14_fu_222_p2                       | -   |        | sub_ln14    | sub | fabric | 0       |
+|    add_ln14_12_fu_236_p2                    | -   |        | add_ln14_12 | add | fabric | 0       |
+|    add_ln14_21_fu_251_p2                    | -   |        | add_ln14_21 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U23                   | 3   |        | mul_ln14    | mul | auto   | 0       |
+|    add_ln14_13_fu_331_p2                    | -   |        | add_ln14_13 | add | fabric | 0       |
+|  + multiplyMatrix_Pipeline_VITIS_LOOP_13_14 | 3   |        |             |     |        |         |
+|    add_ln13_fu_190_p2                       | -   |        | add_ln13    | add | fabric | 0       |
+|    add_ln14_14_fu_174_p2                    | -   |        | add_ln14_14 | add | fabric | 0       |
+|    add_ln14_19_fu_278_p2                    | -   |        | add_ln14_19 | add | fabric | 0       |
+|    sub_ln14_fu_222_p2                       | -   |        | sub_ln14    | sub | fabric | 0       |
+|    add_ln14_15_fu_236_p2                    | -   |        | add_ln14_15 | add | fabric | 0       |
+|    add_ln14_20_fu_251_p2                    | -   |        | add_ln14_20 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U30                   | 3   |        | mul_ln14    | mul | auto   | 0       |
+|    add_ln14_16_fu_331_p2                    | -   |        | add_ln14_16 | add | fabric | 0       |
+|  + multiplyMatrix_Pipeline_VITIS_LOOP_13_15 | 3   |        |             |     |        |         |
+|    add_ln13_fu_190_p2                       | -   |        | add_ln13    | add | fabric | 0       |
+|    add_ln14_fu_174_p2                       | -   |        | add_ln14    | add | fabric | 0       |
+|    add_ln14_15_fu_278_p2                    | -   |        | add_ln14_15 | add | fabric | 0       |
+|    sub_ln14_fu_222_p2                       | -   |        | sub_ln14    | sub | fabric | 0       |
+|    add_ln14_16_fu_236_p2                    | -   |        | add_ln14_16 | add | fabric | 0       |
+|    add_ln14_17_fu_251_p2                    | -   |        | add_ln14_17 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U37                   | 3   |        | mul_ln14    | mul | auto   | 0       |
+|    add_ln14_18_fu_331_p2                    | -   |        | add_ln14_18 | add | fabric | 0       |
+|  + multiplyMatrix_Pipeline_VITIS_LOOP_13_16 | 3   |        |             |     |        |         |
+|    add_ln13_fu_190_p2                       | -   |        | add_ln13    | add | fabric | 0       |
+|    add_ln14_fu_174_p2                       | -   |        | add_ln14    | add | fabric | 0       |
+|    add_ln14_11_fu_278_p2                    | -   |        | add_ln14_11 | add | fabric | 0       |
+|    sub_ln14_fu_222_p2                       | -   |        | sub_ln14    | sub | fabric | 0       |
+|    add_ln14_12_fu_236_p2                    | -   |        | add_ln14_12 | add | fabric | 0       |
+|    add_ln14_13_fu_251_p2                    | -   |        | add_ln14_13 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U44                   | 3   |        | mul_ln14    | mul | auto   | 0       |
+|    add_ln14_14_fu_331_p2                    | -   |        | add_ln14_14 | add | fabric | 0       |
+|  + multiplyMatrix_Pipeline_VITIS_LOOP_13_17 | 3   |        |             |     |        |         |
+|    add_ln13_fu_190_p2                       | -   |        | add_ln13    | add | fabric | 0       |
+|    add_ln14_6_fu_174_p2                     | -   |        | add_ln14_6  | add | fabric | 0       |
+|    add_ln14_7_fu_278_p2                     | -   |        | add_ln14_7  | add | fabric | 0       |
+|    sub_ln14_fu_222_p2                       | -   |        | sub_ln14    | sub | fabric | 0       |
+|    add_ln14_8_fu_236_p2                     | -   |        | add_ln14_8  | add | fabric | 0       |
+|    add_ln14_9_fu_251_p2                     | -   |        | add_ln14_9  | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U51                   | 3   |        | mul_ln14    | mul | auto   | 0       |
+|    add_ln14_10_fu_331_p2                    | -   |        | add_ln14_10 | add | fabric | 0       |
+|  + multiplyMatrix_Pipeline_VITIS_LOOP_13_18 | 3   |        |             |     |        |         |
+|    add_ln13_fu_190_p2                       | -   |        | add_ln13    | add | fabric | 0       |
+|    add_ln14_fu_174_p2                       | -   |        | add_ln14    | add | fabric | 0       |
+|    add_ln14_1_fu_278_p2                     | -   |        | add_ln14_1  | add | fabric | 0       |
+|    sub_ln14_fu_222_p2                       | -   |        | sub_ln14    | sub | fabric | 0       |
+|    add_ln14_2_fu_236_p2                     | -   |        | add_ln14_2  | add | fabric | 0       |
+|    add_ln14_3_fu_251_p2                     | -   |        | add_ln14_3  | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U58                   | 3   |        | mul_ln14    | mul | auto   | 0       |
+|    add_ln14_5_fu_331_p2                     | -   |        | add_ln14_5  | add | fabric | 0       |
++---------------------------------------------+-----+--------+-------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++--------+---------+---------------------------------------------------------+
+| Type   | Options | Location                                                |
++--------+---------+---------------------------------------------------------+
+| unroll |         | matrix_mul/solution3/directives.tcl:7 in multiplymatrix |
++--------+---------+---------------------------------------------------------+
+
+

@@ -1,0 +1,24 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/csynth.tcl:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="multiplyMatrix" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=multiplyMatrix" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/directives.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="multiplyMatrix" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=multiplyMatrix" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/directives.tcl:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="multiplyMatrix" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/directives.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="multiplyMatrix" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="mat_mul.c:7:0" msg_body="Unrolling loop 'multiplyMatrix_label1' (mat_mul.c:10:27) in function 'multiplyMatrix' completely with a factor of 3">
+        <args Factor="3" LoopLoc="mat_mul.c:10:27" LoopName="multiplyMatrix_label1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="mat_mul.c:7:0" msg_body="Unrolling loop 'multiplyMatrix_label0' (mat_mul.c:11:31) in function 'multiplyMatrix' completely with a factor of 3">
+        <args Factor="3" LoopLoc="mat_mul.c:11:31" LoopName="multiplyMatrix_label0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-368" msg_severity="WARNING" msg_loc="mat_mul.c:7:0" msg_body="interface mode 'ap_none' with wrong type '[3 x i32]*'">
+        <args Type="[3 x i32]*"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

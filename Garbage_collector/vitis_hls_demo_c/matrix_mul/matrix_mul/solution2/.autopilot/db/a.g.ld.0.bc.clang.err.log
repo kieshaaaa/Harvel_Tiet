@@ -1,0 +1,47 @@
+remark: mat_mul.c:11:31: Loop 'multiplyMatrix_label0' is marked as complete unroll implied by the pipeline pragma
+remark: mat_mul.c:13:30: Loop 'VITIS_LOOP_13_1' is marked as complete unroll implied by the pipeline pragma
+remark: mat_mul.c:7:0: Unrolling loop 'multiplyMatrix_label0' (mat_mul.c:11:31) in function 'multiplyMatrix' completely with a factor of 3
+remark: mat_mul.c:7:0: Unrolling loop 'VITIS_LOOP_13_1' (mat_mul.c:13:30) in function 'multiplyMatrix' completely with a factor of 3
+remark: mat_mul.c:7:0: Unrolling loop 'VITIS_LOOP_13_1' (mat_mul.c:13:30) in function 'multiplyMatrix' completely with a factor of 3
+remark: mat_mul.c:7:0: Unrolling loop 'VITIS_LOOP_13_1' (mat_mul.c:13:30) in function 'multiplyMatrix' completely with a factor of 3
+remark: mat_mul.c:7:0: Applying array_partition to 'mat1': Complete partitioning on dimension 1.
+remark: mat_mul.c:7:0: Applying array_partition to 'result': Complete partitioning on dimension 1.
+warning: mat_mul.c:12:13: Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+warning: mat_mul.c:14:33: Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+warning: mat_mul.c:14:33: Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+warning: mat_mul.c:14:33: Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+warning: mat_mul.c:12:13: Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+warning: mat_mul.c:12:13: Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+remark: mat_mul.c:10:27: Sequential read of length 3 has been inferred _XLX_SEP_ OldID=for.inc.2.load.14,  _XLX_SEP_ mat1_0seq mat1_0 gmem_0 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential read of length 3 has been inferred _XLX_SEP_ OldID=for.inc.2.load.20,  _XLX_SEP_ mat1_1seq mat1_1 gmem_1 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential read of length 3 has been inferred _XLX_SEP_ OldID=for.inc.2.load.27,  _XLX_SEP_ mat1_2seq mat1_2 gmem_2 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential write of length 3 has been inferred _XLX_SEP_ OldID=for.inc.2.store.32,  _XLX_SEP_ result_0seq result_0 gmem_0 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential write of length 3 has been inferred _XLX_SEP_ OldID=for.inc.2.store.50,  _XLX_SEP_ result_1seq result_1 gmem_1 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential write of length 3 has been inferred _XLX_SEP_ OldID=for.inc.2.store.68,  _XLX_SEP_ result_2seq result_2 gmem_2 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: <unknown>:0:0: Sequential read of length 9 has been inferred _XLX_SEP_ OldID=entry.load.38, entry.load.44, entry.load.50, entry.load.40, entry.load.46, entry.load.52, entry.load.42, entry.load.48, entry.load.54,  _XLX_SEP_ mat21seq mat2 gmem multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ mat1_0seq mat1_0 gmem_0 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ mat1_1seq mat1_1 gmem_1 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ mat1_2seq mat1_2 gmem_2 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ result_0seq result_0 gmem_0 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ result_1seq result_1 gmem_1 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ result_2seq result_2 gmem_2 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: <unknown>:0:0: Sequential access length is not divisible by 2 _XLX_SEP_ mat21seq mat2 gmem multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ mat1_0seq mat1_0 gmem_0 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ mat1_1seq mat1_1 gmem_1 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ mat1_2seq mat1_2 gmem_2 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ result_0seq result_0 gmem_0 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ result_1seq result_1 gmem_1 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Sequential access length is not divisible by 2 _XLX_SEP_ result_2seq result_2 gmem_2 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+warning: mat_mul.c:7:0: interface mode 'ap_none' with wrong type '[3 x i32]*'
+remark: mat_mul.c:10:27: Multiple burst reads of length 3 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq  gmem_0 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Multiple burst reads of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+remark: mat_mul.c:10:27: Multiple burst reads of length 3 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq1  gmem_1 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Multiple burst reads of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+remark: mat_mul.c:10:27: Multiple burst reads of length 3 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq2  gmem_2 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Multiple burst reads of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_2'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+remark: mat_mul.c:10:27: Multiple burst writes of length 3 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq3  gmem_0 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Multiple burst writes of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+remark: mat_mul.c:10:27: Multiple burst writes of length 3 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq4  gmem_1 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Multiple burst writes of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+remark: mat_mul.c:10:27: Multiple burst writes of length 3 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq5  gmem_2 multiplyMatrix_label1 mat_mul.c:10:27 multiplyMatrix 
+remark: mat_mul.c:10:27: Multiple burst writes of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_2'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.

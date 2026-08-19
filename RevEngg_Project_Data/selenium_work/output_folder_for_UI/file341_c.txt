@@ -1,0 +1,80 @@
+Given your constraints, creating variations of the original program without using pointers, recursion, structs, unions, dynamic memory, or modifying data types presents a unique challenge, especially since the core functionality of passing an array of strings to a function heavily relies on pointers in C. However, we can use alternative methods to achieve similar outcomes within the bounds of your requirements. The following examples will showcase different approaches, each avoiding the restricted features you mentioned.
+
+### Version 1: Using Global 2D Array
+
+In this version, we'll use a global 2D character array. This approach bypasses the need for pointers in function parameters.
+
+```c
+#include <stdio.h>
+
+#define MAX_STRINGS 3
+#define MAX_LENGTH 50
+
+// Global 2D array
+char buff[MAX_STRINGS][MAX_LENGTH] = {"Hello function", "How are you?", "Catch some strings"};
+
+// Function to print strings
+void Strfun(int count) {
+    int i;
+    for(i = 0; i < count; i++) {
+        printf("\nString [%d] : ", i);
+        puts(buff[i]); // using puts to print string
+    }
+}
+
+int main() {
+    Strfun(3); // here 3 is the number of strings
+    return 0;
+}
+```
+
+### Version 2: Passing a 2D Array Directly
+
+Here, we directly pass a 2D array to the function. This avoids the use of pointers for the string array but still uses them under the hood for the 2D array handling, adhering to the constraints as best as possible.
+
+```c
+#include <stdio.h>
+
+// Function to print strings
+void Strfun(char arr[][50], int count) {
+    int i;
+    for(i = 0; i < count; i++) {
+        printf("\nString [%d] : ", i);
+        fputs(arr[i], stdout); // using fputs to print string
+    }
+}
+
+int main() {
+    char buff[3][50] = {"Hello function", "How are you?", "Catch some strings"};
+    Strfun(buff, 3); // Passing 2D array to function
+    return 0;
+}
+```
+
+### Version 3: Individual Char Arrays
+
+This version splits the strings into separate variables and passes them to the function, further avoiding the constraints.
+
+```c
+#include <stdio.h>
+
+// Function to print strings
+void Strfun(char str1[], char str2[], char str3[]) {
+    printf("\nString [0] : ");
+    puts(str1); // Print the first string
+    printf("String [1] : ");
+    puts(str2); // Print the second string
+    printf("String [2] : ");
+    puts(str3); // Print the third string
+}
+
+int main() {
+    char str1[] = "Hello function";
+    char str2[] = "How are you?";
+    char str3[] = "Catch some strings";
+    Strfun(str1, str2, str3);
+    return 0;
+}
+```
+
+Each of these versions strives to maintain the spirit of the original task while adhering to the outlined constraints, showcasing creative solutions within the strict boundaries provided.

@@ -1,0 +1,47 @@
+Sure, I will provide you with three different versions of the given code with the specified constraints in mind. Each version will still convert atmospheric pressure to mmHg, but with slight variations in how the code is structured.
+
+### Version 1: Using a Separate Variable for Conversion Factor
+```c
+#include <stdio.h>
+
+int main() {
+    float atm, mmHg, conversionFactor;
+    conversionFactor = 760.0;
+    printf("Enter pressure in Atmospheres: ");
+    scanf("%f", &atm);
+    mmHg = atm * conversionFactor;
+    printf("Pressure in mmHg: %f\n", mmHg);
+    return 0;
+}
+```
+
+### Version 2: Inline Initialization and Conversion
+```c
+#include <stdio.h>
+
+int main() {
+    float atm;
+    printf("Enter pressure in Atmospheres: ");
+    scanf("%f", &atm);
+    float mmHg = atm * 760.0; // Inline initialization and conversion
+    printf("Equivalent pressure in mmHg: %f\n", mmHg);
+    return 0;
+}
+```
+
+### Version 3: Prompt and Calculation Separated
+```c
+#include <stdio.h>
+
+int main() {
+    float atm = 0.0;
+    printf("Enter the value of pressure in atmospheres: ");
+    scanf("%f", &atm);
+    float mmHg = 0.0;
+    mmHg = atm * 760;
+    printf("The pressure in mmHg is: %f\n", mmHg);
+    return 0;
+}
+```
+
+Each version adheres to your constraints, focusing on varying aspects such as the use of a separate conversion factor variable, inline initialization, and a slightly different arrangement of the steps within the code logic.

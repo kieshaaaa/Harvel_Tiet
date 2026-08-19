@@ -1,0 +1,71 @@
+Sure, here are three variations of the provided code that adhere to your restrictions:
+
+### Version 1: Using a `for` loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, i, nthEven = 0;
+    
+    printf("Enter n to find the nth even number: ");
+    scanf("%d", &n);
+    
+    for (i = 1; i <= n; i++) {
+        nthEven += 2;
+    }
+    
+    printf("The nth even number is: ");
+    printf("%d\n", nthEven);
+    
+    return 0;
+}
+```
+
+### Version 2: Using a `while` loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, nthEven = 0, counter = 0;
+    
+    printf("Enter n to find the nth even number: ");
+    scanf("%d", &n);
+    
+    while (counter < n) {
+        nthEven += 2;
+        counter++;
+    }
+    
+    printf("The nth even number is: ");
+    printf("%d\n", nthEven);
+    
+    return 0;
+}
+```
+
+### Version 3: Using arithmetic progression formula
+
+In this version, I use the concept that the series of even numbers is an arithmetic progression with a common difference of 2. The nth term of an arithmetic progression can be found with the formula: `a_n = a_1 + (n - 1) * d`, where `a_1` is the first term and `d` is the common difference. For even numbers, `a_1` is 2 and `d` is also 2. This simplifies to `nthEven = 2 * n`, which is the logic we started with, but I'll show an adjusted formula that doesn't do the calculation within the `printf` to meet your requirements.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, nthEven;
+    float firstTerm = 2, commonDifference = 2;
+    
+    printf("Enter n to find the nth even number: ");
+    scanf("%d", &n);
+    
+    nthEven = firstTerm + (n - 1) * commonDifference;
+    
+    printf("The nth even number is: ");
+    printf("%d\n", nthEven);
+    
+    return 0;
+}
+```
+
+Each of these versions respects your constraints and each calculates the nth even number in a slightly different manner.

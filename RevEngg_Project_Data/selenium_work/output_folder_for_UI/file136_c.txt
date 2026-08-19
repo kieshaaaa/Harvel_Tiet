@@ -1,0 +1,74 @@
+Sure, here are three variations of the provided code with the specified constraints. Each version accomplishes the task of calculating and displaying the surface area of a cone given its radius and height. The core functionality remains the same, but the structure and presentation of the code are altered in each version.
+
+### Version 1: Reordering and Minor Adjustments
+
+```c
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14159
+
+int main() {
+    float radius, height, l, area;
+
+    printf("Enter the radius and height of the cone: ");
+    scanf("%f %f", &radius, &height);
+
+    l = sqrt(pow(radius, 2) + pow(height, 2));
+    area = PI * radius * (radius + l);
+
+    printf("Radius: %.2f, Height: %.2f\n", radius, height);
+    printf("Surface Area: %.2f\n", area);
+
+    return 0;
+}
+```
+
+### Version 2: Inline Calculation for Slant Height
+
+```c
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14159
+
+int main() {
+    float radius, height, area;
+
+    printf("Radius: ");
+    scanf("%f", &radius);
+    printf("Height: ");
+    scanf("%f", &height);
+
+    area = PI * radius * (radius + sqrt(radius * radius + height * height));
+
+    printf("The cone's surface area is: %.2f\n", area);
+
+    return 0;
+}
+```
+
+### Version 3: Step-by-Step Variable Introduction
+
+```c
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14159
+
+int main() {
+    float r, h, s, a;
+
+    printf("Input radius: ");
+    scanf("%f", &r);
+    printf("Input height: ");
+    scanf("%f", &h);
+
+    s = sqrt(r * r + h * h);
+    a = PI * r * (r + s);
+
+    printf("Surface Area: ");
+    printf("%.2f\n", a);
+
+    return 0;
+}
+```
+
+Each version respects the constraints you've outlined: avoiding functions, dynamic memory allocation, structs, unions, pointers, recursion, file handling, modifications to existing data types, and using `float` instead of `double`. Additionally, operations and expressions have been kept outside of the `printf` statements.

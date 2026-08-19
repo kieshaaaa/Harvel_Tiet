@@ -1,0 +1,84 @@
+Certainly! Below are three different versions of the provided code, each version adheres to your constraints, including the avoidance of specified programming constructs and practices. Each version calculates the sum and product of the digits of an integer input by the user.
+
+### Version 1
+This version uses a slightly different variable naming convention and changes the structure of the loop for readability.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number, tempNumber;
+    int digit, totalSum = 0, totalProduct = 1;
+
+    printf("\nEnter any integer number :: ");
+    scanf("%d", &number);
+
+    tempNumber = number;
+
+    while(tempNumber != 0) {
+        digit = tempNumber % 10;
+        totalSum = totalSum + digit;
+        totalProduct = totalProduct * digit;
+        tempNumber = tempNumber / 10;
+    }
+
+    printf("\nSUM of Digits of Number [ %d ] : [ %d ].\n", number, totalSum);
+    printf("\nPRODUCT of digits of Number [ %d ] : [ %d ].\n", number, totalProduct);
+
+    return 0;
+}
+```
+
+### Version 2
+In this version, the loop's condition is inverted, and it directly modifies the input number. It uses subtraction to decrease the number to zero in a loop, thus ensuring the loop will eventually terminate.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    int sum = 0, product = 1;
+
+    printf("\nEnter any integer number :: ");
+    scanf("%d", &num);
+
+    for (; num > 0; num /= 10) {
+        int digit = num % 10;
+        sum = sum + digit;
+        product = product * digit;
+    }
+
+    printf("\nSUM of Digits : [ %d ].\n", sum);
+    printf("\nPRODUCT of digits : [ %d ].\n", product);
+
+    return 0;
+}
+```
+
+### Version 3
+This version introduces a `for` loop, offering a compact loop structure and integrating the initialization, condition, and increment/decrement step within the loop header.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int value;
+    int digitSum = 0, digitProduct = 1;
+
+    printf("\nEnter any integer number :: ");
+    scanf("%d", &value);
+
+    for (int originalValue = value; originalValue > 0; originalValue /= 10) {
+        int digit = originalValue % 10;
+        digitSum += digit;
+        digitProduct *= digit;
+    }
+
+    printf("\nSUM of Digits of Number [ %d ] : [ %d ].\n", value, digitSum);
+    printf("\nPRODUCT of digits of Number [ %d ] : [ %d ].\n", value, digitProduct);
+
+    return 0;
+}
+```
+
+Each version maintains the functionality of calculating and displaying the sum and product of the digits of an input number, while adhering to your constraints and varying in style and structure for diversity.

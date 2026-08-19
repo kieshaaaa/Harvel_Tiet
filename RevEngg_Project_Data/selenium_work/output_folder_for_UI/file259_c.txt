@@ -1,0 +1,93 @@
+Certainly! Below are three different versions of a C program to check if a string is a palindrome without using recursion, dynamic memory allocation, structures, unions, pointers, file handling, modifying existing data types, or using `double` data types. Each version offers a unique approach to solving the problem under the given constraints.
+
+### Version 1: Iterative Approach with `for` Loop
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char word[15];
+    int isPalindrome = 1; // Assume word is a palindrome initially
+    int i, len;
+
+    printf("Enter a word to check if it is a palindrome\n");
+    scanf("%s", word);
+
+    len = strlen(word);
+    for (i = 0; i < len / 2; i++) {
+        if (word[i] != word[len - i - 1]) {
+            isPalindrome = 0; // Not a palindrome
+            break;
+        }
+    }
+
+    if (isPalindrome)
+        printf("The entered word is a palindrome\n");
+    else
+        printf("The entered word is not a palindrome\n");
+
+    return 0;
+}
+```
+
+### Version 2: Iterative Approach with `while` Loop
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char word[15];
+    int leftIndex = 0;
+    int rightIndex;
+    int isPalindrome = 1; // Assume word is a palindrome
+
+    printf("Enter a word to check if it is a palindrome\n");
+    scanf("%s", word);
+
+    rightIndex = strlen(word) - 1;
+    while (leftIndex < rightIndex) {
+        if (word[leftIndex] != word[rightIndex]) {
+            isPalindrome = 0; // Not a palindrome
+            break;
+        }
+        leftIndex++;
+        rightIndex--;
+    }
+
+    if (isPalindrome)
+        printf("The entered word is a palindrome\n");
+    else
+        printf("The entered word is not a palindrome\n");
+
+    return 0;
+}
+```
+
+### Version 3: `for` Loop with Early Exit
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char word[15];
+    int len, i;
+    printf("Enter a word to check if it is a palindrome\n");
+    scanf("%s", word);
+
+    len = strlen(word);
+    for (i = 0; i < len / 2; i++) {
+        if (word[i] != word[len - 1 - i]) {
+            printf("The entered word is not a palindrome\n");
+            return 0; // Early exit from the program
+        }
+    }
+
+    printf("The entered word is a palindrome\n");
+    return 0;
+}
+```
+
+Each of these versions uses an iterative approach to compare characters from the beginning and end of the string, moving towards the center. They meet all the specified constraints.

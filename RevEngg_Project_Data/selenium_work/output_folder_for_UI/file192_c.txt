@@ -1,0 +1,72 @@
+Certainly! Here are three different versions of the given C program. Each version follows the constraints you've mentioned, such as avoiding dynamic memory allocation, pointers, structures, unions, recursion, file handling, and not modifying the given data types or using `double` instead of `float`.
+
+### Version 1: Using an Array
+
+```c
+#include <stdio.h>
+
+int main() {
+    float marks[5];
+    int i, pass = 1;
+    printf("\nEnter Marks of 5 Subjects: ");
+    for (i = 0; i < 5; i++) {
+        scanf("%f", &marks[i]);
+        if (marks[i] <= 32) pass = 0;
+    }
+
+    if (pass)
+        printf("\nYou are Pass");
+    else
+        printf("\nYou are Fail");
+
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 2: Simplifying the Condition Check
+
+```c
+#include <stdio.h>
+
+int main() {
+    float m1, m2, m3, m4, m5;
+    printf("\nEnter Marks of 5 Subjects: ");
+    scanf("%f%f%f%f%f", &m1, &m2, &m3, &m4, &m5);
+
+    int isPass = m1 > 32 && m2 > 32 && m3 > 32 && m4 > 32 && m5 > 32;
+    if (isPass)
+        printf("\nYou are Pass");
+    else
+        printf("\nYou are Fail");
+
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 3: Using a Counter for Passed Subjects
+
+```c
+#include <stdio.h>
+
+int main() {
+    float marks[5];
+    int passedSubjects = 0, i;
+    printf("\nEnter Marks of 5 Subjects: ");
+    for (i = 0; i < 5; i++) {
+        scanf("%f", &marks[i]);
+        if (marks[i] > 32) passedSubjects++;
+    }
+
+    if (passedSubjects == 5)
+        printf("\nYou are Pass");
+    else
+        printf("\nYou are Fail");
+
+    printf("\n");
+    return 0;
+}
+```
+
+Each of these versions has a different approach but achieves the same outcome based on the user's inputs, adhering to your constraints and requirements.

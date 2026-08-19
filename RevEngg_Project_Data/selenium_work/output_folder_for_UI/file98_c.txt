@@ -1,0 +1,110 @@
+Certainly! Here are three different versions of the C program to reverse an array, following your guidelines:
+
+### Version 1: In-place Reversal
+
+This version reverses the array in place, meaning it doesn't need a second array to hold the reversed array. It swaps elements from the start and end moving towards the center.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100];
+    int size, temp, start, end;
+
+    printf("Enter size of the array: ");
+    scanf("%d", &size);
+    printf("\nEnter elements in array:\n");
+
+    for(int i = 0; i < size; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    start = 0;
+    end = size - 1;
+    while(start < end) {
+        temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+
+    printf("\nReversed array: ");
+    for(int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Reversal With Half-Iteration
+
+This version also reverses the array in place but iterates only through the first half of the array, swapping the corresponding elements from the end.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100];
+    int size, temp;
+
+    printf("Enter size of the array: ");
+    scanf("%d", &size);
+    printf("\nEnter elements in array:\n");
+
+    for(int i = 0; i < size; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    for(int i = 0; i < size / 2; i++) {
+        temp = arr[i];
+        arr[i] = arr[size - 1 - i];
+        arr[size - 1 - i] = temp;
+    }
+
+    printf("\nReversed array: ");
+    for(int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Forward Loop for Reversal
+
+This version fills a second array with the elements of the original array in reverse order by iterating through the original array from the beginning and placing elements at the corresponding positions from the end in the new array.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], reversed[100];
+    int size;
+
+    printf("Enter size of the array: ");
+    scanf("%d", &size);
+    printf("\nEnter elements in array:\n");
+
+    for(int i = 0; i < size; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    for(int i = 0; i < size; i++) {
+        reversed[size - 1 - i] = arr[i];
+    }
+
+    printf("\nReversed array: ");
+    for(int i = 0; i < size; i++) {
+        printf("%d ", reversed[i]);
+    }
+
+    return 0;
+}
+```
+
+Each of these versions adheres to the constraints you've specified, offering different approaches to reversing an array in C.

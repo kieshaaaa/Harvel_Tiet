@@ -1,0 +1,93 @@
+### Version 1: Using Bitwise Operations
+
+This version avoids using the `pow` function and instead uses bitwise operations to calculate the decimal value. This is often more efficient and eliminates the need to replace `double` with `float` since `pow` is not being used.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char binary[64];
+    int decimal = 0;
+    int i;
+    printf("Enter a binary number: ");
+    scanf("%s", binary);
+    
+    int length = strlen(binary);
+    for(i = 0; i < length; i++) {
+        decimal = decimal << 1;
+        if(binary[i] == '1') {
+            decimal = decimal | 1;
+        }
+    }
+    
+    printf("Decimal number is: ");
+    printf("%d\n", decimal);
+    return 0;
+}
+```
+
+### Version 2: Using a Different Looping Approach
+
+In this version, we'll iterate through the binary string starting from the end, which simplifies the calculation of the power of 2 that each bit represents.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char binary[64];
+    int decimal = 0;
+    printf("Enter a binary number: ");
+    scanf("%s", binary);
+    
+    int length = strlen(binary);
+    int powerOfTwo = 1; // Represents 2^0 initially
+    for(int i = length - 1; i >= 0; i--) {
+        if(binary[i] == '1') {
+            decimal += powerOfTwo;
+        }
+        powerOfTwo *= 2;
+    }
+    
+    printf("Decimal number is: ");
+    printf("%d\n", decimal);
+    return 0;
+}
+```
+
+### Version 3: Eliminating Library Functions
+
+For a challenge, this version eliminates the use of `strlen` by directly finding the length of the binary string within the loop. It's a more manual approach but demonstrates an alternative method without relying on `string.h`.
+
+```c
+#include <stdio.h>
+
+int main() {
+    char binary[64];
+    int decimal = 0;
+    printf("Enter a binary number: ");
+    scanf("%s", binary);
+    
+    int i = 0;
+    while (binary[i] != '\0') i++; // Manual string length calculation
+    int length = i;
+    
+    for(i = 0; i < length; i++) {
+        if(binary[i] == '1') {
+            // Manual power calculation avoiding pow()
+            int power = 1;
+            for(int j = 1; j < length - i; j++) {
+                power *= 2;
+            }
+            decimal += power;
+        }
+    }
+    
+    printf("Decimal number is: ");
+    printf("%d\n", decimal);
+    return 0;
+}
+```
+
+Each version adheres to your constraints, showing different methods to achieve the binary to decimal conversion.

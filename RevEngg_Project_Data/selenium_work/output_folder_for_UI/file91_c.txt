@@ -1,0 +1,70 @@
+Certainly! Below are three different versions of the given program, each using various methods to check if a number is even or odd without violating the specified constraints.
+
+### Version 1: Using Modulus Operator
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("\nEnter A Number to Check Whether It is Even or Odd => ");
+    scanf("%d", &num);
+    
+    int isOdd = num % 2;
+    
+    if (isOdd)
+        printf("%d is an Odd Number\n", num);
+    else
+        printf("%d is an Even Number\n", num);
+
+    return 0;
+}
+```
+
+### Version 2: Using Bitwise XOR
+
+This approach exploits the fact that odd numbers have their last bit as 1. By XORing with 1, if the number is odd, it will become even (and vice versa), and then the result can be ANDed with 1 to check if it's zero (even) or not (odd).
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("\nEnter A Number to Check Whether It is Even or Odd => ");
+    scanf("%d", &num);
+    
+    int result = (num ^ 1) & 1;
+    
+    if (result == 0)
+        printf("%d is an Odd Number\n", num);
+    else
+        printf("%d is an Even Number\n", num);
+
+    return 0;
+}
+```
+
+### Version 3: Using Shift Operators
+
+This version subtly uses shifting. By shifting the number one bit to the right and then back to the left, if the number was odd, it loses its last bit (which is 1 for odd numbers) and thus changes value. If it was even, it remains unchanged.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("\nEnter A Number to Check Whether It is Even or Odd => ");
+    scanf("%d", &num);
+    
+    int shifted = (num >> 1) << 1;
+    
+    if (num != shifted)
+        printf("%d is an Odd Number\n", num);
+    else
+        printf("%d is an Even Number\n", num);
+
+    return 0;
+}
+```
+
+Each version above checks for odd or even numbers in a different manner, following the guidelines provided.

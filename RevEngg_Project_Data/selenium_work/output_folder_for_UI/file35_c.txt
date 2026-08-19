@@ -1,0 +1,55 @@
+### Version 1: Simplified Variable Names and Direct Calculation
+
+```c
+#include <stdio.h>
+
+#define CM_PER_INCH 2.54
+
+int main() {
+    float inches, centimeters;
+    printf("Enter inches: ");
+    scanf("%f", &inches);
+    centimeters = inches * CM_PER_INCH;
+    printf("Centimeters: %.4f\n", centimeters);
+    return 0;
+}
+```
+
+### Version 2: Inline Calculation with Temporary Variable
+
+```c
+#include <stdio.h>
+
+#define INCH_TO_CM 2.54
+
+int main() {
+    float value;
+    printf("Enter the value in inches: ");
+    scanf("%f", &value);
+    float result = value * INCH_TO_CM;
+    printf("The value in centimeters is: %.4f\n", result);
+    return 0;
+}
+```
+
+### Version 3: Added User Interface Enhancements
+
+```c
+#include <stdio.h>
+
+#define CONVERSION_FACTOR 2.54
+
+int main() {
+    float input_inches, output_cm;
+    printf("**********************************\n");
+    printf("* Inches to Centimeters Converter *\n");
+    printf("**********************************\n");
+    printf("Input inches: ");
+    scanf("%f", &input_inches);
+    output_cm = input_inches * CONVERSION_FACTOR;
+    printf("Result: %.4f centimeters\n", output_cm);
+    return 0;
+}
+```
+
+Each version adheres to the restrictions provided, focusing on simplicity and readability while ensuring no advanced programming concepts or data types are introduced beyond what was specified.

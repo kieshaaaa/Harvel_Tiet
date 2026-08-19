@@ -1,0 +1,77 @@
+Sure, I will provide you with three different versions of the given code to calculate the Body Mass Index (BMI) following your constraints.
+
+### Version 1
+```c
+#include <stdio.h>
+
+int main() {
+    float weight, height, bmi;
+
+    printf("Enter your weight in kilograms: ");
+    scanf("%f", &weight);
+
+    printf("Enter your height in centimeters: ");
+    scanf("%f", &height);
+
+    height = height / 100; // Convert cm to meters
+    bmi = weight / (height * height);
+
+    printf("Your BMI is: ");
+    printf("%f\n", bmi);
+
+    return 0;
+}
+```
+
+### Version 2
+This version slightly changes how the height is converted and uses a separate variable for height in meters for clarity.
+
+```c
+#include <stdio.h>
+
+int main() {
+    float weight, heightCm, heightM, bmi;
+
+    printf("Please enter weight (kg): ");
+    scanf("%f", &weight);
+
+    printf("Please enter height (cm): ");
+    scanf("%f", &heightCm);
+
+    heightM = heightCm / 100; // conversion to meters
+    bmi = weight / (heightM * heightM); // calculating BMI
+
+    printf("Calculated BMI: ");
+    printf("%f\n", bmi);
+
+    return 0;
+}
+```
+
+### Version 3
+In this version, an intermediate step for the square of the height in meters is explicitly calculated and stored in a variable before using it in the BMI calculation.
+
+```c
+#include <stdio.h>
+
+int main() {
+    float weight, height, meterHeight, squareMeterHeight, bmi;
+
+    printf("Input your weight in kilograms: ");
+    scanf("%f", &weight);
+
+    printf("Input your height in centimeters: ");
+    scanf("%f", &height);
+
+    meterHeight = height / 100; // Convert height to meters
+    squareMeterHeight = meterHeight * meterHeight; // Square of height in meters
+    bmi = weight / squareMeterHeight; // Calculate BMI
+
+    printf("BMI Value: ");
+    printf("%f\n", bmi);
+
+    return 0;
+}
+```
+
+Each of these versions offers a slightly different approach but ultimately calculates the BMI using the provided weight in kilograms and height in centimeters, converting height to meters as required.

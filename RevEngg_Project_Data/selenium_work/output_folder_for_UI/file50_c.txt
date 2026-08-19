@@ -1,0 +1,60 @@
+Certainly, here are three variations of the given program, adhering to your constraints:
+
+### Version 1: Simplified Single `scanf` and `printf`
+
+```c
+#include <stdio.h>
+
+int main() {
+    int nums[4], sum = 0;
+    printf("\nEnter Four Numbers: ");
+    scanf("%d %d %d %d", &nums[0], &nums[1], &nums[2], &nums[3]);
+    
+    for(int i = 0; i < 4; i++) {
+        sum += nums[i];
+    }
+
+    printf("\nSum of 4 numbers is %d\n", sum);
+    return 0;
+}
+```
+
+### Version 2: Sequential Individual Inputs
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, c, d, sum;
+    printf("\nEnter the first number: ");
+    scanf("%d", &a);
+    printf("Enter the second number: ");
+    scanf("%d", &b);
+    printf("Enter the third number: ");
+    scanf("%d", &c);
+    printf("Enter the fourth number: ");
+    scanf("%d", &d);
+
+    sum = a + b + c + d;
+    printf("\nSum of 4 numbers is %d\n", sum);
+    return 0;
+}
+```
+
+### Version 3: Use of `float` instead of `int` for Input
+
+```c
+#include <stdio.h>
+
+int main() {
+    float num1, num2, num3, num4, sum;
+    printf("\nEnter Four Numbers: ");
+    scanf("%f %f %f %f", &num1, &num2, &num3, &num4);
+    
+    sum = num1 + num2 + num3 + num4;
+    printf("\nSum of 4 numbers is %.2f\n", sum); // Display sum with 2 decimal places
+    return 0;
+}
+```
+
+Each version sticks to the guidelines you provided, offering slightly different approaches to collecting user input and calculating the sum of four numbers.

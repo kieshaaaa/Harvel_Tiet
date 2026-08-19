@@ -1,0 +1,174 @@
+module entry_point (
+ ap_clk,
+ ap_rst,
+ ap_start,
+ ap_done,
+ ap_idle,
+ ap_ready,
+ num_i,
+ num_o,
+ num_o_ap_vld,
+ temptemp1,
+ temptemp1_ap_vld,
+ temptemp2,
+ temptemp2_ap_vld,
+ ap_return
+);
+parameter ap_ST_fsm_state1 = 3'd1;
+parameter ap_ST_fsm_state2 = 3'd2;
+parameter ap_ST_fsm_state3 = 3'd4;
+input ap_clk;
+input ap_rst;
+input ap_start;
+output ap_done;
+output ap_idle;
+output ap_ready;
+input [31:0] num_i;
+output [31:0] num_o;
+output num_o_ap_vld;
+output [31:0] temptemp1;
+output temptemp1_ap_vld;
+output [31:0] temptemp2;
+output temptemp2_ap_vld;
+output [31:0] ap_return;
+reg ap_done;
+reg ap_idle;
+reg ap_ready;
+reg[31:0] num_o;
+reg num_o_ap_vld;
+reg temptemp1_ap_vld;
+reg temptemp2_ap_vld;
+(* fsm_encoding = "none" *) reg [2:0] ap_CS_fsm;
+wire ap_CS_fsm_state1;
+reg [31:0] empty_fu_44;
+wire [31:0] select_ln29_fu_137_p3;
+wire ap_CS_fsm_state2;
+wire [0:0] empty_7_fu_85_p1;
+wire [31:0] sub_ln29_fu_97_p2;
+wire [30:0] lshr_ln29_1_fu_103_p4;
+wire [31:0] zext_ln29_fu_113_p1;
+wire [30:0] lshr_ln29_2_fu_123_p4;
+wire [0:0] tmp_fu_89_p3;
+wire [31:0] sub_ln29_1_fu_117_p2;
+wire [31:0] zext_ln29_1_fu_133_p1;
+wire ap_CS_fsm_state3;
+reg [2:0] ap_NS_fsm;
+reg ap_ST_fsm_state1_blk;
+wire ap_ST_fsm_state2_blk;
+wire ap_ST_fsm_state3_blk;
+wire ap_ce_reg;
+initial begin
+#0 ap_CS_fsm = 3'd1;
+end
+always @ (posedge ap_clk) begin
+ if (ap_rst == 1'b1) begin
+ ap_CS_fsm <= ap_ST_fsm_state1;
+ end else begin
+ ap_CS_fsm <= ap_NS_fsm;
+ end
+end
+always @ (posedge ap_clk) begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ empty_fu_44 <= num_i;
+ end else if (((empty_7_fu_85_p1 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+ empty_fu_44 <= select_ln29_fu_137_p3;
+ end
+end
+always @ (*) begin
+ if ((ap_start == 1'b0)) begin
+ ap_ST_fsm_state1_blk = 1'b1;
+ end else begin
+ ap_ST_fsm_state1_blk = 1'b0;
+ end
+end
+assign ap_ST_fsm_state2_blk = 1'b0;
+assign ap_ST_fsm_state3_blk = 1'b0;
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state3)) begin
+ ap_done = 1'b1;
+ end else begin
+ ap_done = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
+ ap_idle = 1'b1;
+ end else begin
+ ap_idle = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state3)) begin
+ ap_ready = 1'b1;
+ end else begin
+ ap_ready = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((empty_7_fu_85_p1 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+ num_o = select_ln29_fu_137_p3;
+ end else begin
+ num_o = num_i;
+ end
+end
+always @ (*) begin
+ if (((empty_7_fu_85_p1 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+ num_o_ap_vld = 1'b1;
+ end else begin
+ num_o_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ temptemp1_ap_vld = 1'b1;
+ end else begin
+ temptemp1_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((empty_7_fu_85_p1 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+ temptemp2_ap_vld = 1'b1;
+ end else begin
+ temptemp2_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ case (ap_CS_fsm)
+ ap_ST_fsm_state1 : begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ ap_NS_fsm = ap_ST_fsm_state2;
+ end else begin
+ ap_NS_fsm = ap_ST_fsm_state1;
+ end
+ end
+ ap_ST_fsm_state2 : begin
+ if (((empty_7_fu_85_p1 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+ ap_NS_fsm = ap_ST_fsm_state2;
+ end else begin
+ ap_NS_fsm = ap_ST_fsm_state3;
+ end
+ end
+ ap_ST_fsm_state3 : begin
+ ap_NS_fsm = ap_ST_fsm_state1;
+ end
+ default : begin
+ ap_NS_fsm = 'bx;
+ end
+ endcase
+end
+assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
+assign ap_return = 32'd0;
+assign empty_7_fu_85_p1 = empty_fu_44[0:0];
+assign lshr_ln29_1_fu_103_p4 = {{sub_ln29_fu_97_p2[31:1]}};
+assign lshr_ln29_2_fu_123_p4 = {{empty_fu_44[31:1]}};
+assign select_ln29_fu_137_p3 = ((tmp_fu_89_p3[0:0] == 1'b1) ? sub_ln29_1_fu_117_p2 : zext_ln29_1_fu_133_p1);
+assign sub_ln29_1_fu_117_p2 = (32'd0 - zext_ln29_fu_113_p1);
+assign sub_ln29_fu_97_p2 = (32'd0 - empty_fu_44);
+assign temptemp1 = num_i;
+assign temptemp2 = 32'd2;
+assign tmp_fu_89_p3 = empty_fu_44[32'd31];
+assign zext_ln29_1_fu_133_p1 = lshr_ln29_2_fu_123_p4;
+assign zext_ln29_fu_113_p1 = lshr_ln29_1_fu_103_p4;
+endmodule

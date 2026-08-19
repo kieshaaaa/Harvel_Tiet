@@ -1,0 +1,65 @@
+Sure, here are three different versions of the code based on the specified criteria, each performing a distinct calculation with five input numbers:
+
+### Version 1: Calculate the Average
+
+```c
+#include <stdio.h>
+
+int main() {
+    float a, b, c, d, e, average;
+
+    printf("Enter five numbers separated by spaces (a b c d e): ");
+    scanf("%f %f %f %f %f", &a, &b, &c, &d, &e);
+
+    average = (a + b + c + d + e) / 5;
+
+    printf("The average of a, b, c, d, and e is: %.2f\n", average);
+
+    return 0;
+}
+```
+
+### Version 2: Calculate the Product
+
+```c
+#include <stdio.h>
+
+int main() {
+    float a, b, c, d, e, product;
+
+    printf("Enter five numbers separated by spaces (a b c d e): ");
+    scanf("%f %f %f %f %f", &a, &b, &c, &d, &e);
+
+    product = a * b * c * d * e;
+
+    printf("The product of a, b, c, d, and e is: %.2f\n", product);
+
+    return 0;
+}
+```
+
+### Version 3: Calculate the Maximum
+
+```c
+#include <stdio.h>
+
+int main() {
+    float a, b, c, d, e, max;
+
+    printf("Enter five numbers separated by spaces (a b c d e): ");
+    scanf("%f %f %f %f %f", &a, &b, &c, &d, &e);
+
+    max = a; // Start by assuming 'a' is the largest
+
+    if (b > max) max = b;
+    if (c > max) max = c;
+    if (d > max) max = d;
+    if (e > max) max = e;
+
+    printf("The maximum of a, b, c, d, and e is: %.2f\n", max);
+
+    return 0;
+}
+```
+
+Each of these versions uses the same structure for taking input but performs a different calculation with the provided inputs.

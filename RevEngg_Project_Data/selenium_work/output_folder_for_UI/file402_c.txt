@@ -1,0 +1,77 @@
+### Version 1
+
+In this version, we use the `pow` function instead of `cbrt` to calculate the cube root by raising the limit to the power of 1/3. Here, we use `float` for the intermediate calculations as specified.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int limit;
+    float cubeRoot;
+    int count;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &limit);
+
+    cubeRoot = pow(limit, 1.0/3.0);
+    count = (int)cubeRoot;
+
+    printf("The number of cube (perfect cube) numbers up to ");
+    printf("%d is: %d\n", limit, count);
+    return 0;
+}
+```
+
+### Version 2
+
+This version takes a different approach by directly iterating through possible cube numbers and counting them until exceeding the limit. This approach does not use `math.h` but instead relies on manual computation.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int limit;
+    int count = 0;
+    int i = 1;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &limit);
+
+    while (i*i*i <= limit) {
+        count++;
+        i++;
+    }
+
+    printf("The number of cube (perfect cube) numbers up to ");
+    printf("%d is: %d\n", limit, count);
+    return 0;
+}
+```
+
+### Version 3
+
+This version introduces a slight twist by calculating the cube root using a `for` loop and a manual cube calculation, thereby eliminating the need for any library functions related to mathematical operations, other than basic arithmetic operations. 
+
+```c
+#include <stdio.h>
+
+int main() {
+    int limit;
+    int count = 0;
+    int cube;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &limit);
+
+    for (int i = 1; (cube = i * i * i) <= limit; i++) {
+        count = i;
+    }
+
+    printf("The number of cube (perfect cube) numbers up to ");
+    printf("%d is: %d\n", limit, count);
+    return 0;
+}
+```
+
+Each of these versions adheres to the restrictions you provided, such as avoiding dynamic memory allocation, recursion, file handling, and the use of pointers, among others.

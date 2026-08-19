@@ -1,0 +1,984 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: mat_mul.c, Line: 11, Column: 31 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Loop '''
+  - LoopName:        multiplyMatrix_label0
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: mat_mul.c, Line: 13, Column: 30 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_13_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        multiplyMatrix_label0
+  - String:          ''' ('
+  - LoopLoc:         'mat_mul.c:11:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          multiplyMatrix
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_13_1
+  - String:          ''' ('
+  - LoopLoc:         'mat_mul.c:13:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          multiplyMatrix
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_13_1
+  - String:          ''' ('
+  - LoopLoc:         'mat_mul.c:13:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          multiplyMatrix
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_13_1
+  - String:          ''' ('
+  - LoopLoc:         'mat_mul.c:13:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          multiplyMatrix
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          mat1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          result
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Failure
+Pass:            reflow-array-partition
+Name:            WarnArrayXFORMOnPointerIndexing
+DebugLoc:        { File: mat_mul.c, Line: 12, Column: 13 }
+Function:        multiplyMatrix.5
+Args:            
+  - String:          Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+...
+--- !Failure
+Pass:            reflow-array-partition
+Name:            WarnArrayXFORMOnPointerIndexing
+DebugLoc:        { File: mat_mul.c, Line: 14, Column: 33 }
+Function:        multiplyMatrix.5
+Args:            
+  - String:          Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+...
+--- !Failure
+Pass:            reflow-array-partition
+Name:            WarnArrayXFORMOnPointerIndexing
+DebugLoc:        { File: mat_mul.c, Line: 14, Column: 33 }
+Function:        multiplyMatrix.5
+Args:            
+  - String:          Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+...
+--- !Failure
+Pass:            reflow-array-partition
+Name:            WarnArrayXFORMOnPointerIndexing
+DebugLoc:        { File: mat_mul.c, Line: 14, Column: 33 }
+Function:        multiplyMatrix.5
+Args:            
+  - String:          Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+...
+--- !Failure
+Pass:            reflow-array-partition
+Name:            WarnArrayXFORMOnPointerIndexing
+DebugLoc:        { File: mat_mul.c, Line: 12, Column: 13 }
+Function:        multiplyMatrix.5
+Args:            
+  - String:          Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+...
+--- !Failure
+Pass:            reflow-array-partition
+Name:            WarnArrayXFORMOnPointerIndexing
+DebugLoc:        { File: mat_mul.c, Line: 12, Column: 13 }
+Function:        multiplyMatrix.5
+Args:            
+  - String:          Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer.
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc.2.load.14
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mat1_0seq
+  - String:          ' '
+  - ArrayName:       mat1_0
+  - String:          ' '
+  - BundleName:      gmem_0
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc.2.load.20
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mat1_1seq
+  - String:          ' '
+  - ArrayName:       mat1_1
+  - String:          ' '
+  - BundleName:      gmem_1
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc.2.load.27
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mat1_2seq
+  - String:          ' '
+  - ArrayName:       mat1_2
+  - String:          ' '
+  - BundleName:      gmem_2
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc.2.store.32
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        result_0seq
+  - String:          ' '
+  - ArrayName:       result_0
+  - String:          ' '
+  - BundleName:      gmem_0
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc.2.store.50
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        result_1seq
+  - String:          ' '
+  - ArrayName:       result_1
+  - String:          ' '
+  - BundleName:      gmem_1
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc.2.store.68
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        result_2seq
+  - String:          ' '
+  - ArrayName:       result_2
+  - String:          ' '
+  - BundleName:      gmem_2
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+Function:        multiplyMatrix
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '9'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          entry.load.38
+  - String:          ', '
+  - String:          entry.load.44
+  - String:          ', '
+  - String:          entry.load.50
+  - String:          ', '
+  - String:          entry.load.40
+  - String:          ', '
+  - String:          entry.load.46
+  - String:          ', '
+  - String:          entry.load.52
+  - String:          ', '
+  - String:          entry.load.42
+  - String:          ', '
+  - String:          entry.load.48
+  - String:          ', '
+  - String:          entry.load.54
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mat21seq
+  - String:          ' '
+  - ArrayName:       mat2
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mat1_0seq
+  - String:          ' '
+  - ArrayName:       mat1_0
+  - String:          ' '
+  - BundleName:      gmem_0
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mat1_1seq
+  - String:          ' '
+  - ArrayName:       mat1_1
+  - String:          ' '
+  - BundleName:      gmem_1
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mat1_2seq
+  - String:          ' '
+  - ArrayName:       mat1_2
+  - String:          ' '
+  - BundleName:      gmem_2
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        result_0seq
+  - String:          ' '
+  - ArrayName:       result_0
+  - String:          ' '
+  - BundleName:      gmem_0
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        result_1seq
+  - String:          ' '
+  - ArrayName:       result_1
+  - String:          ' '
+  - BundleName:      gmem_1
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        result_2seq
+  - String:          ' '
+  - ArrayName:       result_2
+  - String:          ' '
+  - BundleName:      gmem_2
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mat21seq
+  - String:          ' '
+  - ArrayName:       mat2
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mat1_0seq
+  - String:          ' '
+  - ArrayName:       mat1_0
+  - String:          ' '
+  - BundleName:      gmem_0
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mat1_1seq
+  - String:          ' '
+  - ArrayName:       mat1_1
+  - String:          ' '
+  - BundleName:      gmem_1
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mat1_2seq
+  - String:          ' '
+  - ArrayName:       mat1_2
+  - String:          ' '
+  - BundleName:      gmem_2
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        result_0seq
+  - String:          ' '
+  - ArrayName:       result_0
+  - String:          ' '
+  - BundleName:      gmem_0
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        result_1seq
+  - String:          ' '
+  - ArrayName:       result_1
+  - String:          ' '
+  - BundleName:      gmem_1
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        result_2seq
+  - String:          ' '
+  - ArrayName:       result_2
+  - String:          ' '
+  - BundleName:      gmem_2
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-interface-check
+Name:            InterfaceWithWrongType
+DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+Function:        multiplyMatrix
+Args:            
+  - String:          interface mode
+  - String:          ' '''
+  - String:          ap_none
+  - String:          ''' '
+  - String:          'with wrong type '
+  - String:          ''''
+  - Type:            '[3 x i32]*'
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_0
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        multiplyMatrix_label1
+  - String:          '''('
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_1
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        multiplyMatrix_label1
+  - String:          '''('
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_1
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq2
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_2
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        multiplyMatrix_label1
+  - String:          '''('
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_2
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq3
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_0
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        multiplyMatrix_label1
+  - String:          '''('
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq4
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_1
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        multiplyMatrix_label1
+  - String:          '''('
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_1
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq5
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_2
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: mat_mul.c, Line: 10, Column: 27 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        multiplyMatrix_label1
+  - String:          '''('
+  - LoopLoc:         'mat_mul.c:10:27'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_2
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

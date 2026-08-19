@@ -1,0 +1,31 @@
+---
+MainSourceFile:  /home/coss01/vitis_hls_demo_c/for_loop/nested/for_nested2/solution1/.autopilot/db/printNum.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_5_1:  '
+    FileOffset:      5
+    FilePath:        printNum.c
+    Replacements:    
+      - FilePath:        /home/coss01/vitis_hls_demo_c/for_loop/nested/for_nested2/solution1/.autopilot/db/printNum.pp.0.c
+        Offset:          24470
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_5_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_6_2:  '
+    FileOffset:      6
+    FilePath:        printNum.c
+    Replacements:    
+      - FilePath:        /home/coss01/vitis_hls_demo_c/for_loop/nested/for_nested2/solution1/.autopilot/db/printNum.pp.0.c
+        Offset:          24515
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_6_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_7_3:  '
+    FileOffset:      7
+    FilePath:        printNum.c
+    Replacements:    
+      - FilePath:        /home/coss01/vitis_hls_demo_c/for_loop/nested/for_nested2/solution1/.autopilot/db/printNum.pp.0.c
+        Offset:          24557
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_7_3: '
+...

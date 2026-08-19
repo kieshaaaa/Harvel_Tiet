@@ -1,0 +1,16 @@
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: printNum.c, Line: 6, Column: 18 }
+Function:        printNumbers
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_6_1
+  - String:          ' '
+  - LoopLoc:         'printNum.c:6:18'
+  - String:          ' '
+  - Function:        printNumbers
+    DebugLoc:        { File: printNum.c, Line: 4, Column: 0 }
+  - String:          ' '
+...

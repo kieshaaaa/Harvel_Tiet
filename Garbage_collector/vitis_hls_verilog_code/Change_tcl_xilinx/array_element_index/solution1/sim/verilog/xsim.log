@@ -1,0 +1,88 @@
+#-----------------------------------------------------------
+# xsim v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Jul 27 10:51:55 2023
+# Process ID: 121957
+# Current directory: /home/virubuntu/Change_tcl_xilinx/array_element_index/solution1/sim/verilog
+# Command line: xsim -source {xsim.dir/processArray/xsim_script.tcl}
+# Log file: /home/virubuntu/Change_tcl_xilinx/array_element_index/solution1/sim/verilog/xsim.log
+# Journal file: /home/virubuntu/Change_tcl_xilinx/array_element_index/solution1/sim/verilog/xsim.jou
+# Running On: virubuntu, OS: Linux, CPU Frequency: 3407.964 MHz, CPU Physical cores: 5, Host memory: 23782 MB
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/processArray/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:40 ; elapsed = 00:00:19 . Memory (MB): peak = 9323.547 ; gain = 203.051 ; free physical = 11569 ; free virtual = 17529
+# xsim {processArray} -view {{processArray_dataflow_ana.wcfg}} -tclbatch {processArray.tcl} -protoinst {processArray.protoinst}
+INFO: [Wavedata 42-565] Reading protoinst file processArray.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_processArray_top/AESL_inst_processArray//AESL_inst_processArray_activity
+WARNING: [Wavedata 42-559] Protocol instance "/apatb_processArray_top/AESL_inst_processArray//AESL_inst_processArray_activity" was created but is non-functional for the following reason(s):
+Couldn't find port object "ap_clk" for protocol analyzer port "AP_CLK".
+Couldn't find port object "ap_rst" for protocol analyzer port "AP_RESET".
+Protocol instance has no valid analyzer.  Please configure the protocol instance again.
+
+Time resolution is 1 ps
+open_wave_config processArray_dataflow_ana.wcfg
+WARNING: [Wavedata 42-572] Protocol instance "/apatb_processArray_top/AESL_inst_processArray/AESL_inst_processArray_activity" is non-functional for the following reason(s):
+Protocol instance has no valid analyzer.  Please configure the protocol instance again.
+
+WARNING: [Wavedata 42-572] Protocol instance "/apatb_processArray_top/AESL_inst_processArray/AESL_inst_processArray_activity" is non-functional for the following reason(s):
+Protocol instance has no valid analyzer.  Please configure the protocol instance again.
+
+source processArray.tcl
+## log_wave [get_objects -filter {type == in_port || type == out_port || type == inout_port || type == port} /apatb_processArray_top/AESL_inst_processArray/*]
+## set designtopgroup [add_wave_group "Design Top Signals"]
+## set cinoutgroup [add_wave_group "C InOuts" -into $designtopgroup]
+## set return_group [add_wave_group return(wire) -into $cinoutgroup]
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_5_o_ap_vld -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_5_o -into $return_group -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_5_i -into $return_group -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_4_o_ap_vld -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_4_o -into $return_group -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_4_i -into $return_group -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_3_o_ap_vld -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_3_o -into $return_group -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_3_i -into $return_group -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_2_o_ap_vld -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_2_o -into $return_group -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_2_i -into $return_group -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_1_o_ap_vld -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_1_o -into $return_group -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_1_i -into $return_group -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_0_o_ap_vld -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_0_o -into $return_group -radix hex
+## add_wave /apatb_processArray_top/AESL_inst_processArray/arr_0_i -into $return_group -radix hex
+## set blocksiggroup [add_wave_group "Block-level IO Handshake" -into $designtopgroup]
+## add_wave /apatb_processArray_top/AESL_inst_processArray/ap_start -into $blocksiggroup
+## add_wave /apatb_processArray_top/AESL_inst_processArray/ap_done -into $blocksiggroup
+## add_wave /apatb_processArray_top/AESL_inst_processArray/ap_idle -into $blocksiggroup
+## add_wave /apatb_processArray_top/AESL_inst_processArray/ap_ready -into $blocksiggroup
+## set resetgroup [add_wave_group "Reset" -into $designtopgroup]
+## set clockgroup [add_wave_group "Clock" -into $designtopgroup]
+## save_wave_config processArray.wcfg
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "125000"
+// RTL Simulation : 1 / 1 [n/a] @ "145000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 205 ns : File "/home/virubuntu/Change_tcl_xilinx/array_element_index/solution1/sim/verilog/processArray.autotb.v" Line 896

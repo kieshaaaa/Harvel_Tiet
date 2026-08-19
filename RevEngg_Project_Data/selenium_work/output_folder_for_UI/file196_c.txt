@@ -1,0 +1,65 @@
+Sure, based on your constraints, I'll generate three different versions of the given program that converts kilometers to miles. Each version will follow the guidelines you've provided.
+
+### Version 1: Using a Defined Conversion Factor
+
+```c
+#include <stdio.h>
+
+int main() {
+    float kilometers;
+    float miles;
+    const float conversionFactor = 0.621371;
+
+    printf("Enter the distance in kilometers: ");
+    scanf("%f", &kilometers);
+
+    miles = kilometers * conversionFactor;
+
+    printf("%.2f kilometers is equal to %.2f miles.\n", kilometers, miles);
+
+    return 0;
+}
+```
+
+### Version 2: Prompting User Input with a Different Message
+
+```c
+#include <stdio.h>
+
+int main() {
+    float kilometers;
+    float miles;
+
+    printf("Please, type the kilometers to convert into miles: ");
+    scanf("%f", &kilometers);
+
+    miles = kilometers * 0.621371;
+
+    printf("%.2f kilometers equals %.2f miles.\n", kilometers, miles);
+
+    return 0;
+}
+```
+
+### Version 3: Adding a Simple Introduction Message
+
+```c
+#include <stdio.h>
+
+int main() {
+    float distanceInKilometers;
+    float distanceInMiles;
+
+    printf("Kilometers to Miles Converter\n");
+    printf("Enter the distance in kilometers: ");
+    scanf("%f", &distanceInKilometers);
+
+    distanceInMiles = distanceInKilometers * 0.621371;
+
+    printf("%.2f kilometers is %.2f miles.\n", distanceInKilometers, distanceInMiles);
+
+    return 0;
+}
+```
+
+Each version sticks to the rules you've provided, avoiding the use of additional functions, dynamic memory allocation, structures, unions, pointers, recursion, file handling, modification of existing data types, and substituting `double` with `float`. They simply offer slight variations in the user interface and variable naming for a bit of diversity.

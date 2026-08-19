@@ -1,0 +1,5 @@
+/home/coss01/vitis_hls_demo_c/while_loop/simple/while_loop_simple/solution1/.autopilot/db/printNum.pp.0.c:946:2: warning: Added loop label VITIS_LOOP_6_1:   [xilinx-label-all-loops]
+ while (i <= end) {
+ ^~~~~
+ VITIS_LOOP_6_1: 
+/home/coss01/vitis_hls_demo_c/while_loop/simple/while_loop_simple/solution1/.autopilot/db/printNum.pp.0.c:946:2: note: FIX-IT applied suggested code changes

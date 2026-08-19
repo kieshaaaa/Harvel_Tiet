@@ -1,0 +1,66 @@
+### Version 1: Using a while loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i, n;
+
+    printf("\nEnter value of n :: ");
+    scanf("%d", &n);
+
+    printf("\nNatural Numbers in Reverse Order Upto [ %d ] :: \n", n);
+
+    i = n;
+    while (i >= 1) {
+        printf("\t%d\n", i);
+        i--;
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using a do-while loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i, n;
+
+    printf("\nEnter value of n :: ");
+    scanf("%d", &n);
+
+    printf("\nNatural Numbers in Reverse Order Upto [ %d ] :: \n", n);
+
+    i = n;
+    do {
+        printf("\t%d\n", i);
+        i--;
+    } while (i >= 1);
+
+    return 0;
+}
+```
+
+### Version 3: Using decrement in the for loop initialization
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    printf("\nEnter value of n :: ");
+    scanf("%d", &n);
+
+    printf("\nNatural Numbers in Reverse Order Upto [ %d ] :: \n", n);
+
+    for(int i = n; i; i--) {
+        printf("\t%d\n", i);
+    }
+
+    return 0;
+}
+```

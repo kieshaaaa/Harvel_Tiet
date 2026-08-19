@@ -1,0 +1,97 @@
+Sure, I'll provide three alternative versions of the C program to find the next prime number after a given number, adhering to your constraints.
+
+### Version 1: Simplifying the Loop
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n;
+    printf("\nEnter A Number to Find Next Prime Number => ");
+    scanf("%d", &n);
+
+    for (int num = n + 1; ; num++) {
+        int isPrime = 1;
+        for (int i = 2; i <= (int)sqrt((float)num); i++) {
+            if (num % i == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+        if (isPrime) {
+            printf("\nNext Prime Number => %d\n", num);
+            break;
+        }
+    }
+    return 0;
+}
+```
+
+### Version 2: Optimizing the Inner Loop
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n;
+    printf("\nEnter A Number to Find Next Prime Number => ");
+    scanf("%d", &n);
+
+    for (int num = n + 1; ; num++) {
+        if (num == 2) {
+            printf("\nNext Prime Number => %d\n", num);
+            break;
+        }
+        if (num % 2 == 0) continue;
+
+        int isPrime = 1;
+        for (int i = 3; i <= (int)sqrt((float)num); i += 2) {
+            if (num % i == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+        if (isPrime) {
+            printf("\nNext Prime Number => %d\n", num);
+            break;
+        }
+    }
+    return 0;
+}
+```
+
+### Version 3: Limiting Range for Prime Check
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n;
+    printf("\nEnter A Number to Find Next Prime Number => ");
+    scanf("%d", &n);
+
+    for (int num = n + 1; ; num++) {
+        if (num <= 3) {
+            if (num > 1) printf("\nNext Prime Number => %d\n", num);
+            else continue;
+            break;
+        }
+        if (num % 2 == 0 || num % 3 == 0) continue;
+
+        int isPrime = 1;
+        for (int i = 5; i * i <= num; i += 6) {
+            if (num % i == 0 || num % (i + 2) == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+        if (isPrime) {
+            printf("\nNext Prime Number => %d\n", num);
+            break;
+        }
+    }
+    return 0;
+}
+```
+
+Each version presents a slightly different approach to finding the next prime number, while respecting your constraints regarding the avoidance of certain programming constructs and practices.

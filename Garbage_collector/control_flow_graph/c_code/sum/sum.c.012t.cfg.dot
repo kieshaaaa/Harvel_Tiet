@@ -1,0 +1,35 @@
+digraph "sum.c.012t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|printf\ (\"Enter\ the\ first\ number:\ \");\l\
+|scanf\ (\"%d\",\ &num1);\l\
+|printf\ (\"Enter\ the\ second\ number:\ \");\l\
+|scanf\ (\"%d\",\ &num2);\l\
+|num1.0_1\ =\ num1;\l\
+|num2.1_2\ =\ num2;\l\
+|sum\ =\ num1.0_1\ +\ num2.1_2;\l\
+|printf\ (\"The\ sum\ is:\ %d\\n\",\ sum);\l\
+|D.2319\ =\ 0;\l\
+|num1\ =\ \{CLOBBER\};\l\
+|num2\ =\ \{CLOBBER\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.2319;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

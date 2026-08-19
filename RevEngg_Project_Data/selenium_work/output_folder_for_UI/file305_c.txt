@@ -1,0 +1,101 @@
+Certainly! Below are three different versions of the given C program to check whether a character is a vowel or a consonant, adhering to your requirements.
+
+### Version 1: Using `tolower` Function
+This version uses the `tolower` function from the `ctype.h` library to simplify the case checking.
+
+```c
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+    
+    ch = tolower(ch); // Convert to lowercase to simplify the switch cases
+
+    if(ch >= 'a' && ch <= 'z') {
+        switch(ch) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                printf("%c is a VOWEL.\n", ch);
+                break;
+            default:
+                printf("%c is a CONSONANT.\n", ch);
+        }
+    } else {
+        printf("%c is not an alphabet.\n", ch);
+    }
+    return 0;
+}
+```
+
+### Version 2: Using Logical OR in Cases
+This version simplifies the vowel check by grouping them into a single case using logical OR conditions.
+
+```c
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+    
+    if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        char isVowel = (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' ||
+                        ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
+        
+        if(isVowel) {
+            printf("%c is a VOWEL.\n", ch);
+        } else {
+            printf("%c is a CONSONANT.\n", ch);
+        }
+    } else {
+        printf("%c is not an alphabet.\n", ch);
+    }
+    return 0;
+}
+```
+
+### Version 3: Without Using `switch` or `if` for Vowel Checking
+This version avoids using a `switch` statement or multiple `if` conditions for checking vowels by utilizing an array of vowel characters.
+
+```c
+#include <stdio.h>
+#include <ctype.h> // For tolower function
+
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+    
+    ch = tolower(ch); // Convert character to lowercase
+    
+    char vowels[] = {'a', 'e', 'i', 'o', 'u'};
+    int isVowel = 0; // Flag to check if ch is a vowel
+    
+    if(ch >= 'a' && ch <= 'z') {
+        for(int i = 0; i < 5; ++i) {
+            if(ch == vowels[i]) {
+                isVowel = 1;
+                break;
+            }
+        }
+        
+        if(isVowel) {
+            printf("%c is a VOWEL.\n", ch);
+        } else {
+            printf("%c is a CONSONANT.\n", ch);
+        }
+    } else {
+        printf("%c is not an alphabet.\n", ch);
+    }
+    
+    return 0;
+}
+```
+
+Each version provides a different approach to solve the problem, yet all conform to your constraints and requirements.

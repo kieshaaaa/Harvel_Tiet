@@ -1,0 +1,74 @@
+Sure, I'll create three different versions of the program you provided, adhering to your guidelines.
+
+### Version 1: Slight Variation in Formula Expression and Interaction
+
+```c
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14159
+
+int main() {
+    float radius, height, volume, baseArea;
+
+    printf("Radius and height of the cone: ");
+    scanf("%f %f", &radius, &height);
+
+    baseArea = PI * pow(radius, 2);
+    volume = baseArea * height / 3;
+
+    printf("The volume is ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+### Version 2: Splitting Input, Calculation, and Output into Separate Blocks
+
+```c
+#include <stdio.h>
+#define PI 3.14159
+
+int main() {
+    float radius, height, volume;
+
+    // Input
+    printf("Input radius: ");
+    scanf("%f", &radius);
+    printf("Input height: ");
+    scanf("%f", &height);
+
+    // Calculation
+    volume = (1.0/3) * PI * radius * radius * height;
+
+    // Output
+    printf("Cone volume: ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+### Version 3: Including Intermediate Variables for Clarity
+
+```c
+#include <stdio.h>
+#define PI 3.14159
+
+int main() {
+    float r, h, v, area;
+
+    printf("Enter cone radius and height: ");
+    scanf("%f %f", &r, &h);
+
+    area = PI * r * r;
+    v = area * h / 3;
+
+    printf("Computed volume: ");
+    printf("%.2f cubic units\n", v);
+
+    return 0;
+}
+```
+
+Each version adheres to your instructions and demonstrates a different way to achieve the same task of calculating and displaying the volume of a cone, without modifying the data types or using the prohibited constructs.

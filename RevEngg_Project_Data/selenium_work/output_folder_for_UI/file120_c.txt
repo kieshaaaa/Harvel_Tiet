@@ -1,0 +1,72 @@
+Given your constraints, creating versions of the original program that avoid pointers, dynamic memory allocation, structs, unions, recursion, file handling, modifying data types (like adding `const`), and replacing `double` with `float` where applicable, while not exactly replicating the structure due to avoiding pointers, will lead us towards more simplistic examples focused on demonstrating similar concepts in different ways. 
+
+Since we can't use pointers, our focus shifts to demonstrating the handling and manipulation of variable values and addresses in a different context.
+
+### Version 1: Basic Arithmetic Operations and Use of `float`
+
+```c
+#include<stdio.h>
+
+int main() {
+    float a = 5.0;
+    float b = 10.0;
+    float sum = a + b;
+    float diff = a - b;
+    float product = a * b;
+    float quotient = a / b;
+
+    printf("Sum of a and b = %.2f\n", sum);
+    printf("Difference between a and b = %.2f\n", diff);
+    printf("Product of a and b = %.2f\n", product);
+    printf("Quotient of a divided by b = %.2f\n", quotient);
+
+    return 0;
+}
+```
+
+### Version 2: Demonstrating Variable Swapping without a Temporary Variable
+
+```c
+#include<stdio.h>
+
+int main() {
+    int a = 5, b = 10;
+
+    printf("Before swapping: a = %d, b = %d\n", a, b);
+    
+    // Swapping without a temporary variable
+    a = a + b; // a now becomes 15
+    b = a - b; // b becomes 5
+    a = a - b; // a becomes 10
+
+    printf("After swapping: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+```
+
+### Version 3: Simple Array Manipulation
+
+```c
+#include<stdio.h>
+
+int main() {
+    float numbers[5] = {1.0, 2.0, 3.0, 4.0, 5.0};
+    float total = 0.0;
+    float average;
+    int i;
+
+    for(i = 0; i < 5; i++) {
+        total += numbers[i];
+    }
+
+    average = total / 5;
+
+    printf("Total of array elements = %.2f\n", total);
+    printf("Average of array elements = %.2f\n", average);
+
+    return 0;
+}
+```
+
+These versions aim to showcase different aspects of C programming within the constraints you've set, focusing on arithmetic operations, logic without using extra variables for swapping, and basic array manipulation without diving into more complex areas such as pointers or memory management.

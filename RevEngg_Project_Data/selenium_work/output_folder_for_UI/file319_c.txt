@@ -1,0 +1,115 @@
+Certainly! Below are three different versions of the original program, each modified slightly according to your instructions. These versions avoid the constraints mentioned, using `float` for division operations to handle non-integer results properly.
+
+### Version 1: Using Temporary Variables for Operations
+
+This version uses temporary variables for intermediate results of the expression.
+
+```c
+#include<stdio.h>
+
+int main() {
+    float a, b, c, d, e, f, result, temp1, temp2, temp3;
+    printf("Enter the value of a: ");
+    scanf("%f", &a);
+
+    printf("Enter the value of b: ");
+    scanf("%f", &b);
+
+    printf("Enter the value of c: ");
+    scanf("%f", &c);
+
+    printf("Enter the value of d: ");
+    scanf("%f", &d);
+
+    printf("Enter the value of e: ");
+    scanf("%f", &e);
+
+    printf("Enter the value of f: ");
+    scanf("%f", &f);
+
+    temp1 = a + b;
+    temp2 = temp1 * c;
+    temp3 = temp2 / d;
+    result = temp3 * (e - f);
+
+    printf("The value of the expression is: %f\n", result);
+    return 0;
+}
+```
+
+### Version 2: Direct Calculation without Extra Variables
+
+This version directly calculates the result without using any temporary variables for the intermediate steps.
+
+```c
+#include<stdio.h>
+
+int main() {
+    float a, b, c, d, e, f, result;
+    printf("Enter the value of a: ");
+    scanf("%f", &a);
+
+    printf("Enter the value of b: ");
+    scanf("%f", &b);
+
+    printf("Enter the value of c: ");
+    scanf("%f", &c);
+
+    printf("Enter the value of d: ");
+    scanf("%f", &d);
+
+    printf("Enter the value of e: ");
+    scanf("%f", &e);
+
+    printf("Enter the value of f: ");
+    scanf("%f", &f);
+
+    result = ((a + b) * c / d) * (e - f);
+
+    printf("The value of the expression is: %f\n", result);
+    return 0;
+}
+```
+
+### Version 3: Adding User-Friendly Prompts
+
+This version adds more detailed prompts to the user for input, improving the user interface without altering the core functionality.
+
+```c
+#include<stdio.h>
+
+int main() {
+    float a, b, c, d, e, f, result;
+    printf("Enter six numbers to calculate ((a + b) * c / d) * (e - f):\n");
+
+    printf("a: ");
+    scanf("%f", &a);
+
+    printf("b: ");
+    scanf("%f", &b);
+
+    printf("c: ");
+    scanf("%f", &c);
+
+    printf("d (non-zero): ");
+    scanf("%f", &d);
+
+    printf("e: ");
+    scanf("%f", &e);
+
+    printf("f: ");
+    scanf("%f", &f);
+
+    if(d == 0) {
+        printf("Division by zero is not allowed.\n");
+        return -1;
+    }
+
+    result = ((a + b) * c / d) * (e - f);
+
+    printf("Result: %f\n", result);
+    return 0;
+}
+```
+
+Each version offers a unique approach to handling the task, with Version 3 including a simple check to prevent division by zero for a better user experience.

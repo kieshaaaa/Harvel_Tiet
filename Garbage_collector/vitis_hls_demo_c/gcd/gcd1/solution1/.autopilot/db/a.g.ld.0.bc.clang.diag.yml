@@ -1,0 +1,16 @@
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: gcd.c, Line: 5, Column: 21 }
+Function:        gcd
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_5_1
+  - String:          ' '
+  - LoopLoc:         'gcd.c:5:21'
+  - String:          ' '
+  - Function:        gcd
+    DebugLoc:        { File: gcd.c, Line: 3, Column: 0 }
+  - String:          ' '
+...

@@ -1,0 +1,64 @@
+### Version 1: Simplified Variable Initialization and Conditional in For-Loop
+```c
+#include<stdio.h>
+
+int main() {
+    int N;
+    float sum = 0.0; // Initialize sum here
+
+    printf("\nEnter the value of N :: ");
+    scanf("%d", &N);
+
+    for(int i = 1; i <= N; ++i) {
+        sum += 1.0 / i; // Simplified expression
+    }
+
+    printf("\nSum of the series is :: %f\n", sum);
+
+    return 0;
+}
+```
+
+### Version 2: Using a While Loop Instead of a For Loop
+```c
+#include<stdio.h>
+
+int main() {
+    int N, i = 1;
+    float sum = 0.0;
+
+    printf("\nEnter the value of N :: ");
+    scanf("%d", &N);
+
+    while(i <= N) {
+        sum += 1.0 / i;
+        i++;
+    }
+
+    printf("\nSum of the series is :: %f\n", sum);
+
+    return 0;
+}
+```
+
+### Version 3: Using Do-While Loop for Calculation
+```c
+#include<stdio.h>
+
+int main() {
+    int N, i = 1;
+    float sum = 0.0;
+
+    printf("\nEnter the value of N :: ");
+    scanf("%d", &N);
+
+    do {
+        sum += 1.0 / i;
+        i++;
+    } while(i <= N);
+
+    printf("\nSum of the series is :: %f\n", sum);
+
+    return 0;
+}
+```

@@ -1,0 +1,5 @@
+<pragmas>
+<pragma file="../Array_main/Array/multiple_operator/array.c" line="7" pragmaType="array_partition" parentfunction="processArray" dim="1" factor="0" mode="complete" dynamic="0" variable="arr"/>
+<pragma file="../Array_main/Array/multiple_operator/array.c" line="8" pragmaType="array_partition" parentfunction="processArray" dim="1" factor="0" mode="complete" dynamic="0" variable="arr2"/>
+<pragma file="../Array_main/Array/multiple_operator/array.c" line="9" pragmaType="array_partition" parentfunction="processArray" dim="1" factor="0" mode="complete" dynamic="0" variable="arr3"/>
+</pragmas>

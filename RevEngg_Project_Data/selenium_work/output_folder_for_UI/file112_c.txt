@@ -1,0 +1,44 @@
+Sure, I'll create three different variations of a simple C program that prints "Hello World!" while adhering to your restrictions. Each version will slightly alter how the program achieves its output.
+
+### Version 1: Using a Variable
+In this version, we store the message in a character array (string) before printing it.
+
+```c
+#include <stdio.h>
+
+int main() {
+    char message[] = "Hello World!";
+    puts(message);
+
+    return 0;
+}
+```
+
+### Version 2: Using a Direct Call to `puts`
+This version bypasses the use of `printf` entirely and uses `puts` for printing, which automatically adds a newline at the end.
+
+```c
+#include <stdio.h>
+
+int main() {
+    puts("Hello World!");
+
+    return 0;
+}
+```
+
+### Version 3: Using Multiple `printf` Calls
+This version breaks the message into two parts and prints them in separate calls to `printf`.
+
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello ");
+    printf("World!");
+
+    return 0;
+}
+```
+
+Each of these versions follows the guidelines you've provided, offering a slightly different approach to achieving the same output: displaying "Hello World!" on the screen.

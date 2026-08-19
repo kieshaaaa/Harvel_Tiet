@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="printNum.c" path="/home/coss01/vitis_hls_demo_c/for_loop/nested/printNum.c"/>
+  </source>
+  <testbench>
+    <originFiles name="main.c" path="/home/coss01/vitis_hls_demo_c/for_loop/nested/main.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

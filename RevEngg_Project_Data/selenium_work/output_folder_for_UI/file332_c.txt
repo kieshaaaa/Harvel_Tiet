@@ -1,0 +1,82 @@
+Certainly! Below are three different versions of the program to swap two numbers, each utilizing a different method while adhering to your restrictions.
+
+### Version 1: Using Addition and Subtraction
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    printf("Before swapping: a = %d, b = %d\n", a, b);
+
+    // Swapping logic
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("After swapping: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+```
+
+### Version 2: Using XOR Bitwise Operation
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    printf("Before swapping: a = %d, b = %d\n", a, b);
+
+    // Swapping logic using XOR
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+
+    printf("After swapping: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+```
+
+### Version 3: Using Multiplication and Division
+Note: This version should be used with caution to avoid potential division by zero or overflow errors.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    printf("Before swapping: a = %d, b = %d\n", a, b);
+
+    if (b != 0 && a != 0) {
+        // Swapping logic using multiplication and division
+        a = a * b;
+        b = a / b;
+        a = a / b;
+    }
+
+    printf("After swapping: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+```
+
+Each of these versions uses a different mathematical or bitwise operation approach to achieve the swapping of two numbers without the need for a third variable. Remember, the multiplication and division method should be carefully used considering its limitations and the environment in which you're running the code.

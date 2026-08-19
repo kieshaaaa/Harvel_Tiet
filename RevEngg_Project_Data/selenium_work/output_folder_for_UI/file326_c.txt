@@ -1,0 +1,68 @@
+### Version 1: Slight Variation with Intermediate Calculation Steps
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float radius, volume, radiusCubed;
+
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    radiusCubed = radius * radius * radius;
+    volume = (4.0f/3.0f) * M_PI * radiusCubed;
+
+    printf("Volume of the sphere: ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+### Version 2: Breaking Down the Formula Further
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float radius, volume, piValue, fourThirds;
+
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    piValue = M_PI;
+    fourThirds = 4.0f / 3.0f;
+    volume = fourThirds * piValue * pow(radius, 3);
+
+    printf("Volume of the sphere: ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+### Version 3: Inline Calculation with Temporary Variables
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float radius, volume, temp;
+
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    temp = pow(radius, 3);
+    volume = temp * M_PI * 4.0f / 3.0f;
+
+    printf("Volume of the sphere: ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+Each of these versions adheres to the constraints specified: they don't introduce any new data types, pointers, dynamic memory allocation, structures, unions, external functions, or recursion. They also maintain the use of `float` for floating-point arithmetic, and separate the calculation from the `printf` statement for displaying the result.

@@ -1,0 +1,4 @@
+if_else.c:10:18: warning: self-comparison always evaluates to true [-Wtautological-compare]
+         if (max == max) {
+                 ^
+1 warning generated.

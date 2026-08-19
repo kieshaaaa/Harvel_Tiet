@@ -1,0 +1,106 @@
+### Version 1: Simplified Variable Initialization and Result Calculation
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int start, end;
+    printf("Enter the starting number: ");
+    scanf("%d", &start);
+    printf("Enter the ending number: ");
+    scanf("%d", &end);
+
+    int count = 0;
+    for (int num = start; num <= end; num++) {
+        int temp = num, sum = 0, digits = 0;
+        
+        // Calculate the number of digits
+        while (temp > 0) {
+            digits++;
+            temp /= 10;
+        }
+
+        temp = num;
+        // Calculate the sum of the powers of its digits
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += pow(digit, digits);
+            temp /= 10;
+        }
+
+        if (sum == num) count++;
+    }
+
+    printf("Count of Armstrong numbers between is : %d \n", count);
+    return 0;
+}
+```
+
+### Version 2: Using For-Loop for Digits Counting and Sum Calculation
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int start, end;
+    printf("Enter the starting number: ");
+    scanf("%d", &start);
+    printf("Enter the ending number: ");
+    scanf("%d", &end);
+
+    int count = 0;
+    for (int num = start; num <= end; num++) {
+        int n = num, digits = 0, sum = 0;
+
+        // Determine the number of digits
+        for (n = num; n != 0; n /= 10, digits++);
+
+        // Calculate the sum of the nth powers of its digits
+        for (n = num; n != 0; n /= 10) {
+            int digit = n % 10;
+            sum += pow(digit, digits);
+        }
+
+        if (sum == num) count++;
+    }
+
+    printf("Count of Armstrong numbers between is : %d \n", count);
+    return 0;
+}
+```
+
+### Version 3: Incorporating Inline Digits Counting
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int start, end;
+    printf("Enter the starting number: ");
+    scanf("%d", &start);
+    printf("Enter the ending number: ");
+    scanf("%d", &end);
+
+    int count = 0;
+    for (int num = start; num <= end; num++) {
+        int sum = 0, n = num;
+        int digits = log10(num) + 1; // Inline calculation of digits using log10
+
+        while (n > 0) {
+            int digit = n % 10;
+            sum += pow(digit, digits);
+            n /= 10;
+        }
+
+        if (sum == num) count++;
+    }
+
+    printf("Count of Armstrong numbers between is : %d \n", count);
+    return 0;
+}
+```
+
+These versions incorporate various optimizations and alternate methods to calculate the number of digits and the sum of powers of digits, aiming to provide different perspectives on solving the problem while adhering to the constraints provided.

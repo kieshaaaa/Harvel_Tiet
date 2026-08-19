@@ -1,0 +1,6 @@
+<pragmas>
+<pragma file="mat_mul.c" line="10" pragmaType="pipeline" parentfunction="multiplyMatrix" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="mat_mul.c" line="9" pragmaType="unroll" parentfunction="multiplyMatrix" factor="-1" skip_exit_check="0"/>
+<pragma file="mat_mul.c" line="7" pragmaType="array_partition" parentfunction="multiplyMatrix" dim="1" factor="0" mode="complete" dynamic="0" variable="mat1"/>
+<pragma file="mat_mul.c" line="8" pragmaType="array_partition" parentfunction="multiplyMatrix" dim="1" factor="0" mode="complete" dynamic="0" variable="result"/>
+</pragmas>

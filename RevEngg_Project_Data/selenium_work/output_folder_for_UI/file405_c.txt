@@ -1,0 +1,104 @@
+Certainly! Below are three different versions of your Armstrong number checker within the specified constraints. Each version avoids the use of additional functions, dynamic memory allocation, structs, unions, pointers, recursion, file handling, and modifications to existing data types. Additionally, `float` is used instead of `double`.
+
+### Version 1: Iterative Method with Minor Adjustments
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int lower, upper, i;
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    printf("Armstrong numbers between %d and %d are:\n", lower, upper);
+    for (i = lower; i <= upper; i++) {
+        int temp = i, sum = 0, n = 0, remainder;
+        // Calculate the number of digits in i
+        while (temp > 0) {
+            temp /= 10;
+            n++;
+        }
+        temp = i;
+        // Calculate the sum of the nth powers of its digits
+        while (temp > 0) {
+            remainder = temp % 10;
+            sum += pow(remainder, n);
+            temp /= 10;
+        }
+        if (sum == i) {
+            printf("%d\n", i);
+        }
+    }
+    return 0;
+}
+```
+
+### Version 2: For Loop Optimization
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int lower, upper;
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    printf("Armstrong numbers between %d and %d are:\n", lower, upper);
+    for (int i = lower; i <= upper; i++) {
+        int sum = 0, original = i, n = 0;
+        for (int temp = i; temp > 0; temp /= 10, n++);
+        for (int temp = i; temp > 0; temp /= 10) {
+            int digit = temp % 10;
+            sum += pow(digit, n);
+        }
+        if (sum == original) {
+            printf("%d\n", original);
+        }
+    }
+    return 0;
+}
+```
+
+### Version 3: Using a Single Loop for Both Counting and Summation
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int lower, upper;
+    printf("Enter the lower bound: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound: ");
+    scanf("%d", &upper);
+
+    printf("Armstrong numbers between %d and %d are:\n", lower, upper);
+    for (int i = lower; i <= upper; i++) {
+        int temp = i, sum = 0, digits = 0, powSum = 1;
+        // Determine the number of digits and the sum of digits raised to the nth power simultaneously
+        while (temp != 0) {
+            digits++;
+            temp /= 10;
+        }
+        temp = i;
+        while (temp != 0) {
+            int remainder = temp % 10;
+            powSum = 1; // Reset power sum for each digit
+            for (int j = 0; j < digits; j++) {
+                powSum *= remainder;
+            }
+            sum += powSum;
+            temp /= 10;
+        }
+        if (sum == i) {
+            printf("%d\n", i);
+        }
+    }
+    return 0;
+}
+```
+
+These versions maintain the essence of your request, adjusting the method of finding Armstrong numbers between a lower and upper bound while respecting your constraints.

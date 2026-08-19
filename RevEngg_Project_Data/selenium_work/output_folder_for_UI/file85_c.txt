@@ -1,0 +1,111 @@
+Certainly! I'll create three simplified versions of the C program for sorting array elements in ascending order, adhering to your constraints.
+
+### Version 1: Inline Code
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[5], i, j, temp, size = 5;
+
+    printf("\nEnter elements: \n");
+    for (i = 0; i < size; i++) {
+        printf("Enter arr[%d]: ", i);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nBefore Sorting\n");
+    for (i = 0; i < size; i++) {
+        printf("\n\tarr[%d]: %d", i, arr[i]);
+    }
+
+    for (i = 0; i < size - 1; i++) {
+        for (j = i + 1; j < size; j++) {
+            if (arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    printf("\nAfter Sorting\n");
+    for (i = 0; i < size; i++) {
+        printf("\n\tarr[%d]: %d", i, arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+
+### Version 2: Use of `for` loop for initialization
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[5], i, j, temp;
+
+    printf("\nEnter 5 elements: \n");
+    for (i = 0; i < 5; i++) {
+        printf("Element %d: ", i);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nArray before sorting: ");
+    for (i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("\nArray after sorting: ");
+    for (i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+
+### Version 3: Minimalist Approach
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[5] = {0}, i, j, temp;
+
+    printf("Enter 5 numbers:\n");
+    for (i = 0; i < 5; ++i) {
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = 1; i < 5; ++i) {
+        for (j = i; j > 0 && arr[j - 1] > arr[j]; --j) {
+            temp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = temp;
+        }
+    }
+
+    printf("Sorted Array:\n");
+    for (i = 0; i < 5; ++i) {
+        printf("%d\n", arr[i]);
+    }
+
+    return 0;
+}
+```
+
+Each version adheres to your guidelines, including avoiding the use of pointers, recursion, file handling, structs, unions, dynamic memory allocation, and keeping the use of data types as requested.

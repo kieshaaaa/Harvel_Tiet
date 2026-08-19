@@ -1,0 +1,674 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.5ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu5p-flva2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcvu5p-flva2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 0.5 
+INFO: [HLS 200-1510] Running: source ./matrix_mul/solution3/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name multiplyMatrix multiplyMatrix 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type complete -dim 1 multiplyMatrix mat1 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type complete -dim 1 multiplyMatrix result 
+INFO: [HLS 200-1510] Running: set_directive_unroll multiplyMatrix/multiplyMatrix_label0 
+INFO: [HLS 200-1510] Running: set_directive_pipeline multiplyMatrix/multiplyMatrix_label1 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 10.03 seconds; current allocated memory: 302.535 MB.
+INFO: [HLS 200-10] Analyzing design file 'mat_mul.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.36 seconds. CPU system time: 0.22 seconds. Elapsed time: 0.61 seconds; current allocated memory: 302.570 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-291] Loop 'multiplyMatrix_label0' is marked as complete unroll implied by the pipeline pragma (mat_mul.c:11:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_13_1' is marked as complete unroll implied by the pipeline pragma (mat_mul.c:13:30)
+INFO: [HLS 214-186] Unrolling loop 'multiplyMatrix_label0' (mat_mul.c:11:31) in function 'multiplyMatrix' completely with a factor of 3 (mat_mul.c:7:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_13_1' (mat_mul.c:13:30) in function 'multiplyMatrix' completely with a factor of 3 (mat_mul.c:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'mat1': Complete partitioning on dimension 1. (mat_mul.c:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'result': Complete partitioning on dimension 1. (mat_mul.c:7:0)
+WARNING: [HLS 214-356] Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer. (mat_mul.c:12:13)
+WARNING: [HLS 214-356] Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer. (mat_mul.c:14:33)
+WARNING: [HLS 214-368] interface mode 'ap_none' with wrong type '[3 x i32]*' (mat_mul.c:7:0)
+INFO: [HLS 214-115] Multiple burst reads of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (mat_mul.c:10:27)
+INFO: [HLS 214-115] Multiple burst reads of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (mat_mul.c:10:27)
+INFO: [HLS 214-115] Multiple burst reads of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_2'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (mat_mul.c:10:27)
+INFO: [HLS 214-115] Multiple burst writes of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (mat_mul.c:10:27)
+INFO: [HLS 214-115] Multiple burst writes of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (mat_mul.c:10:27)
+INFO: [HLS 214-115] Multiple burst writes of length 3 and bit width 32 in loop 'multiplyMatrix_label1'(mat_mul.c:10:27) has been inferred on bundle 'gmem_2'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (mat_mul.c:10:27)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.91 seconds. CPU system time: 0.3 seconds. Elapsed time: 4.3 seconds; current allocated memory: 304.230 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 304.230 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 304.754 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 304.836 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.05 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.08 seconds; current allocated memory: 326.848 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 327.102 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'multiplyMatrix' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_multiplyMatrix_label1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'multiplyMatrix_label1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 5, loop 'multiplyMatrix_label1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 328.738 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 328.738 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.33 seconds. CPU system time: 0 seconds. Elapsed time: 0.33 seconds; current allocated memory: 329.176 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.63 seconds. CPU system time: 0 seconds. Elapsed time: 0.64 seconds; current allocated memory: 329.766 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_multiplyMatrix_label1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_multiplyMatrix_label1' pipeline 'multiplyMatrix_label1' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_0_BREADY' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_1_BREADY' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_2_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_2_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_2_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_2_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_2_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_2_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_2_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_2_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'multiplyMatrix_Pipeline_multiplyMatrix_label1/m_axi_gmem_2_AWPROT' to 0.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.5ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu5p-flva2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcvu5p-flva2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 0.5 
+INFO: [HLS 200-1510] Running: source ./matrix_mul/solution3/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name multiplyMatrix multiplyMatrix 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type complete -dim 1 multiplyMatrix mat1 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type complete -dim 1 multiplyMatrix result 
+INFO: [HLS 200-1510] Running: set_directive_unroll multiplyMatrix/multiplyMatrix_label0 
+INFO: [HLS 200-1510] Running: set_directive_unroll multiplyMatrix/multiplyMatrix_label1 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 10.02 seconds; current allocated memory: 302.547 MB.
+INFO: [HLS 200-10] Analyzing design file 'mat_mul.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.34 seconds. CPU system time: 0.22 seconds. Elapsed time: 0.56 seconds; current allocated memory: 302.582 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-186] Unrolling loop 'multiplyMatrix_label1' (mat_mul.c:10:27) in function 'multiplyMatrix' completely with a factor of 3 (mat_mul.c:7:0)
+INFO: [HLS 214-186] Unrolling loop 'multiplyMatrix_label0' (mat_mul.c:11:31) in function 'multiplyMatrix' completely with a factor of 3 (mat_mul.c:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'mat1': Complete partitioning on dimension 1. (mat_mul.c:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'result': Complete partitioning on dimension 1. (mat_mul.c:7:0)
+WARNING: [HLS 214-356] Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer. (mat_mul.c:12:13)
+WARNING: [HLS 214-356] Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer. (mat_mul.c:14:33)
+WARNING: [HLS 214-368] interface mode 'ap_none' with wrong type '[3 x i32]*' (mat_mul.c:7:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.76 seconds. CPU system time: 0.33 seconds. Elapsed time: 4.09 seconds; current allocated memory: 303.996 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 303.996 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 304.867 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 305.086 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.09 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.11 seconds; current allocated memory: 328.082 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.12 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.14 seconds; current allocated memory: 405.762 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'multiplyMatrix' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 74, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.21 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 407.441 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 0.34 seconds; current allocated memory: 407.441 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 74, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 408.133 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.33 seconds. CPU system time: 0 seconds. Elapsed time: 0.33 seconds; current allocated memory: 408.133 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 74, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.22 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.23 seconds; current allocated memory: 408.828 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.33 seconds. CPU system time: 0 seconds. Elapsed time: 0.33 seconds; current allocated memory: 408.828 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 74, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 409.523 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.33 seconds. CPU system time: 0 seconds. Elapsed time: 0.33 seconds; current allocated memory: 409.523 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 74, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.22 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 410.234 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.35 seconds. CPU system time: 0 seconds. Elapsed time: 0.4 seconds; current allocated memory: 410.234 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 74, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 410.961 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 0.34 seconds; current allocated memory: 410.961 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 74, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 411.660 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 0.34 seconds; current allocated memory: 411.660 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 74, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 412.430 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.33 seconds. CPU system time: 0 seconds. Elapsed time: 0.34 seconds; current allocated memory: 412.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 74, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 413.125 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 0.34 seconds; current allocated memory: 413.125 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.85 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.85 seconds; current allocated memory: 415.375 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2.04 seconds. CPU system time: 0 seconds. Elapsed time: 2.04 seconds; current allocated memory: 418.172 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_32_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.57 seconds. CPU system time: 0 seconds. Elapsed time: 0.57 seconds; current allocated memory: 420.621 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_32_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 424.055 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_32_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.25 seconds; current allocated memory: 427.535 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_32_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 430.961 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_32_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 434.352 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_32_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.24 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 437.777 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_32_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.24 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.24 seconds; current allocated memory: 441.164 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_32_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 444.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_32_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.24 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.25 seconds; current allocated memory: 447.992 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/gmem_0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/gmem_1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/gmem_2' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/mat1_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/mat1_1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/mat1_2' to 's_axilite & ap_none'.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.5ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu5p-flva2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcvu5p-flva2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 0.5 
+INFO: [HLS 200-1510] Running: source ./matrix_mul/solution3/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name multiplyMatrix multiplyMatrix 
+INFO: [HLS 200-1510] Running: set_directive_unroll multiplyMatrix/multiplyMatrix_label0 
+INFO: [HLS 200-1510] Running: set_directive_unroll multiplyMatrix/multiplyMatrix_label1 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 10.08 seconds; current allocated memory: 302.559 MB.
+INFO: [HLS 200-10] Analyzing design file 'mat_mul.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.43 seconds. CPU system time: 0.43 seconds. Elapsed time: 5.5 seconds; current allocated memory: 302.574 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-186] Unrolling loop 'multiplyMatrix_label1' (mat_mul.c:10:27) in function 'multiplyMatrix' completely with a factor of 3 (mat_mul.c:7:0)
+INFO: [HLS 214-186] Unrolling loop 'multiplyMatrix_label0' (mat_mul.c:11:31) in function 'multiplyMatrix' completely with a factor of 3 (mat_mul.c:7:0)
+WARNING: [HLS 214-368] interface mode 'ap_none' with wrong type '[3 x i32]*' (mat_mul.c:7:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.07 seconds. CPU system time: 0.5 seconds. Elapsed time: 9.1 seconds; current allocated memory: 305.020 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 305.020 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.83 seconds; current allocated memory: 305.996 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 306.191 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.28 seconds; current allocated memory: 329.691 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.2 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.25 seconds; current allocated memory: 408.012 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'multiplyMatrix' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_1_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.28 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.58 seconds; current allocated memory: 409.844 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.47 seconds. CPU system time: 0 seconds. Elapsed time: 0.51 seconds; current allocated memory: 409.844 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_3_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.32 seconds. CPU system time: 0 seconds. Elapsed time: 0.32 seconds; current allocated memory: 410.848 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.38 seconds. CPU system time: 0 seconds. Elapsed time: 0.39 seconds; current allocated memory: 410.848 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_5_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.37 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.37 seconds; current allocated memory: 411.820 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.44 seconds. CPU system time: 0 seconds. Elapsed time: 0.44 seconds; current allocated memory: 411.820 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_7_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.29 seconds. CPU system time: 0 seconds. Elapsed time: 0.3 seconds; current allocated memory: 412.762 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.54 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.55 seconds; current allocated memory: 412.762 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_9_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.36 seconds. CPU system time: 0 seconds. Elapsed time: 0.37 seconds; current allocated memory: 413.773 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.37 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 413.773 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_11_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 414.785 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.39 seconds. CPU system time: 0 seconds. Elapsed time: 0.39 seconds; current allocated memory: 414.785 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_13_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.31 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.33 seconds; current allocated memory: 415.688 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.38 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 415.688 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_15_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.32 seconds. CPU system time: 0 seconds. Elapsed time: 0.32 seconds; current allocated memory: 416.695 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.37 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 416.695 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_17_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.33 seconds. CPU system time: 0 seconds. Elapsed time: 0.33 seconds; current allocated memory: 417.719 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.39 seconds. CPU system time: 0 seconds. Elapsed time: 0.39 seconds; current allocated memory: 417.719 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.47 seconds. CPU system time: 0 seconds. Elapsed time: 1.49 seconds; current allocated memory: 420.070 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3.68 seconds. CPU system time: 0 seconds. Elapsed time: 3.69 seconds; current allocated memory: 423.855 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.86 seconds. CPU system time: 0 seconds. Elapsed time: 0.96 seconds; current allocated memory: 425.672 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.39 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.4 seconds; current allocated memory: 428.672 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.37 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.39 seconds; current allocated memory: 431.676 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.31 seconds; current allocated memory: 434.684 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.31 seconds. CPU system time: 0 seconds. Elapsed time: 0.31 seconds; current allocated memory: 437.699 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 440.719 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.31 seconds; current allocated memory: 443.773 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.31 seconds; current allocated memory: 446.828 MB.

@@ -1,0 +1,150 @@
+Given your constraints, I will provide three different versions of the provided code to print patterns of numbers without using recursion, dynamic memory allocation, pointers, structs, unions, file handling, or modifying the existing data types, and using `float` instead of `double` where applicable. Since the original request was to avoid recursion and other specified features, these versions will rely on iterative approaches to achieve the desired patterns.
+
+### Version 1: Simple Nested Loops for Ascending Numbers Pattern
+
+```c
+#include<stdio.h>
+
+void printPattern1(int n) {
+    for (int row = 1; row <= n; row++) {
+        for (int num = 1; num <= row; num++) {
+            printf("%d ", num);
+        }
+        printf("\n");
+    }
+}
+
+void printPattern2(int n) {
+    for (int row = n; row >= 1; row--) {
+        for (int num = 1; num <= row; num++) {
+            printf("%d ", num);
+        }
+        printf("\n");
+    }
+}
+
+void printPattern3(int n) {
+    for (int row = n; row >= 1; row--) {
+        for (int num = row; num >= 1; num--) {
+            printf("%d ", num);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter how many lines you want to print? ");
+    scanf("%d", &n);
+
+    printf("\n------------ Pattern 1 ----------- \n\n");
+    printPattern1(n);
+
+    printf("\n------------ Pattern 2 ----------- \n\n");
+    printPattern2(n);
+
+    printf("\n------------ Pattern 3 ----------- \n\n");
+    printPattern3(n);
+
+    return 0;
+}
+```
+
+### Version 2: Single Function with Pattern Type Parameter
+
+This version uses a single function to print all three patterns based on a parameter indicating the pattern type.
+
+```c
+#include<stdio.h>
+
+void printPattern(int n, int patternType) {
+    for (int row = 1; row <= n; row++) {
+        int start = (patternType == 1 || patternType == 2) ? 1 : row;
+        int end = (patternType == 1) ? row : (patternType == 2) ? n - row + 1 : 1;
+        int increment = (patternType == 3) ? -1 : 1;
+
+        for (int num = start; patternType != 3 ? num <= end : num >= end; num += increment) {
+            printf("%d ", num);
+        }
+        printf("\n");
+        if (patternType == 2 || patternType == 3) n--;
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter how many lines you want to print? ");
+    scanf("%d", &n);
+
+    printf("\n------------ Pattern 1 ----------- \n\n");
+    printPattern(n, 1);
+
+    printf("\n------------ Pattern 2 ----------- \n\n");
+    printPattern(n, 2);
+
+    printf("\n------------ Pattern 3 ----------- \n\n");
+    printPattern(n, 3);
+
+    return 0;
+}
+```
+
+### Version 3: Iterative Patterns with Decreasing Spaces
+
+This version introduces a visual twist by including leading spaces to align the numbers, creating a different visual pattern for each function.
+
+```c
+#include<stdio.h>
+
+void printPattern1(int n) {
+    for (int row = 1; row <= n; row++) {
+        for (int space = n - row; space > 0; space--) {
+            printf("  ");
+        }
+        for (int num = 1; num <= row; num++) {
+            printf("%d ", num);
+        }
+        printf("\n");
+    }
+}
+
+void printPattern2(int n) {
+    for (int row = 1; row <= n; row++) {
+        for (int num = 1; num <= n - row + 1; num++) {
+            printf("%d ", num);
+        }
+        printf("\n");
+    }
+}
+
+void printPattern3(int n) {
+    for (int row = 1; row <= n; row++) {
+        for (int space = 1; space < row; space++) {
+            printf("  ");
+        }
+        for (int num = row; num >= 1; num--) {
+            printf("%d ", num);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter how many lines you want to print? ");
+    scanf("%d", &n);
+
+    printf("\n------------ Pattern 1 ----------- \n\n");
+    printPattern1(n);
+
+    printf("\n------------ Pattern 2 ----------- \n\n");
+    printPattern2(n);
+
+    printf("\n------------ Pattern 3 ----------- \n\n");
+    printPattern3(n);
+
+    return 0;
+}
+```
+
+Each of these versions offers a different approach to generating number patterns, adhering to the constraints you've outlined.

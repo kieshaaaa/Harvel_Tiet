@@ -1,0 +1,71 @@
+Certainly! Here are three variations of the program you provided, adhering to your requirements:
+
+### Version 1: Using direct input and output without intermediate variables for perimeter calculation
+```c
+#include <stdio.h>
+
+int main() {
+    int sides;
+    float length;
+
+    printf("Enter the number of sides: ");
+    scanf("%d", &sides);
+
+    printf("Enter the length of one side: ");
+    scanf("%f", &length);
+
+    printf("Perimeter of the polygon: ");
+    printf("%.2f\n", sides * length);
+
+    return 0;
+}
+```
+
+### Version 2: Introduction of a new variable for user interaction
+```c
+#include <stdio.h>
+
+int main() {
+    int sidesCount;
+    float sideLength, polygonPerimeter;
+
+    printf("Input the sides count: ");
+    scanf("%d", &sidesCount);
+
+    printf("Input the length of a side: ");
+    scanf("%f", &sideLength);
+
+    polygonPerimeter = sidesCount * sideLength;
+
+    printf("The polygon's perimeter is: ");
+    printf("%.2f\n", polygonPerimeter);
+
+    return 0;
+}
+```
+
+### Version 3: Using only one `printf` for displaying the final message by calculating the perimeter beforehand
+```c
+#include <stdio.h>
+
+int main() {
+    int numberOfSides;
+    float lengthOfSide, totalPerimeter;
+
+    printf("Number of sides: ");
+    scanf("%d", &numberOfSides);
+
+    printf("Length of one side: ");
+    scanf("%f", &lengthOfSide);
+
+    totalPerimeter = numberOfSides * lengthOfSide;
+
+    char message[50];
+    sprintf(message, "Perimeter of the polygon: %.2f\n", totalPerimeter);
+    printf("%s", message);
+
+    return 0;
+}
+```
+
+Each version maintains the core functionality of calculating the perimeter of a polygon based on user input, while introducing slight variations in how the code is structured or how the output is handled.

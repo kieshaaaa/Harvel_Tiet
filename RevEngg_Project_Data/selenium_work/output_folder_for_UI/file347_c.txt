@@ -1,0 +1,82 @@
+Certainly! Below are three different versions of the given code, adhering to your constraints and requirements. Each version accomplishes the task in a unique way.
+
+### Version 1: Using a for loop
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    int result;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    for (result = number; result >= 7; result -= 7);
+
+    if (result == 0) {
+        result = number + 1;
+        printf("%d is divisible by 7.\n", result);
+    } else {
+        result = number + 2;
+        printf("%d is not divisible by 7.\n", result);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using modulo operator
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    int result;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number % 7 == 0) {
+        result = number + 1;
+        printf("%d is divisible by 7.\n", result);
+    } else {
+        result = number + 2;
+        printf("%d is not divisible by 7.\n", result);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using a do-while loop
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    int temp;
+    int result;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    temp = number;
+
+    do {
+        if (temp < 7) break;
+        temp -= 7;
+    } while (temp >= 7);
+
+    if (temp == 0) {
+        result = number + 1;
+        printf("%d is divisible by 7.\n", result);
+    } else {
+        result = number + 2;
+        printf("%d is not divisible by 7.\n", result);
+    }
+
+    return 0;
+}
+```
+
+Each of these versions approaches the problem differently but meets the specified constraints, including avoiding certain programming constructs and data types.

@@ -1,0 +1,89 @@
+### Version 1: Simplified Variable Initialization and Improved User Interface
+
+```c
+#include <stdio.h>
+
+int main() {
+    char name[30];
+    float basic, hra, da, gross, pf;
+
+    printf("Enter employee name: ");
+    fgets(name, 30, stdin); // Using fgets to avoid potential buffer overflow
+
+    printf("Enter Basic Salary: ");
+    scanf("%f", &basic);
+
+    printf("Enter House Rent Allowance: ");
+    scanf("%f", &hra);
+
+    printf("Enter Dearness Allowance: ");
+    scanf("%f", &da);
+
+    // Calculate Provident Fund at 12% of Basic Salary
+    pf = basic * 0.12;
+
+    // Calculate Gross Salary
+    gross = basic + hra + da + pf;
+
+    printf("\nEmployee Name: %s", name);
+    printf("Basic Salary: %.2f\n", basic);
+    printf("HRA: %.2f\n", hra);
+    printf("DA: %.2f\n", da);
+    printf("PF: %.2f\n", pf);
+    printf("Gross Salary: %.2f\n", gross);
+
+    return 0;
+}
+```
+
+### Version 2: Direct Calculation Method without Intermediate Variables
+
+```c
+#include <stdio.h>
+
+int main() {
+    char name[30];
+    float basic, hra, da;
+
+    printf("Enter employee name: ");
+    fgets(name, 30, stdin);
+
+    printf("Enter Basic Salary: ");
+    scanf("%f", &basic);
+
+    printf("Enter House Rent Allowance: ");
+    scanf("%f", &hra);
+
+    printf("Enter Dearness Allowance: ");
+    scanf("%f", &da);
+
+    printf("\nEmployee Name: %s", name);
+    printf("Gross Salary: %.2f\n", basic + hra + da + (basic * 0.12));
+
+    return 0;
+}
+```
+
+### Version 3: Incorporating User Input in a More Compact Format
+
+```c
+#include <stdio.h>
+
+int main() {
+    char name[30];
+    float basic;
+
+    printf("Enter employee name, Basic Salary, House Rent Allowance, Dearness Allowance (separated by spaces): ");
+    scanf("%[^\n]%*c %f %f %f", name, &basic, &hra, &da);
+
+    float pf = basic * 0.12;
+    float gross = basic + hra + da + pf;
+
+    printf("\nEmployee Name: %s\n", name);
+    printf("Gross Salary: %.2f\n", gross);
+
+    return 0;
+}
+```
+
+Each version offers a different approach to capturing and processing the user's input, while adhering to the constraints you specified.

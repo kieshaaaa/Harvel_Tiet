@@ -1,0 +1,78 @@
+Certainly! Below are three different versions of the provided C program that calculate the sum of the series 1^2 + 2^2 + 3^2 + ... + N^2. Each version follows the guidelines you've specified.
+
+### Version 1: Using the Mathematical Formula
+
+This version takes advantage of the formula for the sum of squares of the first N natural numbers: \( \frac{N(N + 1)(2N + 1)}{6} \).
+
+```c
+#include<stdio.h>
+
+int main() {
+    int N;
+    unsigned long sum;
+
+    printf("\nEnter the value of N :: ");
+    scanf("%d", &N);
+
+    sum = (N * (N + 1) * (2 * N + 1)) / 6;
+
+    printf("\nSum of the series is :: [ %lu ]\n", sum);
+
+    return 0;
+}
+```
+
+### Version 2: Using a While Loop
+
+This version replaces the `for` loop with a `while` loop to perform the summation.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int i = 1, N;
+    unsigned long sum = 0;
+
+    printf("\nEnter the value of N :: ");
+    scanf("%d", &N);
+
+    while(i <= N) {
+        sum += i * i;
+        i++;
+    }
+
+    printf("\nSum of the series is :: [ %lu ]\n", sum);
+
+    return 0;
+}
+```
+
+### Version 3: Reducing Multiplication Operations
+
+This version attempts to reduce the number of multiplication operations by using a mathematical trick to compute the square of each number.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int N;
+    unsigned long sum = 0;
+    int i = 1;
+    int nextSquare = 1; // Start with 1^2
+
+    printf("\nEnter the value of N :: ");
+    scanf("%d", &N);
+
+    while(i <= N) {
+        sum += nextSquare;
+        nextSquare += (2 * i + 1); // Calculate the next square
+        i++;
+    }
+
+    printf("\nSum of the series is :: [ %lu ]\n", sum);
+
+    return 0;
+}
+```
+
+Each version adheres to your requirements, offering a unique approach to solve the problem.

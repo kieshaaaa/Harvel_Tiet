@@ -1,0 +1,95 @@
+### Version 1: Simplified Loop and Prime Check
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, count = 0, num = 2, nthPrime = 2, i, isPrime;
+
+    printf("Enter the value of n to find the nth prime number: ");
+    scanf("%d", &n);
+
+    while (count < n) {
+        isPrime = 1;
+        for (i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+        if (isPrime) {
+            nthPrime = num;
+            count++;
+        }
+        num++;
+    }
+
+    printf("The %dth prime number is: %d\n", n, nthPrime);
+
+    return 0;
+}
+```
+
+### Version 2: Inline Prime Checking with a Different Looping Strategy
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, num = 2, nthPrime, count = 0, i;
+
+    printf("Enter the value of n to find the nth prime number: ");
+    scanf("%d", &n);
+
+    while (count < n) {
+        for (i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                break;
+            }
+        }
+        if (i > num / 2) {
+            nthPrime = num;
+            count++;
+        }
+        num++;
+    }
+
+    printf("The %dth prime number is: %d\n", n, nthPrime);
+
+    return 0;
+}
+```
+
+### Version 3: Prime Checking with a Minor Optimization and Different Variable Names
+
+```c
+#include <stdio.h>
+
+int main() {
+    int target, primeCount = 0, currentNumber = 2, latestPrime = 2, divisor, primeFlag;
+
+    printf("Enter the value of n to find the nth prime number: ");
+    scanf("%d", &target);
+
+    while (primeCount < target) {
+        primeFlag = 1; // Assume the number is prime
+        for (divisor = 2; divisor <= currentNumber / 2; divisor++) {
+            if (currentNumber % divisor == 0) {
+                primeFlag = 0; // Found a divisor, not prime
+                break;
+            }
+        }
+        if (primeFlag) {
+            latestPrime = currentNumber; // Update the latest prime found
+            primeCount++;
+        }
+        currentNumber++;
+    }
+
+    printf("The %dth prime number is: %d\n", target, latestPrime);
+
+    return 0;
+}
+```
+
+Each version of the code aims to find the nth prime number by slightly varying the approach to prime checking and looping through numbers. None of the versions use extra functions, dynamic memory allocation, structs, unions, pointers, recursion, or file handling. Additionally, they comply with the restrictions on data type modifications and avoid placing expressions or operations inside `printf` statements.

@@ -1,0 +1,77 @@
+Certainly! Below are three variations of your original code, following the provided constraints:
+
+### Version 1: Using a While Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int limit, count = 0;
+    int cube = 0, i = 1;
+    printf("Enter a positive integer: ");
+    scanf("%d", &limit);
+
+    while (cube <= limit) {
+        cube = i * i * i;
+        if (cube <= limit) {
+            count++;
+        }
+        i++;
+    }
+
+    printf("The number of cube (perfect cube) numbers up to ");
+    printf("%d", limit);
+    printf(" is: ");
+    printf("%d\n", count);
+    return 0;
+}
+```
+
+### Version 2: Simplifying the Calculation
+
+```c
+#include <stdio.h>
+
+int main() {
+    int limit, count = 0;
+    printf("Enter a positive integer: ");
+    scanf("%d", &limit);
+
+    for (int i = 1; ; i++) {
+        int cube = i * i * i;
+        if (cube > limit) break;
+        count++;
+    }
+
+    printf("The number of cube (perfect cube) numbers up to ");
+    printf("%d", limit);
+    printf(" is: ");
+    printf("%d\n", count);
+    return 0;
+}
+```
+
+### Version 3: Direct Mathematical Approach
+
+This version uses a mathematical approach to find the largest cube root value within the limit, which directly gives us the count of cube numbers up to the limit. This method relies on the fact that the cube numbers are sequential, starting from 1.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int limit;
+    printf("Enter a positive integer: ");
+    scanf("%d", &limit);
+
+    int count = (int)cbrt(limit); // Directly calculating the largest cube root that fits within the limit.
+
+    printf("The number of cube (perfect cube) numbers up to ");
+    printf("%d", limit);
+    printf(" is: ");
+    printf("%d\n", count);
+    return 0;
+}
+```
+
+Each of these versions achieves the goal through different means: iteration with a while loop, simplifying the for loop conditions, and using a direct mathematical approach, respectively.

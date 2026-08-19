@@ -1,0 +1,28 @@
+/* Source: https://www.includehelp.com/c-programs/user-define-function-example-with-arguments-and-no-return-type.aspx */
+/*  
+C - User define function example with arguments 
+and no return type
+*/
+
+#include <stdio.h>
+
+// function with void return type
+void * fun1(int sum , char *str)
+{
+  printf("\nThe value of sum is : %d",sum);
+  
+  printf("\nThe string is : "); 
+  puts(str);
+}
+
+// main function
+int main()
+{
+  int a=10;
+  char buffer[30]="includehelp.com";
+  
+  //Calling function 
+  fun1(a,buffer);
+  
+  return 0;
+}

@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, num = 1, count = 0;
+    printf("Enter the value of n to find the nth Armstrong number: ");
+    scanf("%d", &n);
+
+    while (1) {
+        int temp = num, sum = 0, digits = 0, t = temp;
+        // Counting digits
+        while (t != 0) {
+            t /= 10;
+            digits++;
+        }
+        // Calculating sum of powers of digits
+        t = temp;
+        while (t != 0) {
+            int remainder = t % 10;
+            sum += pow(remainder, digits);
+            t /= 10;
+        }
+        // Checking for Armstrong number
+        if (num == sum) {
+            count++;
+            if (count == n) {
+                printf("The %dth Armstrong number is: %d\n", n, num);
+                break;
+            }
+        }
+        num++;
+    }
+    return 0;
+}

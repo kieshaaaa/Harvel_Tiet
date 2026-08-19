@@ -1,0 +1,233 @@
+module entry_point (
+ ap_clk,
+ ap_rst,
+ ap_start,
+ ap_done,
+ ap_idle,
+ ap_ready,
+ decimal_i,
+ decimal_o,
+ decimal_o_ap_vld,
+ temptemp1,
+ temptemp1_ap_vld,
+ ap_return
+);
+parameter ap_ST_fsm_state1 = 3'd1;
+parameter ap_ST_fsm_state2 = 3'd2;
+parameter ap_ST_fsm_state3 = 3'd4;
+input ap_clk;
+input ap_rst;
+input ap_start;
+output ap_done;
+output ap_idle;
+output ap_ready;
+input [31:0] decimal_i;
+output [31:0] decimal_o;
+output decimal_o_ap_vld;
+output [31:0] temptemp1;
+output temptemp1_ap_vld;
+output [31:0] ap_return;
+reg ap_done;
+reg ap_idle;
+reg ap_ready;
+reg decimal_o_ap_vld;
+reg temptemp1_ap_vld;
+(* fsm_encoding = "none" *) reg [2:0] ap_CS_fsm;
+wire ap_CS_fsm_state1;
+wire [31:0] octal_3_fu_178_p2;
+reg [31:0] octal_3_reg_300;
+wire ap_CS_fsm_state2;
+wire signed [31:0] sext_ln12_fu_244_p1;
+reg signed [31:0] sext_ln12_reg_305;
+reg signed [31:0] placeValue_fu_52;
+wire [31:0] placeValue_3_fu_196_p2;
+wire [0:0] icmp_ln12_fu_258_p2;
+reg [31:0] octal_fu_56;
+reg [31:0] empty_fu_60;
+wire ap_CS_fsm_state3;
+wire [2:0] trunc_ln8_fu_116_p1;
+wire [3:0] p_and_f_fu_120_p3;
+wire [31:0] sub_ln8_fu_132_p2;
+wire [2:0] trunc_ln8_1_fu_138_p1;
+wire [3:0] p_and_t_fu_142_p3;
+wire [4:0] zext_ln8_1_fu_150_p1;
+wire [0:0] tmp_fu_108_p3;
+wire [4:0] sub_ln8_1_fu_154_p2;
+wire [4:0] zext_ln8_fu_128_p1;
+wire signed [4:0] lastDigit_fu_160_p3;
+wire [31:0] mul_ln9_fu_172_p2;
+wire signed [31:0] shl_ln10_fu_184_p0;
+wire signed [31:0] shl_ln10_1_fu_190_p0;
+wire [31:0] shl_ln10_fu_184_p2;
+wire [31:0] shl_ln10_1_fu_190_p2;
+wire [28:0] trunc_ln11_1_fu_202_p4;
+wire [29:0] zext_ln11_fu_212_p1;
+wire [28:0] trunc_ln11_2_fu_222_p4;
+wire [29:0] sub_ln11_fu_216_p2;
+wire [29:0] zext_ln11_1_fu_232_p1;
+wire [29:0] select_ln11_fu_236_p3;
+wire [28:0] tmp_1_fu_248_p4;
+reg [2:0] ap_NS_fsm;
+reg ap_ST_fsm_state1_blk;
+wire ap_ST_fsm_state2_blk;
+wire ap_ST_fsm_state3_blk;
+wire ap_ce_reg;
+initial begin
+#0 ap_CS_fsm = 3'd1;
+end
+entry_point_mul_5s_32s_32_1_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 1 ),
+ .din0_WIDTH( 5 ),
+ .din1_WIDTH( 32 ),
+ .dout_WIDTH( 32 ))
+mul_5s_32s_32_1_1_U1(
+ .din0(lastDigit_fu_160_p3),
+ .din1(placeValue_fu_52),
+ .dout(mul_ln9_fu_172_p2)
+);
+always @ (posedge ap_clk) begin
+ if (ap_rst == 1'b1) begin
+ ap_CS_fsm <= ap_ST_fsm_state1;
+ end else begin
+ ap_CS_fsm <= ap_NS_fsm;
+ end
+end
+always @ (posedge ap_clk) begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ empty_fu_60 <= decimal_i;
+ end else if (((icmp_ln12_fu_258_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+ empty_fu_60 <= sext_ln12_fu_244_p1;
+ end
+end
+always @ (posedge ap_clk) begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ octal_fu_56 <= 32'd0;
+ end else if (((icmp_ln12_fu_258_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+ octal_fu_56 <= octal_3_fu_178_p2;
+ end
+end
+always @ (posedge ap_clk) begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ placeValue_fu_52 <= 32'd1;
+ end else if (((icmp_ln12_fu_258_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+ placeValue_fu_52 <= placeValue_3_fu_196_p2;
+ end
+end
+always @ (posedge ap_clk) begin
+ if ((1'b1 == ap_CS_fsm_state2)) begin
+ octal_3_reg_300 <= octal_3_fu_178_p2;
+ sext_ln12_reg_305 <= sext_ln12_fu_244_p1;
+ end
+end
+always @ (*) begin
+ if ((ap_start == 1'b0)) begin
+ ap_ST_fsm_state1_blk = 1'b1;
+ end else begin
+ ap_ST_fsm_state1_blk = 1'b0;
+ end
+end
+assign ap_ST_fsm_state2_blk = 1'b0;
+assign ap_ST_fsm_state3_blk = 1'b0;
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state3)) begin
+ ap_done = 1'b1;
+ end else begin
+ ap_done = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
+ ap_idle = 1'b1;
+ end else begin
+ ap_idle = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state3)) begin
+ ap_ready = 1'b1;
+ end else begin
+ ap_ready = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state3)) begin
+ decimal_o_ap_vld = 1'b1;
+ end else begin
+ decimal_o_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state3)) begin
+ temptemp1_ap_vld = 1'b1;
+ end else begin
+ temptemp1_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ case (ap_CS_fsm)
+ ap_ST_fsm_state1 : begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ ap_NS_fsm = ap_ST_fsm_state2;
+ end else begin
+ ap_NS_fsm = ap_ST_fsm_state1;
+ end
+ end
+ ap_ST_fsm_state2 : begin
+ if (((icmp_ln12_fu_258_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+ ap_NS_fsm = ap_ST_fsm_state2;
+ end else begin
+ ap_NS_fsm = ap_ST_fsm_state3;
+ end
+ end
+ ap_ST_fsm_state3 : begin
+ ap_NS_fsm = ap_ST_fsm_state1;
+ end
+ default : begin
+ ap_NS_fsm = 'bx;
+ end
+ endcase
+end
+assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
+assign ap_return = 32'd0;
+assign decimal_o = sext_ln12_reg_305;
+assign icmp_ln12_fu_258_p2 = (($signed(tmp_1_fu_248_p4) > $signed(29'd0)) ? 1'b1 : 1'b0);
+assign lastDigit_fu_160_p3 = ((tmp_fu_108_p3[0:0] == 1'b1) ? sub_ln8_1_fu_154_p2 : zext_ln8_fu_128_p1);
+assign octal_3_fu_178_p2 = (mul_ln9_fu_172_p2 + octal_fu_56);
+assign p_and_f_fu_120_p3 = {{1'd0}, {trunc_ln8_fu_116_p1}};
+assign p_and_t_fu_142_p3 = {{1'd0}, {trunc_ln8_1_fu_138_p1}};
+assign placeValue_3_fu_196_p2 = (shl_ln10_fu_184_p2 + shl_ln10_1_fu_190_p2);
+assign select_ln11_fu_236_p3 = ((tmp_fu_108_p3[0:0] == 1'b1) ? sub_ln11_fu_216_p2 : zext_ln11_1_fu_232_p1);
+assign sext_ln12_fu_244_p1 = $signed(select_ln11_fu_236_p3);
+assign shl_ln10_1_fu_190_p0 = placeValue_fu_52;
+assign shl_ln10_1_fu_190_p2 = shl_ln10_1_fu_190_p0 << 32'd1;
+assign shl_ln10_fu_184_p0 = placeValue_fu_52;
+assign shl_ln10_fu_184_p2 = shl_ln10_fu_184_p0 << 32'd3;
+assign sub_ln11_fu_216_p2 = (30'd0 - zext_ln11_fu_212_p1);
+assign sub_ln8_1_fu_154_p2 = (5'd0 - zext_ln8_1_fu_150_p1);
+assign sub_ln8_fu_132_p2 = (32'd0 - empty_fu_60);
+assign temptemp1 = octal_3_reg_300;
+assign tmp_1_fu_248_p4 = {{empty_fu_60[31:3]}};
+assign tmp_fu_108_p3 = empty_fu_60[32'd31];
+assign trunc_ln11_1_fu_202_p4 = {{sub_ln8_fu_132_p2[31:3]}};
+assign trunc_ln11_2_fu_222_p4 = {{empty_fu_60[31:3]}};
+assign trunc_ln8_1_fu_138_p1 = sub_ln8_fu_132_p2[2:0];
+assign trunc_ln8_fu_116_p1 = empty_fu_60[2:0];
+assign zext_ln11_1_fu_232_p1 = trunc_ln11_2_fu_222_p4;
+assign zext_ln11_fu_212_p1 = trunc_ln11_1_fu_202_p4;
+assign zext_ln8_1_fu_150_p1 = p_and_t_fu_142_p3;
+assign zext_ln8_fu_128_p1 = p_and_f_fu_120_p3;
+endmodule
+module entry_point_mul_5s_32s_32_1_1(din0, din1, dout);
+parameter ID = 1;
+parameter NUM_STAGE = 0;
+parameter din0_WIDTH = 14;
+parameter din1_WIDTH = 12;
+parameter dout_WIDTH = 26;
+input [din0_WIDTH - 1 : 0] din0; 
+input [din1_WIDTH - 1 : 0] din1; 
+output [dout_WIDTH - 1 : 0] dout;
+assign dout = $signed(din0) * $signed(din1);
+endmodule

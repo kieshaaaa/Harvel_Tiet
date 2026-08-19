@@ -1,0 +1,54 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'multiplyMatrix'" level="0">
+<item name = "Date">Thu May 25 16:44:49 2023
+</item>
+<item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
+<item name = "Project">matrix_mul</item>
+<item name = "Solution">solution3 (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu5p-flva2104-1-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00 ns, 4.500 ns, 0.50 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1451, 1451, 7.255 us, 7.255 us, 1452, 1452, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_1_fu_361">multiplyMatrix_Pipeline_VITIS_LOOP_13_1, 81, 81, 0.405 us, 0.405 us, 81, 81, no</column>
+<column name="grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_11_fu_372">multiplyMatrix_Pipeline_VITIS_LOOP_13_11, 81, 81, 0.405 us, 0.405 us, 81, 81, no</column>
+<column name="grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_12_fu_383">multiplyMatrix_Pipeline_VITIS_LOOP_13_12, 81, 81, 0.405 us, 0.405 us, 81, 81, no</column>
+<column name="grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_13_fu_394">multiplyMatrix_Pipeline_VITIS_LOOP_13_13, 81, 81, 0.405 us, 0.405 us, 81, 81, no</column>
+<column name="grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_14_fu_405">multiplyMatrix_Pipeline_VITIS_LOOP_13_14, 81, 81, 0.405 us, 0.405 us, 81, 81, no</column>
+<column name="grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_15_fu_416">multiplyMatrix_Pipeline_VITIS_LOOP_13_15, 81, 81, 0.405 us, 0.405 us, 81, 81, no</column>
+<column name="grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_16_fu_427">multiplyMatrix_Pipeline_VITIS_LOOP_13_16, 81, 81, 0.405 us, 0.405 us, 81, 81, no</column>
+<column name="grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_17_fu_438">multiplyMatrix_Pipeline_VITIS_LOOP_13_17, 81, 81, 0.405 us, 0.405 us, 81, 81, no</column>
+<column name="grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_18_fu_449">multiplyMatrix_Pipeline_VITIS_LOOP_13_18, 81, 81, 0.405 us, 0.405 us, 81, 81, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

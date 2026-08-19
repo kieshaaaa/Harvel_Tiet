@@ -1,0 +1,114 @@
+Here are three different versions of a similar program to print a student profile in C, following the constraints you've mentioned:
+
+### Version 1 - Using Float for DOB
+
+This version uses a `float` to represent the Date of Birth (DOB) year and month as a single floating-point number, where the year and month are separated by a decimal point. 
+
+```c
+#include<stdio.h>
+
+int main() {
+    char regno[15];
+    char name[20];
+    int age;
+    float dob;
+    float result;
+
+    printf("Enter your Register number:\n");
+    scanf("%14s", regno);
+
+    printf("Enter your Name:\n");
+    scanf("%19s", name);
+
+    printf("Enter your age:\n");
+    scanf("%d", &age);
+
+    printf("Enter your DOB (YYYY.MM):\n");
+    scanf("%f", &dob);
+
+    result = age + dob; 
+    printf("Name: \t Reg No: \t Age: \t DOB: \n");
+    printf("%s \t %s \t %d \t %.2f \nResult: %.2f\n", name, regno, age, dob, result);
+
+    return 0;
+}
+```
+
+### Version 2 - Splitting DOB into Year and Month
+
+This version explicitly separates the DOB into two integers: one for the year and another for the month.
+
+```c
+#include<stdio.h>
+
+int main() {
+    char regno[15];
+    char name[20];
+    int age;
+    int dobYear, dobMonth;
+    float result;
+
+    printf("Enter your Register number:\n");
+    scanf("%14s", regno);
+
+    printf("Enter your Name:\n");
+    scanf("%19s", name);
+
+    printf("Enter your age:\n");
+    scanf("%d", &age);
+
+    printf("Enter your DOB Year:\n");
+    scanf("%d", &dobYear);
+
+    printf("Enter your DOB Month:\n");
+    scanf("%d", &dobMonth);
+
+    result = age + dobYear + (float)dobMonth / 100; // Assuming month as a fractional part of a year
+    printf("Name: \t Reg No: \t Age: \t DOB Year: \t DOB Month:\n");
+    printf("%s \t %s \t %d \t %d \t\t %d \nResult: %.2f\n", name, regno, age, dobYear, dobMonth, result);
+
+    return 0;
+}
+```
+
+### Version 3 - Using Separate Variables for Each DOB Component
+
+This version uses individual variables for the day, month, and year of the DOB, each entered separately.
+
+```c
+#include<stdio.h>
+
+int main() {
+    char regno[15];
+    char name[20];
+    int age;
+    int dobDay, dobMonth, dobYear;
+    float result;
+
+    printf("Enter your Register number:\n");
+    scanf("%14s", regno);
+
+    printf("Enter your Name:\n");
+    scanf("%19s", name);
+
+    printf("Enter your age:\n");
+    scanf("%d", &age);
+
+    printf("Enter your DOB Day:\n");
+    scanf("%d", &dobDay);
+
+    printf("Enter your DOB Month:\n");
+    scanf("%d", &dobMonth);
+
+    printf("Enter your DOB Year:\n");
+    scanf("%d", &dobYear);
+
+    result = age + dobYear + (dobMonth / 12.0) + (dobDay / 365.0); // Approximation for month/year ratio
+    printf("Name: \t Reg No: \t Age: \t DOB (DD/MM/YYYY): \n");
+    printf("%s \t %s \t %d \t %02d/%02d/%d \nResult: %.2f\n", name, regno, age, dobDay, dobMonth, dobYear, result);
+
+    return 0;
+}
+```
+
+Each version offers a different approach to handling the date of birth (DOB) while complying with your constraints.

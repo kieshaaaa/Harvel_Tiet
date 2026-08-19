@@ -1,0 +1,55 @@
+Certainly! Here are three different versions of the given code, adhering to your constraints:
+
+### Version 1: Using Inline Comments
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float base, slant, area;
+    printf("Base length: ");
+    scanf("%f", &base);
+    printf("Slant height: ");
+    scanf("%f", &slant);
+    area = pow(base, 2) + 4 * 0.5 * base * slant; // Includes base area and lateral surface area
+    printf("Surface Area: %.2f\n", area);
+    return 0;
+}
+```
+
+### Version 2: Rearranging Calculations and Variable Names
+```c
+#include <stdio.h>
+
+int main() {
+    float bLength, sHeight, sArea;
+    printf("Enter base length: ");
+    scanf("%f", &bLength);
+    printf("Enter slant height: ");
+    scanf("%f", &sHeight);
+    sArea = bLength * bLength; // Base area calculation
+    sArea += 2 * bLength * sHeight; // Adding lateral surface area
+    printf("Total Surface Area: %.2f\n", sArea);
+    return 0;
+}
+```
+
+### Version 3: Using Different Variable Initialization
+```c
+#include <stdio.h>
+
+int main() {
+    float base, slantHeight, totalSurfaceArea;
+    printf("Input base length: ");
+    scanf("%f", &base);
+    printf("Input slant height: ");
+    scanf("%f", &slantHeight);
+    float baseArea = base * base;
+    float lateralArea = 2 * base * slantHeight;
+    totalSurfaceArea = baseArea + lateralArea;
+    printf("Surface Area: %.2f\n", totalSurfaceArea);
+    return 0;
+}
+```
+
+Each version adheres to your guidelines, avoiding the use of advanced data types, dynamic memory allocation, structures, pointers, recursion, file handling, and the `const` qualifier. They also avoid performing calculations or operations within the `printf` statement.

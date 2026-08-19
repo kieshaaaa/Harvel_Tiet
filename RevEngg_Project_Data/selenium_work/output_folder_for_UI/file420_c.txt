@@ -1,0 +1,71 @@
+Certainly, I'll provide three distinct versions of your program that checks if a number is odd or even, adhering to the specified constraints.
+
+### Version 1: Using the Modulo Operator
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number to check whether it is Even or Odd => ");
+    scanf("%d", &num);
+
+    if (num % 2 == 0) {
+        printf("%d is Even\n", num);
+        printf("Next even number is %d\n", num + 2);
+    } else {
+        printf("%d is Odd\n", num);
+        printf("Next odd number is %d\n", num + 2);
+    }
+    return 0;
+}
+```
+
+### Version 2: Using Bitwise AND Operator
+
+This version takes advantage of the fact that the least significant bit of an integer determines its oddness or evenness. If the LSB is 0, the number is even; if it's 1, the number is odd.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number to check whether it is Even or Odd => ");
+    scanf("%d", &num);
+
+    if ((num & 1) == 0) {
+        printf("%d is Even\n", num);
+        printf("Next even number is %d\n", num + 2);
+    } else {
+        printf("%d is Odd\n", num);
+        printf("Next odd number is %d\n", num + 2);
+    }
+    return 0;
+}
+```
+
+### Version 3: Using Conditional Operator
+
+This version simplifies the decision-making process using the conditional (ternary) operator, making the code more concise.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number to check whether it is Even or Odd => ");
+    scanf("%d", &num);
+
+    int isEven = num % 2 == 0 ? 1 : 0;
+    if (isEven) {
+        printf("%d is Even\n", num);
+        printf("Next even number is %d\n", num + 2);
+    } else {
+        printf("%d is Odd\n", num);
+        printf("Next odd number is %d\n", num + 2);
+    }
+    return 0;
+}
+```
+
+Each version provides a different approach to solve the same problem, ensuring variety in the implementations while adhering to your constraints.

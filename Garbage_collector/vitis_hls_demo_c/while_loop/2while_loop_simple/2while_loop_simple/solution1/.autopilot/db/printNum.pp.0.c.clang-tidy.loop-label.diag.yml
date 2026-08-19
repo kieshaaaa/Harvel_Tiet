@@ -1,0 +1,22 @@
+---
+MainSourceFile:  /home/coss01/vitis_hls_demo_c/while_loop/2_simple/2_while/solution1/.autopilot/db/printNum.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_7_1:  '
+    FileOffset:      7
+    FilePath:        printNum.c
+    Replacements:    
+      - FilePath:        /home/coss01/vitis_hls_demo_c/while_loop/2_simple/2_while/solution1/.autopilot/db/printNum.pp.0.c
+        Offset:          24499
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_7_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_11_2:  '
+    FileOffset:      11
+    FilePath:        printNum.c
+    Replacements:    
+      - FilePath:        /home/coss01/vitis_hls_demo_c/while_loop/2_simple/2_while/solution1/.autopilot/db/printNum.pp.0.c
+        Offset:          24556
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_11_2: '
+...

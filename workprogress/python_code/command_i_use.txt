@@ -1,0 +1,9 @@
+To find the file which having the "<conio.h>" and not having the "getch"
+find /path/to/search -type f -name '*.c' -exec grep -l 'conio.h' {} \; | xargs grep -L 'getch'
+
+To find number of the code which cannot compile and throw error  
+find /home/virubuntu/Reverse-Engineering/Crawler/Non-Similar -type f -name '*.c' -exec bash -c 'gcc -o /dev/null "{}" 2>&1 | grep -q "error"' \; -printf "%p\n" | wc -l
+
+
+to save the path of the code which are compile succesfully and save that all path in the successful_compilation.txt
+find /home/virubuntu/Reverse-Engineering/Crawler/Non-Similar -type f -name '*.c' -exec bash -c 'gcc -o /dev/null "{}" 2>&1 | grep -q "error" || echo "{}"' \; > successful_compilations.txt

@@ -1,0 +1,75 @@
+### Version 1: Using `for` Loop Instead of `while`
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, cnt = 0;
+
+    printf("\nEnter any number :: ");
+    scanf("%d", &num);
+
+    for (int tNum = num; tNum > 0; tNum /= 10) {
+        cnt++;
+    }
+
+    printf("\nNumber of digits in [ %d ] is :: [ %d ].\n", num, cnt);
+
+    return 0;
+}
+```
+
+### Version 2: Using `do-while` Loop for Non-Zero Numbers
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, cnt = 0;
+
+    printf("\nEnter any number :: ");
+    scanf("%d", &num);
+
+    if (num == 0) cnt = 1; // If the number is zero
+    else {
+        int tNum = num;
+        do {
+            cnt++;
+            tNum /= 10;
+        } while (tNum > 0);
+    }
+
+    printf("\nNumber of digits in [ %d ] is :: [ %d ].\n", num, cnt);
+
+    return 0;
+}
+```
+
+### Version 3: Counting Negative Numbers as Well
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, cnt = 0;
+
+    printf("\nEnter any number :: ");
+    scanf("%d", &num);
+
+    if (num == 0) {
+        cnt = 1; // Direct assignment for the case of 0
+    } else {
+        int tNum = num < 0 ? -num : num; // Make tNum positive if num is negative
+        while (tNum > 0) {
+            cnt++;
+            tNum /= 10;
+        }
+    }
+
+    printf("\nNumber of digits in [ %d ] is :: [ %d ].\n", num, cnt);
+
+    return 0;
+}
+```
+
+Each version maintains simplicity and adherence to the constraints provided.

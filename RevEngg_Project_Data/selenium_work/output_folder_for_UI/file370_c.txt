@@ -1,0 +1,111 @@
+Certainly! Below are three different versions of the original code that calculate the mean and variance of an array of numbers, each modified according to your constraints. Each version uses `float` instead of `double` for numerical variables and avoids the mentioned programming concepts and constructs.
+
+### Version 1: Separate Calculation Steps
+```c
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    float sum = 0;
+    float mean;
+    float variance = 0;
+    float sumOfSquares = 0;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    float arr[100]; // Assuming a maximum of 100 elements
+
+    for(i = 0; i < n; i++) {
+        printf("Enter number %d: ", i+1);
+        scanf("%f", &arr[i]);
+        sum = sum + arr[i];
+    }
+
+    mean = sum / n;
+
+    for(i = 0; i < n; i++) {
+        float diff = arr[i] - mean;
+        sumOfSquares = sumOfSquares + diff * diff;
+    }
+
+    variance = sumOfSquares / n;
+    printf("Mean = ");
+    printf("%.2f\n", mean);
+    printf("Variance = ");
+    printf("%.2f\n", variance);
+
+    return 0;
+}
+```
+
+### Version 2: Inline Calculation for Sum
+```c
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    float sum = 0, mean, variance = 0, sumOfSquares = 0, diff;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    float arr[100]; // Assuming a maximum of 100 elements
+
+    for(i = 0; i < n; i++) {
+        printf("Enter number %d: ", i+1);
+        scanf("%f", &arr[i]);
+        sum = sum + arr[i];
+    }
+
+    mean = sum / n;
+
+    for(i = 0; i < n; i++) {
+        diff = arr[i] - mean;
+        sumOfSquares += diff * diff;
+    }
+
+    variance = sumOfSquares / n;
+
+    printf("Mean = ");
+    printf("%.2f\n", mean);
+    printf("Variance = ");
+    printf("%.2f\n", variance);
+
+    return 0;
+}
+```
+
+### Version 3: Accumulate Sum and Sum of Squares Simultaneously
+```c
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    float arr[100]; // Assuming a maximum of 100 elements
+    float sum = 0, mean, variance, sumOfSquares = 0, temp;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        printf("Enter number %d: ", i+1);
+        scanf("%f", &arr[i]);
+        sum += arr[i];
+    }
+
+    mean = sum / n;
+
+    for(i = 0; i < n; i++) {
+        temp = arr[i] - mean;
+        sumOfSquares += temp * temp;
+    }
+
+    variance = sumOfSquares / n;
+
+    printf("Mean = ");
+    printf("%.2f\n", mean);
+    printf("Variance = ");
+    printf("%.2f\n", variance);
+
+    return 0;
+}
+```
+
+Each version adheres to your guidelines but varies slightly in how the calculations are structured or presented, while still achieving the same goal of computing the mean and variance of a set of numbers.

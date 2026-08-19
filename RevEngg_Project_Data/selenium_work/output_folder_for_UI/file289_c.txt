@@ -1,0 +1,49 @@
+### Version 1: Using a different macro for conversion factor
+
+```c
+#include <stdio.h>
+#define RAD_TO_DEG 57.2957795
+
+int main() {
+    float radians, degrees;
+    printf("Enter angle in radians: ");
+    scanf("%f", &radians);
+    degrees = radians * RAD_TO_DEG;
+    printf("%f radians is %f degrees.\n", radians, degrees);
+    return 0;
+}
+```
+
+### Version 2: Using user input for PI
+
+```c
+#include <stdio.h>
+
+int main() {
+    float radians, degrees, pi;
+    printf("Enter the value of pi: ");
+    scanf("%f", &pi);
+    printf("Enter angle in radians: ");
+    scanf("%f", &radians);
+    degrees = radians * (180.0 / pi);
+    printf("%f radians is %f degrees.\n", radians, degrees);
+    return 0;
+}
+```
+
+### Version 3: Direct calculation without a macro or variable for conversion factor
+
+```c
+#include <stdio.h>
+
+int main() {
+    float radians, degrees;
+    printf("Enter angle in radians: ");
+    scanf("%f", &radians);
+    degrees = radians * (180.0 / 3.14);
+    printf("%f radians is %f degrees.\n", radians, degrees);
+    return 0;
+}
+```
+
+Each version provides a slightly different approach based on your constraints, offering alternative ways to convert radians to degrees.

@@ -1,0 +1,72 @@
+Certainly! Below are three different versions of the provided code with adjustments to structure and formatting as per your instructions, while adhering to all specified constraints.
+
+**Version 1:**
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, h, A_base, A_side, A_total;
+
+    printf("Enter the side length of the square base: ");
+    scanf("%f", &a);
+    printf("Enter the slant height of the pyramid: ");
+    scanf("%f", &h);
+
+    A_base = a * a;
+    A_side = 2 * a * h;
+    A_total = A_base + A_side;
+
+    printf("Surface area of the right pyramid with a square base: %.2f\n", A_total);
+
+    return 0;
+}
+```
+
+**Version 2:**
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float base_side, slant_h, square_area, triangle_area, total_surface_area;
+
+    printf("Enter the side length of the square base: ");
+    scanf("%f", &base_side);
+    printf("Enter the slant height of the pyramid: ");
+    scanf("%f", &slant_h);
+
+    square_area = base_side * base_side;
+    triangle_area = base_side * slant_h;
+    total_surface_area = square_area + 2 * triangle_area;
+
+    printf("Surface area of the right pyramid with a square base: %.2f\n", total_surface_area);
+
+    return 0;
+}
+```
+
+**Version 3:**
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float length, height, area_base, area_lateral, total_area;
+
+    printf("Enter the side length of the square base: ");
+    scanf("%f", &length);
+    printf("Enter the slant height of the pyramid: ");
+    scanf("%f", &height);
+
+    area_base = pow(length, 2);
+    area_lateral = length * height * 2;
+    total_area = area_base + area_lateral;
+
+    printf("Surface area of the right pyramid with a square base: %.2f\n", total_area);
+
+    return 0;
+}
+```
+
+Each version adheres to the constraints you've mentioned, using `float` for numeric values and avoiding the specified programming constructs and modifications. They also maintain the core logic of calculating the surface area of a right pyramid with a square base but introduce slight variations in variable naming, arithmetic operation arrangement, and presentation for diversity.

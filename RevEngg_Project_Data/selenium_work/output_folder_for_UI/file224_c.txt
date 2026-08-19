@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    float sideLength, perimeter;
+
+    // Prompt the user for the side length of the cube
+    printf("Enter the side length of the cube: ");
+    scanf("%f", &sideLength);
+
+    // Calculate the perimeter of a face
+    perimeter = 4 * sideLength;
+
+    // Display the result
+    printf("Perimeter of a cube's face: %.2f\n", perimeter);
+
+    return 0;
+}

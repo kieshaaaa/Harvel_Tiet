@@ -1,0 +1,71 @@
+Certainly! Below are three different versions of the C program to find the remainder without using the modulus (%) operator, following your specific instructions:
+
+### Version 1: Iterative subtraction method
+
+```c
+#include <stdio.h>
+
+int main() {
+    int dividend, divisor, remainder;
+    printf("Enter first number: ");
+    scanf("%d", &dividend);
+    printf("Enter second number: ");
+    scanf("%d", &divisor);
+
+    remainder = dividend;
+    while (remainder >= divisor) {
+        remainder = remainder - divisor;
+    }
+
+    printf("Remainder is = %d\n", remainder);
+    return 0;
+}
+```
+
+### Version 2: Using the division result as a float, then finding the floor value
+
+```c
+#include <stdio.h>
+#include <math.h> // For floor function
+
+int main() {
+    int dividend, divisor;
+    float divisionResult;
+    printf("Enter first number: ");
+    scanf("%d", &dividend);
+    printf("Enter second number: ");
+    scanf("%d", &divisor);
+
+    divisionResult = (float)dividend / divisor;
+    int floorValue = floor(divisionResult);
+    int remainder = dividend - (floorValue * divisor);
+
+    printf("Remainder is = %d\n", remainder);
+    return 0;
+}
+```
+
+### Version 3: Using subtraction and a temporary variable for iteration
+
+```c
+#include <stdio.h>
+
+int main() {
+    int dividend, divisor, tempDividend, remainder;
+    printf("Enter first number: ");
+    scanf("%d", &dividend);
+    printf("Enter second number: ");
+    scanf("%d", &divisor);
+
+    tempDividend = dividend;
+    while (tempDividend >= divisor) {
+        tempDividend -= divisor;
+    }
+    remainder = tempDividend;
+
+    printf("Remainder is = %d\n", remainder);
+    return 0;
+}
+```
+
+Each version approaches the problem differently but avoids using the modulus operator, as well as adhering to your constraints.

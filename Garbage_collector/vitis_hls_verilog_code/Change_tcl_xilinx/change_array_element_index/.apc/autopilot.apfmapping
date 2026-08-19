@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="array.c" path="/home/virubuntu/Array_with_pragma/Array/array_elements_index/array.c"/>
+  </source>
+  <testbench>
+    <originFiles name="main.c" path="/home/virubuntu/Array_with_pragma/Array/array_elements_index/main.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

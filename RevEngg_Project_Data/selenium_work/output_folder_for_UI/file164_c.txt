@@ -1,0 +1,99 @@
+Certainly! Below are three different versions of the C program to print the specified pattern, adhering to your constraints and guidelines. Each version takes a slightly different approach while meeting the requirements you've outlined.
+
+### Version 1: Using While Loops
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows, i, j, k;
+    printf("\nEnter number of rows: ");
+    scanf("%d", &rows);
+    if (rows < 1) {
+        printf("\nInvalid input. Please enter a positive number.\n");
+        return 0;
+    }
+
+    i = 1;
+    while (i <= rows) {
+        j = rows - i;
+        while (j > 0) {
+            printf("  ");
+            j--;
+        }
+
+        k = 0;
+        while (k < i) {
+            printf("* ");
+            k++;
+        }
+
+        printf("\n");
+        i++;
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using For Loops with Different Logic
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, space, star;
+    printf("\nEnter number of rows: ");
+    scanf("%d", &n);
+    if (n < 1) {
+        printf("\nInvalid input. Please enter a positive number.\n");
+        return 0;
+    }
+
+    for (int row = 1; row <= n; row++) {
+        for (space = 1; space <= n - row; space++) {
+            printf("  ");
+        }
+        for (star = 1; star <= 2 * row - 1; star++) {
+            if (star % 2 == 0) {
+                printf(" ");
+            } else {
+                printf("*");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Simplified For Loops
+
+```c
+#include <stdio.h>
+
+int main() {
+    int lines;
+    printf("\nEnter number of lines: ");
+    scanf("%d", &lines);
+    if (lines < 1) {
+        printf("\nInvalid input. Please enter a positive number.\n");
+        return 0;
+    }
+
+    for (int row = 1; row <= lines; row++) {
+        for (int space = lines - row; space > 0; space--) {
+            printf("  ");
+        }
+        for (int star = 1; star <= row; star++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+These versions avoid the usage of dynamic memory allocation, structures, unions, pointers, recursion, and file handling as requested. They also stick to using simple data types and loops for generating the pattern.

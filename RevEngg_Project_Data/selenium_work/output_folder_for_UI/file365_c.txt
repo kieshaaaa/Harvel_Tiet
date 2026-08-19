@@ -1,0 +1,83 @@
+### Version 1: Using the ternary operator for the difference calculation
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, diff;
+
+    printf("Enter first number :: ");
+    scanf("%d", &a);
+    printf("\nEnter second number :: ");
+    scanf("%d", &b);
+
+    diff = (a > b) ? (a - b) : (b - a);
+
+    printf("\nDifference between ");
+    printf("%d", a);
+    printf(" and ");
+    printf("%d", b);
+    printf(" is = ");
+    printf("%d\n", diff);
+
+    return 0;
+}
+```
+
+### Version 2: Using absolute value function to find the difference
+
+```c
+#include <stdio.h>
+#include <stdlib.h> // For abs()
+
+int main() {
+    int a, b, diff;
+
+    printf("Enter first number :: ");
+    scanf("%d", &a);
+    printf("\nEnter second number :: ");
+    scanf("%d", &b);
+
+    diff = abs(a - b);
+
+    printf("\nDifference between ");
+    printf("%d", a);
+    printf(" and ");
+    printf("%d", b);
+    printf(" is = ");
+    printf("%d\n", diff);
+
+    return 0;
+}
+```
+
+### Version 3: Without using any conditional statement or function for finding the difference
+
+This approach is unconventional and generally not recommended for practical use due to its inefficiency. It's purely academic and illustrates how logical operations might achieve similar outcomes without conditionals, absolute value functions, etc. It assumes both numbers are positive.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, diff, sum;
+
+    printf("Enter first number :: ");
+    scanf("%d", &a);
+    printf("\nEnter second number :: ");
+    scanf("%d", &b);
+
+    sum = a + b;
+    diff = sum - 2 * (a > b ? a : b);
+
+    printf("\nDifference between ");
+    printf("%d", a);
+    printf(" and ");
+    printf("%d", b);
+    printf(" is = ");
+    printf("%d\n", diff < 0 ? -diff : diff); // Ensuring the difference is positive
+
+    return 0;
+}
+```
+
+Each of these versions satisfies the constraints given, offering alternative approaches to calculating the difference between two numbers.

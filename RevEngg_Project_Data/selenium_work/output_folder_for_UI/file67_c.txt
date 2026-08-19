@@ -1,0 +1,71 @@
+Here are three different versions of the provided C program code that calculate and display the perimeter of a hexagon, adhering to your constraints:
+
+### Version 1: Using Direct User Input and Output
+```c
+#include <stdio.h>
+
+int main() {
+    float side;
+    float perimeter;
+
+    printf("Enter the length of the side: ");
+    scanf("%f", &side);
+
+    perimeter = side * 6;
+    
+    printf("Perimeter of the hexagon: ");
+    printf("%.2f\n", perimeter);
+
+    return 0;
+}
+```
+
+### Version 2: Breaking Down Calculations
+```c
+#include <stdio.h>
+
+int main() {
+    float side;
+    float perimeter;
+
+    printf("Enter the length of the side: ");
+    scanf("%f", &side);
+
+    float multipliedSide = side * 6;
+    perimeter = multipliedSide;
+
+    printf("Perimeter of the hexagon: ");
+    printf("%.2f\n", perimeter);
+
+    return 0;
+}
+```
+
+### Version 3: Separate Variables for Each Side
+```c
+#include <stdio.h>
+
+int main() {
+    float side1, side2, side3, side4, side5, side6;
+    float perimeter;
+
+    printf("Enter the length of the side: ");
+    scanf("%f", &side1);
+
+    // Assuming all sides of the hexagon are of equal length
+    side2 = side1;
+    side3 = side1;
+    side4 = side1;
+    side5 = side1;
+    side6 = side1;
+
+    perimeter = side1 + side2 + side3 + side4 + side5 + side6;
+
+    printf("Perimeter of the hexagon: ");
+    printf("%.2f\n", perimeter);
+
+    return 0;
+}
+```
+
+Each version sticks to your constraints and provides a slightly different approach to achieving the same result.

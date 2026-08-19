@@ -1,0 +1,80 @@
+Certainly! Here are three different versions of the C program to calculate the area and circumference of a circle, adhering to your guidelines:
+
+### Version 1: Using Macros for Pi
+```c
+#include<stdio.h>
+#define PI 3.142
+
+int main() {
+    float area, radius, circum;
+
+    printf("ENTER THE RADIUS OF THE CIRCLE :: ");
+    scanf("%f", &radius);
+
+    area = PI * radius * radius;
+    circum = 2 * PI * radius;
+
+    printf("\nTHE AREA OF THE CIRCLE IS :: ");
+    printf("%f", area);
+
+    printf("\n\nTHE CIRCUMFERENCE OF THE CIRCLE IS :: ");
+    printf("%f\n", circum);
+
+    return 0;
+}
+```
+
+### Version 2: Separating Calculations from Output
+```c
+#include<stdio.h>
+
+int main() {
+    float area, radius, circum;
+
+    printf("ENTER THE RADIUS OF THE CIRCLE :: ");
+    scanf("%f", &radius);
+
+    area = 3.142 * radius * radius;
+    circum = 2 * 3.142 * radius;
+
+    printf("\nTHE AREA OF THE CIRCLE IS :: ");
+    float areaResult = area;
+    printf("%f", areaResult);
+
+    printf("\n\nTHE CIRCUMFERENCE OF THE CIRCLE IS :: ");
+    float circumResult = circum;
+    printf("%f\n", circumResult);
+
+    return 0;
+}
+```
+
+### Version 3: Introducing Intermediate Variables
+```c
+#include<stdio.h>
+
+int main() {
+    float area, radius, circum, piValue;
+
+    piValue = 3.142;
+
+    printf("ENTER THE RADIUS OF THE CIRCLE :: ");
+    scanf("%f", &radius);
+
+    area = piValue * radius * radius;
+    circum = 2 * piValue * radius;
+
+    float finalArea = area;
+    float finalCircum = circum;
+
+    printf("\nTHE AREA OF THE CIRCLE IS :: ");
+    printf("%f", finalArea);
+
+    printf("\n\nTHE CIRCUMFERENCE OF THE CIRCLE IS :: ");
+    printf("%f\n", finalCircum);
+
+    return 0;
+}
+```
+
+Each version adheres to your constraints, including the usage of `float` data type, and avoids the specified programming constructs and operations.

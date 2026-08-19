@@ -1,0 +1,124 @@
+### Version 1: Simplified Version Using `float` Instead of `double`
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, i;
+    float arr[100]; // Assuming the array can hold up to 100 elements
+    float sum = 0, mean, variance = 0, sumOfSquares = 0, stdDeviation;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%f", &arr[i]);
+        sum += arr[i];
+    }
+
+    mean = sum / n;
+
+    for(i = 0; i < n; i++) {
+        sumOfSquares += (arr[i] - mean) * (arr[i] - mean);
+    }
+
+    variance = sumOfSquares / n;
+    stdDeviation = sqrtf(variance);
+
+    printf("Mean = ");
+    printf("%.2f\n", mean);
+    printf("Variance = ");
+    printf("%.2f\n", variance);
+    printf("Standard Deviation = ");
+    printf("%.2f\n", stdDeviation);
+
+    return 0;
+}
+```
+
+### Version 2: Compact Version with Immediate Mean Calculation
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, i;
+    float arr[50]; // Assuming a smaller array size for compactness
+    float sum = 0, mean, variance, stdDeviation;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%f", &arr[i]);
+    }
+
+    for(i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+    mean = sum / n;
+
+    sum = 0; // Reusing sum variable for variance calculation
+    for(i = 0; i < n; i++) {
+        sum += (arr[i] - mean) * (arr[i] - mean);
+    }
+    variance = sum / n;
+    stdDeviation = sqrtf(variance);
+
+    printf("Mean = ");
+    printf("%.2f\n", mean);
+    printf("Variance = ");
+    printf("%.2f\n", variance);
+    printf("Standard Deviation = ");
+    printf("%.2f\n", stdDeviation);
+
+    return 0;
+}
+```
+
+### Version 3: Using a Single Loop for Both Sum and Sum of Squares
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, i;
+    float arr[30]; // Assuming a very compact array size
+    float sum = 0, mean, variance = 0, stdDeviation;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%f", &arr[i]);
+    }
+
+    for(i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+    mean = sum / n;
+
+    for(i = 0; i < n; i++) {
+        variance += (arr[i] - mean) * (arr[i] - mean);
+    }
+    variance /= n;
+    stdDeviation = sqrtf(variance);
+
+    printf("Mean = ");
+    printf("%.2f\n", mean);
+    printf("Variance = ");
+    printf("%.2f\n", variance);
+    printf("Standard Deviation = ");
+    printf("%.2f\n", stdDeviation);
+
+    return 0;
+}
+```
+
+Each version uses `float` instead of `double` for numerical calculations and adheres to the constraints specified. The array sizes are chosen arbitrarily under the assumption that dynamic memory allocation is to be avoided, and specific sizes or dynamic approaches were not specified in the constraints.

@@ -1,0 +1,115 @@
+### Version 1: Simplified Loop and Messages
+
+This version simplifies the input and output messages and uses a flag variable for readability.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int arr[10], size, searchValue, found = 0;
+
+    printf("Array size: ");
+    scanf("%d", &size);
+
+    for (int i = 0; i < size; i++) {
+        printf("Element %d: ", i);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Search for: ");
+    scanf("%d", &searchValue);
+
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == searchValue) {
+            found = 1;
+            break;
+        }
+    }
+
+    if (found) {
+        printf("Number found in the array.\n");
+    } else {
+        printf("Number not in the list.\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Enhanced Feedback
+
+This version includes the position of the found element in the feedback to the user.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int array[10], numElements, target, isFound = 0, position;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &numElements);
+
+    for (int i = 0; i < numElements; i++) {
+        printf("Element [%d]: ", i);
+        scanf("%d", &array[i]);
+    }
+
+    printf("Number to find: ");
+    scanf("%d", &target);
+
+    for (int i = 0; i < numElements; i++) {
+        if (array[i] == target) {
+            isFound = 1;
+            position = i;
+            break;
+        }
+    }
+
+    if (isFound) {
+        printf("Number found at position %d.\n", position);
+    } else {
+        printf("Number not found.\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using a For-Loop for Search and Feedback Simultaneously
+
+This version combines the search and feedback in a single loop for efficiency and clarity.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int elements[10], total, searchNum;
+
+    printf("Total elements: ");
+    scanf("%d", &total);
+
+    for (int i = 0; i < total; i++) {
+        printf("Value [%d]: ", i);
+        scanf("%d", &elements[i]);
+    }
+
+    printf("Search for number: ");
+    scanf("%d", &searchNum);
+
+    int found = 0;
+    for (int i = 0; i < total && !found; i++) {
+        if (elements[i] == searchNum) {
+            printf("Number found at index %d.\n", i);
+            found = 1;
+        }
+    }
+
+    if (!found) {
+        printf("Number not found.\n");
+    }
+
+    return 0;
+}
+```
+
+Each version offers a slightly different approach to handling the search and the feedback given to the user, focusing on clarity and user interaction.

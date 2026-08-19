@@ -1,0 +1,4 @@
+<pragmas>
+<pragma file="mat_mul.c" line="8" pragmaType="unroll" parentfunction="multiplyMatrix" factor="-1" skip_exit_check="0"/>
+<pragma file="mat_mul.c" line="7" pragmaType="unroll" parentfunction="multiplyMatrix" factor="-1" skip_exit_check="0"/>
+</pragmas>

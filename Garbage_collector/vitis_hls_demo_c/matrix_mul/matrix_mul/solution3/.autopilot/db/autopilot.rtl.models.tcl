@@ -1,0 +1,22 @@
+set SynModuleInfo {
+  {SRCNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_1 MODELNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_1 RTLNAME multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_1
+    SUBMODULES {
+      {MODELNAME multiplyMatrix_mul_32s_32s_32_1_1 RTLNAME multiplyMatrix_mul_32s_32s_32_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME multiplyMatrix_flow_control_loop_pipe_sequential_init RTLNAME multiplyMatrix_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME multiplyMatrix_flow_control_loop_pipe_sequential_init_U}
+    }
+  }
+  {SRCNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_11 MODELNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_11 RTLNAME multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_11}
+  {SRCNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_12 MODELNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_12 RTLNAME multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_12}
+  {SRCNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_13 MODELNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_13 RTLNAME multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_13}
+  {SRCNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_14 MODELNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_14 RTLNAME multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_14}
+  {SRCNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_15 MODELNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_15 RTLNAME multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_15}
+  {SRCNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_16 MODELNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_16 RTLNAME multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_16}
+  {SRCNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_17 MODELNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_17 RTLNAME multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_17}
+  {SRCNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_18 MODELNAME multiplyMatrix_Pipeline_VITIS_LOOP_13_18 RTLNAME multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_18}
+  {SRCNAME multiplyMatrix MODELNAME multiplyMatrix RTLNAME multiplyMatrix IS_TOP 1
+    SUBMODULES {
+      {MODELNAME multiplyMatrix_gmem_m_axi RTLNAME multiplyMatrix_gmem_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
+      {MODELNAME multiplyMatrix_control_s_axi RTLNAME multiplyMatrix_control_s_axi BINDTYPE interface TYPE interface_s_axilite}
+    }
+  }
+}

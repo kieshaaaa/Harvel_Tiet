@@ -1,0 +1,117 @@
+### Version 1: Simplified and Compact
+
+```c
+#include <stdio.h>
+
+int main() {
+    int count, array[100], temp, maxDigit = 0, divFactor = 1;
+    printf("Enter size of array: ");
+    scanf("%d", &count);
+    printf("Enter elements into array: ");
+    for (int i = 0; i < count; i++) {
+        scanf("%d", &array[i]);
+        int digitCount = 0, n = array[i];
+        while(n > 0) {
+            n /= 10;
+            digitCount++;
+        }
+        if(digitCount > maxDigit) maxDigit = digitCount;
+    }
+
+    for(int digit = 0; digit < maxDigit; digit++, divFactor *= 10) {
+        for(int i = 0; i < count - 1; i++) {
+            for(int j = 0; j < count - i - 1; j++) {
+                if((array[j] / divFactor) % 10 > (array[j+1] / divFactor) % 10) {
+                    temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+    }
+
+    printf("\nSorted Array: ");
+    for(int i = 0; i < count; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 2: Using Flag for Optimization
+
+```c
+#include <stdio.h>
+
+int main() {
+    int count, array[100], temp, maxDigit = 0, divFactor = 1, flag;
+    printf("Enter size of array: ");
+    scanf("%d", &count);
+    printf("Enter elements into array: ");
+    for (int i = 0; i < count; i++) {
+        scanf("%d", &array[i]);
+        for (int t = array[i], digits = 0; t > 0; digits++, t /= 10)
+            if (digits > maxDigit) maxDigit = digits;
+    }
+
+    for (int digit = 0; digit < maxDigit; digit++, divFactor *= 10) {
+        do {
+            flag = 0;
+            for (int i = 0; i < count - 1; i++) {
+                if ((array[i] / divFactor) % 10 > (array[i + 1] / divFactor) % 10) {
+                    temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    flag = 1;
+                }
+            }
+        } while (flag);
+    }
+
+    printf("\nSorted Array: ");
+    for (int i = 0; i < count; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 3: Decremental Digit Position
+
+```c
+#include <stdio.h>
+
+int main() {
+    int count, array[100], temp, maxDigit = 1, divFactor;
+    printf("Enter size of array: ");
+    scanf("%d", &count);
+    printf("Enter elements into array: ");
+    for (int i = 0; i < count; i++) {
+        scanf("%d", &array[i]);
+        for (int t = array[i]; t > 0; maxDigit = maxDigit * (t % 10 > 0 ? 10 : 1), t /= 10);
+    }
+
+    for (divFactor = maxDigit / 10; divFactor >= 1; divFactor /= 10) {
+        for (int i = 0; i < count; i++) {
+            for (int j = i + 1; j < count; j++) {
+                if ((array[i] / divFactor) % 10 > (array[j] / divFactor) % 10) {
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+    }
+
+    printf("\nSorted Array: ");
+    for (int i = 0; i < count; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+These versions aim to illustrate different approaches to achieving the task while adhering to the specified constraints. Each has its own method of handling digit extraction and comparison for sorting, offering a unique perspective on the problem.

@@ -1,0 +1,92 @@
+Sure, I'll provide three alternative versions of the given C program to count the even and odd elements in an array, following the constraints you've provided. Each version will have a slightly different approach or structure while meeting the requirements you've mentioned.
+
+### Version 1: Using a Single Loop with Ternary Operator
+
+```c
+#include <stdio.h>
+
+#define MAX_SIZE 100
+
+int main() {
+    int arr[MAX_SIZE];
+    int i, N;
+    int countEven = 0, countOdd = 0;
+    
+    printf("Enter size of the array: ");
+    scanf("%d", &N);
+
+    for(i = 0; i < N; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+        (arr[i] % 2 == 0) ? countEven++ : countOdd++;
+    }
+    
+    printf("Total even elements: %d\n", countEven);
+    printf("Total odd elements: %d\n", countOdd);
+
+    return 0;
+}
+```
+
+### Version 2: Using Function-like Macros
+
+```c
+#include <stdio.h>
+
+#define MAX_SIZE 100
+#define IS_EVEN(num) ((num) % 2 == 0 ? 1 : 0)
+
+int main() {
+    int arr[MAX_SIZE];
+    int i, N;
+    int evenCount = 0, oddCount = 0;
+
+    printf("Enter size of the array: ");
+    scanf("%d", &N);
+
+    for(i = 0; i < N; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+        if(IS_EVEN(arr[i])) {
+            evenCount++;
+        } else {
+            oddCount++;
+        }
+    }
+
+    printf("Total even elements: %d\n", evenCount);
+    printf("Total odd elements: %d\n", oddCount);
+
+    return 0;
+}
+```
+
+### Version 3: Compact Loop Version
+
+```c
+#include <stdio.h>
+
+#define MAX_SIZE 100
+
+int main() {
+    int arr[MAX_SIZE], N;
+    int even = 0, odd = 0, i = 0;
+
+    printf("Enter size of the array: ");
+    scanf("%d", &N);
+
+    while(i < N) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+        arr[i] % 2 ? odd++ : even++;
+        i++;
+    }
+
+    printf("Total even elements: %d\n", even);
+    printf("Total odd elements: %d\n", odd);
+
+    return 0;
+}
+```
+
+Each of these versions meets the constraints specified and offers a different way of achieving the task to count even and odd numbers in an array.

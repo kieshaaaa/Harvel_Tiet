@@ -1,0 +1,84 @@
+### Version 1: Using separate if conditions
+
+```c
+#include<stdio.h>
+#include<string.h>
+
+int main() {
+    int input, password = 1234;
+    char username[] = "admin", user[20];
+
+    printf("\n Enter your UserName: ");
+    scanf("%s", user);
+    printf("\n Enter your Password: ");
+    scanf("%d", &input);
+
+    if(strcmp(user, username) == 0) {
+        if(input == password) {
+            printf(" Login successful!! \n");
+        } else {
+            printf(" Authentication failed!! \n");
+        }
+    } else {
+        printf(" Authentication failed!! \n");
+    }
+    return 0;
+}
+```
+
+### Version 2: Introducing a flag for authentication status
+
+```c
+#include<stdio.h>
+#include<string.h>
+
+int main() {
+    int input, authFlag = 0, password = 1234;
+    char username[] = "user123", user[20];
+
+    printf("\n Enter your UserName: ");
+    scanf("%s", user);
+    printf("\n Enter your Password: ");
+    scanf("%d", &input);
+
+    if((strcmp(user, username) == 0) && (input == password)) {
+        authFlag = 1;
+    }
+
+    if(authFlag == 1) {
+        printf(" Login successful!! \n");
+    } else {
+        printf(" Authentication failed!! \n");
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Simplified if-else logic by directly comparing strings and integers
+
+```c
+#include<stdio.h>
+#include<string.h>
+
+int main() {
+    int input;
+    char user[20];
+
+    printf("\n Enter your UserName: ");
+    scanf("%s", user);
+    printf("\n Enter your Password: ");
+    scanf("%d", &input);
+
+    // Direct comparison in the condition
+    if(strcmp(user, "admin123") == 0 && input == 4321) {
+        printf(" Login successful!! \n");
+    } else {
+        printf(" Authentication failed!! \n");
+    }
+
+    return 0;
+}
+```
+
+Each version offers a different approach to handling the login logic but adheres to your constraints.

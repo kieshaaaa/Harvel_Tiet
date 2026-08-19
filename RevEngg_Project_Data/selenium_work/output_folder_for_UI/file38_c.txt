@@ -1,0 +1,50 @@
+Sure, I'll create three different versions of the given C program that converts speeds from miles per hour (MPH) to knots, adhering to your constraints.
+
+### Version 1: Simplifying the Output
+```c
+#include <stdio.h>
+
+int main() {
+    float mph, knots;
+    printf("Enter speed in miles per hour: ");
+    scanf("%f", &mph);
+    knots = mph / 1.15078f; // More precise conversion factor
+    printf("Equivalent in knots: %f\n", knots);
+    return 0;
+}
+```
+
+### Version 2: Adding a Greeting Message
+```c
+#include <stdio.h>
+
+int main() {
+    float mph, knots;
+    printf("Speed Converter: MPH to Knots\n");
+    printf("Enter speed in miles per hour: ");
+    scanf("%f", &mph);
+    knots = mph * 0.868976f; // Another method of conversion
+    printf("Speed in knots: %f\n", knots);
+    return 0;
+}
+```
+
+### Version 3: Converting Multiple Speeds
+```c
+#include <stdio.h>
+
+int main() {
+    float mph1, mph2, knots1, knots2;
+    printf("Enter first speed in miles per hour: ");
+    scanf("%f", &mph1);
+    printf("Enter second speed in miles per hour: ");
+    scanf("%f", &mph2);
+    knots1 = mph1 / 1.15078f;
+    knots2 = mph2 / 1.15078f;
+    printf("First speed in knots: %f\n", knots1);
+    printf("Second speed in knots: %f\n", knots2);
+    return 0;
+}
+```
+
+Each version maintains the original constraints and offers a slightly different approach or functionality within the bounds of your restrictions.

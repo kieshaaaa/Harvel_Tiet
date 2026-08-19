@@ -1,0 +1,81 @@
+Certainly! Here are three variations of the provided code that check if a number is a perfect square without using the constraints mentioned:
+
+### Version 1: Using a loop to find a square root
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, root = 0;
+    printf("Enter an integer number: ");
+    scanf("%d", &num);
+
+    for (int i = 1; i <= num / 2; i++) {
+        if (i * i == num) {
+            root = i;
+            break;
+        }
+    }
+
+    if (root > 0)
+        printf("%d is a perfect square.\n", num);
+    else
+        printf("%d is not a perfect square.\n", num);
+
+    return 0;
+}
+```
+
+### Version 2: Incrementally checking squares of numbers
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter an integer number: ");
+    scanf("%d", &num);
+
+    int square = 1, i = 1;
+    while (square <= num) {
+        if (square == num) {
+            printf("%d is a perfect square.\n", num);
+            return 0;
+        }
+        i++;
+        square = i * i;
+    }
+
+    printf("%d is not a perfect square.\n", num);
+    return 0;
+}
+```
+
+### Version 3: Using subtraction method
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter an integer number: ");
+    scanf("%d", &num);
+
+    int odd = 1;
+    int square = 0;
+    while (num >= odd) {
+        num -= odd;
+        odd += 2; // Next odd number
+        square++;
+    }
+
+    if (num == 0)
+        printf("%d is a perfect square.\n", square * square);
+    else
+        printf("%d is not a perfect square.\n", square * square + num);
+
+    return 0;
+}
+```
+
+Each version takes a unique approach to determine if the given number is a perfect square, adhering to the constraints you provided.

@@ -1,0 +1,28 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int entry_point(int (*maxRows))
+{
+int maxCols;
+;
+ if ((*maxRows) < 1)
+ {
+;
+ exit(0);
+ }
+ maxCols = (*maxRows) * 2 - 1;
+ puts("\n--------------------------------------------\n");
+int spacesInCurrentRow;
+int colsInCurrentRow;
+int row = 1;
+ {
+ spacesInCurrentRow = (row - 1) * 2;
+ colsInCurrentRow = maxCols - spacesInCurrentRow;
+int space = 1;
+;
+int col = 1;
+;
+;
+ }
+ return 0;
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op sub" ID="" IMPL="fabric" LATENCY="0" OPTYPE="sub" PRAGMA="" RTLNAME="ap_return" SOURCE="subtraction.c:5" VARIABLE="sub_ln5" MODULE="sub" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

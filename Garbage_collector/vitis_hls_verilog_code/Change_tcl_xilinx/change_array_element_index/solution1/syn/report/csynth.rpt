@@ -1,0 +1,138 @@
+
+
+================================================================
+== Synthesis Summary Report of 'processArray'
+================================================================
++ General Information: 
+    * Date:           Wed Jul 26 17:00:53 2023
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        change_array_element_index
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu11p-flga2577-1-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------+------+------+---------+---------+----------+---------+------+----------+------+----+------------+------------+-----+
+    |     Modules    | Issue|      | Latency | Latency | Iteration|         | Trip |          |      |    |            |            |     |
+    |     & Loops    | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF     |     LUT    | URAM|
+    +----------------+------+------+---------+---------+----------+---------+------+----------+------+----+------------+------------+-----+
+    |+ processArray  |     -|  0.00|       15|  150.000|         -|       16|     -|        no|     -|   -|  5494 (~0%)|  9011 (~0%)|    -|
+    +----------------+------+------+---------+---------+----------+---------+------+----------+------+----+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++--------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface    | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|              | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++--------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_gmem_0 | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
+| m_axi_gmem_1 | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
+| m_axi_gmem_2 | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
+| m_axi_gmem_3 | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
+| m_axi_gmem_4 | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
+| m_axi_gmem_5 | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
++--------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 7             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------+
+| Interface     | Register | Offset | Width | Access | Description          |
++---------------+----------+--------+-------+--------+----------------------+
+| s_axi_control | arr_0_1  | 0x10   | 32    | W      | Data signal of arr_0 |
+| s_axi_control | arr_0_2  | 0x14   | 32    | W      | Data signal of arr_0 |
+| s_axi_control | arr_1_1  | 0x1c   | 32    | W      | Data signal of arr_1 |
+| s_axi_control | arr_1_2  | 0x20   | 32    | W      | Data signal of arr_1 |
+| s_axi_control | arr_2_1  | 0x28   | 32    | W      | Data signal of arr_2 |
+| s_axi_control | arr_2_2  | 0x2c   | 32    | W      | Data signal of arr_2 |
+| s_axi_control | arr_3_1  | 0x34   | 32    | W      | Data signal of arr_3 |
+| s_axi_control | arr_3_2  | 0x38   | 32    | W      | Data signal of arr_3 |
+| s_axi_control | arr_4_1  | 0x40   | 32    | W      | Data signal of arr_4 |
+| s_axi_control | arr_4_2  | 0x44   | 32    | W      | Data signal of arr_4 |
+| s_axi_control | arr_5_1  | 0x4c   | 32    | W      | Data signal of arr_5 |
+| s_axi_control | arr_5_2  | 0x50   | 32    | W      | Data signal of arr_5 |
++---------------+----------+--------+-------+--------+----------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst_n  | reset      | ap_rst_n                          |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| arr      | inout     | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+
+| Argument | HW Interface  | HW Type   | HW Usage |
++----------+---------------+-----------+----------+
+| arr      | m_axi_gmem_0  | interface |          |
+| arr      | s_axi_control | interface | offset   |
+| arr      | m_axi_gmem_1  | interface |          |
+| arr      | s_axi_control | interface | offset   |
+| arr      | m_axi_gmem_2  | interface |          |
+| arr      | s_axi_control | interface | offset   |
+| arr      | m_axi_gmem_3  | interface |          |
+| arr      | s_axi_control | interface | offset   |
+| arr      | m_axi_gmem_4  | interface |          |
+| arr      | s_axi_control | interface | offset   |
+| arr      | m_axi_gmem_5  | interface |          |
+| arr      | s_axi_control | interface | offset   |
++----------+---------------+-----------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------+-----+--------+----------+-----+--------+---------+
+| Name                 | DSP | Pragma | Variable | Op  | Impl   | Latency |
++----------------------+-----+--------+----------+-----+--------+---------+
+| + processArray       | 0   |        |          |     |        |         |
+|   add_ln9_fu_394_p2  | -   |        | add_ln9  | add | fabric | 0       |
+|   add_ln10_fu_399_p2 | -   |        | add_ln10 | add | fabric | 0       |
+|   add_ln11_fu_404_p2 | -   |        | add_ln11 | add | fabric | 0       |
+|   add_ln12_fu_409_p2 | -   |        | add_ln12 | add | fabric | 0       |
+|   add_ln13_fu_414_p2 | -   |        | add_ln13 | add | fabric | 0       |
+|   add_ln14_fu_419_p2 | -   |        | add_ln14 | add | fabric | 0       |
++----------------------+-----+--------+----------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+-----------------------------------------+--------------------------------------------------------------------------------+
+| Type            | Options                                 | Location                                                                       |
++-----------------+-----------------------------------------+--------------------------------------------------------------------------------+
+| interface       | m_axi port=arr offset=slave bundle=gmem | ../Array_with_pragma/Array/array_elements_index/array.c:7 in processarray, arr |
+| array_partition | complete dim=1 variable=arr             | change_array_element_index/solution1/directives.tcl:7 in processarray, arr     |
++-----------------+-----------------------------------------+--------------------------------------------------------------------------------+
+
+

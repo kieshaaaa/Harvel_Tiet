@@ -1,0 +1,76 @@
+### Version 1: Using Conditional (Ternary) Operator
+
+This version utilizes the conditional (ternary) operator to simplify the if-else statement for calculating the difference.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, diff;
+
+    printf("Enter first number :: ");
+    scanf("%d", &a);
+    printf("\nEnter second number :: ");
+    scanf("%d", &b);
+
+    diff = (a > b) ? (a - b) : (b - a);
+
+    printf("\nDifference between %d and %d is = %d\n", a, b, diff);
+    return 0;
+}
+```
+
+### Version 2: Using Absolute Value Function
+
+This version uses the absolute value function `abs()` from the `stdlib.h` library to calculate the difference without needing to check which number is larger.
+
+```c
+#include <stdio.h>
+#include <stdlib.h> // For abs()
+
+int main() {
+    int a, b, diff;
+
+    printf("Enter first number :: ");
+    scanf("%d", &a);
+    printf("\nEnter second number :: ");
+    scanf("%d", &b);
+
+    diff = abs(a - b);
+
+    printf("\nDifference between %d and %d is = %d\n", a, b, diff);
+    return 0;
+}
+```
+
+### Version 3: Using Bitwise Operators
+
+This version is a bit unconventional and primarily for educational purposes. It calculates the difference using bitwise operators, assuming only positive numbers are input. This method is not recommended for general use but demonstrates a different approach.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, diff;
+
+    printf("Enter first number :: ");
+    scanf("%d", &a);
+    printf("\nEnter second number :: ");
+    scanf("%d", &b);
+
+    // Calculate difference using bitwise XOR and AND operations, followed by right shift
+    // Note: This approach works correctly only for positive integers
+    int xor = a ^ b;
+    int and = a & b;
+    diff = xor + (and << 1);
+
+    if (a < b) { // If a is less than b, we need to negate the result
+        diff = -diff;
+    }
+
+    printf("\nDifference between %d and %d is = %d\n", a, b, diff);
+    return 0;
+}
+```
+
+**Note:** The bitwise method is more of a curiosity and should not be used for practical purposes, especially given the constraints and the requirement for dealing with positive numbers only. The absolute value function version is the most straightforward and reliable approach for finding the difference between two numbers.

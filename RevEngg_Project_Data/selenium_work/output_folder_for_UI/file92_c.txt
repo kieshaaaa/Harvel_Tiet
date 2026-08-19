@@ -1,0 +1,75 @@
+### Version 1: Minimalistic Refactoring
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float sideLength, pyramidHeight, hexagonArea, pyramidVolume;
+    float pi = 3.14159;
+
+    printf("Enter the side length of the hexagon: ");
+    scanf("%f", &sideLength);
+    printf("Enter the height of the pyramid: ");
+    scanf("%f", &pyramidHeight);
+
+    hexagonArea = (3 * sqrt(3) / 2) * sideLength * sideLength;
+    pyramidVolume = hexagonArea * pyramidHeight / 3;
+
+    printf("Volume of the hexagonal pyramid: ");
+    printf("%.2f\n", pyramidVolume);
+
+    return 0;
+}
+```
+
+### Version 2: Expanded Steps
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float edge, height, areaOfBase, volOfPyramid;
+    float root3 = sqrt(3);
+
+    printf("Enter the side length of the hexagon: ");
+    scanf("%f", &edge);
+    printf("Enter the height of the pyramid: ");
+    scanf("%f", &height);
+
+    areaOfBase = ((3 * root3) / 2) * (edge * edge);
+    volOfPyramid = areaOfBase * height / 3;
+
+    printf("Volume of the hexagonal pyramid: ");
+    printf("%.2f\n", volOfPyramid);
+
+    return 0;
+}
+```
+
+### Version 3: Rearranging and Renaming for Clarity
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float hexSide, pyrHeight;
+    float baseAreaHex, volumePyramid;
+    float constantFactor = (3 * sqrt(3)) / 2;
+
+    printf("Enter the side length of the hexagon: ");
+    scanf("%f", &hexSide);
+    printf("Enter the height of the pyramid: ");
+    scanf("%f", &pyrHeight);
+
+    baseAreaHex = constantFactor * hexSide * hexSide;
+    volumePyramid = (baseAreaHex * pyrHeight) / 3;
+
+    printf("Volume of the hexagonal pyramid: ");
+    printf("%.2f\n", volumePyramid);
+
+    return 0;
+}
+```

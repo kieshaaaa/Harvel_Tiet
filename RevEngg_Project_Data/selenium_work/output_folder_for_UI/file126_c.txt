@@ -1,0 +1,86 @@
+Certainly! I'll provide you with three different versions of the original code, adhering to your guidelines.
+
+### Version 1: Using a for-loop instead of a while-loop
+```c
+#include <stdio.h>
+
+int main() {
+    int num, digit, count = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("Enter digit to search: ");
+    scanf("%d", &digit);
+
+    for (int tNum = num; tNum > 0; tNum /= 10) {
+        if (tNum % 10 == digit) {
+            count++;
+        }
+    }
+
+    printf("Total occurrence of digit is: ");
+    printf("%d", count);
+    printf(" in number: ");
+    printf("%d", num);
+    printf(".");
+    return 0;
+}
+```
+
+### Version 2: Introducing a flag variable to manage the output for zero occurrences.
+```c
+#include <stdio.h>
+
+int main() {
+    int num, digit, count = 0, flag = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("Enter digit to search: ");
+    scanf("%d", &digit);
+
+    for (int tNum = num; tNum > 0; tNum /= 10) {
+        if (tNum % 10 == digit) {
+            count++;
+            flag = 1;
+        }
+    }
+
+    if (flag == 0) {
+        printf("Digit ");
+        printf("%d", digit);
+        printf(" not found in number: ");
+        printf("%d", num);
+        printf(".");
+    } else {
+        printf("Total occurrence of digit is: ");
+        printf("%d", count);
+        printf(" in number: ");
+        printf("%d", num);
+        printf(".");
+    }
+    return 0;
+}
+```
+
+### Version 3: Simplifying the output statements and using only `if` inside the loop.
+```c
+#include <stdio.h>
+
+int main() {
+    int num, digit, count = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("Enter digit to search: ");
+    scanf("%d", &digit);
+
+    for (int tNum = num; tNum > 0; tNum /= 10) {
+        if (tNum % 10 == digit) {
+            count++;
+        }
+    }
+
+    printf("Total occurrence of digit is: %d", count);
+    printf(" in number: %d.", num);
+    return 0;
+}
+```
+These versions modify the structure of the code while keeping the functionality the same, adhering to the constraints you've specified.

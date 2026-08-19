@@ -1,0 +1,5 @@
+/home/coss01/vitis_hls_demo_c/fibo/fibon/solution1/.autopilot/db/fibonacci.pp.0.c:949:5: warning: Added loop label VITIS_LOOP_9_1:   [xilinx-label-all-loops]
+    for (i = 0; i < n; i++) {
+    ^~~
+    VITIS_LOOP_9_1: 
+/home/coss01/vitis_hls_demo_c/fibo/fibon/solution1/.autopilot/db/fibonacci.pp.0.c:949:5: note: FIX-IT applied suggested code changes

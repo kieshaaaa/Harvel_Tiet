@@ -1,0 +1,115 @@
+### Version 1: Simplified Merge with In-line Array Reading and Printing
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr1[5], arr2[5], arr3[10];
+    int i;
+
+    // Reading arr1
+    for (i = 0; i < 5; i++) {
+        printf("\nEnter arr1[%d] : ", i);
+        scanf("%d", &arr1[i]);
+    }
+
+    // Reading arr2
+    for (i = 0; i < 5; i++) {
+        printf("\nEnter arr2[%d] : ", i);
+        scanf("%d", &arr2[i]);
+    }
+
+    // Merging arr1 and arr2 into arr3
+    for (i = 0; i < 5; i++) {
+        arr3[i] = arr1[i];
+    }
+    for (i = 0; i < 5; i++) {
+        arr3[i + 5] = arr2[i];
+    }
+
+    // Printing arr3
+    printf("\nMerged Array:\n");
+    for (i = 0; i < 10; i++) {
+        printf("arr3[%d] : %d\n", i, arr3[i]);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Inline Initialization and Merge with Conditional Operator
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr1[5] = {0}, arr2[5] = {0}, arr3[10] = {0};
+    int i;
+
+    // Inline read and initialize arr1 and arr2
+    printf("Enter elements for arr1:\n");
+    for (i = 0; i < 5; i++) {
+        printf("arr1[%d]: ", i);
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter elements for arr2:\n");
+    for (i = 0; i < 5; i++) {
+        printf("arr2[%d]: ", i);
+        scanf("%d", &arr2[i]);
+    }
+
+    // Merge arr1 and arr2 into arr3 using conditional operator
+    for (i = 0; i < 10; i++) {
+        arr3[i] = (i < 5) ? arr1[i] : arr2[i - 5];
+    }
+
+    // Print merged array arr3
+    printf("Merged Array Elements:\n");
+    for (i = 0; i < 10; i++) {
+        printf("arr3[%d] = %d\n", i, arr3[i]);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Compact Array Operations with Direct Assignment
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr1[5], arr2[5], arr3[10];
+    int i;
+
+    // Direct read array elements
+    printf("Enter 5 elements for the first array:\n");
+    for (i = 0; i < 5; ++i) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter 5 elements for the second array:\n");
+    for (i = 0; i < 5; ++i) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr2[i]);
+    }
+
+    // Directly assigning values to merge
+    for (i = 0; i < 5; ++i) {
+        arr3[i] = arr1[i];
+        arr3[i + 5] = arr2[i];
+    }
+
+    // Display merged array without using a loop inside printf
+    printf("Merged Array:\n");
+    for (i = 0; i < 10; ++i) {
+        printf("Element %d: %d\n", i, arr3[i]);
+    }
+
+    return 0;
+}
+```
+
+These versions avoid extra functions, dynamic memory allocation, structs, unions, pointers, recursion, file handling, and modifications to existing data types as per your request.

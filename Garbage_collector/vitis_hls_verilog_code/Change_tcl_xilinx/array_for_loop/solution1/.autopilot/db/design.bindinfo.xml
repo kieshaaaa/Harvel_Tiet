@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln7_fu_152_p2" SOURCE="../Array_main/Array/array_for_loop/array.c:7" VARIABLE="icmp_ln7" MODULE="processArray" LOOP="VITIS_LOOP_7_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln7_fu_158_p2" SOURCE="../Array_main/Array/array_for_loop/array.c:7" VARIABLE="add_ln7" MODULE="processArray" LOOP="VITIS_LOOP_7_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op mux" ID="" IMPL="auto" LATENCY="0" OPTYPE="mux" PRAGMA="" RTLNAME="mux_63_32_1_1_U1" SOURCE="../Array_main/Array/array_for_loop/array.c:8" VARIABLE="tmp" MODULE="processArray" LOOP="VITIS_LOOP_7_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln8_fu_182_p2" SOURCE="../Array_main/Array/array_for_loop/array.c:8" VARIABLE="add_ln8" MODULE="processArray" LOOP="VITIS_LOOP_7_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

@@ -1,0 +1,73 @@
+Certainly! Below are three variations of the given program. Each follows the constraints you've specified, focusing on the calculation and output of the total circumference of an annulus, using only `float` for numerical data types, and maintaining simplicity in the program's structure.
+
+### Version 1
+```c
+#include <stdio.h>
+
+int main() {
+    float outerRadius, innerRadius;
+    float outerCircumference, innerCircumference, totalCircumference;
+    
+    printf("Enter the outer radius: ");
+    scanf("%f", &outerRadius);
+    
+    printf("Enter the inner radius: ");
+    scanf("%f", &innerRadius);
+
+    outerCircumference = 2 * 3.14159 * outerRadius;
+    innerCircumference = 2 * 3.14159 * innerRadius;
+    totalCircumference = outerCircumference + innerCircumference;
+    
+    printf("Total circumference of the annulus: ");
+    printf("%.2f\n", totalCircumference);
+
+    return 0;
+}
+```
+
+### Version 2
+```c
+#include <stdio.h>
+
+int main() {
+    float r1, r2, sumCircumference;
+    
+    printf("Enter the outer radius: ");
+    scanf("%f", &r1);
+    
+    printf("Enter the inner radius: ");
+    scanf("%f", &r2);
+
+    sumCircumference = 2 * 3.14159 * (r1 + r2);
+    
+    printf("Total circumference of the annulus: ");
+    printf("%.2f\n", sumCircumference);
+
+    return 0;
+}
+```
+
+### Version 3
+```c
+#include <stdio.h>
+
+int main() {
+    float radius1, radius2;
+    float total;
+
+    printf("Enter the outer radius: ");
+    scanf("%f", &radius1);
+
+    printf("Enter the inner radius: ");
+    scanf("%f", &radius2);
+
+    total = 2 * 3.14159 * radius1 + 2 * 3.14159 * radius2;
+
+    printf("Total circumference of the annulus: ");
+    printf("%.2f\n", total);
+
+    return 0;
+}
+```
+
+Each version calculates the total circumference of an annulus, adhering to the requirements and avoiding the specified restrictions. They vary in variable naming and the steps taken to calculate the total circumference, offering slightly different approaches to achieve the same result.

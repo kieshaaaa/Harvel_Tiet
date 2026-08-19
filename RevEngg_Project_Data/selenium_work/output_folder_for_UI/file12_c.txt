@@ -1,0 +1,85 @@
+Certainly! Below are three different versions of the provided C program to check if a number is a perfect number or not, adhering to your constraints:
+
+### Version 1: Using a while loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, i = 1, sum = 0;
+    printf("\nEnter any number :: ");
+    scanf("%d", &num);
+
+    while(i < num) {
+        if(num % i == 0) {
+            sum += i;
+        }
+        i++;
+    }
+
+    if(sum == num) {
+        printf("\nThe Entered Number [ %d ] is a Perfect Number.\n", num);
+    } else {
+        printf("\nThe Entered Number [ %d ] is not a Perfect Number.\n", num);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Optimizing by checking only up to half the number
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0;
+    printf("\nEnter any number :: ");
+    scanf("%d", &num);
+
+    for(int i = 1; i <= num / 2; i++) {
+        if(num % i == 0) {
+            sum += i;
+        }
+    }
+
+    if(sum == num) {
+        printf("\nThe Entered Number [ %d ] is a Perfect Number.\n", num);
+    } else {
+        printf("\nThe Entered Number [ %d ] is not a Perfect Number.\n", num);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Incorporating break for efficiency (though it makes little practical difference in this context)
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0;
+    printf("\nEnter any number :: ");
+    scanf("%d", &num);
+
+    for(int i = 1; i <= num / 2; i++) {
+        if(num % i == 0) {
+            sum += i;
+        }
+        if(sum > num) {
+            break; // If sum exceeds num, it cannot be a perfect number
+        }
+    }
+
+    if(sum == num) {
+        printf("\nThe Entered Number [ %d ] is a Perfect Number.\n", num);
+    } else {
+        printf("\nThe Entered Number [ %d ] is not a Perfect Number.\n", num);
+    }
+
+    return 0;
+}
+```
+
+Each version modifies the loop structure or adds an optimization to check for perfect numbers in a slightly different manner, while adhering to your specified constraints.

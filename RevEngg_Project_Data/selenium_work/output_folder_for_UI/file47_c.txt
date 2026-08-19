@@ -1,0 +1,69 @@
+Sure, I'll create three variations of the given C program which reads a character input for gender and prints out the corresponding gender, following your specific requirements.
+
+### Version 1: Using `if-else` Statements
+
+```c
+#include <stdio.h>
+
+int main() {
+    char gender;
+    
+    printf("Enter gender (M/m or F/f): ");
+    scanf(" %c", &gender);
+    
+    if (gender == 'M' || gender == 'm') {
+        printf("Male");
+    } else if (gender == 'F' || gender == 'f') {
+        printf("Female");
+    } else {
+        printf("Unspecified Gender");
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 2: Using Ternary Operator
+
+```c
+#include <stdio.h>
+
+int main() {
+    char gender;
+    
+    printf("Enter gender (M/m or F/f): ");
+    scanf(" %c", &gender);
+    
+    printf("%s\n", (gender == 'M' || gender == 'm') ? "Male" : (gender == 'F' || gender == 'f') ? "Female" : "Unspecified Gender");
+    
+    return 0;
+}
+```
+
+### Version 3: Using ASCII Values for Case Insensitivity
+
+```c
+#include <stdio.h>
+
+int main() {
+    char gender;
+    
+    printf("Enter gender (M/m or F/f): ");
+    scanf(" %c", &gender);
+    
+    // Convert uppercase to lowercase by adding 32 to ASCII value if it is uppercase
+    gender = (gender >= 'A' && gender <= 'Z') ? gender + 32 : gender;
+    
+    if (gender == 'm') {
+        printf("Male");
+    } else if (gender == 'f') {
+        printf("Female");
+    } else {
+        printf("Unspecified Gender");
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+Each version adheres to the constraints you've specified, such as avoiding dynamic memory allocation, recursion, file handling, and modifications to data types, among others.

@@ -1,0 +1,98 @@
+Certainly, I'll provide you with three variations of the given C program to check if a number is prime or not, following your instructions:
+
+### Version 1: Using a `while` loop instead of a `for` loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    int i = 2;
+    unsigned char isPrime = 1; // Assuming the number is prime until proven otherwise
+
+    printf("\nEnter any integer number :: ");
+    scanf("%d", &number);
+
+    while (i <= number / 2) {
+        if (number % i == 0) {
+            isPrime = 0; // Number is not prime
+            break;
+        }
+        i++;
+    }
+
+    if (isPrime == 1 && number > 1)
+        printf("\nThe Entered Number [ %d ] is a Prime Number.\n", number);
+    else
+        printf("\nThe Entered Number [ %d ] is not a Prime Number.\n", number);
+
+    return 0;
+}
+```
+
+### Version 2: Optimizing the loop to run until the square root of the number
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int number;
+    unsigned char isPrime = 1; // Assuming the number is prime
+
+    printf("\nEnter any integer number :: ");
+    scanf("%d", &number);
+
+    for (int i = 2; i <= sqrt(number); i++) {
+        if (number % i == 0) {
+            isPrime = 0; // Number is not prime
+            break;
+        }
+    }
+
+    if (isPrime == 1 && number > 1)
+        printf("\nThe Entered Number [ %d ] is a Prime Number.\n", number);
+    else
+        printf("\nThe Entered Number [ %d ] is not a Prime Number.\n", number);
+
+    return 0;
+}
+```
+
+### Version 3: Checking even numbers separately and starting the loop from 3
+
+This method checks if the number is even (and not 2) before proceeding with the loop, which starts from 3 and increments by 2, thus checking only odd divisors.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    unsigned char isPrime = 1; // Assuming the number is prime
+
+    printf("\nEnter any integer number :: ");
+    scanf("%d", &number);
+
+    if (number == 2) // Explicitly handling the case for 2
+        isPrime = 1;
+    else if (number < 2 || number % 2 == 0) // Check if number is less than 2 or even
+        isPrime = 0;
+    else {
+        for (int i = 3; i <= number / 2; i += 2) {
+            if (number % i == 0) {
+                isPrime = 0; // Number is not prime
+                break;
+            }
+        }
+    }
+
+    if (isPrime == 1)
+        printf("\nThe Entered Number [ %d ] is a Prime Number.\n", number);
+    else
+        printf("\nThe Entered Number [ %d ] is not a Prime Number.\n", number);
+
+    return 0;
+}
+```
+
+Each version has its unique approach while adhering to your constraints and achieving the goal of checking for prime numbers.

@@ -1,0 +1,77 @@
+### Version 1: Using `for` Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    float fact = 1;
+    printf("\nEnter A Number to Find Factorial => ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+
+    float factGeneral = fact;
+    float factScientific = fact;
+    printf("\nFactorial of %d (General Form ) => %f\n", n, factGeneral);
+    printf("\nFactorial of %d (Scientific Form )=> %e", n, factScientific);
+
+    return 0;
+}
+```
+
+### Version 2: Using `while` Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    float fact = 1;
+    printf("\nEnter A Number to Find Factorial => ");
+    scanf("%d", &n);
+
+    int i = 1;
+    while (i <= n) {
+        fact *= i;
+        i++;
+    }
+
+    float factGeneral = fact;
+    float factScientific = fact;
+    printf("\nFactorial of %d (General Form ) => %f\n", n, factGeneral);
+    printf("\nFactorial of %d (Scientific Form )=> %e", n, factScientific);
+
+    return 0;
+}
+```
+
+### Version 3: Using `do-while` Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    float fact = 1;
+    printf("\nEnter A Number to Find Factorial => ");
+    scanf("%d", &n);
+
+    int i = 1;
+    do {
+        fact *= i;
+        i++;
+    } while (i <= n);
+
+    float factGeneral = fact;
+    float factScientific = fact;
+    printf("\nFactorial of %d (General Form ) => %f\n", n, factGeneral);
+    printf("\nFactorial of %d (Scientific Form )=> %e", n, factScientific);
+
+    return 0;
+}
+```
+
+Each version calculates the factorial of a given number using different loop structures but adheres to your constraints, including the replacement of `double` with `float` for the factorial calculation and outputs.

@@ -1,0 +1,75 @@
+Certainly! Below are three variations of the provided C program to calculate the factorial of a number, adhering to your guidelines:
+
+### Version 1: Using a `while` loop instead of a `for` loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    long int fact = 1;
+  
+    printf("Enter an integer number: ");
+    scanf("%d", &num);
+  
+    int i = num;
+    while(i >= 1) {
+        fact *= i;
+        i--;
+    }
+  
+    printf("\nFactorial of %d is = %ld", num, fact);
+  
+    return 0;
+}
+```
+
+### Version 2: Modifying loop variable decrement location
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    long int fact = 1;
+  
+    printf("Enter an integer number: ");
+    scanf("%d", &num);
+  
+    for(int i = num; i > 1; ) {
+        fact *= i--;
+    }
+  
+    printf("\nFactorial of %d is = %ld", num, fact);
+  
+    return 0;
+}
+```
+
+### Version 3: Using a `do-while` loop for calculation
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    long int fact = 1;
+  
+    printf("Enter an integer number: ");
+    scanf("%d", &num);
+  
+    int i = num;
+    if (i > 0) {
+        do {
+            fact *= i;
+            i--;
+        } while (i >= 1);
+    }
+  
+    printf("\nFactorial of %d is = %ld", num, fact);
+  
+    return 0;
+}
+```
+
+Each version meets the specified criteria: avoids additional functions, dynamic memory allocation, structs, unions, pointers, recursion, file handling, modifies the existing data types, and ensures calculations are not performed within the `printf` statement.

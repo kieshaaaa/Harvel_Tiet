@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op all" ID="" IMPL="tadder" LATENCY="0" OPTYPE="all" PRAGMA="" RTLNAME="add_ln9_fu_69_p2" SOURCE="../Array_main/Array/array_elements_index_main_1/array.c:9" VARIABLE="add_ln9" MODULE="processArray" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op all" ID="" IMPL="tadder" LATENCY="0" OPTYPE="all" PRAGMA="" RTLNAME="add_ln9_1_fu_75_p2" SOURCE="../Array_main/Array/array_elements_index_main_1/array.c:9" VARIABLE="add_ln9_1" MODULE="processArray" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op all" ID="" IMPL="tadder" LATENCY="0" OPTYPE="all" PRAGMA="" RTLNAME="add_ln9_2_fu_81_p2" SOURCE="../Array_main/Array/array_elements_index_main_1/array.c:9" VARIABLE="add_ln9_2" MODULE="processArray" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op all" ID="" IMPL="tadder" LATENCY="0" OPTYPE="all" PRAGMA="" RTLNAME="arr_0" SOURCE="../Array_main/Array/array_elements_index_main_1/array.c:9" VARIABLE="add_ln9_3" MODULE="processArray" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

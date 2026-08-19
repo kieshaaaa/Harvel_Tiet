@@ -1,0 +1,150 @@
+digraph "found.c.012t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	subgraph cluster_0_2 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 2";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|size.5_19\ =\ size;\l\
+|if\ (i\ \<\ size.5_19)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|_17\ =\ *array.1[i];\l\
+|target.4_18\ =\ target;\l\
+|if\ (_17\ ==\ target.4_18)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	subgraph cluster_0_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|size.3_16\ =\ size;\l\
+|if\ (i\ \<\ size.3_16)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|_15\ =\ &*array.1[i];\l\
+|scanf\ (\"%d\",\ _15);\l\
+|i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|saved_stack.8\ =\ __builtin_stack_save\ ();\l\
+|printf\ (\"Enter\ the\ size\ of\ the\ array:\ \");\l\
+|scanf\ (\"%d\",\ &size);\l\
+|size.0\ =\ size;\l\
+|_1\ =\ (long\ int)\ size.0;\l\
+|_2\ =\ _1\ +\ -1;\l\
+|D.2329\ =\ (sizetype)\ _2;\l\
+|_4\ =\ (sizetype)\ size.0;\l\
+|_5\ =\ (bitsizetype)\ _4;\l\
+|D.2330\ =\ _5\ *\ 32;\l\
+|_7\ =\ (sizetype)\ size.0;\l\
+|D.2331\ =\ _7\ *\ 4;\l\
+|_9\ =\ (sizetype)\ size.0;\l\
+|_10\ =\ (bitsizetype)\ _9;\l\
+|D.2332\ =\ _10\ *\ 32;\l\
+|_12\ =\ (sizetype)\ size.0;\l\
+|D.2333\ =\ _12\ *\ 4;\l\
+|array.1\ =\ __builtin_alloca_with_align\ (D.2333,\ 32);\l\
+|size.2_14\ =\ size;\l\
+|printf\ (\"Enter\ %d\ elements\ of\ the\ array:\\n\",\ size.2_14);\l\
+|i\ =\ 0;\l\
+goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|printf\ (\"Enter\ the\ element\ to\ search:\ \");\l\
+|scanf\ (\"%d\",\ &target);\l\
+|found\ =\ 0;\l\
+|i\ =\ 0;\l\
+goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|found\ =\ 1;\l\
+goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|if\ (found\ !=\ 0)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|target.6_20\ =\ target;\l\
+|printf\ (\"Element\ %d\ is\ present\ in\ the\ array.\\n\",\ target.6_20);\l\
+goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|target.7_21\ =\ target;\l\
+|printf\ (\"Element\ %d\ is\ not\ present\ in\ the\ array.\\n\",\ target.7_21);\l\
+}"];
+
+	fn_0_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|D.2340\ =\ 0;\l\
+|__builtin_stack_restore\ (saved_stack.8);\l\
+|size\ =\ \{CLOBBER\};\l\
+|target\ =\ \{CLOBBER\};\l\
+}"];
+
+	fn_0_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|\<L12\>:\l\
+|return\ D.2340;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_4:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_9:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_7:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_8:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_10:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_9:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_9:s -> fn_0_basic_block_6:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_9:s -> fn_0_basic_block_10:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_11:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_12:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_11:s -> fn_0_basic_block_13:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_12:s -> fn_0_basic_block_13:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_13:s -> fn_0_basic_block_14:n [style="solid,bold",color=blue,weight=100,constraint=true];
+	fn_0_basic_block_14:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

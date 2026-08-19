@@ -1,0 +1,115 @@
+Sure, following the guidelines you've provided, I'll create three different versions of the code that achieves the same functionality without utilizing the features you've asked to avoid. These versions will take user input for the size of an array, fill the array with elements, ask for a position of an element to delete, and then display the array after deletion without using the specific elements you've mentioned.
+
+### Version 1: Basic Approach with Element Input
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, pos, element;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the position of the element you want to delete: ");
+    scanf("%d", &pos);
+
+    for (int i = pos - 1; i < n - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    n--;
+
+    printf("Array after deletion:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 2: Pre-Filled Array and Modified Deletion Logic
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100] = {0}; // Initialize all elements to 0
+    int n = 10; // Example size
+    int pos;
+
+    // Pre-fill the array with example values
+    for (int i = 0; i < n; i++) {
+        arr[i] = i + 1; // Fill array with numbers 1 to n
+    }
+
+    printf("Pre-filled array of 10 elements.\n");
+
+    printf("Enter the position of the element you want to delete: ");
+    scanf("%d", &pos);
+
+    if (pos < 1 || pos > n) {
+        printf("Invalid position!\n");
+    } else {
+        for (int i = pos - 1; i < n - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        n--;
+
+        printf("Array after deletion:\n");
+        for (int i = 0; i < n; i++) {
+            printf("%d ", arr[i]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 3: Enhanced User Experience with Checks
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, pos;
+    printf("Enter the number of elements in the array (1-100): ");
+    scanf("%d", &n);
+
+    if (n < 1 || n > 100) {
+        printf("Invalid number of elements!\n");
+        return 1; // Early exit if the input is invalid
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the position of the element you want to delete (1-%d): ", n);
+    scanf("%d", &pos);
+
+    if (pos < 1 || pos > n) {
+        printf("Invalid position!\n");
+        return 1; // Early exit if the position is invalid
+    }
+
+    for (int i = pos - 1; i < n - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    n--;
+
+    printf("Array after deletion:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+```
+
+Each version adds a different twist to the task, improving upon user interaction, pre-filling the array for ease of testing, and adding validity checks for inputs.

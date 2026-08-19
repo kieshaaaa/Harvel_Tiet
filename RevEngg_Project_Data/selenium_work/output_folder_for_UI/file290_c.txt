@@ -1,0 +1,67 @@
+### Version 1: Basic Rearrangement
+```c
+#include <stdio.h>
+
+int main() {
+    int number1, number2, total;
+    float average;
+
+    printf("Enter two numbers separated by space: ");
+    scanf("%d %d", &number1, &number2);
+
+    total = number1 + number2;
+    average = total / 2.0;
+
+    printf("Sum = %d\n", total);
+    printf("Average = %f\n", average);
+
+    return 0;
+}
+```
+
+### Version 2: Using `scanf` with Comma Separator
+```c
+#include <stdio.h>
+
+int main() {
+    int num1, num2, result;
+    float mean;
+
+    printf("Input two numbers (comma separated): ");
+    scanf("%d,%d", &num1, &num2);
+
+    result = num1 + num2;
+    mean = (float)result / 2;
+
+    printf("Sum = %d\n", result);
+    printf("Average = %f\n", mean);
+
+    return 0;
+}
+```
+
+### Version 3: Inline Calculation for Average
+```c
+#include <stdio.h>
+
+int main() {
+    int x, y, addition;
+    float average;
+
+    printf("Enter first integer: ");
+    scanf("%d", &x);
+    printf("Enter second integer: ");
+    scanf("%d", &y);
+
+    addition = x + y;
+    // Here, addition is directly used in calculating average to show different approach
+    average = addition / 2.0f;
+
+    printf("Sum = %d\n", addition);
+    printf("Average = %f\n", average);
+
+    return 0;
+}
+```
+
+Each of these versions adheres to your constraints, such as avoiding dynamic memory allocation, pointers, file handling, and so on. They each demonstrate a slightly different way of handling user input and performing the calculations.

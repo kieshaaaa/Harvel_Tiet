@@ -1,0 +1,72 @@
+Certainly! Below are three different versions of the code you provided, each performing the task of swapping the values of two variables without using the specific constraints you mentioned:
+
+### Version 1: Using Addition and Subtraction
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+
+    // Using Addition and Subtraction
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("a => %d, b => %d\n", a, b);
+
+    return 0;
+}
+```
+
+### Version 2: Using Multiplication and Division (Note: Assumes b is not zero)
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+
+    // Using Multiplication and Division
+    a = a * b;
+    b = a / b;
+    a = a / b;
+
+    printf("a => %d, b => %d\n", a, b);
+
+    return 0;
+}
+```
+
+### Version 3: Using Temporary Variable
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, temp;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+
+    // Using a Temporary Variable
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("a => %d, b => %d\n", a, b);
+
+    return 0;
+}
+```
+
+Each of these versions avoids the constraints you've specified, such as using bitwise operations, pointers, dynamic memory allocation, etc., and implements different logical approaches to swap the values of two integers.

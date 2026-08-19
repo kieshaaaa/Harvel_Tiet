@@ -1,0 +1,63 @@
+Certainly! Below are three alternative versions of the provided C program, adhering to your guidelines.
+
+### Version 1: Slightly Modified Variable Names and Calculation Method
+```c
+#include <stdio.h>
+
+int main() {
+    float edge, area;
+    
+    printf("Enter the side length of the cube: ");
+    scanf("%f", &edge);
+    
+    area = edge * edge;
+    area = area * 6;
+    
+    printf("Surface area of the cube: ");
+    printf("%.2f\n", area);
+    
+    return 0;
+}
+```
+
+### Version 2: Inline Calculation with a Different Approach
+```c
+#include <stdio.h>
+
+int main() {
+    float length;
+    
+    printf("Enter the side length of the cube: ");
+    scanf("%f", &length);
+    
+    float sa = 6;
+    sa *= length * length;
+    
+    printf("Surface area of the cube: ");
+    printf("%.2f\n", sa);
+    
+    return 0;
+}
+```
+
+### Version 3: Introducing Temporary Variable for Calculation
+```c
+#include <stdio.h>
+
+int main() {
+    float dimension, result;
+    
+    printf("Enter the side length of the cube: ");
+    scanf("%f", &dimension);
+    
+    float temp = dimension * dimension;
+    result = temp * 6;
+    
+    printf("Surface area of the cube: ");
+    printf("%.2f\n", result);
+    
+    return 0;
+}
+```
+
+Each version adheres to your constraints, such as not adding functions, avoiding dynamic memory allocation, and keeping the data type consistent with the requirement to use `float`.

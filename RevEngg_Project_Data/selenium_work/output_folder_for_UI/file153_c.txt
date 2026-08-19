@@ -1,0 +1,46 @@
+Given your constraints, here are three variations of the C program to convert Fahrenheit to Celsius, adhering to your guidelines:
+
+### Version 1: Inline Calculation in the Assignment
+```c
+#include <stdio.h>
+
+int main() {
+    float cel, fah;
+    printf("\nEnter value in Fahrenheit: ");
+    scanf("%f", &fah);
+    cel = (fah - 32) * 5 / 9;
+    printf("\nFahrenheit: %f = Celsius: %.4f\n", fah, cel);
+    return 0;
+}
+```
+
+### Version 2: Use of a Temporary Variable for Conversion
+```c
+#include <stdio.h>
+
+int main() {
+    float cel, fah, conversionFactor;
+    printf("\nEnter value in Fahrenheit: ");
+    scanf("%f", &fah);
+    conversionFactor = 5.0 / 9.0;
+    cel = (fah - 32) * conversionFactor;
+    printf("\nFahrenheit: %f = Celsius: %.4f\n", fah, cel);
+    return 0;
+}
+```
+
+### Version 3: Directly Using Literals in Calculation
+```c
+#include <stdio.h>
+
+int main() {
+    float cel, fah;
+    printf("\nEnter value in Fahrenheit: ");
+    scanf("%f", &fah);
+    cel = (fah - 32) / 1.8; // 1.8 is the direct result of 9/5
+    printf("\nFahrenheit: %f = Celsius: %.4f\n", fah, cel);
+    return 0;
+}
+```
+
+Each version adheres to the restrictions you've provided: avoiding dynamic memory allocation, avoiding the use of pointers, recursion, file handling, and modifications of data types or usage of types other than `float` for the conversion. They offer slight variations in how the conversion formula is applied or represented in the code.

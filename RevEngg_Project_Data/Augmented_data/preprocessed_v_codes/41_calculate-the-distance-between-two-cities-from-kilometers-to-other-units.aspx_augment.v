@@ -1,0 +1,458 @@
+module entry_point (
+ ap_clk,
+ ap_rst,
+ ap_start,
+ ap_done,
+ ap_idle,
+ ap_ready,
+ kilometers,
+ temptemp1,
+ temptemp1_ap_vld,
+ temptemp2,
+ temptemp2_ap_vld,
+ temptemp3,
+ temptemp3_ap_vld,
+ temptemp4,
+ temptemp4_ap_vld,
+ ap_return
+);
+parameter ap_ST_fsm_state1 = 7'd1;
+parameter ap_ST_fsm_state2 = 7'd2;
+parameter ap_ST_fsm_state3 = 7'd4;
+parameter ap_ST_fsm_state4 = 7'd8;
+parameter ap_ST_fsm_state5 = 7'd16;
+parameter ap_ST_fsm_state6 = 7'd32;
+parameter ap_ST_fsm_state7 = 7'd64;
+input ap_clk;
+input ap_rst;
+input ap_start;
+output ap_done;
+output ap_idle;
+output ap_ready;
+input [31:0] kilometers;
+output [31:0] temptemp1;
+output temptemp1_ap_vld;
+output [31:0] temptemp2;
+output temptemp2_ap_vld;
+output [31:0] temptemp3;
+output temptemp3_ap_vld;
+output [31:0] temptemp4;
+output temptemp4_ap_vld;
+output [31:0] ap_return;
+reg ap_done;
+reg ap_idle;
+reg ap_ready;
+reg temptemp1_ap_vld;
+reg temptemp2_ap_vld;
+reg temptemp3_ap_vld;
+reg temptemp4_ap_vld;
+(* fsm_encoding = "none" *) reg [6:0] ap_CS_fsm;
+wire ap_CS_fsm_state1;
+wire [63:0] grp_fu_106_p1;
+reg [63:0] conv1_reg_237;
+wire ap_CS_fsm_state2;
+wire [63:0] grp_fu_96_p2;
+reg [63:0] mul2_reg_243;
+wire ap_CS_fsm_state6;
+wire [63:0] grp_fu_101_p2;
+reg [63:0] mul5_reg_248;
+wire ap_CS_fsm_state7;
+wire [31:0] grp_fu_84_p0;
+wire [31:0] grp_fu_87_p0;
+wire ap_CS_fsm_state3;
+wire [31:0] shl_ln10_fu_110_p2;
+wire [31:0] shl_ln10_1_fu_116_p2;
+wire [31:0] sub_ln10_fu_122_p2;
+wire [31:0] shl_ln10_2_fu_128_p2;
+wire [31:0] shl_ln13_fu_141_p2;
+wire [31:0] shl_ln13_1_fu_147_p2;
+wire [31:0] sub_ln13_fu_153_p2;
+wire [31:0] shl_ln13_2_fu_159_p2;
+wire [31:0] add_ln13_fu_165_p2;
+wire [31:0] shl_ln13_3_fu_171_p2;
+wire [31:0] sub_ln13_1_fu_177_p2;
+wire [31:0] shl_ln13_4_fu_183_p2;
+wire [31:0] add_ln13_1_fu_189_p2;
+wire [31:0] grp_fu_84_p1;
+wire [31:0] grp_fu_87_p1;
+wire [31:0] feet_fu_90_p1;
+wire [31:0] inches_fu_93_p1;
+reg [6:0] ap_NS_fsm;
+reg ap_ST_fsm_state1_blk;
+wire ap_ST_fsm_state2_blk;
+wire ap_ST_fsm_state3_blk;
+wire ap_ST_fsm_state4_blk;
+wire ap_ST_fsm_state5_blk;
+wire ap_ST_fsm_state6_blk;
+wire ap_ST_fsm_state7_blk;
+wire ap_ce_reg;
+initial begin
+#0 ap_CS_fsm = 7'd1;
+end
+entry_point_sitofp_32ns_32_2_no_dsp_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 2 ),
+ .din0_WIDTH( 32 ),
+ .dout_WIDTH( 32 ))
+sitofp_32ns_32_2_no_dsp_1_U1(
+ .clk(ap_clk),
+ .reset(ap_rst),
+ .din0(grp_fu_84_p0),
+ .ce(1'b1),
+ .dout(grp_fu_84_p1)
+);
+entry_point_sitofp_32ns_32_2_no_dsp_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 2 ),
+ .din0_WIDTH( 32 ),
+ .dout_WIDTH( 32 ))
+sitofp_32ns_32_2_no_dsp_1_U2(
+ .clk(ap_clk),
+ .reset(ap_rst),
+ .din0(grp_fu_87_p0),
+ .ce(1'b1),
+ .dout(grp_fu_87_p1)
+);
+entry_point_fptrunc_64ns_32_1_no_dsp_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 1 ),
+ .din0_WIDTH( 64 ),
+ .dout_WIDTH( 32 ))
+fptrunc_64ns_32_1_no_dsp_1_U3(
+ .din0(mul2_reg_243),
+ .dout(feet_fu_90_p1)
+);
+entry_point_fptrunc_64ns_32_1_no_dsp_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 1 ),
+ .din0_WIDTH( 64 ),
+ .dout_WIDTH( 32 ))
+fptrunc_64ns_32_1_no_dsp_1_U4(
+ .din0(mul5_reg_248),
+ .dout(inches_fu_93_p1)
+);
+entry_point_dmul_64ns_64ns_64_4_max_dsp_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 4 ),
+ .din0_WIDTH( 64 ),
+ .din1_WIDTH( 64 ),
+ .dout_WIDTH( 64 ))
+dmul_64ns_64ns_64_4_max_dsp_1_U5(
+ .clk(ap_clk),
+ .reset(ap_rst),
+ .din0(conv1_reg_237),
+ .din1(64'd4659433058531467592),
+ .ce(1'b1),
+ .dout(grp_fu_96_p2)
+);
+entry_point_dmul_64ns_64ns_64_4_max_dsp_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 4 ),
+ .din0_WIDTH( 64 ),
+ .din1_WIDTH( 64 ),
+ .dout_WIDTH( 64 ))
+dmul_64ns_64ns_64_4_max_dsp_1_U6(
+ .clk(ap_clk),
+ .reset(ap_rst),
+ .din0(conv1_reg_237),
+ .din1(64'd4675643798925292339),
+ .ce(1'b1),
+ .dout(grp_fu_101_p2)
+);
+entry_point_sitodp_32ns_64_2_no_dsp_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 2 ),
+ .din0_WIDTH( 32 ),
+ .dout_WIDTH( 64 ))
+sitodp_32ns_64_2_no_dsp_1_U7(
+ .clk(ap_clk),
+ .reset(ap_rst),
+ .din0(kilometers),
+ .ce(1'b1),
+ .dout(grp_fu_106_p1)
+);
+always @ (posedge ap_clk) begin
+ if (ap_rst == 1'b1) begin
+ ap_CS_fsm <= ap_ST_fsm_state1;
+ end else begin
+ ap_CS_fsm <= ap_NS_fsm;
+ end
+end
+always @ (posedge ap_clk) begin
+ if ((1'b1 == ap_CS_fsm_state2)) begin
+ conv1_reg_237 <= grp_fu_106_p1;
+ end
+end
+always @ (posedge ap_clk) begin
+ if ((1'b1 == ap_CS_fsm_state6)) begin
+ mul2_reg_243 <= grp_fu_96_p2;
+ mul5_reg_248 <= grp_fu_101_p2;
+ end
+end
+always @ (*) begin
+ if ((ap_start == 1'b0)) begin
+ ap_ST_fsm_state1_blk = 1'b1;
+ end else begin
+ ap_ST_fsm_state1_blk = 1'b0;
+ end
+end
+assign ap_ST_fsm_state2_blk = 1'b0;
+assign ap_ST_fsm_state3_blk = 1'b0;
+assign ap_ST_fsm_state4_blk = 1'b0;
+assign ap_ST_fsm_state5_blk = 1'b0;
+assign ap_ST_fsm_state6_blk = 1'b0;
+assign ap_ST_fsm_state7_blk = 1'b0;
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state7)) begin
+ ap_done = 1'b1;
+ end else begin
+ ap_done = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0))) begin
+ ap_idle = 1'b1;
+ end else begin
+ ap_idle = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state7)) begin
+ ap_ready = 1'b1;
+ end else begin
+ ap_ready = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state2)) begin
+ temptemp1_ap_vld = 1'b1;
+ end else begin
+ temptemp1_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state7)) begin
+ temptemp2_ap_vld = 1'b1;
+ end else begin
+ temptemp2_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state7)) begin
+ temptemp3_ap_vld = 1'b1;
+ end else begin
+ temptemp3_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state2)) begin
+ temptemp4_ap_vld = 1'b1;
+ end else begin
+ temptemp4_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ case (ap_CS_fsm)
+ ap_ST_fsm_state1 : begin
+ if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
+ ap_NS_fsm = ap_ST_fsm_state2;
+ end else begin
+ ap_NS_fsm = ap_ST_fsm_state1;
+ end
+ end
+ ap_ST_fsm_state2 : begin
+ ap_NS_fsm = ap_ST_fsm_state3;
+ end
+ ap_ST_fsm_state3 : begin
+ ap_NS_fsm = ap_ST_fsm_state4;
+ end
+ ap_ST_fsm_state4 : begin
+ ap_NS_fsm = ap_ST_fsm_state5;
+ end
+ ap_ST_fsm_state5 : begin
+ ap_NS_fsm = ap_ST_fsm_state6;
+ end
+ ap_ST_fsm_state6 : begin
+ ap_NS_fsm = ap_ST_fsm_state7;
+ end
+ ap_ST_fsm_state7 : begin
+ ap_NS_fsm = ap_ST_fsm_state1;
+ end
+ default : begin
+ ap_NS_fsm = 'bx;
+ end
+ endcase
+end
+assign add_ln13_1_fu_189_p2 = (sub_ln13_1_fu_177_p2 + shl_ln13_4_fu_183_p2);
+assign add_ln13_fu_165_p2 = (sub_ln13_fu_153_p2 + shl_ln13_2_fu_159_p2);
+assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
+assign ap_CS_fsm_state6 = ap_CS_fsm[32'd5];
+assign ap_CS_fsm_state7 = ap_CS_fsm[32'd6];
+assign ap_return = 32'd0;
+assign grp_fu_84_p0 = (sub_ln10_fu_122_p2 + shl_ln10_2_fu_128_p2);
+assign grp_fu_87_p0 = (add_ln13_1_fu_189_p2 + shl_ln10_1_fu_116_p2);
+assign shl_ln10_1_fu_116_p2 = kilometers << 32'd5;
+assign shl_ln10_2_fu_128_p2 = kilometers << 32'd3;
+assign shl_ln10_fu_110_p2 = kilometers << 32'd10;
+assign shl_ln13_1_fu_147_p2 = kilometers << 32'd15;
+assign shl_ln13_2_fu_159_p2 = kilometers << 32'd11;
+assign shl_ln13_3_fu_171_p2 = kilometers << 32'd9;
+assign shl_ln13_4_fu_183_p2 = kilometers << 32'd7;
+assign shl_ln13_fu_141_p2 = kilometers << 32'd17;
+assign sub_ln10_fu_122_p2 = (shl_ln10_fu_110_p2 - shl_ln10_1_fu_116_p2);
+assign sub_ln13_1_fu_177_p2 = (add_ln13_fu_165_p2 - shl_ln13_3_fu_171_p2);
+assign sub_ln13_fu_153_p2 = (shl_ln13_fu_141_p2 - shl_ln13_1_fu_147_p2);
+assign temptemp1 = grp_fu_84_p1;
+assign temptemp2 = feet_fu_90_p1;
+assign temptemp3 = inches_fu_93_p1;
+assign temptemp4 = grp_fu_87_p1;
+endmodule
+module entry_point_dmul_64ns_64ns_64_4_max_dsp_1
+#(parameter
+ ID = 1,
+ NUM_STAGE = 3,
+ din0_WIDTH = 32,
+ din1_WIDTH = 32,
+ dout_WIDTH = 32
+)(
+ input wire clk,
+ input wire reset,
+ input wire ce,
+ input wire [din0_WIDTH-1:0] din0,
+ input wire [din1_WIDTH-1:0] din1,
+ output wire [dout_WIDTH-1:0] dout
+);
+wire aclk;
+wire aclken;
+wire a_tvalid;
+wire [din0_WIDTH-1:0] a_tdata;
+wire b_tvalid;
+wire [din1_WIDTH-1:0] b_tdata;
+wire r_tvalid;
+wire [dout_WIDTH-1:0] r_tdata;
+reg [din0_WIDTH-1:0] din0_buf1;
+reg [din1_WIDTH-1:0] din1_buf1;
+reg ce_r;
+wire [dout_WIDTH-1:0] dout_i;
+reg [dout_WIDTH-1:0] dout_r;
+                                                                                                                                                                                                                                                                                                                                          assign aclk = clk;
+assign aclken = ce_r;
+assign a_tvalid = 1'b1;
+assign a_tdata = din0_buf1;
+assign b_tvalid = 1'b1;
+assign b_tdata = din1_buf1;
+assign dout_i = r_tdata;
+always @(posedge clk) begin
+ if (ce) begin
+ din0_buf1 <= din0;
+ din1_buf1 <= din1;
+ end
+end
+always @ (posedge clk) begin
+ ce_r <= ce;
+end
+always @ (posedge clk) begin
+ if (ce_r) begin
+ dout_r <= dout_i;
+ end
+end
+assign dout = ce_r?dout_i:dout_r;
+endmodule
+module entry_point_fptrunc_64ns_32_1_no_dsp_1
+#(parameter
+ ID = 1,
+ NUM_STAGE = 1,
+ din0_WIDTH = 32,
+ dout_WIDTH = 32
+)(
+ input wire [din0_WIDTH-1:0] din0,
+ output wire [dout_WIDTH-1:0] dout
+);
+wire a_tvalid;
+wire [din0_WIDTH-1:0] a_tdata;
+wire r_tvalid;
+wire [dout_WIDTH:0] r_tdata;
+                                                                                                                                                                                                                                assign a_tvalid = 1'b1;
+assign a_tdata = din0;
+assign dout = r_tdata;
+endmodule
+module entry_point_sitodp_32ns_64_2_no_dsp_1
+#(parameter
+ ID = 1,
+ NUM_STAGE = 2,
+ din0_WIDTH = 32,
+ dout_WIDTH = 32
+)(
+ input wire clk,
+ input wire reset,
+ input wire ce,
+ input wire [din0_WIDTH-1:0] din0,
+ output wire [dout_WIDTH-1:0] dout
+);
+wire a_tvalid;
+wire [din0_WIDTH-1:0] a_tdata;
+wire r_tvalid;
+wire [dout_WIDTH-1:0] r_tdata;
+reg [din0_WIDTH-1:0] din0_buf1;
+reg ce_r;
+wire [dout_WIDTH-1:0] dout_i;
+reg [dout_WIDTH-1:0] dout_r;
+                                                                                                                                                                                                                              assign a_tvalid = 1'b1;
+assign a_tdata = din0_buf1;
+assign dout_i = r_tdata;
+always @(posedge clk) begin
+ if (ce) begin
+ din0_buf1 <= din0;
+ end
+end
+always @ (posedge clk) begin
+ ce_r <= ce;
+end
+always @ (posedge clk) begin
+ if (ce_r) begin
+ dout_r <= dout_i;
+ end
+end
+assign dout = ce_r?dout_i:dout_r;
+endmodule
+module entry_point_sitofp_32ns_32_2_no_dsp_1
+#(parameter
+ ID = 1,
+ NUM_STAGE = 2,
+ din0_WIDTH = 32,
+ dout_WIDTH = 32
+)(
+ input wire clk,
+ input wire reset,
+ input wire ce,
+ input wire [din0_WIDTH-1:0] din0,
+ output wire [dout_WIDTH-1:0] dout
+);
+wire a_tvalid;
+wire [din0_WIDTH-1:0] a_tdata;
+wire r_tvalid;
+wire [dout_WIDTH-1:0] r_tdata;
+reg [din0_WIDTH-1:0] din0_buf1;
+reg ce_r;
+wire [dout_WIDTH-1:0] dout_i;
+reg [dout_WIDTH-1:0] dout_r;
+                                                                                                                                                                                                                              assign a_tvalid = 1'b1;
+assign a_tdata = din0_buf1;
+assign dout_i = r_tdata;
+always @(posedge clk) begin
+ if (ce) begin
+ din0_buf1 <= din0;
+ end
+end
+always @ (posedge clk) begin
+ ce_r <= ce;
+end
+always @ (posedge clk) begin
+ if (ce_r) begin
+ dout_r <= dout_i;
+ end
+end
+assign dout = ce_r?dout_i:dout_r;
+endmodule

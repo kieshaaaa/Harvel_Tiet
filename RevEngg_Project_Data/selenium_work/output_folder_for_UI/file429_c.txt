@@ -1,0 +1,81 @@
+### Version 1: Explicit Variable Type in Print Statements
+
+```c
+#include <stdio.h>
+
+int main() {
+    char a = 'B';
+    int b = 345;
+    float c = 456.78f;
+    float d = 2345.67f; // Replacing double with float
+    char str[] = "World";
+
+    int size_a = sizeof(a);
+    int size_b = sizeof(b);
+    int size_c = sizeof(c);
+    int size_d = sizeof(d);
+    int size_str = sizeof(str);
+
+    printf("\nSize of char a: %d", size_a);
+    printf("\nSize of int b: %d", size_b);
+    printf("\nSize of float c: %d", size_c);
+    printf("\nSize of float d (replacing double): %d", size_d);
+    printf("\nSize of char array str: %d", size_str);
+
+    return 0;
+}
+```
+
+### Version 2: Using a Single Print Statement
+
+```c
+#include <stdio.h>
+
+int main() {
+    char x = 'C';
+    int y = 678;
+    float z = 789.01f;
+    float q = 4567.89f; // Replacing double with float
+    char greeting[] = "Hello, C!";
+
+    int size_x = sizeof(x);
+    int size_y = sizeof(y);
+    int size_z = sizeof(z);
+    int size_q = sizeof(q);
+    int size_greeting = sizeof(greeting);
+
+    printf("\nSizes -> char: %d, int: %d, float: %d, float (replacing double): %d, char array: %d", size_x, size_y, size_z, size_q, size_greeting);
+
+    return 0;
+}
+```
+
+### Version 3: Separate Variables for Sizes, No Direct Usage of Types in Print
+
+```c
+#include <stdio.h>
+
+int main() {
+    char letter = 'D';
+    int number = 912;
+    float decimal = 1011.12f;
+    float largeDecimal = 5678.91f; // Replacing double with float
+    char phrase[] = "C Programming";
+
+    int sizeOfLetter = sizeof(letter);
+    int sizeOfNumber = sizeof(number);
+    int sizeOfDecimal = sizeof(decimal);
+    int sizeOfLargeDecimal = sizeof(largeDecimal);
+    int sizeOfPhrase = sizeof(phrase);
+
+    printf("\nSize of letter variable: %d", sizeOfLetter);
+    printf("\nSize of number variable: %d", sizeOfNumber);
+    printf("\nSize of decimal variable: %d", sizeOfDecimal);
+    printf("\nSize of large decimal variable: %d", sizeOfLargeDecimal);
+    printf("\nSize of phrase variable: %d", sizeOfPhrase);
+
+    return 0;
+}
+```
+
+Each version adheres to your guidelines, presenting the sizes of different variable types in unique formats and syntax approaches, ensuring the avoidance of the specified features and operations.

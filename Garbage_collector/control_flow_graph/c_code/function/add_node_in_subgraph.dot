@@ -1,0 +1,14 @@
+import pygraphviz as pgv
+
+# Load your existing graph (replace this with your actual graph loading code)
+graph = pgv.AGraph("your_graph.dot")
+
+# Iterate through the subgraphs
+for subgraph in graph.subgraphs():
+    if subgraph.name.startswith("fn"):
+        subgraph_label = subgraph.graph_attr['label']
+        new_node_name = subgraph.name + "subnode{i}
+        new_node = subgraph.add_node(new_node_name, label=subgraph_label)
+
+# Save the modified graph with new nodes added to the subgraphs
+graph.write("modified_graph.dot")

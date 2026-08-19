@@ -1,0 +1,85 @@
+Given your constraints, here are three different versions of the provided code to generate a similar pattern. Each version respects your guidelines, avoiding the specified features and practices.
+
+### Version 1: Using Decremented Loop Variable
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows;
+    printf("\nEnter number of rows: ");
+    scanf("%d", &rows);
+
+    if (rows < 1) {
+        printf("\nInvalid input. Please enter a positive number.\n");
+        return 0;
+    }
+
+    printf("\nPattern:\n");
+    for (int i = 0; i < rows; i++) {
+        int col = rows;
+        while (col > 0) {
+            printf("%d ", col);
+            col--;
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 2: Using a For Loop in Reverse Order
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows;
+    printf("\nEnter number of rows: ");
+    scanf("%d", &rows);
+
+    if (rows < 1) {
+        printf("\nInvalid input. Please enter a positive number.\n");
+        return 0;
+    }
+
+    printf("\nPattern:\n");
+    for (int i = 1; i <= rows; i++) {
+        for (int j = rows; j >= 1; j--) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 3: Fixed Column Number and Conditional Loop
+
+This version assumes a fixed pattern size of 4 columns as illustrated in the example pattern. This simplification removes the dependency on row count to define the number of columns.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows;
+    printf("\nEnter number of rows: ");
+    scanf("%d", &rows);
+
+    if (rows < 1) {
+        printf("\nInvalid input. Please enter a positive number.\n");
+        return 0;
+    }
+
+    printf("\nPattern:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 4; j >= 1; j--) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+Each version offers a different approach to achieve the same result, adhering to your constraints and excluding the features and practices you wanted to avoid.

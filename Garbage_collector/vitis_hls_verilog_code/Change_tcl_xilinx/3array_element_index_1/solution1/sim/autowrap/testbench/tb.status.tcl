@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/virubuntu/Change_tcl_xilinx/3array_element_index_1/solution1/./sim/autowrap/testbench/array.c_pre.c.tb.c

@@ -1,0 +1,84 @@
+Certainly! I'll provide three different versions of the given C program to print the specified pattern, adhering to your instructions.
+
+### Version 1: Simplified Condition Check
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the size of the pattern: ");
+    scanf("%d", &n);
+    if (n < 1) {
+        printf("Invalid input. Please enter a positive number.");
+        return 0;
+    }
+    n = n % 2 == 0 ? n + 1 : n; // Ensure n is odd
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            if (i == n / 2 + 1 || j == n / 2 + 1) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 2: Using Ternary Operator for Printing
+
+```c
+#include <stdio.h>
+
+int main() {
+    int size;
+    printf("Enter the pattern size: ");
+    scanf("%d", &size);
+    if (size <= 0) {
+        printf("Please enter a positive number.");
+        return 0;
+    }
+    size = size % 2 == 0 ? size + 1 : size;
+    for (int row = 1; row <= size; row++) {
+        for (int col = 1; col <= size; col++) {
+            char toPrint = (col == size / 2 + 1 || row == size / 2 + 1) ? '*' : ' ';
+            printf("%c", toPrint);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+### Version 3: Iterating with Different Loop Variables
+
+```c
+#include <stdio.h>
+
+int main() {
+    int length;
+    printf("Input the length of the pattern: ");
+    scanf("%d", &length);
+    if (length < 1) {
+        printf("Invalid number, please input a positive integer.");
+        return 0;
+    }
+    length = (length % 2 == 0) ? length + 1 : length; // Adjusting to make sure it's odd
+    for (int x = 0; x < length; x++) {
+        for (int y = 0; y < length; y++) {
+            if (x == length / 2 || y == length / 2) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+Each version adjusts the pattern size to be odd, checks for valid input, and varies slightly in its approach to meeting your constraints and requirements.

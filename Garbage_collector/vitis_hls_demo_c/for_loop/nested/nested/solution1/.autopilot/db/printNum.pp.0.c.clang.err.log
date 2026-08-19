@@ -1,0 +1,4 @@
+/home/coss01/vitis_hls_demo_c/for_loop/nested/for_nested2/solution1/csynth.tcl:14:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=printNumbers_XLX_SEP_ PragmaOptions=name=printNumbers_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=printNumbers
+        ^
+1 warning generated.

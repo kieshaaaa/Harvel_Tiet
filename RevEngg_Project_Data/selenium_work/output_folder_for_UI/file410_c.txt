@@ -1,0 +1,65 @@
+Certainly, I'll generate three different versions of the program without using pointers, recursion, dynamic memory allocation, structs, unions, modifying existing data types, or performing operations inside `printf` statements, and by replacing `double` data types with `float` wherever applicable.
+
+### Version 1: Basic Variable Manipulation
+This version simply uses variables and modifies them directly.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a = 100;
+    printf("Value of a: %d", a);
+    
+    a = 200;
+    printf("\nAfter Changing, Value of a: %d", a);
+    
+    return 0;
+}
+```
+
+### Version 2: Using Arrays
+This version uses an array to mimic the storage and change of values, representing an alternative way to handle data storage.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[1];
+    arr[0] = 100; // Assign 100 to the first element
+    
+    printf("Value of arr[0]: %d", arr[0]);
+    
+    arr[0] = 200; // Change the value of the first element
+    printf("\nAfter Changing, Value of arr[0]: %d", arr[0]);
+    
+    return 0;
+}
+```
+
+### Version 3: Using Function Parameters
+This version, although restricted from creating additional functions or using recursion, will demonstrate how a value can be modified through a simulated process by breaking the program's logic into steps within the main function itself. Remember, the requirement was to avoid creating extra functions, dynamic allocations, and so forth, so this will be a straightforward procedural approach without actually calling another function.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int step = 1;
+    int value = 100;
+    
+    // Simulating Step 1: Display initial value
+    if (step == 1) {
+        printf("Value at Step 1: %d", value);
+        step++;  // Move to next step
+    }
+    
+    // Simulating Step 2: Modify value
+    if (step == 2) {
+        value = 200; // Modify value
+        printf("\nValue at Step 2: %d", value);
+    }
+    
+    return 0;
+}
+```
+
+Each version adheres to the constraints you've mentioned, providing different methodologies to handle and modify variable values without the use of pointers or other restricted features.

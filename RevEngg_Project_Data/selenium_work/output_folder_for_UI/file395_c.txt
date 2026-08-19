@@ -1,0 +1,80 @@
+Certainly! Below are three different versions of the provided C program, each designed to print the same numerical pattern. Each version adheres to the constraints you've specified.
+
+### Version 1: Simplified Control Flow
+
+This version simplifies the control flow by directly using the loop variable for printing values, without an extra variable for columns in the current row.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows;
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+    
+    if (rows < 1) {
+        printf("Please enter a positive number.");
+        return 0;
+    }
+    
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+```
+
+### Version 2: Reverse Order Printing
+
+This version prints the numbers in each row in reverse order. It demonstrates a different pattern logic while still respecting your constraints.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows;
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+    
+    if (rows < 1) {
+        printf("Please enter a positive number.");
+        return 0;
+    }
+    
+    for (int i = 1; i <= rows; i++) {
+        for (int j = i; j >= 1; j--) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+```
+
+### Version 3: Using a Fixed Number of Rows
+
+This version does not prompt the user for the number of rows; instead, it uses a fixed number of rows to print the pattern. This approach simplifies the code further and avoids any user input errors.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows = 5; // Fixed number of rows
+    
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+```
+
+Each version adheres to the specified constraints and demonstrates a unique approach to printing a similar pattern.

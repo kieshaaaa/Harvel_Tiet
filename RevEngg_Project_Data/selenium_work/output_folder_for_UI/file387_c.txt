@@ -1,0 +1,79 @@
+### Version 1: Using Bitwise Shift Right
+
+In this version, instead of shifting the mask left, we'll shift the number right, and check the least significant bit.
+
+```c
+#include <stdio.h>
+
+void getBinaryV1(int n) {
+    int bit;
+    for (int i = 15; i >= 0; --i) {
+        bit = (n >> i) & 1;
+        if (bit == 1)
+            printf("1");
+        else
+            printf("0");
+    }
+}
+
+int main() {
+    int num;
+    printf("Enter an integer number :");
+    scanf("%d", &num);
+    printf("\nBinary value of %d is =", num);
+    getBinaryV1(num);
+    return 0;
+}
+```
+
+### Version 2: Using Array to Store Binary Digits
+
+This version converts the number into binary and stores it in an array before printing it in reverse order.
+
+```c
+#include <stdio.h>
+
+void getBinaryV2(int n) {
+    int binary[16], i = 0;
+    for (; i < 16; ++i) {
+        binary[i] = (n >> i) & 1;
+    }
+    for (i = 15; i >= 0; --i) {
+        printf("%d", binary[i]);
+    }
+}
+
+int main() {
+    int num;
+    printf("Enter an integer number :");
+    scanf("%d", &num);
+    printf("\nBinary value of %d is =", num);
+    getBinaryV2(num);
+    return 0;
+}
+```
+
+### Version 3: Using Conditional Operator
+
+In this version, we use the conditional operator to decide whether to print '1' or '0', thus eliminating explicit `if-else` statements.
+
+```c
+#include <stdio.h>
+
+void getBinaryV3(int n) {
+    for (int i = 15; i >= 0; --i) {
+        printf("%c", ((n >> i) & 1) ? '1' : '0');
+    }
+}
+
+int main() {
+    int num;
+    printf("Enter an integer number :");
+    scanf("%d", &num);
+    printf("\nBinary value of %d is =", num);
+    getBinaryV3(num);
+    return 0;
+}
+```
+
+Each version provides a unique approach to solving the problem within the specified constraints.

@@ -1,0 +1,553 @@
+
+
+================================================================
+== Vitis HLS Report for 'processArray'
+================================================================
+* Date:           Thu Jul 27 14:02:14 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        multiple_operator
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu11p-flga2577-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.238 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       35|       35|  0.350 us|  0.350 us|   36|   36|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 36
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.43>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%arr_10_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr_10" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 37 'read' 'arr_10_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%arr_11_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr_11" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 38 'read' 'arr_11_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [36/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 39 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%arr2_5_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr2_5" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 40 'read' 'arr2_5_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%arr2_6_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr2_6" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 41 'read' 'arr2_6_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [36/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 42 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 1.43>
+ST_2 : Operation 43 [35/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 43 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 44 [35/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 44 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 1.43>
+ST_3 : Operation 45 [34/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 45 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 46 [34/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 46 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 1.43>
+ST_4 : Operation 47 [33/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 47 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 48 [33/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 48 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 1.43>
+ST_5 : Operation 49 [32/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 49 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 50 [32/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 50 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 1.43>
+ST_6 : Operation 51 [31/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 51 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 52 [31/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 52 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 1.43>
+ST_7 : Operation 53 [30/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 53 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 54 [30/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 54 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 1.43>
+ST_8 : Operation 55 [29/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 55 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 56 [29/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 56 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 1.43>
+ST_9 : Operation 57 [28/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 57 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 58 [28/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 58 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 1.43>
+ST_10 : Operation 59 [27/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 59 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 60 [27/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 60 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 1.43>
+ST_11 : Operation 61 [26/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 61 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 62 [26/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 62 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 1.43>
+ST_12 : Operation 63 [25/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 63 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 64 [25/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 64 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 1.43>
+ST_13 : Operation 65 [24/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 65 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 66 [24/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 66 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 1.43>
+ST_14 : Operation 67 [23/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 67 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 68 [23/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 68 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 1.43>
+ST_15 : Operation 69 [22/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 69 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 70 [22/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 70 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 1.43>
+ST_16 : Operation 71 [21/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 71 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 72 [21/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 72 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 1.43>
+ST_17 : Operation 73 [20/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 73 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 74 [20/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 74 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 1.43>
+ST_18 : Operation 75 [19/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 75 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 76 [19/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 76 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 1.43>
+ST_19 : Operation 77 [18/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 77 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 78 [18/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 78 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 1.43>
+ST_20 : Operation 79 [17/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 79 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 80 [17/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 80 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 1.43>
+ST_21 : Operation 81 [16/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 81 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 82 [16/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 82 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 1.43>
+ST_22 : Operation 83 [15/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 83 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 84 [15/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 84 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 1.43>
+ST_23 : Operation 85 [14/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 85 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 86 [14/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 86 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 1.43>
+ST_24 : Operation 87 [13/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 87 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 88 [13/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 88 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 1.43>
+ST_25 : Operation 89 [12/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 89 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 90 [12/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 90 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 1.43>
+ST_26 : Operation 91 [11/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 91 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 92 [11/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 92 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 1.43>
+ST_27 : Operation 93 [10/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 93 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 94 [10/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 94 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 1.43>
+ST_28 : Operation 95 [9/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 95 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 96 [9/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 96 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 1.43>
+ST_29 : Operation 97 [8/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 97 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 98 [8/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 98 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 29> <Delay = 1.43>
+ST_30 : Operation 99 [7/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 99 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 100 [7/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 100 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 30> <Delay = 1.43>
+ST_31 : Operation 101 [6/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 101 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 102 [6/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 102 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 1.43>
+ST_32 : Operation 103 [5/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 103 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 104 [5/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 104 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 32> <Delay = 1.43>
+ST_33 : Operation 105 [4/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 105 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 106 [4/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 106 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 33> <Delay = 1.43>
+ST_34 : Operation 107 [3/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 107 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 108 [3/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 108 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 34> <Delay = 3.90>
+ST_35 : Operation 109 [2/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 109 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 110 [1/1] (0.00ns)   --->   "%arr2_1_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr2_1" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 110 'read' 'arr2_1_read' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 111 [1/1] (0.00ns)   --->   "%arr2_3_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr2_3" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 111 'read' 'arr2_3_read' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 112 [1/1] (3.90ns)   --->   "%mul_ln16 = mul i32 %arr2_1_read, i32 %arr2_3_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 112 'mul' 'mul_ln16' <Predicate = true> <Delay = 3.90> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 3.90> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 113 [2/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 113 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 35> <Delay = 6.23>
+ST_36 : Operation 114 [1/1] (0.00ns)   --->   "%spectopmodule_ln6 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [../Array_main/Array/multiple_operator/array.c:6]   --->   Operation 114 'spectopmodule' 'spectopmodule_ln6' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 115 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_0"   --->   Operation 115 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 116 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_0, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 116 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 117 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_1"   --->   Operation 117 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 118 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_1, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 118 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 119 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_2"   --->   Operation 119 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 120 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_2, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 120 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 121 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_3"   --->   Operation 121 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 122 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_3, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 122 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 123 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_4"   --->   Operation 123 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 124 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_4, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 124 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 125 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_5"   --->   Operation 125 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 126 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_5, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 126 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 127 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_6"   --->   Operation 127 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 128 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_6, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 128 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 129 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_7"   --->   Operation 129 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 130 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_7, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 130 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 131 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_8"   --->   Operation 131 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 132 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_8, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 132 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 133 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_9"   --->   Operation 133 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 134 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_9, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 134 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 135 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_10"   --->   Operation 135 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 136 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_10, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 136 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 137 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr_11"   --->   Operation 137 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 138 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr_11, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 138 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 139 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr2_0"   --->   Operation 139 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 140 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr2_0, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 140 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 141 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr2_1"   --->   Operation 141 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 142 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr2_1, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 142 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 143 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr2_2"   --->   Operation 143 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 144 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr2_2, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 144 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 145 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr2_3"   --->   Operation 145 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 146 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr2_3, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 146 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 147 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr2_4"   --->   Operation 147 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 148 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr2_4, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 148 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 149 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr2_5"   --->   Operation 149 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 150 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr2_5, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 150 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 151 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr2_6"   --->   Operation 151 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 152 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr2_6, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 152 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 153 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr2_7"   --->   Operation 153 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 154 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr2_7, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 154 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 155 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr2_8"   --->   Operation 155 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 156 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr2_8, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 156 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 157 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr2_9"   --->   Operation 157 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 158 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr2_9, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 158 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 159 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr3_0"   --->   Operation 159 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 160 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr3_0, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 160 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 161 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr3_1"   --->   Operation 161 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 162 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr3_1, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 162 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 163 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr3_2"   --->   Operation 163 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 164 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr3_2, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 164 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 165 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr3_3"   --->   Operation 165 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 166 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr3_3, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 166 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 167 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr3_4"   --->   Operation 167 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 168 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr3_4, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 168 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 169 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr3_5"   --->   Operation 169 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 170 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr3_5, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 170 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 171 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr3_6"   --->   Operation 171 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 172 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr3_6, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 172 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 173 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr3_7"   --->   Operation 173 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 174 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr3_7, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 174 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 175 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr3_8"   --->   Operation 175 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 176 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr3_8, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 176 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 177 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %arr3_9"   --->   Operation 177 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 178 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %arr3_9, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 178 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 179 [1/1] (0.00ns)   --->   "%arr_1_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr_1" [../Array_main/Array/multiple_operator/array.c:10]   --->   Operation 179 'read' 'arr_1_read' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 180 [1/1] (0.00ns)   --->   "%arr_2_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr_2" [../Array_main/Array/multiple_operator/array.c:10]   --->   Operation 180 'read' 'arr_2_read' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 181 [1/1] (1.14ns)   --->   "%add_ln10 = add i32 %arr_2_read, i32 %arr_1_read" [../Array_main/Array/multiple_operator/array.c:10]   --->   Operation 181 'add' 'add_ln10' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 182 [1/1] (0.00ns)   --->   "%write_ln10 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %arr_0, i32 %add_ln10" [../Array_main/Array/multiple_operator/array.c:10]   --->   Operation 182 'write' 'write_ln10' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 183 [1/1] (0.00ns)   --->   "%arr_4_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr_4" [../Array_main/Array/multiple_operator/array.c:11]   --->   Operation 183 'read' 'arr_4_read' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 184 [1/1] (0.00ns)   --->   "%arr_5_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr_5" [../Array_main/Array/multiple_operator/array.c:11]   --->   Operation 184 'read' 'arr_5_read' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 185 [1/1] (1.14ns)   --->   "%sub_ln11 = sub i32 %arr_4_read, i32 %arr_5_read" [../Array_main/Array/multiple_operator/array.c:11]   --->   Operation 185 'sub' 'sub_ln11' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 186 [1/1] (0.00ns)   --->   "%write_ln11 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %arr_3, i32 %sub_ln11" [../Array_main/Array/multiple_operator/array.c:11]   --->   Operation 186 'write' 'write_ln11' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 187 [1/1] (0.00ns)   --->   "%arr_7_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr_7" [../Array_main/Array/multiple_operator/array.c:12]   --->   Operation 187 'read' 'arr_7_read' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 188 [1/1] (0.00ns)   --->   "%arr_8_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr_8" [../Array_main/Array/multiple_operator/array.c:12]   --->   Operation 188 'read' 'arr_8_read' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 189 [1/1] (3.90ns)   --->   "%mul_ln12 = mul i32 %arr_8_read, i32 %arr_7_read" [../Array_main/Array/multiple_operator/array.c:12]   --->   Operation 189 'mul' 'mul_ln12' <Predicate = true> <Delay = 3.90> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 3.90> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 190 [1/1] (0.00ns)   --->   "%write_ln12 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %arr_6, i32 %mul_ln12" [../Array_main/Array/multiple_operator/array.c:12]   --->   Operation 190 'write' 'write_ln12' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 191 [1/36] (1.43ns)   --->   "%sdiv_ln13 = sdiv i32 %arr_10_read, i32 %arr_11_read" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 191 'sdiv' 'sdiv_ln13' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 192 [1/1] (0.00ns)   --->   "%write_ln13 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %arr_9, i32 %sdiv_ln13" [../Array_main/Array/multiple_operator/array.c:13]   --->   Operation 192 'write' 'write_ln13' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 193 [1/1] (0.00ns)   --->   "%arr2_2_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr2_2" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 193 'read' 'arr2_2_read' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 194 [1/1] (3.90ns)   --->   "%mul_ln16_1 = mul i32 %mul_ln16, i32 %arr2_2_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 194 'mul' 'mul_ln16_1' <Predicate = true> <Delay = 3.90> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 3.90> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 195 [1/1] (0.00ns)   --->   "%arr2_4_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %arr2_4" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 195 'read' 'arr2_4_read' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 196 [1/36] (1.43ns)   --->   "%sdiv_ln16 = sdiv i32 %arr2_5_read, i32 %arr2_6_read" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 196 'sdiv' 'sdiv_ln16' <Predicate = true> <Delay = 1.43> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 1.43> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 197 [1/1] (3.90ns)   --->   "%mul_ln16_2 = mul i32 %arr_7_read, i32 %sdiv_ln16" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 197 'mul' 'mul_ln16_2' <Predicate = true> <Delay = 3.90> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 3.90> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 198 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln16 = add i32 %arr2_4_read, i32 %mul_ln16_1" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 198 'add' 'add_ln16' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.45> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_36 : Operation 199 [1/1] (0.90ns) (root node of TernaryAdder)   --->   "%sub_ln16 = sub i32 %add_ln16, i32 %mul_ln16_2" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 199 'sub' 'sub_ln16' <Predicate = true> <Delay = 0.90> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.45> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_36 : Operation 200 [1/1] (0.00ns)   --->   "%write_ln16 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %arr2_0, i32 %sub_ln16" [../Array_main/Array/multiple_operator/array.c:16]   --->   Operation 200 'write' 'write_ln16' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 201 [1/1] (0.00ns)   --->   "%ret_ln18 = ret" [../Array_main/Array/multiple_operator/array.c:18]   --->   Operation 201 'ret' 'ret_ln18' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.43ns
+The critical path consists of the following:
+	wire read operation ('arr_10_read', ../Array_main/Array/multiple_operator/array.c:13) on port 'arr_10' (../Array_main/Array/multiple_operator/array.c:13) [110]  (0 ns)
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 2>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 3>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 4>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 5>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 6>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 7>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 8>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 9>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 10>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 11>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 12>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 13>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 14>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 15>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 16>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 17>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 18>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 19>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 20>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 21>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 22>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 23>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 24>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 25>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 26>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 27>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 28>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 29>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 30>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 31>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 32>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 33>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 34>: 1.43ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln13', ../Array_main/Array/multiple_operator/array.c:13) [112]  (1.43 ns)
+
+ <State 35>: 3.9ns
+The critical path consists of the following:
+	wire read operation ('arr2_1_read', ../Array_main/Array/multiple_operator/array.c:16) on port 'arr2_1' (../Array_main/Array/multiple_operator/array.c:16) [114]  (0 ns)
+	'mul' operation ('mul_ln16', ../Array_main/Array/multiple_operator/array.c:16) [117]  (3.9 ns)
+
+ <State 36>: 6.24ns
+The critical path consists of the following:
+	'sdiv' operation ('sdiv_ln16', ../Array_main/Array/multiple_operator/array.c:16) [122]  (1.43 ns)
+	'mul' operation ('mul_ln16_2', ../Array_main/Array/multiple_operator/array.c:16) [123]  (3.9 ns)
+	'sub' operation ('sub_ln16', ../Array_main/Array/multiple_operator/array.c:16) [125]  (0.907 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

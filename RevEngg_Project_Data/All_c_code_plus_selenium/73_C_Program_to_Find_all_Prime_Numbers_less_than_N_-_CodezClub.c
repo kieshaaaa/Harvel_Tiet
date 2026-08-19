@@ -1,0 +1,29 @@
+/* Source: https://www.codezclub.com/c-find-prime-numbers-below-given-number/ */
+/* C Program to Find all Prime Numbers less than N  */
+
+#include<stdio.h>
+
+int main()
+{
+    int i, prime, lim_up, n;
+
+    printf("\nEnter Limit(N) upto which u want :: ");
+    scanf("%d", &lim_up);
+    printf("\nPRIME NUMBERS less than [ %d ] are :: \n\n",lim_up);
+
+    for(n=1; n<lim_up; n++)
+    {
+        prime = 1;
+        for(i=2; i<n; i++)
+            if(n%i == 0)
+            {
+                prime = 0;
+                break;
+            }
+        if(prime)
+            printf(" %d ",n);
+    }
+
+    printf("\n");
+    return 0;
+}

@@ -1,0 +1,109 @@
+Certainly! I'll provide three different versions of the program to find the largest and smallest of three numbers, adhering to your constraints.
+
+### Version 1: Using `else` branches more explicitly
+```c
+#include<stdio.h>
+
+int main() {
+    int n1, n2, n3, largest, smallest;
+
+    printf("ENTER FIRST NUMBER A :: ");
+    scanf("%d", &n1);
+    printf("\nENTER SECOND NUMBER B :: ");
+    scanf("%d", &n2);
+    printf("\nENTER THIRD NUMBER C :: ");
+    scanf("%d", &n3);
+
+    if (n1 >= n2) {
+        if (n1 >= n3) {
+            largest = n1;
+        } else {
+            largest = n3;
+        }
+    } else {
+        if (n2 >= n3) {
+            largest = n2;
+        } else {
+            largest = n3;
+        }
+    }
+
+    if (n1 <= n2) {
+        if (n1 <= n3) {
+            smallest = n1;
+        } else {
+            smallest = n3;
+        }
+    } else {
+        if (n2 <= n3) {
+            smallest = n2;
+        } else {
+            smallest = n3;
+        }
+    }
+
+    printf("\nTHE BIGGEST NUMBER IS :: %d", largest);
+    printf("\n\nTHE SMALLEST NUMBER IS :: %d", smallest);
+
+    return 0;
+}
+```
+
+### Version 2: Using temporary variables for comparison
+```c
+#include<stdio.h>
+
+int main() {
+    int a, b, c, big, small;
+
+    printf("ENTER FIRST NUMBER A :: ");
+    scanf("%d", &a);
+    printf("\nENTER SECOND NUMBER B :: ");
+    scanf("%d", &b);
+    printf("\nENTER THIRD NUMBER C :: ");
+    scanf("%d", &c);
+
+    big = a;
+    if (b > big) big = b;
+    if (c > big) big = c;
+
+    small = a;
+    if (b < small) small = b;
+    if (c < small) small = c;
+
+    printf("\nTHE BIGGEST NUMBER IS :: %d", big);
+    printf("\n\nTHE SMALLEST NUMBER IS :: %d", small);
+
+    return 0;
+}
+```
+
+### Version 3: Simplifying logic by initializing with first input
+```c
+#include<stdio.h>
+
+int main() {
+    int x, y, z, max, min;
+
+    printf("ENTER FIRST NUMBER A :: ");
+    scanf("%d", &x);
+    max = min = x; // Initializing both max and min with the first number
+
+    printf("\nENTER SECOND NUMBER B :: ");
+    scanf("%d", &y);
+    if (y > max) max = y;
+    if (y < min) min = y;
+
+    printf("\nENTER THIRD NUMBER C :: ");
+    scanf("%d", &z);
+    if (z > max) max = z;
+    if (z < min) min = z;
+
+    printf("\nTHE BIGGEST NUMBER IS :: %d", max);
+    printf("\n\nTHE SMALLEST NUMBER IS :: %d", min);
+
+    return 0;
+}
+```
+
+Each of these versions adheres to the constraints you provided, avoiding specific features and focusing on simple control structures for the comparisons.

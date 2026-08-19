@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="gcd1" solutionName="solution1" date="2023-05-24T12:26:30.137+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'gcd' (loop 'VITIS_LOOP_5_1'): Unable to enforce a carried dependence constraint (II = 34, distance = 1, offset = 0) between 'store' operation ('temp_write_ln5', gcd.c:5) of variable 'b', gcd.c:7 on local variable 'a' and 'load' operation ('b', gcd.c:7) on local variable 'a'.&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html" projectName="gcd1" solutionName="solution1" date="2023-05-24T12:26:29.738+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'gcd' (loop 'VITIS_LOOP_5_1'): Unable to enforce a carried dependence constraint (II = 33, distance = 1, offset = 0) between 'store' operation ('temp_write_ln5', gcd.c:5) of variable 'b', gcd.c:7 on local variable 'a' and 'load' operation ('b', gcd.c:7) on local variable 'a'.&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html" projectName="gcd1" solutionName="solution1" date="2023-05-24T12:26:29.578+0530" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

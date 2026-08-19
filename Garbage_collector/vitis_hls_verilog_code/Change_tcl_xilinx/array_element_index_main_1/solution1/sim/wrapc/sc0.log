@@ -1,0 +1,24 @@
+   Build using "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/bin/g++"
+   Compiling apatb_processArray.cpp
+   Compiling (apcc) array.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'virubuntu' on host 'virubuntu.myguest.virtualbox.org' (Linux_x86_64 version 5.19.0-50-generic) on Thu Jul 27 11:02:13 IST 2023
+INFO: [HLS 200-10] On os Ubuntu 22.04.2 LTS
+INFO: [HLS 200-10] In directory '/home/virubuntu/Change_tcl_xilinx/array_element_index_main_1/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_virubuntu/1234851690435933533072
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 2.07 seconds. Total CPU system time: 0.2 seconds. Total elapsed time: 2.37 seconds; peak allocated memory: 98.957 MB.
+   Compiling (apcc) main.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'virubuntu' on host 'virubuntu.myguest.virtualbox.org' (Linux_x86_64 version 5.19.0-50-generic) on Thu Jul 27 11:02:17 IST 2023
+INFO: [HLS 200-10] On os Ubuntu 22.04.2 LTS
+INFO: [HLS 200-10] In directory '/home/virubuntu/Change_tcl_xilinx/array_element_index_main_1/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_virubuntu/1235421690435937086581
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 2.14 seconds. Total CPU system time: 0.15 seconds. Total elapsed time: 2.15 seconds; peak allocated memory: 98.957 MB.
+   Compiling apatb_processArray_ir.ll
+   Generating cosim.tv.exe

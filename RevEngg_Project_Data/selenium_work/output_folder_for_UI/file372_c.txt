@@ -1,0 +1,81 @@
+### Version 1: Using `while` loop instead of `for` loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    char i = 'A';
+
+    printf("Capital (upper) case characters:\n");
+    while (i <= 'Z') {
+        printf("%c ", i);
+        i++;
+    }
+
+    printf("\n\nLower case characters:\n");
+    i = 'a';
+    while (i <= 'z') {
+        printf("%c ", i);
+        i++;
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Breaking it into two different loops as functions
+
+```c
+#include <stdio.h>
+
+void printUpperCase() {
+    char ch = 'A';
+    printf("Capital (upper) case characters:\n");
+    while (ch <= 'Z') {
+        printf("%c ", ch);
+        ch++;
+    }
+    printf("\n");
+}
+
+void printLowerCase() {
+    char ch = 'a';
+    printf("Lower case characters:\n");
+    while (ch <= 'z') {
+        printf("%c ", ch);
+        ch++;
+    }
+    printf("\n");
+}
+
+int main() {
+    printUpperCase();
+    printf("\n");
+    printLowerCase();
+    return 0;
+}
+```
+
+### Version 3: Using ASCII values directly in the loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i;
+
+    printf("Capital (upper) case characters:\n");
+    for(i = 65; i <= 90; i++) {
+        printf("%c ", i);
+    }
+
+    printf("\n\nLower case characters:\n");
+    for(i = 97; i <= 122; i++) {
+        printf("%c ", i);
+    }
+     
+    return 0;
+}
+```
+
+Each of these versions demonstrates a different approach to achieve the same output as your original program, adhering to the constraints you specified.

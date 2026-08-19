@@ -1,0 +1,72 @@
+Certainly! Below are three different versions of the provided code that swap the values of two variables without using the restrictions you mentioned:
+
+### Version 1: Using Addition and Subtraction
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+
+    // Swapping using addition and subtraction
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("a => %d, b => %d\n", a, b);
+
+    return 0;
+}
+```
+
+### Version 2: Using XOR Bitwise Operation
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+
+    // Swapping using XOR
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+
+    printf("a => %d, b => %d\n", a, b);
+
+    return 0;
+}
+```
+
+### Version 3: Using Temporary Variable
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, temp;
+    printf("\nEnter value of a => ");
+    scanf("%d", &a);
+    printf("\nEnter value of b => ");
+    scanf("%d", &b);
+
+    // Swapping using a temporary variable
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("a => %d, b => %d\n", a, b);
+
+    return 0;
+}
+```
+
+Each of these versions swaps the values of `a` and `b` using different techniques: arithmetic operations, bitwise XOR, and a temporary variable, respectively. These methods are compliant with the constraints you've provided.

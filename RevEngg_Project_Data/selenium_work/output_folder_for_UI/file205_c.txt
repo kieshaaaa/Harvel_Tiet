@@ -1,0 +1,80 @@
+Certainly, here are three alternative versions of your program that calculate the surface area of a cuboid, following your guidelines:
+
+### Version 1: Using separate variables for each area
+
+```c
+#include <stdio.h>
+
+int main() {
+    float length, width, height;
+    float area1, area2, area3, surfaceArea;
+
+    printf("Enter the length of the cuboid: ");
+    scanf("%f", &length);
+
+    printf("Enter the width of the cuboid: ");
+    scanf("%f", &width);
+
+    printf("Enter the height of the cuboid: ");
+    scanf("%f", &height);
+
+    area1 = length * width;
+    area2 = width * height;
+    area3 = height * length;
+
+    surfaceArea = 2 * (area1 + area2 + area3);
+
+    printf("Surface Area of the cuboid: %.2f\n", surfaceArea);
+
+    return 0;
+}
+```
+
+### Version 2: Sequential calculation without intermediate variables for area
+
+```c
+#include <stdio.h>
+
+int main() {
+    float length, width, height, surfaceArea;
+
+    printf("Enter the length of the cuboid: ");
+    scanf("%f", &length);
+
+    printf("Enter the width of the cuboid: ");
+    scanf("%f", &width);
+
+    printf("Enter the height of the cuboid: ");
+    scanf("%f", &height);
+
+    surfaceArea = length * width;
+    surfaceArea += width * height;
+    surfaceArea += height * length;
+    surfaceArea *= 2;
+
+    printf("Surface Area of the cuboid: %.2f\n", surfaceArea);
+
+    return 0;
+}
+```
+
+### Version 3: Compact input and calculation
+
+```c
+#include <stdio.h>
+
+int main() {
+    float length, width, height, surfaceArea;
+
+    printf("Enter length, width, and height of the cuboid: ");
+    scanf("%f %f %f", &length, &width, &height);
+
+    surfaceArea = 2 * ((length * width) + (width * height) + (height * length));
+
+    printf("Surface Area of the cuboid: %.2f\n", surfaceArea);
+
+    return 0;
+}
+```
+
+Each version avoids the constraints you've mentioned, providing a slightly different approach to reading input and calculating the surface area of the cuboid.

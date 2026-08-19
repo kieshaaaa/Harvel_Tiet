@@ -1,0 +1,197 @@
+module entry_point (
+ ap_clk,
+ ap_rst,
+ ap_start,
+ ap_done,
+ ap_idle,
+ ap_ready,
+ N,
+ temptemp1,
+ temptemp1_ap_vld,
+ ap_return
+);
+parameter ap_ST_fsm_state1 = 2'd1;
+parameter ap_ST_fsm_state2 = 2'd2;
+input ap_clk;
+input ap_rst;
+input ap_start;
+output ap_done;
+output ap_idle;
+output ap_ready;
+input [31:0] N;
+output [63:0] temptemp1;
+output temptemp1_ap_vld;
+output [31:0] ap_return;
+reg ap_done;
+reg ap_idle;
+reg ap_ready;
+reg temptemp1_ap_vld;
+(* fsm_encoding = "none" *) reg [1:0] ap_CS_fsm;
+wire ap_CS_fsm_state1;
+wire signed [31:0] mul_ln6_1_fu_77_p2;
+reg signed [31:0] mul_ln6_1_reg_159;
+reg [0:0] tmp_reg_164;
+wire ap_CS_fsm_state2;
+wire signed [31:0] add_ln6_fu_53_p0;
+wire signed [31:0] shl_ln6_fu_59_p0;
+wire [31:0] shl_ln6_fu_59_p2;
+wire signed [31:0] mul_ln6_fu_71_p0;
+wire signed [31:0] mul_ln6_fu_71_p1;
+wire signed [31:0] mul_ln6_fu_71_p2;
+wire [33:0] mul_ln6_2_fu_94_p1;
+wire [64:0] mul_ln6_2_fu_94_p2;
+wire [64:0] sub_ln6_fu_100_p2;
+wire signed [29:0] tmp_3_fu_116_p4;
+wire [29:0] tmp_1_fu_106_p4;
+wire [29:0] select_ln6_1_fu_130_p3;
+wire signed [31:0] sext_ln6_3_fu_137_p1;
+wire [31:0] sub_ln6_1_fu_141_p2;
+wire signed [31:0] sext_ln6_2_fu_126_p1;
+wire [31:0] sum_fu_147_p3;
+reg [1:0] ap_NS_fsm;
+reg ap_ST_fsm_state1_blk;
+wire ap_ST_fsm_state2_blk;
+wire ap_ce_reg;
+initial begin
+#0 ap_CS_fsm = 2'd1;
+end
+entry_point_mul_32s_32s_32_1_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 1 ),
+ .din0_WIDTH( 32 ),
+ .din1_WIDTH( 32 ),
+ .dout_WIDTH( 32 ))
+mul_32s_32s_32_1_1_U1(
+ .din0(mul_ln6_fu_71_p0),
+ .din1(mul_ln6_fu_71_p1),
+ .dout(mul_ln6_fu_71_p2)
+);
+entry_point_mul_32s_32s_32_1_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 1 ),
+ .din0_WIDTH( 32 ),
+ .din1_WIDTH( 32 ),
+ .dout_WIDTH( 32 ))
+mul_32s_32s_32_1_1_U2(
+ .din0(mul_ln6_fu_71_p2),
+ .din1(N),
+ .dout(mul_ln6_1_fu_77_p2)
+);
+entry_point_mul_32s_34ns_65_1_1 #(
+ .ID( 1 ),
+ .NUM_STAGE( 1 ),
+ .din0_WIDTH( 32 ),
+ .din1_WIDTH( 34 ),
+ .dout_WIDTH( 65 ))
+mul_32s_34ns_65_1_1_U3(
+ .din0(mul_ln6_1_reg_159),
+ .din1(mul_ln6_2_fu_94_p1),
+ .dout(mul_ln6_2_fu_94_p2)
+);
+always @ (posedge ap_clk) begin
+ if (ap_rst == 1'b1) begin
+ ap_CS_fsm <= ap_ST_fsm_state1;
+ end else begin
+ ap_CS_fsm <= ap_NS_fsm;
+ end
+end
+always @ (posedge ap_clk) begin
+ if ((1'b1 == ap_CS_fsm_state1)) begin
+ mul_ln6_1_reg_159 <= mul_ln6_1_fu_77_p2;
+ tmp_reg_164 <= mul_ln6_1_fu_77_p2[32'd31];
+ end
+end
+always @ (*) begin
+ if ((ap_start == 1'b0)) begin
+ ap_ST_fsm_state1_blk = 1'b1;
+ end else begin
+ ap_ST_fsm_state1_blk = 1'b0;
+ end
+end
+assign ap_ST_fsm_state2_blk = 1'b0;
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state2)) begin
+ ap_done = 1'b1;
+ end else begin
+ ap_done = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
+ ap_idle = 1'b1;
+ end else begin
+ ap_idle = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state2)) begin
+ ap_ready = 1'b1;
+ end else begin
+ ap_ready = 1'b0;
+ end
+end
+always @ (*) begin
+ if ((1'b1 == ap_CS_fsm_state2)) begin
+ temptemp1_ap_vld = 1'b1;
+ end else begin
+ temptemp1_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ case (ap_CS_fsm)
+ ap_ST_fsm_state1 : begin
+ if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+ ap_NS_fsm = ap_ST_fsm_state2;
+ end else begin
+ ap_NS_fsm = ap_ST_fsm_state1;
+ end
+ end
+ ap_ST_fsm_state2 : begin
+ ap_NS_fsm = ap_ST_fsm_state1;
+ end
+ default : begin
+ ap_NS_fsm = 'bx;
+ end
+ endcase
+end
+assign add_ln6_fu_53_p0 = N;
+assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+assign ap_return = 32'd0;
+assign mul_ln6_2_fu_94_p1 = 65'd5726623062;
+assign mul_ln6_fu_71_p0 = ($signed(add_ln6_fu_53_p0) + $signed(32'd1));
+assign mul_ln6_fu_71_p1 = (shl_ln6_fu_59_p2 | 32'd1);
+assign select_ln6_1_fu_130_p3 = ((tmp_reg_164[0:0] == 1'b1) ? tmp_1_fu_106_p4 : tmp_3_fu_116_p4);
+assign sext_ln6_2_fu_126_p1 = tmp_3_fu_116_p4;
+assign sext_ln6_3_fu_137_p1 = $signed(select_ln6_1_fu_130_p3);
+assign shl_ln6_fu_59_p0 = N;
+assign shl_ln6_fu_59_p2 = shl_ln6_fu_59_p0 << 32'd1;
+assign sub_ln6_1_fu_141_p2 = ($signed(32'd0) - $signed(sext_ln6_3_fu_137_p1));
+assign sub_ln6_fu_100_p2 = (65'd0 - mul_ln6_2_fu_94_p2);
+assign sum_fu_147_p3 = ((tmp_reg_164[0:0] == 1'b1) ? sub_ln6_1_fu_141_p2 : sext_ln6_2_fu_126_p1);
+assign temptemp1 = $signed(sum_fu_147_p3);
+assign tmp_1_fu_106_p4 = {{sub_ln6_fu_100_p2[64:35]}};
+assign tmp_3_fu_116_p4 = {{mul_ln6_2_fu_94_p2[64:35]}};
+endmodule
+module entry_point_mul_32s_32s_32_1_1(din0, din1, dout);
+parameter ID = 1;
+parameter NUM_STAGE = 0;
+parameter din0_WIDTH = 14;
+parameter din1_WIDTH = 12;
+parameter dout_WIDTH = 26;
+input [din0_WIDTH - 1 : 0] din0; 
+input [din1_WIDTH - 1 : 0] din1; 
+output [dout_WIDTH - 1 : 0] dout;
+assign dout = $signed(din0) * $signed(din1);
+endmodule
+module entry_point_mul_32s_34ns_65_1_1(din0, din1, dout);
+parameter ID = 1;
+parameter NUM_STAGE = 0;
+parameter din0_WIDTH = 14;
+parameter din1_WIDTH = 12;
+parameter dout_WIDTH = 26;
+input [din0_WIDTH - 1 : 0] din0; 
+input [din1_WIDTH - 1 : 0] din1; 
+output [dout_WIDTH - 1 : 0] dout;
+assign dout = $signed(din0) * $signed({1'b0, din1});
+endmodule

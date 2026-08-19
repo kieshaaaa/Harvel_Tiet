@@ -1,0 +1,72 @@
+Certainly! Below are three different versions of the code you provided, following your guidelines. Each version accomplishes the task in a slightly different way while adhering to the constraints you've outlined.
+
+### Version 1: Direct Calculation
+```c
+#include <stdio.h>
+#define PI 3.14159265358979323846
+
+int main() {
+    float R, r, volume;
+    
+    printf("Enter the major radius (R) of the torus: ");
+    scanf("%f", &R);
+    printf("Enter the minor radius (r) of the torus: ");
+    scanf("%f", &r);
+
+    volume = (PI * PI) * (R * r * r) * 2;
+    
+    printf("Volume of the torus: ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+### Version 2: Separated Calculations
+```c
+#include <stdio.h>
+#define PI 3.14159265358979323846
+
+int main() {
+    float R, r, volume, piSquared;
+    
+    printf("Enter the major radius (R) of the torus: ");
+    scanf("%f", &R);
+    printf("Enter the minor radius (r) of the torus: ");
+    scanf("%f", &r);
+
+    piSquared = PI * PI;
+    volume = piSquared * 2 * R * r * r;
+    
+    printf("Volume of the torus: ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+### Version 3: Reordered Operations
+```c
+#include <stdio.h>
+#define PI 3.14159265358979323846
+
+int main() {
+    float R, r, volume, doublePi, squareR;
+    
+    printf("Enter the major radius (R) of the torus: ");
+    scanf("%f", &R);
+    printf("Enter the minor radius (r) of the torus: ");
+    scanf("%f", &r);
+
+    doublePi = 2 * PI;
+    squareR = r * r;
+    volume = doublePi * PI * R * squareR;
+    
+    printf("Volume of the torus: ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+Each version manipulates the formula or the order of operations to provide a unique approach while maintaining the original functionality.

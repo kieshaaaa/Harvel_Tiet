@@ -1,0 +1,1043 @@
+INFO-FLOW: Workspace /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3 opened at Thu May 25 16:44:09 IST 2023
+Execute     ap_set_clock -name default -period 5 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+Execute     ap_set_clock -name default -uncertainty 0.5 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.5ns.
+Execute     set_part xcvu5p-flva2104-1-e 
+Execute       create_platform xcvu5p-flva2104-1-e -board  
+DBG:HLSDevice: Trying to load device library: /root/Downloads/Vitis_HLS/2022.2/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /root/Downloads/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xcvu5p-flva2104-1-e'
+Command       create_platform done; 0.85 sec.
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.12 sec.
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.15 sec.
+Execute       ap_part_info -name xcvu5p-flva2104-1-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.03 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vitis 
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Execute     send_msg_by_id INFO @200-1464@%s config_interface -default_interface=kernel 
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+Execute     config_interface -default_interface=kernel 
+Execute     send_msg_by_id INFO @200-1464@%s config_interface -m_axi_alignment_byte_size=64 
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+Execute     config_interface -m_axi_alignment_byte_size=64 
+Execute     send_msg_by_id INFO @200-1464@%s config_interface -m_axi_latency=64 
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+Execute     config_interface -m_axi_latency=64 
+Execute     send_msg_by_id INFO @200-1464@%s config_interface -m_axi_max_widen_bitwidth=512 
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+Execute     config_interface -m_axi_max_widen_bitwidth=512 
+Execute     send_msg_by_id INFO @200-1464@%s config_rtl -register_reset_num=3 
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+Execute     config_rtl -register_reset_num=3 
+Command   open_solution done; 1.22 sec.
+Execute   set_part xcvu5p-flva2104-1-e 
+INFO: [HLS 200-1510] Running: set_part xcvu5p-flva2104-1-e 
+Execute     create_platform xcvu5p-flva2104-1-e -board  
+Execute     source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command       ap_source done; 0.12 sec.
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.15 sec.
+Execute     ap_part_info -name xcvu5p-flva2104-1-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.17 sec.
+Execute   create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+Execute   config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
+Execute   config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+Execute   set_clock_uncertainty 0.5 
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 0.5 
+Execute   source ./matrix_mul/solution3/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./matrix_mul/solution3/directives.tcl
+Execute     set_directive_top -name multiplyMatrix multiplyMatrix 
+INFO: [HLS 200-1510] Running: set_directive_top -name multiplyMatrix multiplyMatrix 
+Execute     set_directive_unroll multiplyMatrix/multiplyMatrix_label0 
+INFO: [HLS 200-1510] Running: set_directive_unroll multiplyMatrix/multiplyMatrix_label0 
+Execute     set_directive_unroll multiplyMatrix/multiplyMatrix_label1 
+INFO: [HLS 200-1510] Running: set_directive_unroll multiplyMatrix/multiplyMatrix_label1 
+Execute   csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 10.08 seconds; current allocated memory: 302.559 MB.
+INFO: [HLS 200-10] Analyzing design file 'mat_mul.c' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling mat_mul.c as C
+Execute       ap_part_info -name xcvu5p-flva2104-1-e -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang mat_mul.c -foptimization-record-file=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /root/Downloads/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /root/Downloads/Vitis_HLS/2022.2/common/technology/autopilot -I /root/Downloads/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -I /usr/include/x86_64-linux-gnu -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c -hls-platform-db-name=/root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_slow -device-resource-info=BRAM_2048.000000_DSP_3474.000000_FF_1201154.000000_LUT_600577.000000_SLICE_98520.000000_SLR_2.000000_URAM_470.000000 -device-name-info=xcvu5p-flva2104-1-e > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.c.clang.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.c.clang.err.log 
+Command       ap_eval done; 2.16 sec.
+INFO-FLOW: Done: GCC PP 39 time: 2.2 seconds per iteration
+Execute       set_directive_top multiplyMatrix -name=multiplyMatrix 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+INFO-FLOW: Source syntax check for synthesis
+Execute       ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c -hls-platform-db-name=/root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_slow -device-resource-info=BRAM_2048.000000_DSP_3474.000000_FF_1201154.000000_LUT_600577.000000_SLICE_98520.000000_SLR_2.000000_URAM_470.000000 -device-name-info=xcvu5p-flva2104-1-e > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/clang.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/clang.err.log 
+Command       ap_eval done; 0.68 sec.
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c std=gnu99 -target fpga  -directive=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/.systemc_flag -fix-errors /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 1.2 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c std=gnu99 -target fpga  -directive=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/all.directive.json -fix-errors /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Execute       clang_tidy xilinx-remove-assert -desc remove-assert /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: exec /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c std=gnu99 -target fpga  
+Execute         ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c.clang-tidy.loop-label.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c.clang-tidy.loop-label.err.log 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute       ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c.xilinx-dataflow-lawyer.diag.yml /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c.xilinx-dataflow-lawyer.err.log 
+Command       ap_eval done; 0.8 sec.
+Execute       ap_part_info -name xcvu5p-flva2104-1-e -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /root/Downloads/Vitis_HLS/2022.2/common/technology/autopilot -I /root/Downloads/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.bc -hls-platform-db-name=/root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_slow -device-resource-info=BRAM_2048.000000_DSP_3474.000000_FF_1201154.000000_LUT_600577.000000_SLICE_98520.000000_SLR_2.000000_URAM_470.000000 -device-name-info=xcvu5p-flva2104-1-e > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c.clang.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.pp.0.c.clang.err.log 
+Command       ap_eval done; 0.36 sec.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.43 seconds. CPU system time: 0.43 seconds. Elapsed time: 5.5 seconds; current allocated memory: 302.574 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.0.bc -args  "/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.g.bc"  
+Execute         ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/mat_mul.g.bc -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.0.bc > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log 
+Command         ap_eval done; 0.16 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 0.16 sec.
+Execute       run_link_or_opt -opt -out /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.1.lower.bc -args /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute         ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.1.lower.bc > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
+Command         ap_eval done; 1.68 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 1.68 sec.
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.2.m1.bc -args /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.1.lower.bc -only-needed /root/Downloads/Vitis_HLS/2022.2/lnx64/lib/libhlsm_39.bc /root/Downloads/Vitis_HLS/2022.2/lnx64/lib/libhlsmc++_39.bc 
+Execute         ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.1.lower.bc -only-needed /root/Downloads/Vitis_HLS/2022.2/lnx64/lib/libhlsm_39.bc /root/Downloads/Vitis_HLS/2022.2/lnx64/lib/libhlsmc++_39.bc -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.2.m1.bc > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
+Command         ap_eval done; 4.22 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 4.22 sec.
+Execute       run_link_or_opt -opt -out /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.3.fpc.bc -args /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=multiplyMatrix -reflow-float-conversion 
+Execute         ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=multiplyMatrix -reflow-float-conversion -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.3.fpc.bc > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
+Command         ap_eval done; 1.05 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 1.05 sec.
+Execute       run_link_or_opt -out /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.4.m2.bc -args /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /root/Downloads/Vitis_HLS/2022.2/lnx64/lib/libfloatconversion_39.bc 
+Execute         ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /root/Downloads/Vitis_HLS/2022.2/lnx64/lib/libfloatconversion_39.bc -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.4.m2.bc > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
+Command         ap_eval done; 0.12 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 0.12 sec.
+Execute       run_link_or_opt -opt -out /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.5.gdce.bc -args /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=multiplyMatrix 
+Execute         ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=multiplyMatrix -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.5.gdce.bc > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log 
+INFO-FLOW: 
+Execute       send_msg_by_id INFO @200-777@%s Vitis 
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+Execute       is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+Execute       ap_eval exec -ignorestderr /root/Downloads/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=multiplyMatrix -mllvm -hls-db-dir -mllvm /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/../../../kernel.xml -mllvm -top-io-mapping-info=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=true -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=64 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=512 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -assume-maxi-align=64 -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-assume-no-address-wrap=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -enable-reflow-vitis-flow-setting=true -mllvm -default-clock-period=5 -x ir /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.5.gdce.bc -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_slow -device-resource-info=BRAM_2048.000000_DSP_3474.000000_FF_1201154.000000_LUT_600577.000000_SLICE_98520.000000_SLR_2.000000_URAM_470.000000 -device-name-info=xcvu5p-flva2104-1-e > /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.ld.0.bc.clang.err.log 
+Command       ap_eval done; 0.96 sec.
+INFO: [HLS 214-186] Unrolling loop 'multiplyMatrix_label1' (mat_mul.c:10:27) in function 'multiplyMatrix' completely with a factor of 3 (mat_mul.c:7:0)
+INFO: [HLS 214-186] Unrolling loop 'multiplyMatrix_label0' (mat_mul.c:11:31) in function 'multiplyMatrix' completely with a factor of 3 (mat_mul.c:7:0)
+WARNING: [HLS 214-368] interface mode 'ap_none' with wrong type '[3 x i32]*' (mat_mul.c:7:0)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: copying raw kernel.xml: /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/../../../kernel.xml -> /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.07 seconds. CPU system time: 0.5 seconds. Elapsed time: 9.1 seconds; current allocated memory: 305.020 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 305.020 MB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top multiplyMatrix -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.0.bc -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 0.83 sec.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.83 seconds; current allocated memory: 305.996 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.1.bc -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.2.prechk.bc -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 306.191 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.g.1.bc to /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.o.1.bc -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' (mat_mul.c:8) in function 'multiplyMatrix' automatically.
+Command         transform done; 0.21 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.o.1.tmp.bc -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.28 seconds; current allocated memory: 329.691 MB.
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.o.2.bc -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+Command         transform done; 0.25 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.2 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.25 seconds; current allocated memory: 408.012 MB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 1.43 sec.
+Command     elaborate done; 16.04 sec.
+Execute     ap_eval exec zip -j /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'multiplyMatrix' ...
+Execute       ap_set_top_model multiplyMatrix 
+Execute       get_model_list multiplyMatrix -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model multiplyMatrix 
+Execute       preproc_iomode -model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+Execute       preproc_iomode -model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+Execute       preproc_iomode -model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+Execute       preproc_iomode -model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+Execute       preproc_iomode -model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+Execute       preproc_iomode -model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+Execute       preproc_iomode -model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+Execute       preproc_iomode -model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+Execute       preproc_iomode -model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+Execute       get_model_list multiplyMatrix -filter all-wo-channel 
+INFO-FLOW: Model list for configure: multiplyMatrix_Pipeline_VITIS_LOOP_13_1 multiplyMatrix_Pipeline_VITIS_LOOP_13_11 multiplyMatrix_Pipeline_VITIS_LOOP_13_12 multiplyMatrix_Pipeline_VITIS_LOOP_13_13 multiplyMatrix_Pipeline_VITIS_LOOP_13_14 multiplyMatrix_Pipeline_VITIS_LOOP_13_15 multiplyMatrix_Pipeline_VITIS_LOOP_13_16 multiplyMatrix_Pipeline_VITIS_LOOP_13_17 multiplyMatrix_Pipeline_VITIS_LOOP_13_18 multiplyMatrix
+INFO-FLOW: Configuring Module : multiplyMatrix_Pipeline_VITIS_LOOP_13_1 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+Execute       apply_spec_resource_limit multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+INFO-FLOW: Configuring Module : multiplyMatrix_Pipeline_VITIS_LOOP_13_11 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+Execute       apply_spec_resource_limit multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+INFO-FLOW: Configuring Module : multiplyMatrix_Pipeline_VITIS_LOOP_13_12 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+Execute       apply_spec_resource_limit multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+INFO-FLOW: Configuring Module : multiplyMatrix_Pipeline_VITIS_LOOP_13_13 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+Execute       apply_spec_resource_limit multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+INFO-FLOW: Configuring Module : multiplyMatrix_Pipeline_VITIS_LOOP_13_14 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+Execute       apply_spec_resource_limit multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+INFO-FLOW: Configuring Module : multiplyMatrix_Pipeline_VITIS_LOOP_13_15 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+Execute       apply_spec_resource_limit multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+INFO-FLOW: Configuring Module : multiplyMatrix_Pipeline_VITIS_LOOP_13_16 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+Execute       apply_spec_resource_limit multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+INFO-FLOW: Configuring Module : multiplyMatrix_Pipeline_VITIS_LOOP_13_17 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+Execute       apply_spec_resource_limit multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+INFO-FLOW: Configuring Module : multiplyMatrix_Pipeline_VITIS_LOOP_13_18 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+Execute       apply_spec_resource_limit multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+INFO-FLOW: Configuring Module : multiplyMatrix ...
+Execute       set_default_model multiplyMatrix 
+Execute       apply_spec_resource_limit multiplyMatrix 
+INFO-FLOW: Model list for preprocess: multiplyMatrix_Pipeline_VITIS_LOOP_13_1 multiplyMatrix_Pipeline_VITIS_LOOP_13_11 multiplyMatrix_Pipeline_VITIS_LOOP_13_12 multiplyMatrix_Pipeline_VITIS_LOOP_13_13 multiplyMatrix_Pipeline_VITIS_LOOP_13_14 multiplyMatrix_Pipeline_VITIS_LOOP_13_15 multiplyMatrix_Pipeline_VITIS_LOOP_13_16 multiplyMatrix_Pipeline_VITIS_LOOP_13_17 multiplyMatrix_Pipeline_VITIS_LOOP_13_18 multiplyMatrix
+INFO-FLOW: Preprocessing Module: multiplyMatrix_Pipeline_VITIS_LOOP_13_1 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+Execute       cdfg_preprocess -model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+INFO-FLOW: Preprocessing Module: multiplyMatrix_Pipeline_VITIS_LOOP_13_11 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+Execute       cdfg_preprocess -model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+INFO-FLOW: Preprocessing Module: multiplyMatrix_Pipeline_VITIS_LOOP_13_12 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+Execute       cdfg_preprocess -model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+INFO-FLOW: Preprocessing Module: multiplyMatrix_Pipeline_VITIS_LOOP_13_13 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+Execute       cdfg_preprocess -model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+INFO-FLOW: Preprocessing Module: multiplyMatrix_Pipeline_VITIS_LOOP_13_14 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+Execute       cdfg_preprocess -model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+INFO-FLOW: Preprocessing Module: multiplyMatrix_Pipeline_VITIS_LOOP_13_15 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+Execute       cdfg_preprocess -model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+INFO-FLOW: Preprocessing Module: multiplyMatrix_Pipeline_VITIS_LOOP_13_16 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+Execute       cdfg_preprocess -model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+INFO-FLOW: Preprocessing Module: multiplyMatrix_Pipeline_VITIS_LOOP_13_17 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+Execute       cdfg_preprocess -model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+INFO-FLOW: Preprocessing Module: multiplyMatrix_Pipeline_VITIS_LOOP_13_18 ...
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+Execute       cdfg_preprocess -model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+INFO-FLOW: Preprocessing Module: multiplyMatrix ...
+Execute       set_default_model multiplyMatrix 
+Execute       cdfg_preprocess -model multiplyMatrix 
+Execute       rtl_gen_preprocess multiplyMatrix 
+INFO-FLOW: Model list for synthesis: multiplyMatrix_Pipeline_VITIS_LOOP_13_1 multiplyMatrix_Pipeline_VITIS_LOOP_13_11 multiplyMatrix_Pipeline_VITIS_LOOP_13_12 multiplyMatrix_Pipeline_VITIS_LOOP_13_13 multiplyMatrix_Pipeline_VITIS_LOOP_13_14 multiplyMatrix_Pipeline_VITIS_LOOP_13_15 multiplyMatrix_Pipeline_VITIS_LOOP_13_16 multiplyMatrix_Pipeline_VITIS_LOOP_13_17 multiplyMatrix_Pipeline_VITIS_LOOP_13_18 multiplyMatrix
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+Execute       schedule -model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_1_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.49 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.28 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.58 seconds; current allocated memory: 409.844 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_1.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.35 sec.
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_1.sched.adb -f 
+INFO-FLOW: Finish scheduling multiplyMatrix_Pipeline_VITIS_LOOP_13_1.
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+Execute       bind -model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.15 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.47 seconds. CPU system time: 0 seconds. Elapsed time: 0.51 seconds; current allocated memory: 409.844 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_1.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_1.bind.adb -f 
+INFO-FLOW: Finish binding multiplyMatrix_Pipeline_VITIS_LOOP_13_1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+Execute       schedule -model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_3_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.21 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.32 seconds. CPU system time: 0 seconds. Elapsed time: 0.32 seconds; current allocated memory: 410.848 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_11.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.24 sec.
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_11.sched.adb -f 
+INFO-FLOW: Finish scheduling multiplyMatrix_Pipeline_VITIS_LOOP_13_11.
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+Execute       bind -model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.14 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.38 seconds. CPU system time: 0 seconds. Elapsed time: 0.39 seconds; current allocated memory: 410.848 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_11.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_11.bind.adb -f 
+INFO-FLOW: Finish binding multiplyMatrix_Pipeline_VITIS_LOOP_13_11.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+Execute       schedule -model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_5_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.27 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.37 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.37 seconds; current allocated memory: 411.820 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_12.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.3 sec.
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_12.sched.adb -f 
+INFO-FLOW: Finish scheduling multiplyMatrix_Pipeline_VITIS_LOOP_13_12.
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+Execute       bind -model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.14 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.44 seconds. CPU system time: 0 seconds. Elapsed time: 0.44 seconds; current allocated memory: 411.820 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_12.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_12.bind.adb -f 
+INFO-FLOW: Finish binding multiplyMatrix_Pipeline_VITIS_LOOP_13_12.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+Execute       schedule -model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_7_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.2 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.29 seconds. CPU system time: 0 seconds. Elapsed time: 0.3 seconds; current allocated memory: 412.762 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_13.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.4 sec.
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_13.sched.adb -f 
+INFO-FLOW: Finish scheduling multiplyMatrix_Pipeline_VITIS_LOOP_13_13.
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+Execute       bind -model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.15 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.54 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.55 seconds; current allocated memory: 412.762 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_13.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_13.bind.adb -f 
+INFO-FLOW: Finish binding multiplyMatrix_Pipeline_VITIS_LOOP_13_13.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+Execute       schedule -model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_9_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.26 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.36 seconds. CPU system time: 0 seconds. Elapsed time: 0.37 seconds; current allocated memory: 413.773 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_14.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.24 sec.
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_14.sched.adb -f 
+INFO-FLOW: Finish scheduling multiplyMatrix_Pipeline_VITIS_LOOP_13_14.
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+Execute       bind -model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.14 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.37 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 413.773 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_14.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_14.bind.adb -f 
+INFO-FLOW: Finish binding multiplyMatrix_Pipeline_VITIS_LOOP_13_14.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+Execute       schedule -model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_11_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.19 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 414.785 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_15.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.24 sec.
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_15.sched.adb -f 
+INFO-FLOW: Finish scheduling multiplyMatrix_Pipeline_VITIS_LOOP_13_15.
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+Execute       bind -model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.14 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.39 seconds. CPU system time: 0 seconds. Elapsed time: 0.39 seconds; current allocated memory: 414.785 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_15.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_15.bind.adb -f 
+INFO-FLOW: Finish binding multiplyMatrix_Pipeline_VITIS_LOOP_13_15.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+Execute       schedule -model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_13_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.22 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.31 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.33 seconds; current allocated memory: 415.688 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_16.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.23 sec.
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_16.sched.adb -f 
+INFO-FLOW: Finish scheduling multiplyMatrix_Pipeline_VITIS_LOOP_13_16.
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+Execute       bind -model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.14 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.38 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 415.688 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_16.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_16.bind.adb -f 
+INFO-FLOW: Finish binding multiplyMatrix_Pipeline_VITIS_LOOP_13_16.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+Execute       schedule -model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_15_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.21 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.32 seconds. CPU system time: 0 seconds. Elapsed time: 0.32 seconds; current allocated memory: 416.695 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_17.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.23 sec.
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_17.sched.adb -f 
+INFO-FLOW: Finish scheduling multiplyMatrix_Pipeline_VITIS_LOOP_13_17.
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+Execute       bind -model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.14 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.37 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 416.695 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_17.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_17.bind.adb -f 
+INFO-FLOW: Finish binding multiplyMatrix_Pipeline_VITIS_LOOP_13_17.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+Execute       schedule -model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_17_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 76, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.23 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.33 seconds. CPU system time: 0 seconds. Elapsed time: 0.33 seconds; current allocated memory: 417.719 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_18.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.23 sec.
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_18.sched.adb -f 
+INFO-FLOW: Finish scheduling multiplyMatrix_Pipeline_VITIS_LOOP_13_18.
+Execute       set_default_model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+Execute       bind -model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.15 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.39 seconds. CPU system time: 0 seconds. Elapsed time: 0.39 seconds; current allocated memory: 417.719 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_18.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_18.bind.adb -f 
+INFO-FLOW: Finish binding multiplyMatrix_Pipeline_VITIS_LOOP_13_18.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model multiplyMatrix 
+Execute       schedule -model multiplyMatrix 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 1.38 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.47 seconds. CPU system time: 0 seconds. Elapsed time: 1.49 seconds; current allocated memory: 420.070 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 2.09 sec.
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.sched.adb -f 
+INFO-FLOW: Finish scheduling multiplyMatrix.
+Execute       set_default_model multiplyMatrix 
+Execute       bind -model multiplyMatrix 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 1.59 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3.68 seconds. CPU system time: 0 seconds. Elapsed time: 3.69 seconds; current allocated memory: 423.855 MB.
+Execute       syn_report -verbosereport -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.78 sec.
+Execute       db_write -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.bind.adb -f 
+INFO-FLOW: Finish binding multiplyMatrix.
+Execute       get_model_list multiplyMatrix -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+Execute       rtl_gen_preprocess multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+Execute       rtl_gen_preprocess multiplyMatrix 
+INFO-FLOW: Model list for RTL generation: multiplyMatrix_Pipeline_VITIS_LOOP_13_1 multiplyMatrix_Pipeline_VITIS_LOOP_13_11 multiplyMatrix_Pipeline_VITIS_LOOP_13_12 multiplyMatrix_Pipeline_VITIS_LOOP_13_13 multiplyMatrix_Pipeline_VITIS_LOOP_13_14 multiplyMatrix_Pipeline_VITIS_LOOP_13_15 multiplyMatrix_Pipeline_VITIS_LOOP_13_16 multiplyMatrix_Pipeline_VITIS_LOOP_13_17 multiplyMatrix_Pipeline_VITIS_LOOP_13_18 multiplyMatrix
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 -top_prefix multiplyMatrix_ -sub_prefix multiplyMatrix_ -mg_file /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_1.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1'.
+Command       create_rtl_model done; 0.15 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.86 seconds. CPU system time: 0 seconds. Elapsed time: 0.96 seconds; current allocated memory: 425.672 MB.
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.rtl_wrap.cfg.tcl 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_1 -style xilinx -f -lang vhdl -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/vhdl/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_1 -style xilinx -f -lang vlog -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/verilog/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+Execute       syn_report -csynth -model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_1_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_1_csynth.xml 
+Execute       syn_report -verbosereport -model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_1.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.17 sec.
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 -f -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_1.adb 
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_1 -bindview -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info multiplyMatrix_Pipeline_VITIS_LOOP_13_1 -p /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 -top_prefix multiplyMatrix_ -sub_prefix multiplyMatrix_ -mg_file /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_11.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.39 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.4 seconds; current allocated memory: 428.672 MB.
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.rtl_wrap.cfg.tcl 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_11 -style xilinx -f -lang vhdl -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/vhdl/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_11 -style xilinx -f -lang vlog -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/verilog/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+Execute       syn_report -csynth -model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_11_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_11_csynth.xml 
+Execute       syn_report -verbosereport -model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_11.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.16 sec.
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 -f -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_11.adb 
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_11 -bindview -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info multiplyMatrix_Pipeline_VITIS_LOOP_13_11 -p /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_11 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 -top_prefix multiplyMatrix_ -sub_prefix multiplyMatrix_ -mg_file /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_12.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.37 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.39 seconds; current allocated memory: 431.676 MB.
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.rtl_wrap.cfg.tcl 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_12 -style xilinx -f -lang vhdl -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/vhdl/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_12 -style xilinx -f -lang vlog -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/verilog/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+Execute       syn_report -csynth -model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_12_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_12_csynth.xml 
+Execute       syn_report -verbosereport -model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_12.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.11 sec.
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 -f -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_12.adb 
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_12 -bindview -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info multiplyMatrix_Pipeline_VITIS_LOOP_13_12 -p /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_12 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 -top_prefix multiplyMatrix_ -sub_prefix multiplyMatrix_ -mg_file /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_13.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.31 seconds; current allocated memory: 434.684 MB.
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.rtl_wrap.cfg.tcl 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_13 -style xilinx -f -lang vhdl -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/vhdl/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_13 -style xilinx -f -lang vlog -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/verilog/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+Execute       syn_report -csynth -model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_13_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_13_csynth.xml 
+Execute       syn_report -verbosereport -model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_13.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.12 sec.
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 -f -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_13.adb 
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_13 -bindview -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info multiplyMatrix_Pipeline_VITIS_LOOP_13_13 -p /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_13 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 -top_prefix multiplyMatrix_ -sub_prefix multiplyMatrix_ -mg_file /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_14.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.31 seconds. CPU system time: 0 seconds. Elapsed time: 0.31 seconds; current allocated memory: 437.699 MB.
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.rtl_wrap.cfg.tcl 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_14 -style xilinx -f -lang vhdl -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/vhdl/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_14 -style xilinx -f -lang vlog -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/verilog/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+Execute       syn_report -csynth -model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_14_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_14_csynth.xml 
+Execute       syn_report -verbosereport -model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_14.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.12 sec.
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 -f -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_14.adb 
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_14 -bindview -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info multiplyMatrix_Pipeline_VITIS_LOOP_13_14 -p /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_14 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 -top_prefix multiplyMatrix_ -sub_prefix multiplyMatrix_ -mg_file /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_15.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 440.719 MB.
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.rtl_wrap.cfg.tcl 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_15 -style xilinx -f -lang vhdl -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/vhdl/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_15 -style xilinx -f -lang vlog -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/verilog/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+Execute       syn_report -csynth -model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_15_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_15_csynth.xml 
+Execute       syn_report -verbosereport -model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_15.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.11 sec.
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 -f -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_15.adb 
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_15 -bindview -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info multiplyMatrix_Pipeline_VITIS_LOOP_13_15 -p /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_15 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 -top_prefix multiplyMatrix_ -sub_prefix multiplyMatrix_ -mg_file /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_16.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.31 seconds; current allocated memory: 443.773 MB.
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.rtl_wrap.cfg.tcl 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_16 -style xilinx -f -lang vhdl -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/vhdl/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_16 -style xilinx -f -lang vlog -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/verilog/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+Execute       syn_report -csynth -model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_16_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_16_csynth.xml 
+Execute       syn_report -verbosereport -model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_16.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.12 sec.
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 -f -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_16.adb 
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_16 -bindview -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info multiplyMatrix_Pipeline_VITIS_LOOP_13_16 -p /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_16 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 -top_prefix multiplyMatrix_ -sub_prefix multiplyMatrix_ -mg_file /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_17.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.31 seconds; current allocated memory: 446.828 MB.
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.rtl_wrap.cfg.tcl 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_17 -style xilinx -f -lang vhdl -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/vhdl/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_17 -style xilinx -f -lang vlog -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/verilog/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+Execute       syn_report -csynth -model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_17_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_17_csynth.xml 
+Execute       syn_report -verbosereport -model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_17.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.11 sec.
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 -f -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_17.adb 
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_17 -bindview -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info multiplyMatrix_Pipeline_VITIS_LOOP_13_17 -p /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_17 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 -top_prefix multiplyMatrix_ -sub_prefix multiplyMatrix_ -mg_file /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_18.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18' pipeline 'VITIS_LOOP_13_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.3 seconds. CPU system time: 0 seconds. Elapsed time: 0.3 seconds; current allocated memory: 449.844 MB.
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.rtl_wrap.cfg.tcl 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_18 -style xilinx -f -lang vhdl -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/vhdl/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+Execute       gen_rtl multiplyMatrix_Pipeline_VITIS_LOOP_13_18 -style xilinx -f -lang vlog -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/verilog/multiplyMatrix_multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+Execute       syn_report -csynth -model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_18_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_Pipeline_VITIS_LOOP_13_18_csynth.xml 
+Execute       syn_report -verbosereport -model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_18.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.11 sec.
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 -f -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_18.adb 
+Execute       db_write -model multiplyMatrix_Pipeline_VITIS_LOOP_13_18 -bindview -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info multiplyMatrix_Pipeline_VITIS_LOOP_13_18 -p /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_18 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'multiplyMatrix' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model multiplyMatrix -top_prefix  -sub_prefix multiplyMatrix_ -mg_file /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/mat1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/mat2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multiplyMatrix/result' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'multiplyMatrix' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'mat1', 'mat2', 'result' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multiplyMatrix'.
+Command       create_rtl_model done; 0.31 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.54 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.56 seconds; current allocated memory: 463.344 MB.
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.rtl_wrap.cfg.tcl 
+Execute       gen_rtl multiplyMatrix -istop -style xilinx -f -lang vhdl -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/vhdl/multiplyMatrix 
+Execute       gen_rtl multiplyMatrix -istop -style xilinx -f -lang vlog -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/verilog/multiplyMatrix 
+Execute       syn_report -csynth -model multiplyMatrix -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model multiplyMatrix -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/multiplyMatrix_csynth.xml 
+Execute       syn_report -verbosereport -model multiplyMatrix -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.8 sec.
+Execute       db_write -model multiplyMatrix -f -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.adb 
+Execute       db_write -model multiplyMatrix -bindview -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info multiplyMatrix -p /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix 
+Execute       export_constraint_db -f -tool general -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.constraint.tcl 
+Execute       syn_report -designview -model multiplyMatrix -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.design.xml 
+Command       syn_report done; 0.47 sec.
+Execute       syn_report -csynthDesign -model multiplyMatrix -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -wcfg -model multiplyMatrix -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model multiplyMatrix -o /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.protoinst 
+Execute       sc_get_clocks multiplyMatrix 
+Execute       sc_get_portdomain multiplyMatrix 
+INFO-FLOW: Model list for RTL component generation: multiplyMatrix_Pipeline_VITIS_LOOP_13_1 multiplyMatrix_Pipeline_VITIS_LOOP_13_11 multiplyMatrix_Pipeline_VITIS_LOOP_13_12 multiplyMatrix_Pipeline_VITIS_LOOP_13_13 multiplyMatrix_Pipeline_VITIS_LOOP_13_14 multiplyMatrix_Pipeline_VITIS_LOOP_13_15 multiplyMatrix_Pipeline_VITIS_LOOP_13_16 multiplyMatrix_Pipeline_VITIS_LOOP_13_17 multiplyMatrix_Pipeline_VITIS_LOOP_13_18 multiplyMatrix
+INFO-FLOW: Handling components in module [multiplyMatrix_Pipeline_VITIS_LOOP_13_1] ... 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_1.compgen.tcl 
+INFO-FLOW: Found component multiplyMatrix_mul_32s_32s_32_1_1.
+INFO-FLOW: Append model multiplyMatrix_mul_32s_32s_32_1_1
+INFO-FLOW: Found component multiplyMatrix_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [multiplyMatrix_Pipeline_VITIS_LOOP_13_11] ... 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_11.compgen.tcl 
+INFO-FLOW: Found component multiplyMatrix_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [multiplyMatrix_Pipeline_VITIS_LOOP_13_12] ... 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_12.compgen.tcl 
+INFO-FLOW: Found component multiplyMatrix_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [multiplyMatrix_Pipeline_VITIS_LOOP_13_13] ... 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_13.compgen.tcl 
+INFO-FLOW: Found component multiplyMatrix_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [multiplyMatrix_Pipeline_VITIS_LOOP_13_14] ... 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_14.compgen.tcl 
+INFO-FLOW: Found component multiplyMatrix_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [multiplyMatrix_Pipeline_VITIS_LOOP_13_15] ... 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_15.compgen.tcl 
+INFO-FLOW: Found component multiplyMatrix_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [multiplyMatrix_Pipeline_VITIS_LOOP_13_16] ... 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_16.compgen.tcl 
+INFO-FLOW: Found component multiplyMatrix_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [multiplyMatrix_Pipeline_VITIS_LOOP_13_17] ... 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_17.compgen.tcl 
+INFO-FLOW: Found component multiplyMatrix_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [multiplyMatrix_Pipeline_VITIS_LOOP_13_18] ... 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_18.compgen.tcl 
+INFO-FLOW: Found component multiplyMatrix_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [multiplyMatrix] ... 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.compgen.tcl 
+INFO-FLOW: Found component multiplyMatrix_gmem_m_axi.
+INFO-FLOW: Append model multiplyMatrix_gmem_m_axi
+INFO-FLOW: Found component multiplyMatrix_control_s_axi.
+INFO-FLOW: Append model multiplyMatrix_control_s_axi
+INFO-FLOW: Append model multiplyMatrix_Pipeline_VITIS_LOOP_13_1
+INFO-FLOW: Append model multiplyMatrix_Pipeline_VITIS_LOOP_13_11
+INFO-FLOW: Append model multiplyMatrix_Pipeline_VITIS_LOOP_13_12
+INFO-FLOW: Append model multiplyMatrix_Pipeline_VITIS_LOOP_13_13
+INFO-FLOW: Append model multiplyMatrix_Pipeline_VITIS_LOOP_13_14
+INFO-FLOW: Append model multiplyMatrix_Pipeline_VITIS_LOOP_13_15
+INFO-FLOW: Append model multiplyMatrix_Pipeline_VITIS_LOOP_13_16
+INFO-FLOW: Append model multiplyMatrix_Pipeline_VITIS_LOOP_13_17
+INFO-FLOW: Append model multiplyMatrix_Pipeline_VITIS_LOOP_13_18
+INFO-FLOW: Append model multiplyMatrix
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: multiplyMatrix_mul_32s_32s_32_1_1 multiplyMatrix_flow_control_loop_pipe_sequential_init multiplyMatrix_flow_control_loop_pipe_sequential_init multiplyMatrix_flow_control_loop_pipe_sequential_init multiplyMatrix_flow_control_loop_pipe_sequential_init multiplyMatrix_flow_control_loop_pipe_sequential_init multiplyMatrix_flow_control_loop_pipe_sequential_init multiplyMatrix_flow_control_loop_pipe_sequential_init multiplyMatrix_flow_control_loop_pipe_sequential_init multiplyMatrix_flow_control_loop_pipe_sequential_init multiplyMatrix_gmem_m_axi multiplyMatrix_control_s_axi multiplyMatrix_Pipeline_VITIS_LOOP_13_1 multiplyMatrix_Pipeline_VITIS_LOOP_13_11 multiplyMatrix_Pipeline_VITIS_LOOP_13_12 multiplyMatrix_Pipeline_VITIS_LOOP_13_13 multiplyMatrix_Pipeline_VITIS_LOOP_13_14 multiplyMatrix_Pipeline_VITIS_LOOP_13_15 multiplyMatrix_Pipeline_VITIS_LOOP_13_16 multiplyMatrix_Pipeline_VITIS_LOOP_13_17 multiplyMatrix_Pipeline_VITIS_LOOP_13_18 multiplyMatrix
+INFO-FLOW: Generating /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model multiplyMatrix_mul_32s_32s_32_1_1
+INFO-FLOW: To file: write model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model multiplyMatrix_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model multiplyMatrix_gmem_m_axi
+INFO-FLOW: To file: write model multiplyMatrix_control_s_axi
+INFO-FLOW: To file: write model multiplyMatrix_Pipeline_VITIS_LOOP_13_1
+INFO-FLOW: To file: write model multiplyMatrix_Pipeline_VITIS_LOOP_13_11
+INFO-FLOW: To file: write model multiplyMatrix_Pipeline_VITIS_LOOP_13_12
+INFO-FLOW: To file: write model multiplyMatrix_Pipeline_VITIS_LOOP_13_13
+INFO-FLOW: To file: write model multiplyMatrix_Pipeline_VITIS_LOOP_13_14
+INFO-FLOW: To file: write model multiplyMatrix_Pipeline_VITIS_LOOP_13_15
+INFO-FLOW: To file: write model multiplyMatrix_Pipeline_VITIS_LOOP_13_16
+INFO-FLOW: To file: write model multiplyMatrix_Pipeline_VITIS_LOOP_13_17
+INFO-FLOW: To file: write model multiplyMatrix_Pipeline_VITIS_LOOP_13_18
+INFO-FLOW: To file: write model multiplyMatrix
+INFO-FLOW: Generating /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/global.setting.tcl
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/generic/autopilot/common.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/generic/autopilot/op.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/global.setting.tcl 
+Execute       source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /root/Downloads/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=5.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/vhdl' dstVlogDir='/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/vlog' tclDir='/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db' modelList='multiplyMatrix_mul_32s_32s_32_1_1
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_gmem_m_axi
+multiplyMatrix_control_s_axi
+multiplyMatrix_Pipeline_VITIS_LOOP_13_1
+multiplyMatrix_Pipeline_VITIS_LOOP_13_11
+multiplyMatrix_Pipeline_VITIS_LOOP_13_12
+multiplyMatrix_Pipeline_VITIS_LOOP_13_13
+multiplyMatrix_Pipeline_VITIS_LOOP_13_14
+multiplyMatrix_Pipeline_VITIS_LOOP_13_15
+multiplyMatrix_Pipeline_VITIS_LOOP_13_16
+multiplyMatrix_Pipeline_VITIS_LOOP_13_17
+multiplyMatrix_Pipeline_VITIS_LOOP_13_18
+multiplyMatrix
+' expOnly='0'
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xcvu5p-flva2104-1-e -data names -quiet 
+Execute       ap_part_info -name xcvu5p-flva2104-1-e -data info -quiet 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/global.setting.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/global.setting.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_1.compgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_11.compgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_12.compgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_13.compgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_14.compgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_15.compgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_16.compgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_17.compgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_18.compgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.compgen.tcl 
+Execute         source ./control.slave.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.72 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.75 seconds; current allocated memory: 470.309 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='multiplyMatrix_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0.1 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='multiplyMatrix_mul_32s_32s_32_1_1
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_flow_control_loop_pipe_sequential_init
+multiplyMatrix_gmem_m_axi
+multiplyMatrix_control_s_axi
+multiplyMatrix_Pipeline_VITIS_LOOP_13_1
+multiplyMatrix_Pipeline_VITIS_LOOP_13_11
+multiplyMatrix_Pipeline_VITIS_LOOP_13_12
+multiplyMatrix_Pipeline_VITIS_LOOP_13_13
+multiplyMatrix_Pipeline_VITIS_LOOP_13_14
+multiplyMatrix_Pipeline_VITIS_LOOP_13_15
+multiplyMatrix_Pipeline_VITIS_LOOP_13_16
+multiplyMatrix_Pipeline_VITIS_LOOP_13_17
+multiplyMatrix_Pipeline_VITIS_LOOP_13_18
+multiplyMatrix
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/global.setting.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/global.setting.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/top-io-be.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.tbgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.compgen.dataonly.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.compgen.dataonly.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.rtl_wrap.cfg.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.compgen.dataonly.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_1.tbgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_11.tbgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_12.tbgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_13.tbgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_14.tbgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_15.tbgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_16.tbgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_17.tbgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix_Pipeline_VITIS_LOOP_13_18.tbgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.tbgen.tcl 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xcvu5p-flva2104-1-e -data names -quiet 
+Execute       ap_part_info -name xcvu5p-flva2104-1-e -data info -quiet 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/multiplyMatrix.constraint.tcl 
+Execute       sc_get_clocks multiplyMatrix 
+Execute       source /home/coss01/vitis_hls_demo_c/matrix_mul/matrix_mul/solution3/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter DISPLAY {bind_adapter axilite} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME control_s_axi_U SOURCE {} VARIABLE {} MODULE multiplyMatrix LOOP {} BUNDLEDNAME control DSP 0 BRAM 0 URAM 0} {BINDTYPE adapter DISPLAY {bind_adapter axi_master} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME gmem_m_axi_U SOURCE {} VARIABLE {} MODULE multiplyMatrix LOOP {} BUNDLEDNAME gmem DSP 0 BRAM 0 URAM 0}} report_dict {TOPINST multiplyMatrix MODULE2INSTS {multiplyMatrix multiplyMatrix multiplyMatrix_Pipeline_VITIS_LOOP_13_1 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_1_fu_361 multiplyMatrix_Pipeline_VITIS_LOOP_13_11 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_11_fu_372 multiplyMatrix_Pipeline_VITIS_LOOP_13_12 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_12_fu_383 multiplyMatrix_Pipeline_VITIS_LOOP_13_13 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_13_fu_394 multiplyMatrix_Pipeline_VITIS_LOOP_13_14 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_14_fu_405 multiplyMatrix_Pipeline_VITIS_LOOP_13_15 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_15_fu_416 multiplyMatrix_Pipeline_VITIS_LOOP_13_16 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_16_fu_427 multiplyMatrix_Pipeline_VITIS_LOOP_13_17 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_17_fu_438 multiplyMatrix_Pipeline_VITIS_LOOP_13_18 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_18_fu_449} INST2MODULE {multiplyMatrix multiplyMatrix grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_1_fu_361 multiplyMatrix_Pipeline_VITIS_LOOP_13_1 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_11_fu_372 multiplyMatrix_Pipeline_VITIS_LOOP_13_11 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_12_fu_383 multiplyMatrix_Pipeline_VITIS_LOOP_13_12 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_13_fu_394 multiplyMatrix_Pipeline_VITIS_LOOP_13_13 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_14_fu_405 multiplyMatrix_Pipeline_VITIS_LOOP_13_14 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_15_fu_416 multiplyMatrix_Pipeline_VITIS_LOOP_13_15 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_16_fu_427 multiplyMatrix_Pipeline_VITIS_LOOP_13_16 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_17_fu_438 multiplyMatrix_Pipeline_VITIS_LOOP_13_17 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_18_fu_449 multiplyMatrix_Pipeline_VITIS_LOOP_13_18} INSTDATA {multiplyMatrix {DEPTH 1 CHILDREN {grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_1_fu_361 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_11_fu_372 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_12_fu_383 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_13_fu_394 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_14_fu_405 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_15_fu_416 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_16_fu_427 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_17_fu_438 grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_18_fu_449}} grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_1_fu_361 {DEPTH 2 CHILDREN {}} grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_11_fu_372 {DEPTH 2 CHILDREN {}} grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_12_fu_383 {DEPTH 2 CHILDREN {}} grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_13_fu_394 {DEPTH 2 CHILDREN {}} grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_14_fu_405 {DEPTH 2 CHILDREN {}} grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_15_fu_416 {DEPTH 2 CHILDREN {}} grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_16_fu_427 {DEPTH 2 CHILDREN {}} grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_17_fu_438 {DEPTH 2 CHILDREN {}} grp_multiplyMatrix_Pipeline_VITIS_LOOP_13_18_fu_449 {DEPTH 2 CHILDREN {}}} MODULEDATA {multiplyMatrix_Pipeline_VITIS_LOOP_13_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_190_p2 SOURCE mat_mul.c:13 VARIABLE add_ln13 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_1_fu_174_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_1 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_fu_278_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln14_fu_222_p2 SOURCE mat_mul.c:14 VARIABLE sub_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_2_fu_236_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_2 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_25_fu_251_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_25 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U1 SOURCE mat_mul.c:14 VARIABLE mul_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_3_fu_331_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_3 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 3 BRAM 0 URAM 0}} multiplyMatrix_Pipeline_VITIS_LOOP_13_11 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_190_p2 SOURCE mat_mul.c:13 VARIABLE add_ln13 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_5_fu_174_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_5 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_23_fu_278_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_23 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln14_fu_222_p2 SOURCE mat_mul.c:14 VARIABLE sub_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_6_fu_236_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_6 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_24_fu_251_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_24 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U9 SOURCE mat_mul.c:14 VARIABLE mul_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_7_fu_331_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_7 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 3 BRAM 0 URAM 0}} multiplyMatrix_Pipeline_VITIS_LOOP_13_12 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_190_p2 SOURCE mat_mul.c:13 VARIABLE add_ln13 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_8_fu_174_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_8 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_fu_278_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln14_fu_222_p2 SOURCE mat_mul.c:14 VARIABLE sub_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_9_fu_236_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_9 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_22_fu_251_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_22 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U16 SOURCE mat_mul.c:14 VARIABLE mul_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_10_fu_331_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_10 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 3 BRAM 0 URAM 0}} multiplyMatrix_Pipeline_VITIS_LOOP_13_13 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_190_p2 SOURCE mat_mul.c:13 VARIABLE add_ln13 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_11_fu_174_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_11 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_fu_278_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln14_fu_222_p2 SOURCE mat_mul.c:14 VARIABLE sub_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_12_fu_236_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_12 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_21_fu_251_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_21 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U23 SOURCE mat_mul.c:14 VARIABLE mul_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_13_fu_331_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_13 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 3 BRAM 0 URAM 0}} multiplyMatrix_Pipeline_VITIS_LOOP_13_14 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_190_p2 SOURCE mat_mul.c:13 VARIABLE add_ln13 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_14_fu_174_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_19_fu_278_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_19 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln14_fu_222_p2 SOURCE mat_mul.c:14 VARIABLE sub_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_15_fu_236_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_15 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_20_fu_251_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_20 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U30 SOURCE mat_mul.c:14 VARIABLE mul_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_16_fu_331_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_16 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 3 BRAM 0 URAM 0}} multiplyMatrix_Pipeline_VITIS_LOOP_13_15 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_190_p2 SOURCE mat_mul.c:13 VARIABLE add_ln13 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_fu_174_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_15_fu_278_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_15 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln14_fu_222_p2 SOURCE mat_mul.c:14 VARIABLE sub_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_16_fu_236_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_16 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_17_fu_251_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_17 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U37 SOURCE mat_mul.c:14 VARIABLE mul_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_18_fu_331_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_18 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 3 BRAM 0 URAM 0}} multiplyMatrix_Pipeline_VITIS_LOOP_13_16 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_190_p2 SOURCE mat_mul.c:13 VARIABLE add_ln13 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_fu_174_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_11_fu_278_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_11 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln14_fu_222_p2 SOURCE mat_mul.c:14 VARIABLE sub_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_12_fu_236_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_12 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_13_fu_251_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_13 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U44 SOURCE mat_mul.c:14 VARIABLE mul_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_14_fu_331_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 3 BRAM 0 URAM 0}} multiplyMatrix_Pipeline_VITIS_LOOP_13_17 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_190_p2 SOURCE mat_mul.c:13 VARIABLE add_ln13 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_6_fu_174_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_6 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_7_fu_278_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_7 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln14_fu_222_p2 SOURCE mat_mul.c:14 VARIABLE sub_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_8_fu_236_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_8 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_9_fu_251_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_9 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U51 SOURCE mat_mul.c:14 VARIABLE mul_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_10_fu_331_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_10 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 3 BRAM 0 URAM 0}} multiplyMatrix_Pipeline_VITIS_LOOP_13_18 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_190_p2 SOURCE mat_mul.c:13 VARIABLE add_ln13 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_fu_174_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_1_fu_278_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_1 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln14_fu_222_p2 SOURCE mat_mul.c:14 VARIABLE sub_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_2_fu_236_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_2 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_3_fu_251_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_3 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U58 SOURCE mat_mul.c:14 VARIABLE mul_ln14 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_5_fu_331_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_5 LOOP VITIS_LOOP_13_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 3 BRAM 0 URAM 0}} multiplyMatrix {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_fu_500_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln8_fu_512_p2 SOURCE mat_mul.c:8 VARIABLE add_ln8 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln8_1_fu_577_p2 SOURCE mat_mul.c:8 VARIABLE add_ln8_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_4_fu_611_p2 SOURCE mat_mul.c:14 VARIABLE add_ln14_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_625_p2 SOURCE mat_mul.c:13 VARIABLE add_ln13 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln8_2_fu_637_p2 SOURCE mat_mul.c:8 VARIABLE add_ln8_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln8_3_fu_674_p2 SOURCE mat_mul.c:8 VARIABLE add_ln8_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln8_4_fu_707_p2 SOURCE mat_mul.c:8 VARIABLE add_ln8_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln8_5_fu_744_p2 SOURCE mat_mul.c:8 VARIABLE add_ln8_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_1_fu_769_p2 SOURCE mat_mul.c:13 VARIABLE add_ln13_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln8_6_fu_783_p2 SOURCE mat_mul.c:8 VARIABLE add_ln8_6 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln8_7_fu_798_p2 SOURCE mat_mul.c:8 VARIABLE add_ln8_7 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 27 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.68 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.7 seconds; current allocated memory: 480.953 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for multiplyMatrix.
+INFO: [VLOG 209-307] Generating Verilog RTL for multiplyMatrix.
+Execute       syn_report -model multiplyMatrix -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 222.22 MHz
+Command     autosyn done; 18.83 sec.
+Command   csynth_design done; 34.91 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 24.13 seconds. CPU system time: 1.18 seconds. Elapsed time: 34.91 seconds; current allocated memory: 178.898 MB.
+Command ap_source done; 46.4 sec.
+Execute cleanup_all 

@@ -1,0 +1,117 @@
+### Version 1: Inline Reading and Printing with Selection Sort
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[5], i, j, temp, size = 5;
+    
+    for (i = 0; i < size; i++) {
+        printf("Enter arr[%d] : ", i);
+        scanf("%d", &arr[i]);
+    }
+    
+    printf("\nBefore Sorting:\n");
+    for (i = 0; i < size; i++) {
+        printf("arr[%d] : %d\n", i, arr[i]);
+    }
+    
+    // Selection sort
+    for (i = 0; i < size - 1; i++) {
+        for (j = i + 1; j < size; j++) {
+            if (arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    
+    printf("\nAfter Sorting:\n");
+    for (i = 0; i < size; i++) {
+        printf("arr[%d] : %d\n", i, arr[i]);
+    }
+    
+    return 0;
+}
+```
+
+### Version 2: Inline Reading and Printing with Bubble Sort
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[5], i, j, temp, swapped, size = 5;
+    
+    for (i = 0; i < size; i++) {
+        printf("Enter arr[%d] : ", i);
+        scanf("%d", &arr[i]);
+    }
+    
+    printf("\nBefore Sorting:\n");
+    for (i = 0; i < size; i++) {
+        printf("arr[%d] : %d\n", i, arr[i]);
+    }
+    
+    // Bubble sort
+    do {
+        swapped = 0;
+        for (i = 0; i < size - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                swapped = 1;
+            }
+        }
+    } while (swapped != 0);
+    
+    printf("\nAfter Sorting:\n");
+    for (i = 0; i < size; i++) {
+        printf("arr[%d] : %d\n", i, arr[i]);
+    }
+    
+    return 0;
+}
+```
+
+### Version 3: Inline Reading and Printing with Insertion Sort
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[5], i, j, key, size = 5;
+    
+    for (i = 0; i < size; i++) {
+        printf("Enter arr[%d] : ", i);
+        scanf("%d", &arr[i]);
+    }
+    
+    printf("\nBefore Sorting:\n");
+    for (i = 0; i < size; i++) {
+        printf("arr[%d] : %d\n", i, arr[i]);
+    }
+    
+    // Insertion sort
+    for (i = 1; i < size; i++) {
+        key = arr[i];
+        j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+    
+    printf("\nAfter Sorting:\n");
+    for (i = 0; i < size; i++) {
+        printf("arr[%d] : %d\n", i, arr[i]);
+    }
+    
+    return 0;
+}
+```
+
+Each of these versions uses a different sorting algorithm (Selection Sort, Bubble Sort, and Insertion Sort) for the task. This meets your requirement for three different versions of the code, keeping inline with the constraints provided.

@@ -1,0 +1,73 @@
+### Version 1
+
+```c
+#include <stdio.h>
+
+int main() {
+    float a, b, c, d, result, sumAB, sumCD;
+
+    printf("Enter four numbers (a, b, c, d): ");
+    scanf("%f %f %f %f", &a, &b, &c, &d);
+
+    sumAB = a + b;
+    sumCD = c + d;
+
+    if(sumCD == 0) {
+        printf("Division by zero error.\n");
+        return -1;
+    }
+
+    result = sumAB / sumCD;
+    printf("The result is: %.2f\n", result);
+
+    return 0;
+}
+```
+
+### Version 2
+
+```c
+#include <stdio.h>
+
+int main() {
+    float num1, num2, num3, num4, divisionResult;
+
+    printf("Enter four numbers (num1, num2, num3, num4): ");
+    scanf("%f %f %f %f", &num1, &num2, &num3, &num4);
+
+    if(num3 + num4 != 0) {
+        divisionResult = (num1 + num2) / (num3 + num4);
+        printf("Result: %.2f\n", divisionResult);
+    } else {
+        printf("Cannot divide by zero.\n");
+        return -1;
+    }
+
+    return 0;
+}
+```
+
+### Version 3
+
+```c
+#include <stdio.h>
+
+int main() {
+    float x1, x2, x3, x4, calcResult;
+
+    printf("Input four numbers (x1, x2, x3, x4): ");
+    scanf("%f %f %f %f", &x1, &x2, &x3, &x4);
+
+    if((x3 + x4) == 0) {
+        printf("Error: division by zero.\n");
+        return -1;
+    } else {
+        calcResult = (x1 + x2) / (x3 + x4);
+        printf("The calculation result is: %.2f\n", calcResult);
+    }
+
+    return 0;
+}
+```
+
+Each version adheres to the constraints: no additional functions, no dynamic memory allocation, no structs, no unions, no pointers, no recursion, no file handling, not modifying existing data types or using `double` instead of `float`, and avoids performing operations inside `printf` statements.

@@ -1,0 +1,93 @@
+Sure, I'll provide you with three variations of the program you've provided. Each version will take a full name as input, search for vowels, and convert those vowels to uppercase without using the features and functionalities you've asked to avoid.
+
+### Version 1
+
+```c
+#include <stdio.h>
+
+int main() {
+    char name[100];
+    printf("Enter your Name: ");
+    scanf("%[^\n]%*c", name);
+
+    for(int i = 0; name[i] != '\0'; i++) {
+        switch(name[i]) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                name[i] -= 32;
+                break;
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
+                break;
+            default:
+                break;
+        }
+    }
+
+    printf("Name with vowels in uppercase: ");
+    printf("%s\n", name);
+
+    return 0;
+}
+```
+
+### Version 2
+
+```c
+#include <stdio.h>
+
+int main() {
+    char fullName[100];
+    printf("Enter your Name: ");
+    scanf("%[^\n]%*c", fullName);
+
+    for(int j = 0; fullName[j] != '\0'; j++) {
+        if(fullName[j] == 'a' || fullName[j] == 'e' || fullName[j] == 'i' || fullName[j] == 'o' || fullName[j] == 'u') {
+            fullName[j] -= 'a' - 'A';
+        } else if(fullName[j] == 'A' || fullName[j] == 'E' || fullName[j] == 'I' || fullName[j] == 'O' || fullName[j] == 'U') {
+            // Vowels are already uppercase
+        } else {
+            // Not a vowel, do nothing
+        }
+    }
+
+    printf("Processed Name: ");
+    printf("%s\n", fullName);
+
+    return 0;
+}
+```
+
+### Version 3
+
+```c
+#include <stdio.h>
+
+int main() {
+    char inputName[100];
+    printf("Enter your Name: ");
+    scanf("%[^\n]%*c", inputName);
+
+    int pos = 0;
+    while(inputName[pos] != '\0') {
+        char ch = inputName[pos];
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            inputName[pos] = ch - 32;
+        }
+        pos++;
+    }
+
+    printf("Modified Name: ");
+    printf("%s\n", inputName);
+
+    return 0;
+}
+```
+
+Each version takes a slightly different approach but ultimately accomplishes the same goal of converting vowels in a name to uppercase, conforming to your specifications.

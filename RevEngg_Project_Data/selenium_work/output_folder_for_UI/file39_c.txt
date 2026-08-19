@@ -1,0 +1,77 @@
+Certainly! Based on your requirements, I'll generate three different versions of code that demonstrate similar concepts of working with variables and accessing their values, avoiding the use of pointers and the other restrictions you've mentioned.
+
+### Version 1: Direct Variable Access and Modification
+
+```c
+#include<stdio.h>
+
+int main() {
+    int num1 = 10;
+    float num2 = 20.5;
+    int num1_copy = num1;
+    float num2_copy = num2;
+
+    // Modifying the variables
+    num1 += 5;
+    num2 += 2.5;
+
+    // Displaying original and modified values
+    printf("Original value of num1: %d\n", num1_copy);
+    printf("Modified value of num1: %d\n", num1);
+    printf("Original value of num2: %f\n", num2_copy);
+    printf("Modified value of num2: %f\n", num2);
+
+    return 0;
+}
+```
+
+### Version 2: Using Arithmetic to Modify and Display Variables
+
+```c
+#include<stdio.h>
+
+int main() {
+    int x = 30;
+    float y = 40.5;
+    int x_increment = 10;
+    float y_decrement = 5.5;
+
+    // Calculating new values
+    int new_x = x + x_increment;
+    float new_y = y - y_decrement;
+
+    // Displaying values
+    printf("x before increment: %d\n", x);
+    printf("x after increment: %d\n", new_x);
+    printf("y before decrement: %f\n", y);
+    printf("y after decrement: %f\n", new_y);
+
+    return 0;
+}
+```
+
+### Version 3: Swapping Values Without Pointers
+
+```c
+#include<stdio.h>
+
+int main() {
+    int var1 = 100, var2 = 200;
+    int temp;
+
+    // Displaying original values
+    printf("Original var1: %d, var2: %d\n", var1, var2);
+
+    // Swapping the values
+    temp = var1;
+    var1 = var2;
+    var2 = temp;
+
+    // Displaying swapped values
+    printf("Swapped var1: %d, var2: %d\n", var1, var2);
+
+    return 0;
+}
+```
+
+Each of these versions demonstrates basic variable manipulation and value display while adhering to the constraints you've set.

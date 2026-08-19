@@ -1,0 +1,141 @@
+Sure, I'll provide three different versions of the provided LSD Radix Sort program with the mentioned restrictions. Each version will have slight variations to show different ways of achieving similar outcomes.
+
+### Version 1: Simplified Loop Iteration
+
+This version simplifies some of the loop iterations and variable assignments.
+
+```c
+#include <stdio.h>
+
+int array[100], array1[100];
+
+void main() {
+    int n, i, j, k, temp;
+
+    printf("Enter size of array :");
+    scanf("%d", &n);
+    printf("Enter elements into array :");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &array[i]);
+        array1[i] = array[i];
+    }
+
+    for (k = 0; k < 3; k++) {
+        for (i = 0; i < n; i++) {
+            for (j = i + 1; j < n; j++) {
+                if ((array[i] % 10) > (array[j] % 10)) {
+                    // Swap in array
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                    // Swap in array1
+                    temp = array1[i];
+                    array1[i] = array1[j];
+                    array1[j] = temp;
+                }
+            }
+        }
+        for (i = 0; i < n; i++) {
+            array[i] = array[i] / 10;
+        }
+    }
+
+    printf("Sorted Array (LSD radix sort) : ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", array1[i]);
+    }
+}
+```
+
+### Version 2: Loop Reversal for Variety
+
+This version introduces a different loop traversal method for variety.
+
+```c
+#include <stdio.h>
+
+int array[100], array1[100];
+
+void main() {
+    int n, i, j, k, temp;
+
+    printf("Enter size of array :");
+    scanf("%d", &n);
+    printf("Enter elements into array :");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &array[i]);
+        array1[i] = array[i];
+    }
+
+    for (k = 0; k < 3; k++) {
+        for (i = n - 1; i >= 0; i--) {
+            for (j = i - 1; j >= 0; j--) {
+                if ((array[i] % 10) < (array[j] % 10)) {
+                    // Swap in array
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                    // Swap in array1
+                    temp = array1[i];
+                    array1[i] = array1[j];
+                    array1[j] = temp;
+                }
+            }
+        }
+        for (i = 0; i < n; i++) {
+            array[i] = array[i] / 10;
+        }
+    }
+
+    printf("Sorted Array (LSD radix sort) : ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", array1[i]);
+    }
+}
+```
+
+### Version 3: Incremental Reduction
+
+This version slightly modifies the digit reduction technique.
+
+```c
+#include <stdio.h>
+
+int array[100], array1[100];
+
+void main() {
+    int n, i, j, k, temp, divisor = 1;
+
+    printf("Enter size of array :");
+    scanf("%d", &n);
+    printf("Enter elements into array :");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &array[i]);
+        array1[i] = array[i];
+    }
+
+    for (k = 0; k < 3; k++, divisor *= 10) {
+        for (i = 0; i < n; i++) {
+            for (j = i + 1; j < n; j++) {
+                if (((array[i] / divisor) % 10) > ((array[j] / divisor) % 10)) {
+                    // Swap in array
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                    // Swap in array1
+                    temp = array1[i];
+                    array1[i] = array1[j];
+                    array1[j] = temp;
+                }
+            }
+        }
+    }
+
+    printf("Sorted Array (LSD radix sort) : ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", array1[i]);
+    }
+}
+```
+
+Each of these versions adapts the original program in small ways to provide alternative implementations of LSD Radix Sort without using dynamic memory allocation, recursion, pointers, etc., as per your request.

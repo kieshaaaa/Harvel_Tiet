@@ -1,0 +1,71 @@
+Certainly! Below are three different versions of the program you provided, adhering to your constraints. Each version checks if the given number is positive, negative, or zero and prints the result.
+
+### Version 1: Simplifying the if-else structure
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("\nEnter a number => ");
+    scanf("%d", &num);
+
+    if (num > 0) {
+        printf("\n1 is Positive");
+    } else if (num < 0) {
+        printf("\n-1 is Negative");
+    } else {
+        printf("\nEntered Number is 0");
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+
+### Version 2: Using ternary operator for compactness
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("\nEnter a number => ");
+    scanf("%d", &num);
+
+    printf("\n");
+    num > 0 ? printf("1 is Positive") : (num < 0 ? printf("-1 is Negative") : printf("Entered Number is 0"));
+    printf("\n");
+
+    return 0;
+}
+```
+
+### Version 3: Using separate variables to indicate the state
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    int isPositive, isNegative;
+    printf("\nEnter a number => ");
+    scanf("%d", &num);
+
+    isPositive = num > 0;
+    isNegative = num < 0;
+
+    if (isPositive) {
+        printf("\n1 is Positive");
+    } else if (isNegative) {
+        printf("\n-1 is Negative");
+    } else {
+        printf("\nEntered Number is 0");
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+
+Each of these versions avoids using recursion, pointers, dynamic memory allocation, structs, unions, modifying data types, using the `double` data type, and does not perform operations inside `printf` statements. They all check if a number is positive, negative, or zero, using slightly different approaches.

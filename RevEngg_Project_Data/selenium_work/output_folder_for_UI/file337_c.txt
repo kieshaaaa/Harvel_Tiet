@@ -1,0 +1,71 @@
+### Version 1: Using Inline Comments for Clarity
+```c
+#include <stdio.h>
+
+int main() {
+    float cm; // Variable for centimeters
+    float m; // Variable for meters
+
+    // Prompt user for input
+    printf("Enter length in centimeters: ");
+    scanf("%f", &cm);
+
+    // Convert centimeters to meters
+    m = cm / 100;
+
+    // Display the result
+    printf("Length in meters: %.2f\n", m);
+
+    return 0;
+}
+```
+
+### Version 2: Adding a Prompt to Press Enter to Exit
+```c
+#include <stdio.h>
+
+int main() {
+    float lengthInCm; // Stores length in centimeters
+    float lengthInM; // Stores length in meters
+
+    // Asking for user input
+    printf("Input the length in centimeters: ");
+    scanf("%f", &lengthInCm);
+
+    // Conversion process
+    lengthInM = lengthInCm / 100.0;
+
+    // Displaying the conversion
+    printf("Equivalent in meters: %.2f\n", lengthInM);
+
+    // Prompt to exit
+    printf("Press Enter to exit.");
+    while (getchar() != '\n'); // Clear the input buffer
+    getchar(); // Wait for enter key
+
+    return 0;
+}
+```
+
+### Version 3: Simplifying the Input/Output Operations
+```c
+#include <stdio.h>
+
+int main() {
+    float inputCm; // To hold the input in centimeters
+    float outputM; // To hold the converted value in meters
+
+    // Get the length from the user
+    printf("Enter the length in cm: ");
+    scanf("%f", &inputCm);
+
+    // Perform the conversion
+    outputM = inputCm / 100.0;
+
+    // Output the result to the user
+    printf("In meters: %.2f\n", outputM);
+
+    return 0;
+}
+```
+Each version adheres to your constraints while offering a slight variation in implementation or user interaction, maintaining the core functionality of converting centimeters to meters.

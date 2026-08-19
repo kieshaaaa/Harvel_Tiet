@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="factorial.c" path="/home/virubuntu/improve_mistake/factorial_wr/factorial.c"/>
+  </source>
+  <testbench>
+    <originFiles name="main.c" path="/home/virubuntu/improve_mistake/factorial_wr/main.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

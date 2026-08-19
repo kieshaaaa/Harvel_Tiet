@@ -1,0 +1,50 @@
+Certainly! Below are three different versions of the provided code, each converting pressure from bar to mmHg, adhering to the specified constraints.
+
+### Version 1: Using Direct Calculation in Assignment
+
+```c
+#include <stdio.h>
+
+int main() {
+    float bar, mmHg;
+    printf("Enter pressure in Bar: ");
+    scanf("%f", &bar);
+    mmHg = 750.062 * bar;
+    printf("Pressure in mmHg: %f\n", mmHg);
+    return 0;
+}
+```
+
+### Version 2: Introducing a New Variable for Conversion Factor
+
+```c
+#include <stdio.h>
+
+int main() {
+    float bar, mmHg, conversionFactor;
+    conversionFactor = 750.062;
+    printf("Input pressure in Bar: ");
+    scanf("%f", &bar);
+    mmHg = conversionFactor * bar;
+    printf("Equivalent mmHg: %f\n", mmHg);
+    return 0;
+}
+```
+
+### Version 3: Adding User Confirmation After Conversion
+
+```c
+#include <stdio.h>
+
+int main() {
+    float bar, mmHg;
+    printf("Enter the pressure in Bar to convert: ");
+    scanf("%f", &bar);
+    mmHg = bar * 750.062;
+    printf("Conversion result: %f mmHg\n", mmHg);
+    printf("Conversion completed successfully.\n");
+    return 0;
+}
+```
+
+Each version modifies the code in a small way to present a different approach while adhering to the constraints you've specified.

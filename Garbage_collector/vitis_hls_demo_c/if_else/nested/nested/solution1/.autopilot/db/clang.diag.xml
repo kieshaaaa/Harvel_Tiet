@@ -1,0 +1,23 @@
+<dict>
+  <key>main-file</key>
+  <string>/home/coss01/vitis_hls_demo_c/if_else/nested/nested_if_welse/solution1/.autopilot/db/if_else.pp.0.c</string>
+  <key>diagnostics</key>
+  <array>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>if_else.c</string>
+      <key>line</key>
+      <integer>10</integer>
+      <key>column</key>
+      <integer>18</integer>
+      <key>message</key>
+      <string>self-comparison always evaluates to true</string>
+      <key>ID</key>
+      <integer>4704</integer>
+      <key>WarningOption</key>
+      <string>tautological-compare</string>
+    </dict>
+  </array>
+</dict>

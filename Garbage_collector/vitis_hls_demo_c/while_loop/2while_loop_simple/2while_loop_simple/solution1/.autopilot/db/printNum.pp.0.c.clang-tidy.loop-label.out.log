@@ -1,0 +1,10 @@
+/home/coss01/vitis_hls_demo_c/while_loop/2_simple/2_while/solution1/.autopilot/db/printNum.pp.0.c:947:2: warning: Added loop label VITIS_LOOP_7_1:   [xilinx-label-all-loops]
+ while (i <= end) {
+ ^~~~~
+ VITIS_LOOP_7_1: 
+/home/coss01/vitis_hls_demo_c/while_loop/2_simple/2_while/solution1/.autopilot/db/printNum.pp.0.c:947:2: note: FIX-IT applied suggested code changes
+/home/coss01/vitis_hls_demo_c/while_loop/2_simple/2_while/solution1/.autopilot/db/printNum.pp.0.c:951:2: warning: Added loop label VITIS_LOOP_11_2:   [xilinx-label-all-loops]
+ while (j <=end) {
+ ^~~~~
+ VITIS_LOOP_11_2: 
+/home/coss01/vitis_hls_demo_c/while_loop/2_simple/2_while/solution1/.autopilot/db/printNum.pp.0.c:951:2: note: FIX-IT applied suggested code changes

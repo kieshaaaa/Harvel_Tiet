@@ -1,0 +1,87 @@
+### Version 1: Using Separate Variables for Interest Calculation
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float principal, rate, year, amount, ci;
+
+    printf("Enter principal: ");
+    scanf("%f", &principal);
+
+    printf("Enter rate: ");
+    scanf("%f", &rate);
+
+    printf("Enter time in years: ");
+    scanf("%f", &year);
+
+    // calculate amount after compound interest
+    amount = principal * pow((1 + rate / 100), year);
+    ci = amount - principal;
+
+    printf("Compound interest is: %f\n", ci);
+
+    return 0;
+}
+```
+
+### Version 2: Using a For Loop for Compound Interest Calculation
+
+```c
+#include <stdio.h>
+
+int main() {
+    float principal, rate, year, ci;
+    int i;
+
+    printf("Enter principal: ");
+    scanf("%f", &principal);
+
+    printf("Enter rate: ");
+    scanf("%f", &rate);
+
+    printf("Enter time in years: ");
+    scanf("%f", &year);
+
+    ci = principal;
+    for(i = 0; i < year; i++) {
+        ci = ci + (ci * rate / 100);
+    }
+    ci -= principal;
+
+    printf("Compound interest is: %f\n", ci);
+
+    return 0;
+}
+```
+
+### Version 3: Simplifying Compound Interest Formula Usage
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float principal, rate, year, ratePlusOne, ci;
+
+    printf("Enter principal: ");
+    scanf("%f", &principal);
+
+    printf("Enter rate: ");
+    scanf("%f", &rate);
+
+    printf("Enter time in years: ");
+    scanf("%f", &year);
+
+    ratePlusOne = 1 + rate / 100;
+
+    ci = principal * (pow(ratePlusOne, year) - 1);
+
+    printf("Compound interest is: %f\n", ci);
+
+    return 0;
+}
+```
+
+Each version approaches the calculation of compound interest slightly differently within the constraints specified.

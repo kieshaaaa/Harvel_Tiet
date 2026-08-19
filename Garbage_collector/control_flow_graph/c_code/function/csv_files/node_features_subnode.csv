@@ -1,0 +1,63 @@
+node,label
+fn_0_basic_block_6_subnode_0,{\<bb\ 6\>:
+fn_0_basic_block_6_subnode_1,|_8\ =\ (long\ unsigned\ int)\ i;
+fn_0_basic_block_6_subnode_2,|_9\ =\ _8\ *\ 4;
+fn_0_basic_block_6_subnode_3,|_10\ =\ arr\ +\ _9;
+fn_0_basic_block_6_subnode_4,|_11\ =\ *_10;
+fn_0_basic_block_6_subnode_5,|if\ (_11\ !=\ -1)
+fn_0_basic_block_6_subnode_6,\ \ goto\ \<bb\ 3\>;\ [INV]
+fn_0_basic_block_6_subnode_7,else
+fn_0_basic_block_6_subnode_8,\ \ goto\ \<bb\ 7\>;\ [INV]
+fn_0_basic_block_6_subnode_9,}
+fn_0_basic_block_3_subnode_0,{\<bb\ 3\>:
+fn_0_basic_block_3_subnode_1,|_1\ =\ (long\ unsigned\ int)\ i;
+fn_0_basic_block_3_subnode_2,|_2\ =\ _1\ *\ 4;
+fn_0_basic_block_3_subnode_3,|_3\ =\ arr\ +\ _2;
+fn_0_basic_block_3_subnode_4,|_4\ =\ *_3;
+fn_0_basic_block_3_subnode_5,|if\ (largest\ \<\ _4)
+fn_0_basic_block_3_subnode_6,\ \ goto\ \<bb\ 4\>;\ [INV]
+fn_0_basic_block_3_subnode_7,else
+fn_0_basic_block_3_subnode_8,\ \ goto\ \<bb\ 5\>;\ [INV]
+fn_0_basic_block_3_subnode_9,}
+fn_0_basic_block_4_subnode_0,{\<bb\ 4\>:
+fn_0_basic_block_4_subnode_1,|_5\ =\ (long\ unsigned\ int)\ i;
+fn_0_basic_block_4_subnode_2,|_6\ =\ _5\ *\ 4;
+fn_0_basic_block_4_subnode_3,|_7\ =\ arr\ +\ _6;
+fn_0_basic_block_4_subnode_4,|largest\ =\ *_7;
+fn_0_basic_block_4_subnode_5,}
+fn_0_basic_block_5_subnode_0,{\<bb\ 5\>:
+fn_0_basic_block_5_subnode_1,|i\ =\ i\ +\ 1;
+fn_0_basic_block_5_subnode_2,}
+fn_0_basic_block_0_subnode_0,ENTRY
+fn_0_basic_block_1_subnode_0,EXIT
+fn_0_basic_block_2_subnode_0,{\<bb\ 2\>:
+fn_0_basic_block_2_subnode_1,|largest\ =\ *arr;
+fn_0_basic_block_2_subnode_2,|i\ =\ 1;
+fn_0_basic_block_2_subnode_3,goto\ \<bb\ 6\>;\ [INV]
+fn_0_basic_block_2_subnode_4,}
+fn_0_basic_block_7_subnode_0,{\<bb\ 7\>:
+fn_0_basic_block_7_subnode_1,|D.2328\ =\ largest;
+fn_0_basic_block_7_subnode_2,}
+fn_0_basic_block_8_subnode_0,{\<bb\ 8\>:
+fn_0_basic_block_8_subnode_1,|\<L5\>:
+fn_0_basic_block_8_subnode_2,|return\ D.2328;
+fn_0_basic_block_8_subnode_3,}
+fn_1_basic_block_0_subnode_0,ENTRY
+fn_1_basic_block_1_subnode_0,EXIT
+fn_1_basic_block_2_subnode_0,{\<bb\ 2\>:
+fn_1_basic_block_2_subnode_1,|array[0]\ =\ 4;
+fn_1_basic_block_2_subnode_2,|array[1]\ =\ 8;
+fn_1_basic_block_2_subnode_3,|array[2]\ =\ 2;
+fn_1_basic_block_2_subnode_4,|array[3]\ =\ 10;
+fn_1_basic_block_2_subnode_5,|array[4]\ =\ 6;
+fn_1_basic_block_2_subnode_6,|array[5]\ =\ 12;
+fn_1_basic_block_2_subnode_7,|array[6]\ =\ -1;
+fn_1_basic_block_2_subnode_8,|result\ =\ findLargest\ (&array);
+fn_1_basic_block_2_subnode_9,"|printf\ (""The\ largest\ element\ in\ the\ array\ is:\ %d\\n"",\ result);"
+fn_1_basic_block_2_subnode_10,|D.2330\ =\ 0;
+fn_1_basic_block_2_subnode_11,|array\ =\ \{CLOBBER\};
+fn_1_basic_block_2_subnode_12,}
+fn_1_basic_block_3_subnode_0,{\<bb\ 3\>:
+fn_1_basic_block_3_subnode_1,|\<L1\>:
+fn_1_basic_block_3_subnode_2,|return\ D.2330;
+fn_1_basic_block_3_subnode_3,}

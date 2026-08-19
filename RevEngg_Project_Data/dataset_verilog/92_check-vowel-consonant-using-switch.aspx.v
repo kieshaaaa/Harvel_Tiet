@@ -1,0 +1,107 @@
+module entry_point (
+ ap_start,
+ ap_done,
+ ap_idle,
+ ap_ready,
+ ch,
+ temptemp1,
+ temptemp1_ap_vld,
+ temptemp2,
+ temptemp2_ap_vld,
+ temptemp3,
+ temptemp3_ap_vld,
+ ap_return
+);
+input ap_start;
+output ap_done;
+output ap_idle;
+output ap_ready;
+input [7:0] ch;
+output [7:0] temptemp1;
+output temptemp1_ap_vld;
+output [7:0] temptemp2;
+output temptemp2_ap_vld;
+output [7:0] temptemp3;
+output temptemp3_ap_vld;
+output [31:0] ap_return;
+reg temptemp1_ap_vld;
+reg temptemp2_ap_vld;
+reg temptemp3_ap_vld;
+wire [0:0] or_ln6_fu_108_p2;
+wire [0:0] empty_21_fu_222_p2;
+wire [7:0] add_ln6_fu_84_p2;
+wire [7:0] add_ln6_1_fu_96_p2;
+wire [0:0] icmp_ln6_fu_90_p2;
+wire [0:0] icmp_ln6_1_fu_102_p2;
+wire [0:0] empty_4_fu_120_p2;
+wire [0:0] empty_fu_114_p2;
+wire [0:0] empty_6_fu_132_p2;
+wire [0:0] empty_5_fu_126_p2;
+wire [0:0] empty_8_fu_144_p2;
+wire [0:0] empty_7_fu_138_p2;
+wire [0:0] empty_10_fu_156_p2;
+wire [0:0] empty_9_fu_150_p2;
+wire [0:0] empty_12_fu_168_p2;
+wire [0:0] empty_11_fu_162_p2;
+wire [0:0] empty_14_fu_180_p2;
+wire [0:0] empty_13_fu_174_p2;
+wire [0:0] empty_16_fu_192_p2;
+wire [0:0] empty_15_fu_186_p2;
+wire [0:0] empty_18_fu_204_p2;
+wire [0:0] empty_17_fu_198_p2;
+wire [0:0] empty_20_fu_216_p2;
+wire [0:0] empty_19_fu_210_p2;
+wire ap_ce_reg;
+always @ (*) begin
+ if (((empty_21_fu_222_p2 == 1'd1) & (or_ln6_fu_108_p2 == 1'd1) & (ap_start == 1'b1))) begin
+ temptemp1_ap_vld = 1'b1;
+ end else begin
+ temptemp1_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((empty_21_fu_222_p2 == 1'd0) & (or_ln6_fu_108_p2 == 1'd1) & (ap_start == 1'b1))) begin
+ temptemp2_ap_vld = 1'b1;
+ end else begin
+ temptemp2_ap_vld = 1'b0;
+ end
+end
+always @ (*) begin
+ if (((or_ln6_fu_108_p2 == 1'd0) & (ap_start == 1'b1))) begin
+ temptemp3_ap_vld = 1'b1;
+ end else begin
+ temptemp3_ap_vld = 1'b0;
+ end
+end
+assign add_ln6_1_fu_96_p2 = ($signed(ch) + $signed(8'd159));
+assign add_ln6_fu_84_p2 = ($signed(ch) + $signed(8'd191));
+assign ap_done = ap_start;
+assign ap_idle = 1'b1;
+assign ap_ready = ap_start;
+assign ap_return = 32'd0;
+assign empty_10_fu_156_p2 = ((ch == 8'd97) ? 1'b1 : 1'b0);
+assign empty_11_fu_162_p2 = (empty_9_fu_150_p2 | empty_10_fu_156_p2);
+assign empty_12_fu_168_p2 = ((ch == 8'd85) ? 1'b1 : 1'b0);
+assign empty_13_fu_174_p2 = (empty_12_fu_168_p2 | empty_11_fu_162_p2);
+assign empty_14_fu_180_p2 = ((ch == 8'd79) ? 1'b1 : 1'b0);
+assign empty_15_fu_186_p2 = (empty_14_fu_180_p2 | empty_13_fu_174_p2);
+assign empty_16_fu_192_p2 = ((ch == 8'd73) ? 1'b1 : 1'b0);
+assign empty_17_fu_198_p2 = (empty_16_fu_192_p2 | empty_15_fu_186_p2);
+assign empty_18_fu_204_p2 = ((ch == 8'd69) ? 1'b1 : 1'b0);
+assign empty_19_fu_210_p2 = (empty_18_fu_204_p2 | empty_17_fu_198_p2);
+assign empty_20_fu_216_p2 = ((ch == 8'd65) ? 1'b1 : 1'b0);
+assign empty_21_fu_222_p2 = (empty_20_fu_216_p2 | empty_19_fu_210_p2);
+assign empty_4_fu_120_p2 = ((ch == 8'd111) ? 1'b1 : 1'b0);
+assign empty_5_fu_126_p2 = (empty_fu_114_p2 | empty_4_fu_120_p2);
+assign empty_6_fu_132_p2 = ((ch == 8'd105) ? 1'b1 : 1'b0);
+assign empty_7_fu_138_p2 = (empty_6_fu_132_p2 | empty_5_fu_126_p2);
+assign empty_8_fu_144_p2 = ((ch == 8'd101) ? 1'b1 : 1'b0);
+assign empty_9_fu_150_p2 = (empty_8_fu_144_p2 | empty_7_fu_138_p2);
+assign empty_fu_114_p2 = ((ch == 8'd117) ? 1'b1 : 1'b0);
+assign icmp_ln6_1_fu_102_p2 = ((add_ln6_1_fu_96_p2 < 8'd26) ? 1'b1 : 1'b0);
+assign icmp_ln6_fu_90_p2 = ((add_ln6_fu_84_p2 < 8'd26) ? 1'b1 : 1'b0);
+assign or_ln6_fu_108_p2 = (icmp_ln6_fu_90_p2 | icmp_ln6_1_fu_102_p2);
+assign temptemp1 = ch;
+assign temptemp2 = ch;
+assign temptemp3 = ch;
+endmodule

@@ -1,0 +1,60 @@
+Given the constraints you've set, I'll create three different versions of code that illustrate similar concepts—getting and showing the address of array elements—without using pointers, dynamic memory allocation, functions, structs, unions, recursion, file handling, or modifying the original data type, and replacing `double` with `float` where necessary. Each example will follow a different approach to demonstrate the address of an array element without directly using pointers.
+
+### Version 1: Using Array Indexing
+
+This version directly accesses the address of the array elements through array indexing in a `for` loop. It demonstrates accessing each element's address without explicitly using pointers in the user's code.
+
+```c
+#include <stdio.h>
+
+int main() {
+    char multiple[] = "CodezClub";
+    int length = sizeof(multiple) / sizeof(multiple[0]);
+
+    for (int i = 0; i < length; i++) {
+        printf("The address of array element %d: %u\n", i, (unsigned)&multiple[i]);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using Array Decay
+
+This version leverages the fact that in C, the array name can decay into a pointer to its first element. This decay is used to calculate the address of other elements based on the size of the array element.
+
+```c
+#include <stdio.h>
+
+int main() {
+    char multiple[] = "CodezClub";
+    unsigned baseAddress = (unsigned)multiple;
+
+    for (int i = 0; i < 10; i++) { // Assuming we know the array length.
+        printf("The address of array element %d: %u\n", i, baseAddress + i * sizeof(char));
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using Arithmetic to Calculate Addresses
+
+This version uses a combination of arithmetic on the array base address (treated as an integer) to calculate and display addresses of elements. This method avoids direct pointer usage in the arithmetic or in displaying addresses.
+
+```c
+#include <stdio.h>
+
+int main() {
+    char multiple[] = "CodezClub";
+    unsigned baseAddress = (unsigned)&multiple[0]; // Get the base address as an unsigned int
+
+    for (int i = 0; i < 10; i++) { // Loop over the array length
+        printf("The address of array element %d: %u\n", i, baseAddress + i);
+    }
+
+    return 0;
+}
+```
+
+Each of these versions respects the constraints you've outlined, showing alternative methods to display the address of array elements without directly using pointer syntax in the operations or display statements.

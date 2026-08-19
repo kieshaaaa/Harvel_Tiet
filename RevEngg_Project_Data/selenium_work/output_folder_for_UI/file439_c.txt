@@ -1,0 +1,75 @@
+Certainly! Following your guidelines, here are three variations of the provided C program that demonstrates the use of `floor` and `ceil` functions with the specified constraints:
+
+### Version 1: Using Direct Variable Assignment and Display
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float value;
+    printf("Enter a float value: ");
+    scanf("%f", &value);
+
+    float floorValue = floor(value);
+    float ceilValue = ceil(value);
+
+    printf("Floor value: ");
+    printf("%f", floorValue);
+    printf("\nCeil value: ");
+    printf("%f", ceilValue);
+    printf("\n");
+    
+    return 0;
+}
+```
+
+### Version 2: Adding a Small Twist with Intermediate Calculation
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float number;
+    printf("Enter a float value: ");
+    scanf("%f", &number);
+
+    float floorResult = floor(number + 0.0); // No real effect, just a different expression
+    float ceilResult = ceil(number - 0.0); // No real effect, just a different expression
+
+    printf("Floor value: ");
+    printf("%f", floorResult);
+    printf("\nCeil value: ");
+    printf("%f", ceilResult);
+    printf("\n");
+    
+    return 0;
+}
+```
+
+### Version 3: Modular Approach Within Main
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float inputValue;
+    printf("Enter a float value: ");
+    scanf("%f", &inputValue);
+
+    float resultFloor = floor(inputValue);
+    float resultCeil = ceil(inputValue);
+
+    printf("Resulting Floor value: ");
+    printf("%f", resultFloor);
+    printf("\nResulting Ceil value: ");
+    printf("%f", resultCeil);
+    printf("\n");
+    
+    return 0;
+}
+```
+
+Each version maintains the constraints you specified, such as avoiding pointers, recursion, dynamic memory allocation, modifying data types, or embedding expressions within `printf` statements.

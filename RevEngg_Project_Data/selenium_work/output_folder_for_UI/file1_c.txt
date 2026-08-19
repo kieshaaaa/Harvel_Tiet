@@ -1,0 +1,120 @@
+### Version 1: Inline Operations with Simplified Control Flow
+
+```c
+#include <stdio.h>
+#define MAX 20
+
+int main() {
+    int arr[MAX], n, item;
+    int i, found = 0;
+
+    printf("\nEnter size of an Array :");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        printf("Enter %d element :", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter an item to find :");
+    scanf("%d", &item);
+
+    for (i = 0; i < n; i++) {
+        if (arr[i] == item) {
+            found = 1;
+            printf("\n%d found @ %d position.\n", item, i);
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("\n%d does not exists in array.\n", item);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using `while` Loop Instead of `for` for Array Traversal
+
+```c
+#include <stdio.h>
+#define MAX 20
+
+int main() {
+    int arr[MAX], n, item;
+    int i = 0, found = 0;
+
+    printf("\nEnter size of an Array :");
+    scanf("%d", &n);
+
+    while (i < n) {
+        printf("Enter %d element :", i + 1);
+        scanf("%d", &arr[i]);
+        i++;
+    }
+
+    i = 0; // Resetting i for reuse
+    printf("Enter an item to find :");
+    scanf("%d", &item);
+
+    while (i < n) {
+        if (arr[i] == item) {
+            found = 1;
+            printf("\n%d found @ %d position.\n", item, i);
+            break;
+        }
+        i++;
+    }
+
+    if (!found) {
+        printf("\n%d does not exists in array.\n", item);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Incorporating User Confirmation to Continue Search
+
+```c
+#include <stdio.h>
+#define MAX 20
+
+int main() {
+    int arr[MAX], n, item;
+    char cont = 'y';
+    int i;
+
+    printf("\nEnter size of an Array :");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        printf("Enter %d element :", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    while (cont == 'y' || cont == 'Y') {
+        printf("Enter an item to find :");
+        scanf("%d", &item);
+
+        for (i = 0; i < n; i++) {
+            if (arr[i] == item) {
+                printf("\n%d found @ %d position.\n", item, i);
+                break;
+            }
+        }
+
+        if (i == n) {
+            printf("\n%d does not exist in array.\n", item);
+        }
+
+        printf("Do you want to search another item? (y/n): ");
+        scanf(" %c", &cont); // Notice the space before %c to catch any newline character left in the input buffer
+    }
+
+    return 0;
+}
+```
+
+Each version progressively builds on the basic task of finding an item in an array but with slight modifications in how the array is iterated and how user interaction is handled.

@@ -1,0 +1,66 @@
+Sure, here are three different versions of the given C program to check if a number is even or odd, adhering to your constraints:
+
+### Version 1: Using bitwise AND operator
+In this version, we use the bitwise AND operator to determine if a number is even or odd. This works because the least significant bit (LSB) of all even numbers is 0, and the LSB of all odd numbers is 1.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter an integer number :: ");
+    scanf("%d", &num);
+
+    int result = num & 1;
+    if(result == 0)
+        printf("\n%d is an EVEN number.", num);
+    else
+        printf("\n%d is an ODD number.", num);
+
+    return 0;
+}
+```
+
+### Version 2: Using addition and subtraction
+This version uses a simple trick with addition and subtraction to check if a number is even or odd. We subtract 1 from the number, double it, and then add 1. If the result equals the original number, it's odd; otherwise, it's even.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter an integer number :: ");
+    scanf("%d", &num);
+
+    int modifiedNum = ((num - 1) * 2) + 1;
+    if(modifiedNum != num)
+        printf("\n%d is an EVEN number.", num);
+    else
+        printf("\n%d is an ODD number.", num);
+
+    return 0;
+}
+```
+
+### Version 3: Using modulus operator differently
+In this version, instead of directly checking the modulus result in the `if` statement, we store it in a variable and then check the variable. This is a slight variation from the direct approach.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter an integer number :: ");
+    scanf("%d", &num);
+
+    int isOdd = num % 2;
+    if(isOdd)
+        printf("\n%d is an ODD number.", num);
+    else
+        printf("\n%d is an EVEN number.", num);
+
+    return 0;
+}
+```
+
+Each of these versions offers a different way to approach the problem while adhering to the restrictions you've outlined.

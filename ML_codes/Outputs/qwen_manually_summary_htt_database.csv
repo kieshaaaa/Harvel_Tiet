@@ -1,0 +1,872 @@
+verilog code ,c code ,Unnamed: 2,c code Summary
+"timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company:
+// Engineer:
+//
+// Create Date:    12:20:01 03/06/2013
+// Design Name:
+// Module Name:    TSC
+// Project Name:
+// Target Devices:
+// Tool versions:
+// Description:
+//
+// Dependencies:
+//
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+//
+//////////////////////////////////////////////////////////////////////////////////
+module TSC(
+    input rst,
+    input clk,
+    input [127:0] key,
+	 output [63:0] load
+    );
+
+	reg [63:0] load;
+	wire [19: 0] counter;
+
+	lfsr_counter lfsr (rst, clk, counter);
+	always @ (posedge clk)
+		begin
+			load[0] <= key[0] ^ counter[0];
+			load[1] <= key[0] ^ counter[0];
+			load[2] <= key[0] ^ counter[0];
+			load[3] <= key[0] ^ counter[0];
+			load[4] <= key[0] ^ counter[0];
+			load[5] <= key[0] ^ counter[0];
+			load[6] <= key[0] ^ counter[0];
+			load[7] <= key[0] ^ counter[0];
+
+			load[8] <= key[1] ^ counter[1];
+			load[9] <= key[1] ^ counter[1];
+			load[10] <= key[1] ^ counter[1];
+			load[11] <= key[1] ^ counter[1];
+			load[12] <= key[1] ^ counter[1];
+			load[13] <= key[1] ^ counter[1];
+			load[14] <= key[1] ^ counter[1];
+			load[15] <= key[1] ^ counter[1];
+
+			load[16] <= key[2] ^ counter[2];
+			load[17] <= key[2] ^ counter[2];
+			load[18] <= key[2] ^ counter[2];
+			load[19] <= key[2] ^ counter[2];
+			load[20] <= key[2] ^ counter[2];
+			load[21] <= key[2] ^ counter[2];
+			load[22] <= key[2] ^ counter[2];
+			load[23] <= key[2] ^ counter[2];
+
+			load[24] <= key[3] ^ counter[3];
+			load[25] <= key[3] ^ counter[3];
+			load[26] <= key[3] ^ counter[3];
+			load[27] <= key[3] ^ counter[3];
+			load[28] <= key[3] ^ counter[3];
+			load[29] <= key[3] ^ counter[3];
+			load[30] <= key[3] ^ counter[3];
+			load[31] <= key[3] ^ counter[3];
+
+			load[32] <= key[4] ^ counter[4];
+			load[33] <= key[4] ^ counter[4];
+			load[34] <= key[4] ^ counter[4];
+			load[35] <= key[4] ^ counter[4];
+			load[36] <= key[4] ^ counter[4];
+			load[37] <= key[4] ^ counter[4];
+			load[38] <= key[4] ^ counter[4];
+			load[39] <= key[4] ^ counter[4];
+
+			load[40] <= key[5] ^ counter[5];
+			load[41] <= key[5] ^ counter[5];
+			load[42] <= key[5] ^ counter[5];
+			load[43] <= key[5] ^ counter[5];
+			load[44] <= key[5] ^ counter[5];
+			load[45] <= key[5] ^ counter[5];
+			load[46] <= key[5] ^ counter[5];
+			load[47] <= key[5] ^ counter[5];
+
+			load[48] <= key[6] ^ counter[6];
+			load[49] <= key[6] ^ counter[6];
+			load[50] <= key[6] ^ counter[6];
+			load[51] <= key[6] ^ counter[6];
+			load[52] <= key[6] ^ counter[6];
+			load[53] <= key[6] ^ counter[6];
+			load[54] <= key[6] ^ counter[6];
+			load[55] <= key[6] ^ counter[6];
+
+			load[56] <= key[7] ^ counter[7];
+			load[57] <= key[7] ^ counter[7];
+			load[58] <= key[7] ^ counter[7];
+			load[59] <= key[7] ^ counter[7];
+			load[60] <= key[7] ^ counter[7];
+			load[61] <= key[7] ^ counter[7];
+			load[62] <= key[7] ^ counter[7];
+			load[63] <= key[7] ^ counter[7];
+		end
+
+endmodule","```c
+#include <stdio.h>
+
+void TSC(int rst, int clk, int key[128], int load[64]) {
+    int counter[20];
+
+    lfsr_counter(rst, clk, counter);
+
+    for (int i = 0; i < 64; i++) {
+        load[i] = key[i % 128] ^ counter[i / 8];
+    }
+}
+```",AES-T100,"The C code simulates a simplified version of a Tweakable Stream Cipher (TSC). It takes a reset signal (`rst`), a clock signal (`clk`), a 128-bit key (`key`), and an output array `load` of 64 bits as input.
+
+The core functionality is as follows:
+
+1. **LFSR Counter:** It uses a function `lfsr_counter` (assumed to be defined elsewhere) driven by `rst` and `clk` to generate a 20-bit counter value, stored in the `counter` array.  This function's implementation is not provided.
+
+2. **XOR Operation:** It iterates 64 times, calculating each bit of the `load` array. For each `load[i]`, it XORs a bit from the `key` with a bit from the `counter`.
+
+   *  The key index `i % 128` effectively repeats the 128-bit key to generate a longer keystream if necessary.
+   *  The counter index `i / 8` selects a bit from the 20-bit counter.  This means that every 8 bits of `load` will be XORed with the same counter bit.  Since the counter is 20 bits wide and `load` is 64 bits, not all counter bits are used.
+
+In essence, this code generates a 64-bit output (`load`) by XORing a segment of a cyclically repeated 128-bit key with a low-resolution (8-bit chunks) version of a 20-bit LFSR-generated counter. The `lfsr_counter` function and its impact on the generated counter values are crucial to the security and behavior of this (simplified) cipher."
+"`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    12:20:01 03/06/2013 
+// Design Name: 
+// Module Name:    TSC 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module TSC(
+	 input rst, clk, 
+    input [127:0] state,
+	 input [127:0] rk1, rk2, rk3, rk4, rk5, rk6, rk7, rk8
+    );
+
+	reg enable1, enable2, enable3, enable4, enable5, enable6, enable7, enable8;
+	reg [7:0] SHReg1, SHReg2, SHReg3, SHReg4, SHReg5, SHReg6, SHReg7, SHReg8;
+	always @ (rk1)
+		begin
+			enable1 <= (state[0]&rk1[0])^(state[1]&rk1[1])^(state[2]&rk1[2])^(state[3]&rk1[3])^(state[4]&rk1[4])^(state[5]&rk1[5])^(state[6]&rk1[6])^(state[7]&rk1[7]);
+		end
+	always @ (rk2)
+		begin
+			enable2 <= (state[0]&rk2[0])^(state[1]&rk2[1])^(state[2]&rk2[2])^(state[3]&rk2[3])^(state[4]&rk2[4])^(state[5]&rk2[5])^(state[6]&rk2[6])^(state[7]&rk2[7]);
+		end
+	always @ (rk3)
+		begin
+			enable3 <= (state[0]&rk3[0])^(state[1]&rk3[1])^(state[2]&rk3[2])^(state[3]&rk3[3])^(state[4]&rk3[4])^(state[5]&rk3[5])^(state[6]&rk3[6])^(state[7]&rk3[7]);
+		end
+	always @ (rk4)
+		begin
+			enable4 <= (state[0]&rk4[0])^(state[1]&rk4[1])^(state[2]&rk4[2])^(state[3]&rk4[3])^(state[4]&rk4[4])^(state[5]&rk4[5])^(state[6]&rk4[6])^(state[7]&rk4[7]);
+		end
+	always @ (rk5)
+		begin
+			enable5 <= (state[0]&rk5[0])^(state[1]&rk5[1])^(state[2]&rk5[2])^(state[3]&rk5[3])^(state[4]&rk5[4])^(state[5]&rk5[5])^(state[6]&rk5[6])^(state[7]&rk5[7]);
+		end
+	always @ (rk6)
+		begin
+			enable6 <= (state[0]&rk6[0])^(state[1]&rk6[1])^(state[2]&rk6[2])^(state[3]&rk6[3])^(state[4]&rk6[4])^(state[5]&rk6[5])^(state[6]&rk6[6])^(state[7]&rk6[7]);
+		end
+	always @ (rk7)
+		begin
+			enable7 <= (state[0]&rk7[0])^(state[1]&rk7[1])^(state[2]&rk7[2])^(state[3]&rk7[3])^(state[4]&rk7[4])^(state[5]&rk7[5])^(state[6]&rk7[6])^(state[7]&rk7[7]);
+		end
+	always @ (rk8)
+		begin
+			enable8 <= (state[0]&rk8[0])^(state[1]&rk8[1])^(state[2]&rk8[2])^(state[3]&rk8[3])^(state[4]&rk8[4])^(state[5]&rk8[5])^(state[6]&rk8[6])^(state[7]&rk8[7]);
+		end
+
+	always @(clk)
+		begin
+			if (rst == 1) begin
+					SHReg1 <= ""10101010"";
+			end else if (enable1 == 1) begin
+					SHReg1 <= {SHReg1[0], SHReg1[7:1]}; 
+			end 
+		end
+
+	always @(clk)
+		begin
+			if (rst == 1) begin
+					SHReg2 <= ""10101010"";
+			end else if (enable2 == 1) begin
+					SHReg2 <= {SHReg2[0], SHReg2[7:1]}; 
+			end 
+		end
+
+	always @(clk)
+		begin
+			if (rst == 1) begin
+					SHReg3 <= ""10101010"";
+			end else if (enable3 == 1) begin
+					SHReg3 <= {SHReg3[0], SHReg3[7:1]}; 
+			end 
+		end
+
+	always @(clk)
+		begin
+			if (rst == 1) begin
+					SHReg4 <= ""10101010"";
+			end else if (enable4 == 1) begin
+					SHReg4 <= {SHReg4[0], SHReg4[7:1]}; 
+			end 
+		end
+
+	always @(clk)
+		begin
+			if (rst == 1) begin
+					SHReg5 <= ""10101010"";
+			end else if (enable5 == 1) begin
+					SHReg5 <= {SHReg5[0], SHReg5[7:1]}; 
+			end 
+		end
+
+	always @(clk)
+		begin
+			if (rst == 1) begin
+					SHReg6 <= ""10101010"";
+			end else if (enable6 == 1) begin
+					SHReg6 <= {SHReg6[0], SHReg6[7:1]}; 
+			end 
+		end
+
+	always @(clk)
+		begin
+			if (rst == 1) begin
+					SHReg7 <= ""10101010"";
+			end else if (enable7 == 1) begin
+					SHReg7 <= {SHReg7[0], SHReg7[7:1]}; 
+			end 
+		end
+
+	always @(clk)
+		begin
+			if (rst == 1) begin
+					SHReg8 <= ""10101010"";
+			end else if (enable8 == 1) begin
+					SHReg8 <= {SHReg8[0], SHReg8[7:1]}; 
+			end 
+		end
+
+endmodule","```c
+#include <stdio.h>
+
+void TSC(int rst, int clk, int state[128], int rk1[128], int rk2[128], int rk3[128], int rk4[128], int rk5[128], int rk6[128], int rk7[128], int rk8[128]) {
+    int enable1, enable2, enable3, enable4, enable5, enable6, enable7, enable8;
+    int SHReg1[8], SHReg2[8], SHReg3[8], SHReg4[8], SHReg5[8], SHReg6[8], SHReg7[8], SHReg8[8];
+
+    for (int i = 0; i < 8; i++) {
+        SHReg1[i] = 0x55;
+        SHReg2[i] = 0x55;
+        SHReg3[i] = 0x55;
+        SHReg4[i] = 0x55;
+        SHReg5[i] = 0x55;
+        SHReg6[i] = 0x55;
+        SHReg7[i] = 0x55;
+        SHReg8[i] = 0x55;
+    }
+
+    while (1) {
+        if (rst) {
+            for (int i = 0; i < 8; i++) {
+                SHReg1[i] = 0x55;
+                SHReg2[i] = 0x55;
+                SHReg3[i] = 0x55;
+                SHReg4[i] = 0x55;
+                SHReg5[i] = 0x55;
+                SHReg6[i] = 0x55;
+                SHReg7[i] = 0x55;
+                SHReg8[i] = 0x55;
+            }
+        } else {
+            enable1 = (state[0] & rk1[0]) ^ (state[1] & rk1[1]) ^ (state[2] & rk1[2]) ^ (state[3] & rk1[",AES-T300,"This C code simulates a digital circuit, likely a Test Pattern Generator or a cryptographic component (suggested by the name ""TSC"" and the round keys `rk1` through `rk8`). It appears to be a simplified version that operates in a procedural manner within a `while(1)` loop.  Here's a breakdown:
+
+*   **Purpose:** The core function `TSC` models the behavior of a digital circuit. It takes `rst` (reset) and `clk` (clock) as inputs, along with a `state` array (128 bits), and eight `rk` (round key) arrays, also 128 bits each. It updates internal state based on these inputs.
+
+*   **Initialization:**  `SHReg1` through `SHReg8` (shift registers) are initialized with the value `0x55` (likely representing alternating 1s and 0s) at the beginning of the function and reset when `rst` is asserted.
+
+*   **Main Loop:**  The `while (1)` loop simulates continuous operation.
+
+*   **Reset Logic:**  If `rst` is high, the shift registers `SHReg1` through `SHReg8` are reset to `0x55`.
+
+*   **Keyed State Update:** If `rst` is low, it computes `enable1` through `enable8` based on a bitwise AND and XOR combination of the `state` array and the `rk` arrays. This operation suggests a keyed transformation of the state. (The provided extract is incomplete and thus it's impossible to know the full update process. The complete code likely involves shifting the SHRegs based on `enable` flags and potentially updating the `state` array based on these registers).
+
+In essence, this C code seems to simulate a digital circuit involving shift registers and round key based state manipulation. The presence of round keys (`rk1` - `rk8`) suggests that this could be related to a block cipher or some other cryptographic operation."
+"`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    13:40:39 03/08/2013 
+// Design Name: 
+// Module Name:    Trojan_Trigger 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module Trojan_Trigger(
+    input rst,
+    input clk,
+    input [127:0] state,
+    output Tj_Trig
+    );
+
+	reg Tj_Trig;
+	reg tempClk1, tempClk2;
+	reg Detected;
+	
+	always @(tempClk1, tempClk2)
+	begin
+		Tj_Trig <= tempClk1 | tempClk2;
+	end
+	
+	// Tj_Trig is high for two clock cycles
+	always @(posedge clk)
+	begin
+		if (rst == 1)	begin tempClk1 <= 1; tempClk2 <= 0; end
+		else if ((tempClk1 == 1) && (Detected == 1))	begin tempClk1 <= 0; tempClk2 <= 1;	end
+		else if ((tempClk1 == 0) && (tempClk2 == 1))	begin tempClk2 <= 0;	end		
+		else begin tempClk1 <= 0; tempClk2 <= 0; end
+	end
+
+	always @(state)
+	begin
+		if (state == 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)	
+			Detected <= 1; 
+		else 
+			Detected <= 0; 
+	end
+endmodule","```c
+#include <stdio.h>
+
+void Trojan_Trigger(int rst, int clk, unsigned long long state, int* Tj_Trig) {
+    int tempClk1 = 1, tempClk2 = 0;
+    int Detected = 0;
+
+    if (rst == 1) {
+        tempClk1 = 1;
+        tempClk2 = 0;
+    } else if ((tempClk1 == 1) && (Detected == 1)) {
+        tempClk1 = 0;
+        tempClk2 = 1;
+    } else if ((tempClk1 == 0) && (tempClk2 == 1)) {
+        tempClk2 = 0;
+    } else {
+        tempClk1 = 0;
+        tempClk2 = 0;
+    }
+
+    *Tj_Trig = tempClk1 | tempClk2;
+
+    if (state == 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF) {
+        Detected = 1;
+    } else {
+        Detected = 0;
+    }
+}
+```",AES-T400,"This C code simulates the behavior of a hardware Trojan trigger based on a state machine and a detection condition.
+
+Here's a breakdown:
+
+*   **Purpose:**  The `Trojan_Trigger` function determines whether a Trojan trigger should be activated (`Tj_Trig`).
+
+*   **Inputs:**
+    *   `rst`:  A reset signal.  When high (1), the trigger is reset.
+    *   `clk`:  A clock signal (although the code seems to implement its own clock-like behavior). It is not being used.
+    *   `state`:  A 128-bit state value. This is the primary trigger condition.
+    *   `Tj_Trig`: A pointer to an integer that will hold the value of the Trojan trigger signal (0 or 1).
+
+*   **State Machine:** The code implements a simple state machine using `tempClk1` and `tempClk2`. It attempts to simulate a clock-like behavior, although the usefulness of this aspect is questionable in the absence of the `clk` input being used. It toggles `tempClk1` and `tempClk2` to potentially trigger.  The main functionality of it is to set the trigger signal to 1 under certain conditions.
+
+*   **Detection Condition:**
+    *   `Detected`: A flag that is set to 1 if the `state` variable equals a specific very large value (all bits set to 1, represented as `0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF`).
+
+*   **Trigger Activation:**
+    *   `*Tj_Trig = tempClk1 | tempClk2;`:  The Trojan trigger signal `*Tj_Trig` is set to the logical OR of `tempClk1` and `tempClk2`.
+
+*   **Reset Behavior:** When `rst` is 1, `tempClk1` is set to 1 and `tempClk2` is set to 0, effectively resetting the internal state of the trigger logic.
+
+In summary, this code simulates a Trojan trigger that is activated when a specific state (`0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF`) is reached. The `tempClk1` and `tempClk2` variables and the state machine that controls them add more complexity.  It sets the *Tj_Trig to 1 under specific conditions, primarily driven by the ""Detected"" flag and the state of tempClk1 and tempClk2."
+"module TSC(
+    input clk,
+    input rst,
+    input [127:0] state
+    );
+
+	 reg 	[127:0] DynamicPower; 
+	 reg 	State0, State1, State2, State3; 
+	 reg 	Tj_Trig;
+	 
+	 always @(rst, clk)
+	 begin
+		if (rst == 1)
+			DynamicPower <= 128'haaaaaaaa_aaaaaaaa_aaaaaaaa_aaaaaaaa;
+		else if (Tj_Trig == 1)
+			DynamicPower <= {DynamicPower[0],DynamicPower[127:1]}; 	
+	 end
+
+	 always @(rst, state)
+	 begin
+		if (rst == 1) begin
+			State0 <= 0;
+			State1 <= 0;
+			State2 <= 0;
+			State3 <= 0; 
+		end else if (state == 128'h3243f6a8_885a308d_313198a2_e0370734) begin
+			State0 <= 1;
+		end else if ((state == 128'h00112233_44556677_8899aabb_ccddeeff) && (State0 == 1)) begin
+			State1 <= 1;
+		end else if ((state == 128'h0) && (State1 == 1)) begin
+			State2 <= 1;
+		end else if ((state == 128'h1) && (State2 == 1)) begin
+			State3 <= 1;
+		end
+	 end
+
+	always @(State0, State1, State2, State3)
+	begin
+		Tj_Trig <= State0 & State1 & State2 & State3;
+	end
+	
+endmodule","```c
+#include <stdint.h>
+
+void TSC(int clk, int rst, uint128_t state, uint128_t *DynamicPower, int *State0, int *State1, int *State2, int *State3, int *Tj_Trig) {
+    if (rst == 1) {
+        *DynamicPower = 0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
+        *State0 = 0;
+        *State1 = 0;
+        *State2 = 0;
+        *State3 = 0;
+    } else if (*Tj_Trig == 1) {
+        *DynamicPower = (*DynamicPower << 1) | (*DynamicPower >> 127);
+    }
+
+    if (rst == 1) {
+        *State0 = 0;
+        *State1 = 0;
+        *State2 = 0;
+        *State3 = 0;
+    } else if (state == 0x3243f6a8885a308d313198a2e0370734) {
+        *State0 = 1;
+    } else if ((state == 0x00112233445566778899aabbccddeeff) && (*State0 == 1)) {
+        *State1 = 1;
+    } else if ((state == 0x0) && (*State1 == 1)) {
+        *State2 = 1;
+    } else if ((state == 0x1) && (*State2 == 1)) {
+        *State3 = 1;
+    }
+
+    *Tj_Trig = (*State0 && *State1 && *State2 && *State3);
+}
+```",AES-T500,"This C code simulates the behavior of a digital circuit named `TSC`.  It takes clock (`clk`), reset (`rst`), a 128-bit state (`state`), and pointers to several output variables as input.
+
+Here's a breakdown:
+
+*   **Reset Logic:** When `rst` is 1, the code initializes `DynamicPower` to a specific hexadecimal value, and resets the state variables `State0`, `State1`, `State2`, and `State3` to 0.
+
+*   **Dynamic Power Calculation:** When `Tj_Trig` is asserted, `DynamicPower` undergoes a left shift by one bit with wraparound (rotation). The most significant bit becomes the least significant bit.
+
+*   **State Machine:** The code implements a state machine using `State0`, `State1`, `State2`, and `State3`.  The state transitions are triggered by specific values of the 128-bit `state` input, contingent on the current state. It transitions from `State0` to `State1` to `State2` to `State3` based on specific state values.
+
+*   **Tj_Trig Generation:**  `Tj_Trig` is asserted (set to 1) only when all state variables (`State0`, `State1`, `State2`, and `State3`) are simultaneously 1. This acts like an AND gate of all state variables and forms a trigger condition."
+"module Trojan_Trigger(
+    input rst,
+    input [127:0] out,
+    output Tj_Trig
+    );
+
+	reg Tj_Trig;
+	reg [127:0] Counter;
+	
+	always @(rst, out)
+	begin
+		if (rst == 1) begin
+			Counter <= 0;
+		end else begin
+			Counter <= Counter + 1;
+		end
+	end
+
+	always @(rst, Counter)
+	begin
+		if (rst == 1) begin
+			Tj_Trig <= 0;
+		end else if (Counter == 128'hffff_ffff_ffff_ffff_ffff_ffff_ffff_ffff) begin
+			Tj_Trig <= 1;
+		end else begin
+			Tj_Trig <= 0;		
+		end
+	end
+
+endmodule","```c
+#include <stdbool.h>
+
+void Trojan_Trigger(bool rst, unsigned long long out, bool* Tj_Trig) {
+    unsigned long long Counter = 0;
+
+    if (rst) {
+        Counter = 0;
+    } else {
+        Counter++;
+    }
+
+    if (rst) {
+        *Tj_Trig = false;
+    } else if (Counter == 18446744073709551615ULL) {
+        *Tj_Trig = true;
+    } else {
+        *Tj_Trig = false;
+    }
+}
+```",AES-T800,"The C code simulates a Trojan trigger mechanism.  It uses a counter that increments on every clock cycle (implied by the lack of `rst`). When the counter reaches its maximum value (UINT64_MAX or 18446744073709551615), the `Tj_Trig` output is set to true, indicating the Trojan is triggered. A reset signal `rst` sets the counter back to zero and deactivates the trigger.  Essentially, it's a counter that triggers a signal after a very long time."
+"module TSC(
+    input clk,
+    input rst,
+	 input [127:0] key,
+	 input Tj_Trig
+    );
+
+	 reg [127:0] SECRETKey; 
+	 reg [127:0] COUNTER; 
+	 reg LEAKBit; 
+	 wire INV1_out, INV2_out, INV3_out, INV4_out, INV5_out, INV6_out, INV7_out, INV8_out, INV9_out, INV10_out, INV11_out; 
+	 
+	 always @(rst, clk)
+	 begin
+			if (rst == 1)
+				COUNTER <= 0;
+			else
+				COUNTER <= COUNTER + 1;
+	 end
+
+	 always @(posedge Tj_Trig, posedge COUNTER[127])
+	 begin
+			if (Tj_Trig == 1)
+				SECRETKey <= key;
+			else
+				SECRETKey <= SECRETKey >> 1;
+	 end
+
+	 always @ (SECRETKey)
+	 begin
+			LEAKBit <= SECRETKey[0];
+	 end
+
+	 assign INV1_out = ~(LEAKBit);
+	 assign INV2_out = ~(INV1_out);
+	 assign INV3_out = ~(INV1_out);
+	 assign INV4_out = ~(INV1_out);
+	 assign INV5_out = ~(INV1_out);
+	 assign INV6_out = ~(INV1_out);
+	 assign INV7_out = ~(INV1_out);
+	 assign INV8_out = ~(INV1_out);
+	 assign INV9_out = ~(INV1_out);
+	 assign INV10_out = ~(INV1_out);
+	 assign INV11_out = ~(INV1_out);
+	 
+endmodule","```c #include <stdio.h> void TSC(int clk, int rst, int key[128], int Tj_Trig) { int SECRETKey[128]; int COUNTER = 0; int LEAKBit; if (rst == 1) { COUNTER = 0; } else { COUNTER++; } if (Tj_Trig == 1) { for (int i = 0; i < 128; i++) { SECRETKey[i] = key[i]; } } else { for (int i = 0; i < 128; i++) { SECRETKey[i] = SECRETKey[i] >> 1; } } LEAKBit = SECRETKey[0]; int INV1_out = ~LEAKBit; int INV2_out = ~INV1_out; int INV3_out = ~INV1_out; int INV4_out = ~INV1_out; int INV5_out = ~INV1_out; int INV6_out = ~INV1_out; int INV7_out = ~INV1_out; int INV8_out = ~INV1_out; int INV9_out = ~INV1_out; int INV10_out = ~INV1_out; int INV11_out = ~INV1_out; } ```",AES-T2100,"This C code simulates the behavior of a hardware module, likely a Time-to-Space Converter (TSC) based on the function name.  It takes clock (`clk`), reset (`rst`), a 128-bit key (`key`), and a trigger signal (`Tj_Trig`) as inputs.
+
+Here's a breakdown:
+
+1. **Initialization and State:**
+   - It maintains a `COUNTER` variable that increments on each clock cycle when the reset (`rst`) is inactive.  Resetting sets the counter back to 0.
+   - It has a 128-bit `SECRETKey` which acts as a register.
+
+2. **Key Loading/Shifting:**
+   - When `Tj_Trig` is high, the input `key` is loaded into the `SECRETKey`.
+   - When `Tj_Trig` is low, the `SECRETKey` is right-shifted by one bit on each ""clock cycle"" (simulated by the loop in the `else` block).  This is the core operation that leaks information.
+
+3. **Leakage:**
+   - The least significant bit of the `SECRETKey` (`SECRETKey[0]`) is extracted and assigned to `LEAKBit`.  This is likely the information that the TSC aims to leak in a controlled manner.
+
+4. **Inverter Chain (Noise Generation):**
+   - A series of inverters (`INV1_out` to `INV11_out`) are driven by the complement of `LEAKBit`. The outputs of these inverters are calculated but not used. This part probably intended to add noise to the signal related to the leakage information. The number of inverters could be important to control the amount of noise.
+
+In essence, the code models a circuit that loads a secret key upon a trigger signal, then repeatedly right-shifts the key, exposing the least significant bit on each cycle, which is then run through an inverter chain, potentially to be observed as side-channel information. The shift operation coupled with the observation of the LSB suggests a side-channel vulnerability."
+"module TSC(
+	input clk,
+	input rst,
+	input r1,
+	output trigger
+    );
+
+	reg [3: 0] counter;
+	
+	always @ (posedge clk)
+		begin
+
+			if (~rst) begin
+				counter = 0;
+			end
+			if (r1 == 1) counter = counter + 1'b1;		
+		end
+
+
+	assign trigger = counter[3];
+
+	always @ (posedge trigger) $display(""Trojan Activated"");
+
+endmodule","```c
+#include <stdio.h>
+
+void TSC(int clk, int rst, int r1, int* trigger) {
+    static int counter = 0;
+
+    if (rst) {
+        counter = 0;
+    } else if (r1) {
+        counter++;
+    }
+
+    *trigger = counter & 0x8;
+
+    if (*trigger) {
+        printf(""Trojan Activated\n"");
+    }
+}
+```",AES-T2600,"This C code simulates a simple Trojan detection circuit, likely derived from Verilog.  Here's a breakdown:
+
+*   **Purpose:**  The function `TSC` emulates a trigger condition based on clock cycles and a reset signal. If the trigger condition is met, it prints ""Trojan Activated"".
+
+*   **Inputs:**
+    *   `clk`: Clock signal (likely ignored in this simplified C version).
+    *   `rst`: Reset signal. When high (1), it resets the counter.
+    *   `r1`:  A condition that, when true (1), increments the internal counter.
+    *   `trigger`: A pointer to an integer that will hold the trigger signal.
+
+*   **Internal State:** `counter`: A static integer that persists its value between function calls.  This acts as a cycle counter.
+
+*   **Logic:**
+    1.  **Reset:** If `rst` is high, `counter` is reset to 0.
+    2.  **Increment:** If `r1` is high (and `rst` is low), `counter` is incremented.
+    3.  **Trigger Condition:**  The `trigger` output is set to the value of `counter & 0x8`. This effectively checks if the 4th bit (bit 3, counting from 0) of the `counter` is set.
+    4.  **Trojan Activation:**  If the `trigger` is non-zero, it prints ""Trojan Activated"" to the console.
+
+In essence, the code increments a counter and activates a trigger (and prints a message) when the counter reaches a specific value (a multiple of 8), and it can be reset.  This is a simplified simulation of a potentially malicious hardware component (the ""Trojan"") being triggered based on certain conditions within the Verilog design. The 'clk' input is essentially unused, suggesting it might be handled differently in the original Verilog design for timing."
+"module top(
+    input clk,
+    input rst,
+    input [127:0]trigger_in1
+    // output trigger
+);
+// reg trigger;
+reg tempClk1=0;
+reg tempClk2=0;
+reg Detected;
+
+// always@(tempClk1, tempClk2)
+// begin
+//     trigger <= (tempClk1 | tempClk2);
+// end
+
+always @(posedge clk)
+begin
+	if (rst == 1)	begin tempClk1 <= 1; tempClk2 <= 0; end
+	else if ((tempClk1 == 1) && ((trigger_in1 == 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF) == 1))	begin tempClk1 <= 0; tempClk2 <= 1;	end
+	else if ((tempClk1 == 0) && (tempClk2 == 1))	begin tempClk2 <= 0;	end		
+	else begin tempClk1 <= 0; tempClk2 <= 0; end
+end
+
+// always @(trigger_in1)
+// begin
+// 	if (trigger_in1 == 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)	
+// 		Detected <= 1; 
+// 	else 
+// 		Detected <= 0; 
+// end
+
+    reg [25:0] Baud8GeneratorACC = 0;
+	// reg [127:0] SHIFTReg = 0;
+	
+	always @(posedge clk)
+	begin
+		if ((rst == 1'b1) || ((tempClk1 | tempClk2) == 1'b1)) begin
+			Baud8GeneratorACC <= 0;
+		end else begin
+			Baud8GeneratorACC <= Baud8GeneratorACC + 1;
+		end
+	end
+	
+	// always @(posedge (tempClk1 | tempClk2), posedge Baud8GeneratorACC[25])
+	// begin
+	// 	if ((tempClk1 | tempClk2) == 1'b1) begin
+	// 		SHIFTReg <= 128'h99999999_99999999_99999999_99999999;
+	// 	end else begin	
+	// 		SHIFTReg <= SHIFTReg >> 1; 
+	// 	end	
+	// end
+endmodule","```c
+#include <stdio.h>
+
+void top(int clk, int rst, int trigger_in1[128]) {
+    int tempClk1 = 0;
+    int tempClk2 = 0;
+    int Detected = 0;
+
+    if (rst == 1) {
+        tempClk1 = 1;
+        tempClk2 = 0;
+    } else if ((tempClk1 == 1) && (trigger_in1[127] == 1)) {
+        tempClk1 = 0;
+        tempClk2 = 1;
+    } else if ((tempClk1 == 0) && (tempClk2 == 1)) {
+        tempClk2 = 0;
+    } else {
+        tempClk1 = 0;
+        tempClk2 = 0;
+    }
+
+    int Baud8GeneratorACC = 0;
+
+    if ((rst == 1) || ((tempClk1 | tempClk2) == 1)) {
+        Baud8GeneratorACC = 0;
+    } else {
+        Baud8GeneratorACC++;
+    }
+}
+```",AES-T2800,"This C code simulates a simplified digital circuit (likely derived from Verilog). It models a state machine and a counter.
+
+Here's a breakdown:
+
+*   **`top(int clk, int rst, int trigger_in1[128])`**:  This function likely represents the top-level module of a Verilog design. It takes a clock signal (`clk`, seemingly unused in the provided snippet), a reset signal (`rst`), and an array `trigger_in1` (presumably an input signal) as inputs.
+
+*   **`tempClk1`, `tempClk2`**: These integer variables represent two states within a state machine. They are used as flags. The state machine transitions based on the `rst` and the last element of `trigger_in1`.
+
+*   **State Machine Logic:** The `if/else if/else` block implements the state machine.
+    *   `rst == 1`: Resets the state machine, setting `tempClk1` to 1 and `tempClk2` to 0.
+    *   `(tempClk1 == 1) && (trigger_in1[127] == 1)`:  If the state machine is in `tempClk1` and the last element of `trigger_in1` is high (1), it transitions to a different state (`tempClk1 = 0`, `tempClk2 = 1`).  This suggests `trigger_in1` is a data input of some kind and element 127 being high triggers the state transition.
+    *   `(tempClk1 == 0) && (tempClk2 == 1)`: If state machine is in `tempClk2`, it transition to `tempClk2 = 0`.
+    *   `else`: default case, set both to 0.
+
+*   **`Baud8GeneratorACC`**: This integer variable acts as a counter.
+
+*   **Counter Logic:** The counter is incremented unless it is being reset:
+    *   `(rst == 1) || ((tempClk1 | tempClk2) == 1)`: If the reset signal is active or the state machine is in either of the `tempClk` states, the counter is reset to 0.  This condition implies that either reset is active or the state machine has just transitioned due to `trigger_in1`.
+    *   `else`: Otherwise, the counter is incremented.
+
+In essence, the code emulates a circuit that transitions through states based on an external trigger (`trigger_in1`) and counts up, resetting either when the reset signal is high or the state machine is active. It looks like it is implementing a Baud rate generator's counter that is triggered by some input, most likely data in."
+"module TSC(
+    input clk,
+	input rst,
+    input r1,
+    input r2,
+	output trigger
+    );
+
+
+	reg [3: 0] counter;
+	reg [3: 0] counter2;
+	wire andOut;
+	
+	always @ (posedge clk)
+		begin
+
+			if (~rst) begin
+				counter = 0;
+				counter2 = 0;
+			end
+			counter = counter + 1'b1;
+			if (andOut)	counter2 = counter2 + 1'b1; 		
+		end
+
+
+	assign andOut = r1 && r2 && counter[3];
+
+	assign trigger = counter2[3];
+
+	always @ (posedge trigger) $display(""Trojan Activated"");
+
+endmodule","```c
+#include <stdio.h>
+
+void TSC(int clk, int rst, int r1, int r2, int *trigger) {
+    static int counter = 0;
+    static int counter2 = 0;
+    int andOut;
+
+    if (rst) {
+        counter = 0;
+        counter2 = 0;
+    } else {
+        counter++;
+        if (andOut) {
+            counter2++;
+        }
+    }
+
+    andOut = r1 && r2 && (counter & 0x8);
+
+    *trigger = counter2 & 0x8;
+
+    if (*trigger) {
+        printf(""Trojan Activated\n"");
+    }
+}
+```",,"The C code simulates a circuit (likely a Trojan circuit detector) with inputs `clk`, `rst`, `r1`, and `r2`, and output `trigger`. It uses two static counters, `counter` and `counter2`.
+
+*   **Reset (`rst`):**  If `rst` is asserted, both counters are reset to 0.
+
+*   **Counting:** When `rst` is not asserted, `counter` increments on every clock cycle (`clk`).  `counter2` only increments if `andOut` is true.
+
+*   **`andOut` Logic:** `andOut` is a boolean value derived from `r1`, `r2`, and a specific bit of `counter` (the 4th bit, `counter & 0x8`).
+
+*   **`trigger` Output:** The output `trigger` is also derived from a specific bit of `counter2` (the 4th bit, `counter2 & 0x8`).
+
+*   **Trojan Activation:** If `trigger` is asserted (non-zero), the code prints ""Trojan Activated"".
+
+In essence, the code represents a state machine that counts cycles and generates a `trigger` signal based on the inputs `r1`, `r2`, and the internal states of the counters.  The `andOut` signal acts as a condition for incrementing `counter2`, making `r1`, `r2` essential components to activate the `trigger`."
+"module TSC(
+    input r1,
+    input r2,
+	output trigger
+    );
+
+	assign trigger = r1 && r2;
+
+	
+	always @ (posedge trigger) 	$display(""Trojan Activated"");
+
+endmodule","```c
+#include <stdio.h>
+
+void TSC(int r1, int r2, int* trigger) {
+    *trigger = r1 && r2;
+}
+
+int main() {
+    int r1 = 1;
+    int r2 = 1;
+    int trigger;
+
+    TSC(r1, r2, &trigger);
+
+    if (trigger) {
+        printf(""Trojan Activated\n"");
+    }
+
+    return 0;
+}
+```",,"The C code simulates a simple Trojan activation condition.  The `TSC` function takes two integer inputs, `r1` and `r2`, and sets the value pointed to by the `trigger` pointer to 1 if both `r1` and `r2` are non-zero (treated as true), otherwise it sets it to 0.  The `main` function initializes `r1` and `r2` to 1, calls `TSC` to potentially activate the `trigger`, and then prints ""Trojan Activated"" if `trigger` is true (non-zero). In this specific case, since both `r1` and `r2` are 1, the trigger will be activated and the Trojan message will be printed."

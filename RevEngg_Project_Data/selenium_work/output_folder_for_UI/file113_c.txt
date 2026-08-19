@@ -1,0 +1,76 @@
+Certainly! Here are three variations of your program that calculate the surface area of a cylinder without using the features you requested to avoid:
+
+### Version 1: Using Separate Variables for Calculations
+```c
+#include <stdio.h>
+
+#define PI 3.14159
+
+int main() {
+    float radius, height, circleArea, sideArea, totalSurfaceArea;
+
+    printf("Enter the radius of the cylinder: ");
+    scanf("%f", &radius);
+
+    printf("Enter the height of the cylinder: ");
+    scanf("%f", &height);
+
+    circleArea = PI * radius * radius;
+    sideArea = 2 * PI * radius * height;
+    totalSurfaceArea = 2 * circleArea + sideArea;
+
+    printf("Surface area of the cylinder: %.2f\n", totalSurfaceArea);
+
+    return 0;
+}
+```
+
+### Version 2: Simplifying the Formula
+```c
+#include <stdio.h>
+
+#define PI 3.14159
+
+int main() {
+    float radius, height, surfaceArea;
+
+    printf("Enter the radius of the cylinder: ");
+    scanf("%f", &radius);
+
+    printf("Enter the height of the cylinder: ");
+    scanf("%f", &height);
+
+    surfaceArea = (2 * PI * radius * (radius + height));
+
+    printf("Surface area of the cylinder: %.2f\n", surfaceArea);
+
+    return 0;
+}
+```
+
+### Version 3: Splitting Input, Process, and Output
+```c
+#include <stdio.h>
+
+#define PI 3.14159
+
+int main() {
+    float radius, height;
+    float baseArea, lateralSurfaceArea, totalSurfaceArea;
+
+    printf("Enter the radius of the cylinder: ");
+    scanf("%f", &radius);
+    printf("Enter the height of the cylinder: ");
+    scanf("%f", &height);
+
+    baseArea = PI * radius * radius;
+    lateralSurfaceArea = 2 * PI * radius * height;
+    totalSurfaceArea = 2 * baseArea + lateralSurfaceArea;
+
+    printf("Surface area of the cylinder: %.2f\n", totalSurfaceArea);
+
+    return 0;
+}
+```
+
+Each version offers a slightly different approach to organizing and calculating the required surface area, but all adhere to your guidelines and avoid the listed features.

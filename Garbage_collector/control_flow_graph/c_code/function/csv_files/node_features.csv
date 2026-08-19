@@ -1,0 +1,14 @@
+node,label
+fn_0_basic_block_6,{\<bb\ 6\>:\l|_8\ =\ (long\ unsigned\ int)\ i;\l|_9\ =\ _8\ *\ 4;\l|_10\ =\ arr\ +\ _9;\l|_11\ =\ *_10;\l|if\ (_11\ !=\ -1)\l\ \ goto\ \<bb\ 3\>;\ [INV]\lelse\l\ \ goto\ \<bb\ 7\>;\ [INV]\l}
+fn_0_basic_block_3,{\<bb\ 3\>:\l|_1\ =\ (long\ unsigned\ int)\ i;\l|_2\ =\ _1\ *\ 4;\l|_3\ =\ arr\ +\ _2;\l|_4\ =\ *_3;\l|if\ (largest\ \<\ _4)\l\ \ goto\ \<bb\ 4\>;\ [INV]\lelse\l\ \ goto\ \<bb\ 5\>;\ [INV]\l}
+fn_0_basic_block_4,{\<bb\ 4\>:\l|_5\ =\ (long\ unsigned\ int)\ i;\l|_6\ =\ _5\ *\ 4;\l|_7\ =\ arr\ +\ _6;\l|largest\ =\ *_7;\l}
+fn_0_basic_block_5,{\<bb\ 5\>:\l|i\ =\ i\ +\ 1;\l}
+fn_0_basic_block_0,ENTRY
+fn_0_basic_block_1,EXIT
+fn_0_basic_block_2,{\<bb\ 2\>:\l|largest\ =\ *arr;\l|i\ =\ 1;\lgoto\ \<bb\ 6\>;\ [INV]\l}
+fn_0_basic_block_7,{\<bb\ 7\>:\l|D.2328\ =\ largest;\l}
+fn_0_basic_block_8,{\<bb\ 8\>:\l|\<L5\>:\l|return\ D.2328;\l}
+fn_1_basic_block_0,ENTRY
+fn_1_basic_block_1,EXIT
+fn_1_basic_block_2,"{\<bb\ 2\>:\l|array[0]\ =\ 4;\l|array[1]\ =\ 8;\l|array[2]\ =\ 2;\l|array[3]\ =\ 10;\l|array[4]\ =\ 6;\l|array[5]\ =\ 12;\l|array[6]\ =\ -1;\l|result\ =\ findLargest\ (&array);\l|printf\ (""The\ largest\ element\ in\ the\ array\ is:\ %d\\n"",\ result);\l|D.2330\ =\ 0;\l|array\ =\ \{CLOBBER\};\l}"
+fn_1_basic_block_3,{\<bb\ 3\>:\l|\<L1\>:\l|return\ D.2330;\l}

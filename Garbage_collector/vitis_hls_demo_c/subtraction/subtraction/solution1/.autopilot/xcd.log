@@ -1,0 +1,25 @@
+Wed May 31 15:52:08 2023: Running xcd server. This server was built by gradle.
+Wed May 31 15:52:08 2023: Server was asked to start on port: '39785'
+Wed May 31 15:52:08 2023: Server is using token UUID: '666b8d8a-7165-4417-8684-dde9f5bf5210'
+Wed May 31 15:52:08 2023: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Wed May 31 15:52:08 2023: Attempting to start server on port '39785'
+Wed May 31 15:52:08 2023: XCD main fifo: created main fifo '/tmp/xcdmain666b8d8a-7165-4417-8684-dde9f5bf5210', fd read = 13
+Wed May 31 15:52:08 2023: Running Dispatch Server
+Wed May 31 15:52:08 2023: Version 2.2.0
+Wed May 31 15:52:16 2023: Dispatch Server: Accepted socket connection from client
+Wed May 31 15:52:16 2023: Starting Socket connection
+Wed May 31 15:52:16 2023: EXCHANGE_TOKEN received, server token: 666b8d8a-7165-4417-8684-dde9f5bf5210, passed token: 666b8d8a-7165-4417-8684-dde9f5bf5210
+Wed May 31 15:52:16 2023: SESSION_MGR: creating session with session uuid: '9c77ab19-b665-4a0d-995f-46c2fe55f78d' and name 'vitis_hls'
+Wed May 31 15:52:16 2023: KERNEL_SVC: creating session with uuid: '9c77ab19-b665-4a0d-995f-46c2fe55f78d' and name 'vitis_hls'
+Wed May 31 15:52:16 2023: GUIDANCE_SMGR: creating guidance session with uuid: '9c77ab19-b665-4a0d-995f-46c2fe55f78d' and name 'vitis_hls'
+Wed May 31 15:52:21 2023: STOP_SERVER received, server token: 666b8d8a-7165-4417-8684-dde9f5bf5210, passed token: 666b8d8a-7165-4417-8684-dde9f5bf5210
+Wed May 31 15:52:21 2023: Socket received request to stop server.
+Wed May 31 15:52:21 2023: Dispatch Server: do_await_stop
+Wed May 31 15:52:21 2023: Dispatch Server: stopping mainFifo_
+Wed May 31 15:52:21 2023: XCD main fifo: Stopping
+Wed May 31 15:52:21 2023: XCD main fifo: do_read error code: Operation canceled
+Wed May 31 15:52:21 2023: XCD main fifo: bytes_transferred: 0
+Wed May 31 15:52:21 2023: SERVER: destructor for server bound to port 39785
+Wed May 31 15:52:21 2023: XCD main fifo: Good unlink of /tmp/xcdmain666b8d8a-7165-4417-8684-dde9f5bf5210
+Wed May 31 15:52:21 2023: Server exiting with status 0.
+Wed May 31 15:52:21 2023: Closing log file.

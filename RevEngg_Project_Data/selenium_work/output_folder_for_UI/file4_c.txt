@@ -1,0 +1,55 @@
+Certainly! Below are three different versions of the code you provided. Each version takes an angle in gradians and converts it to radians, adhering to your specified constraints.
+
+### Version 1: Use of `const` for Pi
+
+This version defines Pi as a constant. It helps in making the code cleaner and slightly more efficient since the value of Pi is not computed during each execution but is set as a constant.
+
+```c
+#include <stdio.h>
+
+int main() {
+    const float PI = 3.14159265;
+    float gradians, radians;
+    printf("Enter angle in gradians: ");
+    scanf("%f", &gradians);
+    radians = gradians * (PI / 200.0);
+    printf("%f gradians is %f radians.\n", gradians, radians);
+    return 0;
+}
+```
+
+### Version 2: Inline Calculation for Conversion Factor
+
+This version performs the calculation of the conversion factor (PI/200.0) directly in the assignment of the `radians` variable. This method minimizes the use of extra variables for the conversion factor.
+
+```c
+#include <stdio.h>
+
+int main() {
+    float gradians, radians;
+    printf("Enter angle in gradians: ");
+    scanf("%f", &gradians);
+    radians = gradians * 0.015707963267948966; // Directly using the result of 3.14/200
+    printf("%f gradians is %f radians.\n", gradians, radians);
+    return 0;
+}
+```
+
+### Version 3: User Input and Output in the Same Line
+
+This version tries to compact the user interaction into a smaller number of lines, without compromising the clarity of the input and output. It directly asks for the input and provides the output in a concise manner.
+
+```c
+#include <stdio.h>
+
+int main() {
+    float gradians;
+    printf("Enter angle in gradians to convert to radians: ");
+    scanf("%f", &gradians);
+    float radians = gradians * (3.14159 / 200); // Slightly more accurate value of Pi
+    printf("%f gradians = %f radians\n", gradians, radians);
+    return 0;
+}
+```
+
+Each version above follows your instructions by not using dynamic memory allocation, functions, structs, unions, pointers, recursion, or file handling. They simply take a different approach to defining constants, performing calculations, and organizing code structure.

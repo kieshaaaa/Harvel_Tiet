@@ -1,0 +1,67 @@
+Given your constraints, below are three different versions of the code you provided, using `float` instead of `double` and adhering to the restrictions you've outlined:
+
+### Version 1: Simple Variation with `scanf` and `printf` adjustments
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float x;
+    float result;
+    printf("Enter the value of x: ");
+    scanf("%f", &x); // Adjusted for float
+
+    result = expf(x); // Use expf for float
+
+    printf("%f e^x = %f\n", x, result); // Corrected format specifier
+    return 0;
+}
+```
+
+### Version 2: Using `powf` to calculate e^x manually
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float x;
+    float result;
+    printf("Enter the value of x: ");
+    scanf("%f", &x);
+
+    result = powf(M_E, x); // Calculate e^x manually using powf
+
+    printf("%f e^x = %f\n", x, result);
+    return 0;
+}
+```
+
+### Version 3: Using a loop to approximate e^x
+
+This version uses the Taylor series expansion to approximate `e^x`. Note that this is a simpler, less efficient approach without optimization for the sake of complying with your constraints.
+
+```c
+#include <stdio.h>
+
+int main() {
+    float x;
+    float result = 1.0; // Initialize result to 1 for the series sum
+    float term = 1.0; // First term of the series
+    int n = 20; // Number of terms to include for approximation
+
+    printf("Enter the value of x: ");
+    scanf("%f", &x);
+
+    for(int i = 1; i <= n; i++) {
+        term *= x / i; // Calculate each term
+        result += term; // Add each term to the result
+    }
+
+    printf("%f e^x = %f\n", x, result);
+    return 0;
+}
+```
+
+These versions adjust for your requirements while demonstrating different approaches to calculating \(e^x\).

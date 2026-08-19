@@ -1,0 +1,74 @@
+Certainly! Here are three variations of the provided code that calculate the volume of a triangular pyramid, adhering to your restrictions:
+
+### Version 1
+This version uses direct calculation without storing the base area in a separate variable.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, h, volume;
+
+    printf("Enter the side length of the base equilateral triangle: ");
+    scanf("%f", &a);
+    printf("Enter the height of the triangular pyramid: ");
+    scanf("%f", &h);
+
+    volume = (sqrt(3) / 4 * a * a * h) / 3;
+
+    printf("Volume of the triangular pyramid: %.2f\n", volume);
+
+    return 0;
+}
+```
+
+### Version 2
+In this version, intermediate calculations for the area of the triangle and the pyramid's volume are done in separate steps with explicit multiplication by fractions represented as float numbers.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, h, volume;
+
+    printf("Enter the side length of the base equilateral triangle: ");
+    scanf("%f", &a);
+    printf("Enter the height of the triangular pyramid: ");
+    scanf("%f", &h);
+
+    volume = (((sqrt(3) / 4.0f) * (a * a)) * h) / 3.0f;
+
+    printf("Volume of the triangular pyramid: %.2f\n", volume);
+
+    return 0;
+}
+```
+
+### Version 3
+This version uses a slightly different approach by explicitly defining constants for the calculations, which might make the code more readable for some.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, h, volume;
+    const float sqrt3Over4 = sqrt(3) / 4.0f;
+    const float oneThird = 1.0f / 3.0f;
+
+    printf("Enter the side length of the base equilateral triangle: ");
+    scanf("%f", &a);
+    printf("Enter the height of the triangular pyramid: ");
+    scanf("%f", &h);
+
+    volume = sqrt3Over4 * a * a * h * oneThird;
+
+    printf("Volume of the triangular pyramid: %.2f\n", volume);
+
+    return 0;
+}
+```
+
+Each of these versions accomplishes the task using slightly different approaches in the calculation and presentation of the code, while adhering to the constraints you've provided.

@@ -1,0 +1,77 @@
+Sure, I'll provide you with three different versions of the given code that checks if a number is even or odd, adhering to your constraints. Each version will avoid the restrictions you've mentioned.
+
+### Version 1: Using Modulo Operator
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    int result;
+
+    printf("\nEnter a number to check whether it is Even or Odd => ");
+    scanf("%d", &num);
+
+    if (num % 2 == 0) {
+        result = num + 2;
+        printf("\n%d is Even", result);
+    } else {
+        result = num + 1;
+        printf("\n%d is Odd", result);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using Bitwise AND Operator
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    int nextEvenOrOdd;
+
+    printf("\nEnter a number to check whether it is Even or Odd => ");
+    scanf("%d", &num);
+
+    if ((num & 1) == 0) {
+        nextEvenOrOdd = num + 2;
+        printf("\n%d is Even", nextEvenOrOdd);
+    } else {
+        nextEvenOrOdd = num + 1;
+        printf("\n%d is Odd", nextEvenOrOdd);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using Increment Operators
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    int result;
+
+    printf("\nEnter a number to check whether it is Even or Odd => ");
+    scanf("%d", &num);
+
+    // Checks if adding 1 to the doubled number is equal to the number doubled and incremented by 2.
+    // This is a roundabout way to check even/odd without directly using % or bitwise operators.
+    if (((num * 2) + 1) == ((num + 1) * 2)) {
+        result = num + 2; // Next even number
+        printf("\n%d is Even", result);
+    } else {
+        result = num + 1; // Next odd number (technically, the number itself if it's odd)
+        printf("\n%d is Odd", result);
+    }
+
+    return 0;
+}
+```
+
+Each version uses a different method to determine if the number is even or odd and then calculates the next even or odd number accordingly.

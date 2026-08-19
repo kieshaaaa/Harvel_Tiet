@@ -1,0 +1,90 @@
+Sure, here are three different versions of the given program, adhering to your constraints:
+
+### Version 1: Using Conditional Operator
+
+```c
+#include<stdio.h>
+
+int main() {
+    int a, b, c, largest, smallest;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+    printf("Enter third number: ");
+    scanf("%d", &c);
+
+    largest = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
+    smallest = (a < b) ? (a < c ? a : c) : (b < c ? b : c);
+
+    printf("The largest number is: %d\n", largest);
+    printf("The smallest number is: %d\n", smallest);
+
+    return 0;
+}
+```
+
+### Version 2: Using Intermediate Variables for Comparison
+
+```c
+#include<stdio.h>
+
+int main() {
+    int a, b, c, largest, smallest, mid;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+    printf("Enter third number: ");
+    scanf("%d", &c);
+
+    mid = a;
+    if(b > mid) mid = b;
+    if(c > mid) largest = c;
+    else largest = mid;
+
+    mid = a;
+    if(b < mid) mid = b;
+    if(c < mid) smallest = c;
+    else smallest = mid;
+
+    printf("The largest number is: %d\n", largest);
+    printf("The smallest number is: %d\n", smallest);
+
+    return 0;
+}
+```
+
+### Version 3: Sequential Comparison
+
+```c
+#include<stdio.h>
+
+int main() {
+    int a, b, c, largest, smallest;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+    printf("Enter third number: ");
+    scanf("%d", &c);
+
+    largest = smallest = a;
+
+    if (b > largest) largest = b;
+    if (c > largest) largest = c;
+
+    if (b < smallest) smallest = b;
+    if (c < smallest) smallest = c;
+
+    printf("The largest number is: %d\n", largest);
+    printf("The smallest number is: %d\n", smallest);
+
+    return 0;
+}
+```
+
+Each of these versions offers a slightly different approach to determining the largest and smallest numbers without altering your initial constraints.

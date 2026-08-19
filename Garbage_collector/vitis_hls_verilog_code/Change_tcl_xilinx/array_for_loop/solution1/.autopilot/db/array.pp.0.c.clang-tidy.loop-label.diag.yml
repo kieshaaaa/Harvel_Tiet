@@ -1,0 +1,13 @@
+---
+MainSourceFile:  /home/virubuntu/Change_tcl_xilinx/array_for_loop/solution1/.autopilot/db/array.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_7_1:  '
+    FileOffset:      7
+    FilePath:        /home/virubuntu/Array_main/Array/array_for_loop/array.c
+    Replacements:    
+      - FilePath:        /home/virubuntu/Change_tcl_xilinx/array_for_loop/solution1/.autopilot/db/array.pp.0.c
+        Offset:          24900
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_7_1: '
+...

@@ -1,0 +1,58 @@
+Certainly! I'll generate three different versions of the given C program that calculates the surface area of a sphere, adhering to your constraints.
+
+### Version 1: Direct Calculation in Variable Initialization
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float radius;
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    float surfaceArea = 4 * M_PI * radius * radius;
+    printf("Surface area of the sphere: ");
+    printf("%.2f\n", surfaceArea);
+
+    return 0;
+}
+```
+
+### Version 2: Using Temporary Variable for Radius Squared
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float radius;
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    float radiusSquared = radius * radius;
+    float surfaceArea = 4 * M_PI * radiusSquared;
+    printf("Surface area of the sphere: ");
+    printf("%.2f\n", surfaceArea);
+
+    return 0;
+}
+```
+
+### Version 3: Inline Calculation with Modified Formula Expression
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float radius;
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    float surfaceArea = 4.0f * M_PI * radius * radius; // Explicit float constant
+    printf("Surface area of the sphere: ");
+    printf("%.2f\n", surfaceArea);
+
+    return 0;
+}
+```
+
+Each of these versions adheres to the guidelines you provided, using only `float` data type for numeric calculations and avoiding the specified programming constructs and techniques.

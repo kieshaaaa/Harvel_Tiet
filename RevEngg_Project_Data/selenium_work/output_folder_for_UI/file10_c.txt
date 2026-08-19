@@ -1,0 +1,105 @@
+Here are three alternative versions of your C program that print the described pattern. Each version adheres to your constraints and presents a different approach to solving the problem.
+
+### Version 1: Direct Loop Modification
+
+This version uses direct manipulation of loop conditions to achieve the pattern, simplifying the control structure a bit.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("Please enter a positive number.");
+        return 0;
+    }
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j < i; j++) {
+            printf("  ");
+        }
+        for (int j = i; j <= n; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using While Loops
+
+This version employs `while` loops instead of `for` loops for iteration, offering a different loop structure for achieving the same pattern.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("Please enter a positive number.");
+        return 0;
+    }
+
+    int i = 1;
+    while (i <= n) {
+        int space = 1;
+        while (space < i) {
+            printf("  ");
+            space++;
+        }
+
+        int num = i;
+        while (num <= n) {
+            printf("%d ", num);
+            num++;
+        }
+
+        printf("\n");
+        i++;
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Adjusting for Zero-Indexing
+
+This version is designed to think in terms of zero-indexing (common in programming), adjusting the loop counters accordingly. It might not be drastically different in logic but encourages a different way of thinking about loop boundaries and indices.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("Please enter a positive number.");
+        return 0;
+    }
+
+    for (int row = 0; row < n; row++) {
+        for (int col = 0; col < n; col++) {
+            if (col < row) {
+                printf("  ");
+            } else {
+                printf("%d ", col + 1);
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+Each version presents a unique way to control the flow to print the desired pattern, adhering to the constraints you've specified.

@@ -1,0 +1,15 @@
+/home/coss01/vitis_hls_demo_c/for_loop/2_simple/for_2loop_simple/solution1/.autopilot/db/printNum.pp.0.c:948:5: warning: Added loop label VITIS_LOOP_8_1:   [xilinx-label-all-loops]
+    for (i = start; i <= end; i++) {
+    ^~~
+    VITIS_LOOP_8_1: 
+/home/coss01/vitis_hls_demo_c/for_loop/2_simple/for_2loop_simple/solution1/.autopilot/db/printNum.pp.0.c:948:5: note: FIX-IT applied suggested code changes
+/home/coss01/vitis_hls_demo_c/for_loop/2_simple/for_2loop_simple/solution1/.autopilot/db/printNum.pp.0.c:951:5: warning: Added loop label VITIS_LOOP_11_2:   [xilinx-label-all-loops]
+    for (j = start; j <=end; j++) {
+    ^~~
+    VITIS_LOOP_11_2: 
+/home/coss01/vitis_hls_demo_c/for_loop/2_simple/for_2loop_simple/solution1/.autopilot/db/printNum.pp.0.c:951:5: note: FIX-IT applied suggested code changes
+/home/coss01/vitis_hls_demo_c/for_loop/2_simple/for_2loop_simple/solution1/.autopilot/db/printNum.pp.0.c:955:5: warning: Added loop label VITIS_LOOP_15_3:   [xilinx-label-all-loops]
+    for (K = start; K <=end; K++) {
+    ^~~
+    VITIS_LOOP_15_3: 
+/home/coss01/vitis_hls_demo_c/for_loop/2_simple/for_2loop_simple/solution1/.autopilot/db/printNum.pp.0.c:955:5: note: FIX-IT applied suggested code changes

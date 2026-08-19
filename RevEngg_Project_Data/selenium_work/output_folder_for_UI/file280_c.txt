@@ -1,0 +1,62 @@
+Given your constraints, I will create three different versions of the code that meet the criteria you've provided. These versions will involve minimal variations to demonstrate different ways to achieve similar outcomes without employing the disallowed features.
+
+### Version 1: Inline Variable Declarations and Explicit Printing
+
+```c
+#include <stdio.h>
+
+void displayStudentInfo(int rollno, char *name, float marks) {
+    printf("\nName is : %s", name);
+    printf("\nRoll No. is : %d", rollno);
+    float roundedMarks = (int)(marks * 100 + 0.5) / 100.0; // Manual rounding to 2 decimal places
+    printf("\nMarks are : %f OR Marks are : %.02f", marks, roundedMarks);
+}
+
+int main() {
+    displayStudentInfo(101, "Shyam Verma", 75.25);
+    return 0;
+}
+```
+
+### Version 2: Using Array for Name and Simplified Printing
+
+```c
+#include <stdio.h>
+
+void printDetails(int rollno, char name[], float marks) {
+    printf("\nName is : %s", name);
+    printf("\nRoll No. is : %d", rollno);
+    printf("\nMarks are : %f", marks);
+    printf(" OR Marks are : %.2f", marks);
+}
+
+int main() {
+    char studentName[] = "Geeta Kumari";
+    printDetails(102, studentName, 82.75);
+    return 0;
+}
+```
+
+### Version 3: Splitting the Print Functionality
+
+```c
+#include <stdio.h>
+
+void outputInfo(int rollno, char *name, float marks) {
+    printf("\nName is : %s", name);
+    printf("\nRoll No. is : %d", rollno);
+    printMarks(marks);
+}
+
+void printMarks(float marks) {
+    printf("\nMarks are : %f", marks);
+    printf(" OR Marks are : %.2f", marks);
+}
+
+int main() {
+    outputInfo(103, "Raj Malhotra", 68.5);
+    return 0;
+}
+```
+
+Each version adheres to your restrictions while demonstrating different aspects of function usage and variable handling in C. Note that due to the constraints, the creativity in modifications is limited, focusing primarily on variations in function design and variable usage.

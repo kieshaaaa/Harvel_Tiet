@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="matrix_mul" solutionName="solution3" date="2023-05-25T16:44:53.423+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_18' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_17_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="matrix_mul" solutionName="solution3" date="2023-05-25T16:44:43.815+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_17' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_15_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="matrix_mul" solutionName="solution3" date="2023-05-25T16:44:43.131+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_16' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_13_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="matrix_mul" solutionName="solution3" date="2023-05-25T16:44:42.404+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_15' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_11_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="matrix_mul" solutionName="solution3" date="2023-05-25T16:44:41.714+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_14' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_9_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="matrix_mul" solutionName="solution3" date="2023-05-25T16:44:40.954+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_13' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_7_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="matrix_mul" solutionName="solution3" date="2023-05-25T16:44:40.089+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_12' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_5_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="matrix_mul" solutionName="solution3" date="2023-05-25T16:44:39.283+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_11' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_3_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="matrix_mul" solutionName="solution3" date="2023-05-25T16:44:38.588+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'multiplyMatrix_Pipeline_VITIS_LOOP_13_1' (loop 'VITIS_LOOP_13_1'): Unable to schedule bus request operation ('gmem_load_1_req', mat_mul.c:14) on port 'gmem' (mat_mul.c:14) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="matrix_mul" solutionName="solution3" date="2023-05-25T16:44:37.724+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 214-368] interface mode 'ap_none' with wrong type '[3 x i32]*' (mat_mul.c:7:0)" projectName="matrix_mul" solutionName="solution3" date="2023-05-25T16:44:35.895+0530" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

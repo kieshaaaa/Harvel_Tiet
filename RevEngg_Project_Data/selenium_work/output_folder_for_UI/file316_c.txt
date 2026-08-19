@@ -1,0 +1,82 @@
+### Version 1: Using a Different Loop and Condition Style
+
+```c
+#include<stdio.h>
+
+int main() {
+    int wordCount = 0;
+    char inputString[30];
+    printf("\nEnter a string: ");
+    scanf("%[^\n]%*c", inputString);
+
+    for (int i = 0; inputString[i] != '\0';) {
+        // Skip any spaces or separators at the beginning
+        while (inputString[i] == ' ' || inputString[i] == '\n' || inputString[i] == '\t') {
+            i++;
+        }
+        
+        if (inputString[i] != '\0') {
+            wordCount++;
+        }
+
+        // Move to the end of the current word
+        while (inputString[i] != '\0' && inputString[i] != ' ' && inputString[i] != '\n' && inputString[i] != '\t') {
+            i++;
+        }
+    }
+
+    printf("\nNumber of words in string \"%s\" is: %d\n", inputString, wordCount);
+    return 0;
+}
+```
+
+### Version 2: Simplifying the Conditions
+
+```c
+#include<stdio.h>
+
+int main() {
+    int words = 0;
+    char sentence[30];
+    printf("\nEnter a string: ");
+    scanf("%[^\n]%*c", sentence);
+
+    for (int pos = 0; sentence[pos] != '\0'; pos++) {
+        if (sentence[pos] != ' ' && (sentence[pos+1] == ' ' || sentence[pos+1] == '\0')) {
+            words++;
+        }
+    }
+
+    printf("\nNumber of words in string \"%s\" is: %d\n", sentence, words);
+    return 0;
+}
+```
+
+### Version 3: Leveraging Boolean-like Values Without `TRUE` or `FALSE`
+
+```c
+#include<stdio.h>
+
+int main() {
+    int wordCounter = 0;
+    char text[30];
+    printf("\nEnter a string: ");
+    scanf("%[^\n]%*c", text);
+
+    int inWord = 0; // Acts as a boolean: 0 = false, not 0 = true
+
+    for (int index = 0; text[index] != '\0'; index++) {
+        if (text[index] == ' ' || text[index] == '\n' || text[index] == '\t') {
+            inWord = 0;
+        } else if (!inWord) {
+            inWord = 1;
+            wordCounter++;
+        }
+    }
+
+    printf("\nNumber of words in string \"%s\" is: %d\n", text, wordCounter);
+    return 0;
+}
+```
+
+These versions explore different logical structures and conditions to achieve the same outcome of counting words in a string. Each avoids the specified restrictions and utilizes different aspects of C programming to maintain simplicity and efficiency.

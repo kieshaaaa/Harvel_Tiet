@@ -1,0 +1,69 @@
+Certainly! Below are three variations of your original code, following your constraints:
+
+### Version 1: Simplified Input Prompts
+```c
+#include <stdio.h>
+#define PI 3.14159265358979323846
+
+int main() {
+    float a, b, c, volume;
+
+    printf("Enter the semi-principal axes a, b, and c: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    volume = (4.0 / 3.0) * PI * a * b * c;
+
+    printf("Ellipsoid Volume: ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+### Version 2: Using Single Scanf for Input
+```c
+#include <stdio.h>
+#define PI 3.14159265358979323846
+
+int main() {
+    float dimensions[3], volume;
+
+    printf("Enter semi-principal axes a, b, and c: ");
+    scanf("%f %f %f", &dimensions[0], &dimensions[1], &dimensions[2]);
+
+    volume = (4.0 / 3.0) * PI * dimensions[0] * dimensions[1] * dimensions[2];
+
+    printf("Volume: ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+### Version 3: Separating Calculations and Output
+```c
+#include <stdio.h>
+#define PI 3.14159265358979323846
+
+int main() {
+    float a, b, c;
+    float volume;
+
+    printf("Axis a: ");
+    scanf("%f", &a);
+    printf("Axis b: ");
+    scanf("%f", &b);
+    printf("Axis c: ");
+    scanf("%f", &c);
+
+    volume = 4.0 / 3.0 * PI;
+    volume *= a * b * c;
+
+    printf("Volume: ");
+    printf("%.2f\n", volume);
+
+    return 0;
+}
+```
+
+Each version offers a slightly different approach to receiving inputs or processing the calculation, while adhering to your constraints and avoiding the mentioned programming concepts and techniques.

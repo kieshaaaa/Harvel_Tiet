@@ -1,0 +1,61 @@
+Here are three different C programs based on the constraints you've specified. These examples will demonstrate various simple concepts without using the features you've asked to avoid.
+
+### Version 1: Calculate Area of Circle
+
+```c
+#include <stdio.h>
+
+#define PI 3.14f
+
+int main() {
+    float radius = 5.0f;
+    float area;
+
+    area = PI * radius * radius;
+
+    printf("Radius of circle: %f\n", radius);
+    printf("Area of circle: %f\n", area);
+
+    return 0;
+}
+```
+
+### Version 2: Swap Two Numbers Using Temporary Variable
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 20, temp;
+
+    printf("Before swap: a = %d, b = %d\n", a, b);
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("After swap: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+```
+
+### Version 3: Convert Celsius to Fahrenheit
+
+```c
+#include <stdio.h>
+
+int main() {
+    float celsius = 36.6f;
+    float fahrenheit;
+
+    fahrenheit = (celsius * 9 / 5) + 32;
+
+    printf("Temperature in Celsius: %f\n", celsius);
+    printf("Temperature in Fahrenheit: %f\n", fahrenheit);
+
+    return 0;
+}
+```
+
+Each of these programs demonstrates basic C syntax and operations while adhering to the limitations you've set.

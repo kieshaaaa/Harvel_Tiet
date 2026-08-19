@@ -1,0 +1,13 @@
+---
+MainSourceFile:  /home/virubuntu/improve_mistake/factorial_wr/factorial_wr/solution1/.autopilot/db/factorial.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_7_1:  '
+    FileOffset:      7
+    FilePath:        factorial.c
+    Replacements:    
+      - FilePath:        /home/virubuntu/improve_mistake/factorial_wr/factorial_wr/solution1/.autopilot/db/factorial.pp.0.c
+        Offset:          6676
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_7_1: '
+...

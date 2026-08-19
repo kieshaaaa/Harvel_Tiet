@@ -1,0 +1,79 @@
+Certainly! Here are three different versions of the program you've provided. These versions avoid the use of pointers, recursion, dynamic memory allocation, structs, unions, the `const` keyword with data types, and file handling. Additionally, they use `float` instead of `double` and perform calculations outside of the `printf` statement.
+
+### Version 1
+
+This version uses an alternative calculation for the remainder by repeatedly subtracting `b` from `a` until `a` is less than `b`.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    float rem;
+
+    printf("\nEnter first number :: ");
+    scanf("%d", &a);
+    printf("\nEnter second number :: ");
+    scanf("%d", &b);
+
+    rem = a;
+    while(rem >= b) {
+        rem = rem - b;
+    }
+
+    printf("\nRemainder of [ %d ] & [ %d ] is = %.0f\n", a, b, rem);
+
+    return 0;
+}
+```
+
+### Version 2
+
+This version introduces a slight modification by inverting the roles of `a` and `b` in the calculation, then restoring the intended result by subtracting from `b`. It's a bit of a trick to change the flow of calculation.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    float rem;
+
+    printf("\nEnter first number :: ");
+    scanf("%d", &a);
+    printf("\nEnter second number :: ");
+    scanf("%d", &b);
+
+    rem = b - (b / a) * a;
+    rem = a - rem;
+
+    printf("\nRemainder of [ %d ] & [ %d ] is = %.0f\n", a, b, rem);
+
+    return 0;
+}
+```
+
+### Version 3
+
+This version uses a `for` loop to decrement `a` by `b` until `a` is less than `b`, effectively finding the remainder. It's another iterative approach but framed differently.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    float rem;
+
+    printf("\nEnter first number :: ");
+    scanf("%d", &a);
+    printf("\nEnter second number :: ");
+    scanf("%d", &b);
+
+    for(rem = a; rem >= b; rem -= b);
+
+    printf("\nRemainder of [ %d ] & [ %d ] is = %.0f\n", a, b, rem);
+
+    return 0;
+}
+```
+
+Each version adheres to the constraints you've outlined, providing a fresh approach to finding the remainder without using the modulus operator.

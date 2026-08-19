@@ -1,0 +1,83 @@
+Below are three different versions of the given code, modified according to your specifications. These versions utilize `float` instead of `double` and adhere to the constraints provided.
+
+### Version 1
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float x;
+    float exp_pos, exp_neg, sum, difference;
+
+    printf("Enter the value of x: ");
+    scanf("%f", &x);
+
+    exp_pos = expf(x);
+    exp_neg = expf(-x);
+
+    sum = exp_pos + exp_neg;
+    difference = exp_pos - exp_neg;
+
+    printf("%f\n", sum);
+    printf("%f\n", difference);
+
+    return 0;
+}
+```
+
+### Version 2
+This version introduces intermediate variables for the purpose of breaking down the steps further, without changing the functionality.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float x;
+    float positive, negative;
+    float total, delta;
+
+    printf("Enter the value of x: ");
+    scanf("%f", &x);
+
+    positive = expf(x);
+    negative = expf(-x);
+
+    total = positive + negative;
+    delta = positive - negative;
+
+    printf("%f\n", total);
+    printf("%f\n", delta);
+
+    return 0;
+}
+```
+
+### Version 3
+In this version, I simplified the variable names while maintaining the operation's integrity.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float x;
+    float e_pos, e_neg, s, d;
+
+    printf("Enter the value of x: ");
+    scanf("%f", &x);
+
+    e_pos = expf(x);
+    e_neg = expf(-x);
+
+    s = e_pos + e_neg;
+    d = e_pos - e_neg;
+
+    printf("%f\n", s);
+    printf("%f\n", d);
+
+    return 0;
+}
+```
+
+Each of these versions adheres to your constraints while demonstrating slightly different coding styles or variable naming conventions. They all calculate the sum and difference of \(e^x\) and \(e^{-x}\) using `float` instead of `double`.

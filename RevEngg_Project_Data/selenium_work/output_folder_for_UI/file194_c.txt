@@ -1,0 +1,78 @@
+### Version 1
+
+This version simplifies the inner while loop by directly checking and shifting characters if they are not alphabets without an explicit inner for-loop.
+
+```c
+#include<stdio.h>
+
+int main() {
+    char line[150];
+    int i, j;
+    printf("\nEnter a string: ");
+    scanf("%[^\n]%*c", line);
+
+    for(i = 0, j = 0; line[i] != '\0'; i++) {
+        if((line[i] >= 'a' && line[i] <= 'z') || (line[i] >= 'A' && line[i] <= 'Z')) {
+            line[j++] = line[i];
+        }
+    }
+    line[j] = '\0';
+    printf("\nOutput String :: ");
+    printf("%s", line);
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 2
+
+This version introduces a separate variable `len` to hold the string length, which helps to eliminate characters not in the alphabet range more efficiently. The idea is to count only the alphabet characters and shift them to the beginning of the string.
+
+```c
+#include<stdio.h>
+
+int main() {
+    char line[150];
+    int i, j, len = 0;
+    printf("\nEnter a string: ");
+    scanf("%[^\n]%*c", line);
+
+    for(i = 0; line[i] != '\0'; i++) {
+        if((line[i] >= 'a' && line[i] <= 'z') || (line[i] >= 'A' && line[i] <= 'Z')) {
+            line[len++] = line[i];
+        }
+    }
+    line[len] = '\0';
+    printf("\nOutput String :: ");
+    printf("%s", line);
+    printf("\n");
+    return 0;
+}
+```
+
+### Version 3
+
+This version combines the concept of filtering characters directly in the input loop, making it slightly more efficient by avoiding a separate loop for string length calculation or character shifting.
+
+```c
+#include<stdio.h>
+
+int main() {
+    char line[150], ch;
+    int i = 0, j = 0;
+    printf("\nEnter a string: ");
+    while((ch = getchar()) != '\n' && i < 149) {
+        if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+            line[j++] = ch;
+        }
+        i++;
+    }
+    line[j] = '\0';
+    printf("\nOutput String :: ");
+    printf("%s", line);
+    printf("\n");
+    return 0;
+}
+```
+
+Each of these versions avoids the specified constraints, focusing on directly manipulating the input string to remove non-alphabet characters.

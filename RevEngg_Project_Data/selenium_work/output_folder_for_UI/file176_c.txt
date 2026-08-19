@@ -1,0 +1,118 @@
+Given the constraints you've outlined, I'll create three distinct versions of the given C program to compare two strings without using the `strcmp` function or other excluded programming constructs and approaches. Each version will differ slightly in its logic or structure for comparison.
+
+### Version 1: Use a Flag Variable for Equality Check
+
+```c
+#include<stdio.h>
+
+int main() {
+    char str1[20], str2[20];
+    int i = 0, isEqual = 1; // Use isEqual as a flag for equality
+
+    printf("\nEnter first string :: ");
+    scanf("%19s", str1); // Use scanf to avoid gets
+    printf("\nEnter second string :: ");
+    scanf("%19s", str2); // Use scanf to avoid gets
+
+    printf("\nStrings are :: \n\n");
+    printf("%s\n", str1);
+    printf("%s\n", str2);
+
+    while(str1[i] != '\0' || str2[i] != '\0') {
+        if(str1[i] != str2[i]) {
+            isEqual = 0; // Set flag to 0 if characters do not match
+            break; // Exit loop early if a mismatch is found
+        }
+        i++;
+    }
+
+    if(isEqual)
+        printf("\nStrings are equal.\n");
+    else
+        printf("\nStrings are not equal.\n");
+
+    return 0;
+}
+```
+
+### Version 2: Check Length First
+
+```c
+#include<stdio.h>
+
+int main() {
+    char str1[20], str2[20];
+    int i = 0, length1 = 0, length2 = 0;
+
+    printf("\nEnter first string :: ");
+    scanf("%19s", str1);
+    printf("\nEnter second string :: ");
+    scanf("%19s", str2);
+
+    printf("\nStrings are :: \n\n");
+    printf("%s\n", str1);
+    printf("%s\n", str2);
+
+    // Calculate length of str1
+    while(str1[length1] != '\0') {
+        length1++;
+    }
+    // Calculate length of str2
+    while(str2[length2] != '\0') {
+        length2++;
+    }
+
+    if(length1 != length2) {
+        printf("\nStrings are not equal.\n");
+        return 0; // Exit if lengths are different
+    }
+
+    while((str1[i]!='\0') && (str2[i]!='\0')) { // Use && as lengths are now equal
+        if(str1[i] != str2[i]) {
+            printf("\nStrings are not equal.\n");
+            return 0;
+        }
+        i++;
+    }
+
+    printf("\nStrings are equal.\n");
+    return 0;
+}
+```
+
+### Version 3: Integrated Length and Equality Check
+
+```c
+#include<stdio.h>
+
+int main() {
+    char str1[20], str2[20];
+    int i = 0, notEqual = 0;
+
+    printf("\nEnter first string :: ");
+    scanf("%19s", str1);
+    printf("\nEnter second string :: ");
+    scanf("%19s", str2);
+
+    printf("\nStrings are :: \n\n");
+    printf("%s\n", str1);
+    printf("%s\n", str2);
+
+    while(str1[i] != '\0' || str2[i] != '\0') {
+        if(str1[i] != str2[i] || (str1[i] == '\0' && str2[i] != '\0') || (str2[i] == '\0' && str1[i] != '\0')) {
+            notEqual = 1;
+            break;
+        }
+        i++;
+    }
+
+    if(notEqual)
+        printf("\nStrings are not equal.\n");
+    else
+        printf("\nStrings are equal.\n");
+
+    return 0;
+}
+```
+
+Each version approaches the problem with a slightly different strategy, while adhering to your constraints.

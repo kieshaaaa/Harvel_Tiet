@@ -1,0 +1,73 @@
+Given your specific requirements, I'll create three different variations of the code you provided, focusing on demonstrating different concepts while adhering to your constraints.
+
+### Version 1: Swap Values Using Call by Value
+
+This version uses a function to attempt to swap two values, showing that changes made to the variables inside the function don't affect the original variables.
+
+```c
+#include<stdio.h>
+
+void attemptSwap(int x, int y);
+
+int main() {
+    int a = 5, b = 8;
+    printf("Before calling the function, a = %d and b = %d\n", a, b);
+    attemptSwap(a, b);
+    printf("After calling the function, a = %d and b = %d\n", a, b);
+    return 0;
+}
+
+void attemptSwap(int x, int y) {
+    int temp = x;
+    x = y;
+    y = temp;
+    printf("Inside function x = %d , y = %d\n", x, y);
+}
+```
+
+### Version 2: Modify and Return One Value
+
+This version modifies the function to work with a single value, demonstrating how a change to the value affects only the local copy of the variable.
+
+```c
+#include<stdio.h>
+
+int addFive(int x);
+
+int main() {
+    int a = 10;
+    printf("Before calling the function, a = %d\n", a);
+    a = addFive(a); // Assign the returned value to 'a' to reflect the change.
+    printf("After calling the function, a = %d\n", a);
+    return 0;
+}
+
+int addFive(int x) {
+    x += 5;
+    return x; // Return the modified value.
+}
+```
+
+### Version 3: Simulate Call by Reference Using Call by Value
+
+This version simulates call by reference by using call by value to modify a variable indirectly. Since direct references and pointers are avoided, it demonstrates modifying a variable by returning a new value.
+
+```c
+#include<stdio.h>
+
+int increment(int x);
+
+int main() {
+    int a = 15;
+    printf("Before calling the function, a = %d\n", a);
+    a = increment(a); // Using the function to indirectly modify 'a'
+    printf("After calling the function, a = %d\n", a);
+    return 0;
+}
+
+int increment(int x) {
+    return x + 1; // Increment and return the new value
+}
+```
+
+Each of these versions adheres to the restrictions you've set, including not using pointers, dynamic memory allocation, structures, unions, recursion, file handling, modifying the provided data types, and avoiding certain C features. They each demonstrate a slightly different concept within the constraints provided.

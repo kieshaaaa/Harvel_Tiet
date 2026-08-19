@@ -1,0 +1,137 @@
+
+
+================================================================
+== Synthesis Summary Report of 'processArray'
+================================================================
++ General Information: 
+    * Date:           Wed Jul 26 20:03:38 2023
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        3array_elements_index1
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu11p-flga2577-1-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------+------+------+---------+--------+----------+---------+------+----------+------+----+---+-----------+-----+
+    |     Modules    | Issue|      | Latency | Latency| Iteration|         | Trip |          |      |    |   |           |     |
+    |     & Loops    | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP| FF|    LUT    | URAM|
+    +----------------+------+------+---------+--------+----------+---------+------+----------+------+----+---+-----------+-----+
+    |+ processArray  |     -|  5.02|        0|   0.000|         -|        1|     -|        no|     -|   -|  -|  234 (~0%)|    -|
+    +----------------+------+------+---------+--------+----------+---------+------+----------+------+----+---+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* Other Ports
++-----------+---------+----------+
+| Interface | Mode    | Bitwidth |
++-----------+---------+----------+
+| arr2_0_i  | ap_ovld | 32       |
+| arr2_0_o  | ap_ovld | 32       |
+| arr2_1    | ap_vld  | 32       |
+| arr2_2    | ap_none | 32       |
+| arr2_3    | ap_none | 32       |
+| arr2_4    | ap_none | 32       |
+| arr3_0    | ap_vld  | 32       |
+| arr3_1    | ap_none | 32       |
+| arr3_2    | ap_none | 32       |
+| arr3_3    | ap_none | 32       |
+| arr3_4    | ap_none | 32       |
+| arr_0_i   | ap_ovld | 32       |
+| arr_0_o   | ap_ovld | 32       |
+| arr_1_i   | ap_ovld | 32       |
+| arr_1_o   | ap_ovld | 32       |
+| arr_2     | ap_none | 32       |
+| arr_3     | ap_vld  | 32       |
+| arr_4     | ap_none | 32       |
++-----------+---------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| arr      | inout     | int*     |
+| arr2     | inout     | int*     |
+| arr3     | out       | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+-----------------+---------+
+| Argument | HW Interface    | HW Type |
++----------+-----------------+---------+
+| arr      | arr_0_i         | port    |
+| arr      | arr_0_o         | port    |
+| arr      | arr_0_o_ap_vld  | port    |
+| arr      | arr_1_i         | port    |
+| arr      | arr_1_o         | port    |
+| arr      | arr_1_o_ap_vld  | port    |
+| arr      | arr_2           | port    |
+| arr      | arr_3           | port    |
+| arr      | arr_3_ap_vld    | port    |
+| arr      | arr_4           | port    |
+| arr2     | arr2_0_i        | port    |
+| arr2     | arr2_0_o        | port    |
+| arr2     | arr2_0_o_ap_vld | port    |
+| arr2     | arr2_1          | port    |
+| arr2     | arr2_1_ap_vld   | port    |
+| arr2     | arr2_2          | port    |
+| arr2     | arr2_3          | port    |
+| arr2     | arr2_4          | port    |
+| arr3     | arr3_0          | port    |
+| arr3     | arr3_0_ap_vld   | port    |
+| arr3     | arr3_1          | port    |
+| arr3     | arr3_2          | port    |
+| arr3     | arr3_3          | port    |
+| arr3     | arr3_4          | port    |
++----------+-----------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------+-----+--------+----------+-----+--------+---------+
+| Name                 | DSP | Pragma | Variable | Op  | Impl   | Latency |
++----------------------+-----+--------+----------+-----+--------+---------+
+| + processArray       | 0   |        |          |     |        |         |
+|   add_ln9_fu_134_p2  | -   |        | add_ln9  | add | fabric | 0       |
+|   add_ln10_fu_141_p2 | -   |        | add_ln10 | add | fabric | 0       |
+|   arr_3              | -   |        | add_ln11 | add | fabric | 0       |
+|   arr2_0_o           | -   |        | add_ln12 | add | fabric | 0       |
+|   arr2_1             | -   |        | add_ln13 | add | fabric | 0       |
+|   arr3_0             | -   |        | add_ln14 | add | fabric | 0       |
++----------------------+-----+--------+----------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+------------------------------+-------------------------------------------------------------------------+
+| Type            | Options                      | Location                                                                |
++-----------------+------------------------------+-------------------------------------------------------------------------+
+| array_partition | complete dim=1 variable=arr  | 3array_elements_index1/solution1/directives.tcl:6 in processarray, arr  |
+| array_partition | complete dim=1 variable=arr2 | 3array_elements_index1/solution1/directives.tcl:7 in processarray, arr2 |
+| array_partition | complete dim=1 variable=arr3 | 3array_elements_index1/solution1/directives.tcl:8 in processarray, arr3 |
++-----------------+------------------------------+-------------------------------------------------------------------------+
+
+

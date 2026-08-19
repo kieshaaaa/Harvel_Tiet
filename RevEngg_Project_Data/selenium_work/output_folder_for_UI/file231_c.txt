@@ -1,0 +1,71 @@
+Certainly! Here are three different versions of the provided C program to check whether a character is a vowel or not, without using the restrictions you've outlined:
+
+### Version 1: Using `if-else` Statements
+
+```c
+#include<stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a character to check :: ");
+    scanf("%c", &ch);
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+        ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+        printf("\nThe entered character %c is a vowel", ch);
+    } else {
+        printf("\nThe entered character %c is not a vowel", ch);
+    }
+    return 0;
+}
+```
+
+### Version 2: Using `switch` Statement with Fall-through
+
+This version includes both lowercase and uppercase vowel checks within the `switch` statement by utilizing case fall-through.
+
+```c
+#include<stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a character to check :: ");
+    scanf("%c", &ch);
+    switch (ch) {
+    case 'a': case 'A':
+    case 'e': case 'E':
+    case 'i': case 'I':
+    case 'o': case 'O':
+    case 'u': case 'U':
+        printf("\nThe entered character %c is a vowel", ch);
+        break;
+    default:
+        printf("\nThe entered character %c is not a vowel", ch);
+    }
+    return 0;
+}
+```
+
+### Version 3: Using `switch` and Compound Conditions for Upper and Lower Case
+
+This version also supports both lowercase and uppercase vowels but checks for them in groups to minimize the number of cases.
+
+```c
+#include<stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a character to check :: ");
+    scanf("%c", &ch);
+    switch (ch) {
+    case 'a': case 'e': case 'i': case 'o': case 'u':
+    case 'A': case 'E': case 'I': case 'O': case 'U':
+        printf("\nThe entered character %c is a vowel", ch);
+        break;
+    default:
+        printf("\nThe entered character %c is not a vowel", ch);
+    }
+    return 0;
+}
+```
+
+Each version above follows your guidelines, avoiding the specified restrictions and adapting different approaches to solve the same problem.

@@ -1,0 +1,87 @@
+### Version 1: Separate Variables for Each Calculation Step
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float principal, rate, time, amount, compoundInterest;
+
+    printf("Enter principal: ");
+    scanf("%f", &principal);
+
+    printf("Enter rate: ");
+    scanf("%f", &rate);
+
+    printf("Enter time in years: ");
+    scanf("%f", &time);
+
+    float rateFraction = rate / 100;
+    float totalGrowth = pow((1 + rateFraction), time);
+    amount = principal * totalGrowth;
+    compoundInterest = amount - principal;
+
+    printf("Compound interest is: %f\n", compoundInterest);
+
+    return 0;
+}
+```
+
+### Version 2: Inline Calculation for Amount and Direct CI Calculation
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float principal, rate, time, ci;
+
+    printf("Enter principal: ");
+    scanf("%f", &principal);
+
+    printf("Enter rate: ");
+    scanf("%f", &rate);
+
+    printf("Enter time in years: ");
+    scanf("%f", &time);
+
+    // Inline calculation for the final amount
+    float amount = principal * pow((1 + rate / 100), time);
+    ci = amount - principal;
+
+    printf("Compound interest is: %f\n", ci);
+
+    return 0;
+}
+```
+
+### Version 3: Breaking Down Formula into More Variables for Clarity
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float principal, rate, time, base, exponent, ci;
+
+    printf("Enter principal: ");
+    scanf("%f", &principal);
+
+    printf("Enter rate: ");
+    scanf("%f", &rate);
+
+    printf("Enter time in years: ");
+    scanf("%f", &time);
+
+    rate = rate / 100; // Convert percentage to a decimal
+    base = 1 + rate; // Calculate the base of the power operation
+    exponent = pow(base, time); // Calculate the exponentiation
+    ci = principal * (exponent - 1); // Finally, calculate the compound interest
+
+    printf("Compound interest is: %f\n", ci);
+
+    return 0;
+}
+```
+
+Each of these versions performs the same fundamental calculation but breaks down the process differently to either clarify steps, reorganize calculations, or adjust how values are temporarily stored and used.

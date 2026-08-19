@@ -1,0 +1,85 @@
+Here are three different versions of a program to swap two numbers without using a third variable, adhering to your constraints:
+
+### Version 1: Using Subtraction and Addition
+
+```c
+#include <stdio.h>
+
+int main() {
+    int x, y;
+
+    printf("Enter the first number: ");
+    scanf("%d", &x);
+    printf("Enter the second number: ");
+    scanf("%d", &y);
+
+    printf("Before swapping: x = %d, y = %d\n", x, y);
+
+    // Swapping
+    x = x - y;
+    y = x + y;
+    x = y - x;
+
+    printf("After swapping: x = %d, y = %d\n", x, y);
+
+    return 0;
+}
+```
+
+### Version 2: Using Bitwise XOR
+
+```c
+#include <stdio.h>
+
+int main() {
+    int m, n;
+
+    printf("Enter the first number: ");
+    scanf("%d", &m);
+    printf("Enter the second number: ");
+    scanf("%d", &n);
+
+    printf("Before swapping: m = %d, n = %d\n", m, n);
+
+    // Swapping
+    m = m ^ n;
+    n = m ^ n;
+    m = m ^ n;
+
+    printf("After swapping: m = %d, n = %d\n", m, n);
+
+    return 0;
+}
+```
+
+### Version 3: Using Multiplication and Division (Ensure no value is 0)
+
+```c
+#include <stdio.h>
+
+int main() {
+    float p, q;
+
+    printf("Enter the first number: ");
+    scanf("%f", &p);
+    printf("Enter the second number: ");
+    scanf("%f", &q);
+
+    printf("Before swapping: p = %.2f, q = %.2f\n", p, q);
+
+    if (p != 0 && q != 0) {
+        // Swapping
+        p = p * q;
+        q = p / q;
+        p = p / q;
+    } else {
+        printf("One of the numbers is 0, cannot proceed with multiplication/division method.\n");
+    }
+
+    printf("After swapping: p = %.2f, q = %.2f\n", p, q);
+
+    return 0;
+}
+```
+
+Each version provides a unique method of swapping two numbers without using a third variable, following the guidelines you provided.

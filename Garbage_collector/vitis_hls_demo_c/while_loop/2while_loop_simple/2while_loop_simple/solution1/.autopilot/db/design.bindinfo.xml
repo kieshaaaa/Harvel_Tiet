@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln7_fu_44_p2" SOURCE="printNum.c:7" VARIABLE="icmp_ln7" MODULE="printNumbers_Pipeline_VITIS_LOOP_7_1" LOOP="VITIS_LOOP_7_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="i_3_fu_50_p2" SOURCE="printNum.c:9" VARIABLE="i_3" MODULE="printNumbers_Pipeline_VITIS_LOOP_7_1" LOOP="VITIS_LOOP_7_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln11_fu_44_p2" SOURCE="printNum.c:11" VARIABLE="icmp_ln11" MODULE="printNumbers_Pipeline_VITIS_LOOP_11_2" LOOP="VITIS_LOOP_11_2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="j_3_fu_50_p2" SOURCE="printNum.c:13" VARIABLE="j_3" MODULE="printNumbers_Pipeline_VITIS_LOOP_11_2" LOOP="VITIS_LOOP_11_2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln7_fu_54_p2" SOURCE="printNum.c:7" VARIABLE="icmp_ln7" MODULE="printNumbers" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

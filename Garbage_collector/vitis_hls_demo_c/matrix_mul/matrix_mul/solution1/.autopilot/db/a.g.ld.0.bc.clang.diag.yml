@@ -1,0 +1,204 @@
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mat_mul.c, Line: 13, Column: 30 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc.load.5
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - String:          ' '
+  - ArrayName:       mat1
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_13_1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:13:30'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: mat_mul.c, Line: 14, Column: 46 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.load.7
+  - String:          ' '
+  - ArrayName:       mat2
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_13_1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:13:30'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: mat_mul.c, Line: 13, Column: 30 }
+Function:        multiplyMatrix
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - String:          ' '
+  - ArrayName:       mat1
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        multiplyMatrix_label0
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:11:31'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: mat_mul.c, Line: 12, Column: 26 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: mat_mul.c, Line: 14, Column: 30 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_13_1.store.3
+  - String:          ' '
+  - ArrayName:       result
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: mat_mul.c, Line: 14, Column: 30 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: mat_mul.c, Line: 12, Column: 26 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc21.store.2
+  - String:          ' '
+  - ArrayName:       result
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualAlignment
+DebugLoc:        { File: mat_mul.c, Line: 13, Column: 30 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to alignment '
+  - Alignment:       '4'
+  - String:          '(bytes)'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - String:          ' '
+  - ArrayName:       mat1
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_13_1
+  - String:          ' '
+  - LoopLoc:         'mat_mul.c:13:30'
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-interface-check
+Name:            InterfaceWithWrongType
+DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+Function:        multiplyMatrix
+Args:            
+  - String:          interface mode
+  - String:          ' '''
+  - String:          ap_none
+  - String:          ''' '
+  - String:          'with wrong type '
+  - String:          ''''
+  - Type:            '[3 x i32]*'
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-interface-check
+Name:            InterfaceWithWrongType
+DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+Function:        multiplyMatrix
+Args:            
+  - String:          interface mode
+  - String:          ' '''
+  - String:          ap_none
+  - String:          ''' '
+  - String:          'with wrong type '
+  - String:          ''''
+  - Type:            '[3 x i32]*'
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-interface-check
+Name:            InterfaceWithWrongType
+DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+Function:        multiplyMatrix
+Args:            
+  - String:          interface mode
+  - String:          ' '''
+  - String:          ap_none
+  - String:          ''' '
+  - String:          'with wrong type '
+  - String:          ''''
+  - Type:            '[3 x i32]*'
+  - String:          ''''
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            BurstConflict
+DebugLoc:        { File: mat_mul.c, Line: 13, Column: 30 }
+Function:        multiplyMatrix
+Args:            
+  - String:          'Could not burst due to multiple potential '
+  - Direction:       reads
+  - String:          ' to the same bundle in the same region.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        multiplyMatrix
+    DebugLoc:        { File: mat_mul.c, Line: 7, Column: 0 }
+  - String:          ' '
+...

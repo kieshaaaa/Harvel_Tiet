@@ -1,0 +1,9 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="" msg_id="207-4704" msg_severity="WARNING" msg_loc="if_else.c:10:18" msg_body="self-comparison always evaluates to true">
+        <args ClangWarningOption="tautological-compare"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/coss01/vitis_hls_demo_c/if_else/nested/nested_if_welse/solution1/csynth.tcl:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="if_else" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=if_else" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

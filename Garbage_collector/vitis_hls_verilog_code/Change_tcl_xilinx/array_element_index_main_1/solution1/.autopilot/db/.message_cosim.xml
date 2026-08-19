@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[COSIM 212-47]" key="COSIM_TCL_47_1115" tag="" content="Using XSIM for RTL simulation." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-14]" key="COSIM_TCL_14_1084" tag="" content="Instrumenting C test bench ..." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1427" tag="" content="Running &apos;/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;virubuntu&apos; on host &apos;virubuntu.myguest.virtualbox.org&apos; (Linux_x86_64 version 5.19.0-50-generic) on Thu Jul 27 11:02:13 IST 2023" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1429" tag="" content="On os Ubuntu 22.04.2 LTS" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1430" tag="" content="In directory &apos;/home/virubuntu/Change_tcl_xilinx/array_element_index_main_1/solution1/sim/wrapc&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is /tmp/apcc_db_virubuntu/1234851690435933533072" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-1]" key="APCC_1_1611" tag="" content="APCC is done." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1427" tag="" content="Running &apos;/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;virubuntu&apos; on host &apos;virubuntu.myguest.virtualbox.org&apos; (Linux_x86_64 version 5.19.0-50-generic) on Thu Jul 27 11:02:17 IST 2023" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1429" tag="" content="On os Ubuntu 22.04.2 LTS" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1430" tag="" content="In directory &apos;/home/virubuntu/Change_tcl_xilinx/array_element_index_main_1/solution1/sim/wrapc&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is /tmp/apcc_db_virubuntu/1235421690435937086581" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-1]" key="APCC_1_1611" tag="" content="APCC is done." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-302]" key="COSIM_TCL_302_1177" tag="" content="Starting C TB testing ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-333]" key="COSIM_TCL_333_1204" tag="" content="Generating C post check test bench ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-12]" key="COSIM_TCL_12_1082" tag="" content="Generating RTL test bench ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-1]" key="COSIM_TCL_1_1071" tag="" content="*** C/RTL co-simulation file generation completed. ***" resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-323]" key="COSIM_TCL_323_1195" tag="" content="Starting verilog simulation." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-15]" key="COSIM_TCL_15_1085" tag="" content="Starting XSIM ..." resolution=""/>
+</Messages>

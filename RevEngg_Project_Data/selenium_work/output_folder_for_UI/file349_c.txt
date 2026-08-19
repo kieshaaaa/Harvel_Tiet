@@ -1,0 +1,66 @@
+Sure, below are three variations of the program that check the eligibility of a candidate to vote based on their age, without using the restrictions you mentioned.
+
+### Version 1: Basic if-else
+```c
+#include<stdio.h>
+
+int main() {
+    int age;
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    if(age >= 18) {
+        printf("Eligible to Vote.\n");
+    } else {
+        printf("Not Eligible to Vote.\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using Ternary Operator
+Since you wanted different versions without using any specific features like dynamic memory allocation, pointers, etc., this version uses the ternary operator for a more concise decision-making process.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int age;
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    age >= 18 ? printf("Eligible to Vote.\n") : printf("Not Eligible to Vote.\n");
+
+    return 0;
+}
+```
+
+### Version 3: Adding a Variable for Eligibility Status
+This version adds a variable to explicitly store the eligibility status, which can be useful for extending the program's functionality in the future.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int age, isEligible;
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    if(age >= 18) {
+        isEligible = 1; // True for eligibility
+    } else {
+        isEligible = 0; // False for non-eligibility
+    }
+
+    if(isEligible == 1) {
+        printf("Eligible to Vote.\n");
+    } else {
+        printf("Not Eligible to Vote.\n");
+    }
+
+    return 0;
+}
+```
+
+Each of these versions respects the constraints you outlined and provides a different approach to solving the problem.

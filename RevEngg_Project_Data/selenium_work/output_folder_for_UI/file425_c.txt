@@ -1,0 +1,64 @@
+### Version 1: Using Global Variable
+
+This version uses a global variable for the string. The function `Strfun` directly prints this global variable without needing it passed as an argument, adhering to your constraints.
+
+```c
+#include <stdio.h>
+
+char buff[20] = "Hello Function";
+
+void Strfun() {
+    printf("The String is : ");
+    printf("%s", buff);
+}
+
+int main() {
+    Strfun();
+    return 0;
+}
+```
+
+### Version 2: Using Array Indexing
+
+This version avoids using pointers by manually printing each character of the string using array indexing. It stops printing when it encounters the null terminator `\0`.
+
+```c
+#include <stdio.h>
+
+void Strfun() {
+    char buff[20] = "Hello Function";
+    int i = 0;
+    printf("The String is : ");
+    while (buff[i] != '\0') {
+        printf("%c", buff[i]);
+        i++;
+    }
+}
+
+int main() {
+    Strfun();
+    return 0;
+}
+```
+
+### Version 3: Using a Macro
+
+This version defines the string as a macro and uses it within the `Strfun` function. This approach completely bypasses the need for variables or pointers in passing the string.
+
+```c
+#include <stdio.h>
+
+#define MY_STRING "Hello Function"
+
+void Strfun() {
+    printf("The String is : ");
+    printf("%s", MY_STRING);
+}
+
+int main() {
+    Strfun();
+    return 0;
+}
+```
+
+Each of these versions adheres to the constraints you've set, avoiding pointers, dynamic memory allocation, structs, unions, recursion, file handling, and modifications to the data type definitions, including the use of `const`.

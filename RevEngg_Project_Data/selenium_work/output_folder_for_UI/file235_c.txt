@@ -1,0 +1,92 @@
+### Version 1: Simple Loop Iteration
+This version uses nested loops to manage spaces and stars in each row. It's straightforward and avoids using any of the disallowed constructs.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i, j, k, rows;
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    for(i=1; i<=rows; i++) {
+        // Print leading spaces
+        for(j=1; j<=rows-i; j++) {
+            printf(" ");
+        }
+        // Print stars
+        for(k=1; k<=i; k++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using Character Arrays
+This version involves using a character array to store and display each row of the pattern. It constructs the pattern row by row and prints it.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows, i, j, k;
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    for(i=1; i<=rows; i++) {
+        char line[200] = {0}; // Assuming max number of columns won't exceed 200
+        k = 0;
+
+        // Add leading spaces to the line
+        for(j=1; j<=rows-i; j++, k++) {
+            line[k] = ' ';
+        }
+        // Add stars to the line
+        for(j=1; j<=i; j++, k+=2) {
+            line[k] = '*';
+            if(j < i) { // Avoid adding an extra space after the last star
+                line[k+1] = ' ';
+            }
+        }
+        printf("%s\n", line);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using Logic Without Arrays or Dynamic Memory
+This version cleverly calculates when to print a star or a space based on the current row and column without directly using character arrays or additional memory for storing the pattern.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int rows, i, j;
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    for(i=1; i<=rows; i++) {
+        // Determine the total number of characters to be printed in each row
+        int totalChars = rows - 1 + i;
+        for(j=1; j<=totalChars; j++) {
+            if(j >= rows - (i - 1)) {
+                printf("*");
+                if(j < totalChars) { // Add a space after each star except the last one in each row
+                    printf(" ");
+                }
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+Each of these versions fulfills the requirements set out, avoiding the use of forbidden constructs and data types, and offering a different approach to solving the problem of printing the specified pattern.

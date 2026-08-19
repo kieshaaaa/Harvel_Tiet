@@ -1,0 +1,83 @@
+Certainly! Below are three different versions of the program that calculates the factorial of a non-negative integer, in line with your guidelines:
+
+**Version 1:** Simplifying the loop by integrating the condition within the loop.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    int factorial = 1;
+
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Error! Factorial of a negative number doesn't exist.\n");
+    } else {
+        int i = 1;
+        while (i <= n) {
+            factorial *= i;
+            i++;
+        }
+        printf("Factorial of %d = %d\n", n, factorial);
+    }
+
+    return 0;
+}
+```
+
+**Version 2:** Using a `do-while` loop instead of a `for` or `while` loop for calculation.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    int factorial = 1;
+
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Error! Factorial of a negative number doesn't exist.\n");
+    } else {
+        int i = 1;
+        do {
+            factorial *= i;
+            i++;
+        } while (i <= n);
+        printf("Factorial of %d = %d\n", n, factorial);
+    }
+
+    return 0;
+}
+```
+
+**Version 3:** Introducing an early `return` to reduce the need for an `else` statement.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    int factorial = 1;
+
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Error! Factorial of a negative number doesn't exist.\n");
+        return -1; // Using an error code to indicate failure.
+    } 
+
+    for (int i = 1; i <= n; ++i) {
+        factorial *= i;
+    }
+    printf("Factorial of %d = %d\n", n, factorial);
+
+    return 0;
+}
+```
+
+Each version adheres to your instructions, ensuring no recursion, no dynamic memory allocation, no use of structures, unions, or pointers, and avoiding file handling. Additionally, these examples avoid modifying the existing data types or integrating complex logic within the `printf` statements.

@@ -1,0 +1,135 @@
+
+
+================================================================
+== Vitis HLS Report for 'processArray'
+================================================================
+* Date:           Thu Jul 27 10:38:30 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        array_element_index
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu11p-flga2577-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  1.142 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|      234|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|     -|        -|        -|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|        -|    -|
+|Register             |        -|     -|        -|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|        0|      234|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1344|  3072|   864000|   432000|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|        0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4032|  9216|  2592000|  1296000|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|        0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------+----------+----+---+----+------------+------------+
+    | Variable Name| Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------+----------+----+---+----+------------+------------+
+    |arr_0_o       |         +|   0|  0|  39|          32|           1|
+    |arr_1_o       |         +|   0|  0|  39|          32|           2|
+    |arr_2_o       |         +|   0|  0|  39|          32|           2|
+    |arr_3_o       |         +|   0|  0|  39|          32|           3|
+    |arr_4_o       |         +|   0|  0|  39|          32|           3|
+    |arr_5_o       |         +|   0|  0|  39|          32|           3|
+    +--------------+----------+----+---+----+------------+------------+
+    |Total         |          |   0|  0| 234|         192|          14|
+    +--------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------+-----+-----+------------+--------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  | Source Object|    C Type    |
++----------------+-----+-----+------------+--------------+--------------+
+|ap_start        |   in|    1|  ap_ctrl_hs|  processArray|  return value|
+|ap_done         |  out|    1|  ap_ctrl_hs|  processArray|  return value|
+|ap_idle         |  out|    1|  ap_ctrl_hs|  processArray|  return value|
+|ap_ready        |  out|    1|  ap_ctrl_hs|  processArray|  return value|
+|arr_0_i         |   in|   32|     ap_ovld|         arr_0|       pointer|
+|arr_0_o         |  out|   32|     ap_ovld|         arr_0|       pointer|
+|arr_0_o_ap_vld  |  out|    1|     ap_ovld|         arr_0|       pointer|
+|arr_1_i         |   in|   32|     ap_ovld|         arr_1|       pointer|
+|arr_1_o         |  out|   32|     ap_ovld|         arr_1|       pointer|
+|arr_1_o_ap_vld  |  out|    1|     ap_ovld|         arr_1|       pointer|
+|arr_2_i         |   in|   32|     ap_ovld|         arr_2|       pointer|
+|arr_2_o         |  out|   32|     ap_ovld|         arr_2|       pointer|
+|arr_2_o_ap_vld  |  out|    1|     ap_ovld|         arr_2|       pointer|
+|arr_3_i         |   in|   32|     ap_ovld|         arr_3|       pointer|
+|arr_3_o         |  out|   32|     ap_ovld|         arr_3|       pointer|
+|arr_3_o_ap_vld  |  out|    1|     ap_ovld|         arr_3|       pointer|
+|arr_4_i         |   in|   32|     ap_ovld|         arr_4|       pointer|
+|arr_4_o         |  out|   32|     ap_ovld|         arr_4|       pointer|
+|arr_4_o_ap_vld  |  out|    1|     ap_ovld|         arr_4|       pointer|
+|arr_5_i         |   in|   32|     ap_ovld|         arr_5|       pointer|
+|arr_5_o         |  out|   32|     ap_ovld|         arr_5|       pointer|
+|arr_5_o_ap_vld  |  out|    1|     ap_ovld|         arr_5|       pointer|
++----------------+-----+-----+------------+--------------+--------------+
+

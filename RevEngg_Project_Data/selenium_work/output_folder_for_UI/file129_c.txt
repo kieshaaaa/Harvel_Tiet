@@ -1,0 +1,89 @@
+### Version 1: Simplified Input Loop & Inline Comments
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], size;
+    printf("Enter size of the array: ");
+    scanf("%d", &size);
+
+    for (int i = 0; i < size; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    int max = arr[0], min = arr[0];
+
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max) max = arr[i];
+        if (arr[i] < min) min = arr[i];
+    }
+
+    printf("Maximum element = %d\n", max);
+    printf("Minimum element = %d\n", min);
+
+    return 0;
+}
+```
+
+### Version 2: Loop Optimization & Reduced Code
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], i, size, max, min;
+    printf("Enter size of the array: ");
+    scanf("%d", &size);
+
+    for (i = 0; i < size; i++) {
+        printf("Element %d: ", i);
+        scanf("%d", &arr[i]);
+        if (i == 0) {
+            max = min = arr[0];
+        } else {
+            if (arr[i] > max) max = arr[i];
+            if (arr[i] < min) min = arr[i];
+        }
+    }
+
+    printf("Maximum element = %d\n", max);
+    printf("Minimum element = %d\n", min);
+
+    return 0;
+}
+```
+
+### Version 3: User Interaction & Initial Checks
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], size, max, min;
+    printf("Enter size of the array: ");
+    scanf("%d", &size);
+
+    if (size > 0 && size <= 100) {
+        for (int i = 0; i < size; i++) {
+            printf("Element %d: ", i + 1);
+            scanf("%d", &arr[i]);
+            if (i == 0) {
+                max = min = arr[i];
+                continue;
+            }
+            max = (arr[i] > max) ? arr[i] : max;
+            min = (arr[i] < min) ? arr[i] : min;
+        }
+        printf("Maximum element = %d\n", max);
+        printf("Minimum element = %d\n", min);
+    } else {
+        printf("Invalid array size.\n");
+    }
+
+    return 0;
+}
+```
+
+Each version maintains the simplicity and meets all your restrictions, varying in input methods, loop optimizations, and user feedback for invalid input.

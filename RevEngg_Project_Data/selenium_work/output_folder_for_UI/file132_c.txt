@@ -1,0 +1,79 @@
+Sure, I'll provide you with three different versions of the C program to print the multiplication table of a number, adhering to your constraints. Let's keep it simple and straightforward while making sure each version has a little twist in its structure or input/output handling.
+
+### Version 1: Using `while` Loop
+
+```c
+#include<stdio.h>
+
+int main() {
+    int num, range, i = 1;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+    printf("Enter the range: ");
+    scanf("%d", &range);
+    
+    while(i <= range) {
+        int product = num * i;
+        printf("%d * %d = %d\n", num, i, product);
+        i++;
+    }
+    return 0;
+}
+```
+
+### Version 2: Including Negative Range Support
+
+In this version, the program can handle both positive and negative ranges for the multiplication table, showing flexibility in the direction of counting.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int num, start, end, i;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+    printf("Enter start of range: ");
+    scanf("%d", &start);
+    printf("Enter end of range: ");
+    scanf("%d", &end);
+    
+    if(start <= end) {
+        for(i = start; i <= end; i++) {
+            int result = num * i;
+            printf("%d * %d = %d\n", num, i, result);
+        }
+    } else {
+        for(i = start; i >= end; i--) {
+            int result = num * i;
+            printf("%d * %d = %d\n", num, i, result);
+        }
+    }
+    return 0;
+}
+```
+
+### Version 3: Use of `do-while` Loop
+
+This version leverages a `do-while` loop, ensuring the loop runs at least once regardless of the range's initial value.
+
+```c
+#include<stdio.h>
+
+int main() {
+    int num, range, i = 1;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+    printf("Enter the range: ");
+    scanf("%d", &range);
+    
+    do {
+        int multiplication = num * i;
+        printf("%d * %d = %d\n", num, i, multiplication);
+        i++;
+    } while(i <= range);
+    
+    return 0;
+}
+```
+
+Each of these versions provides a unique approach to handling the input and loop constructs within the constraints you've provided.

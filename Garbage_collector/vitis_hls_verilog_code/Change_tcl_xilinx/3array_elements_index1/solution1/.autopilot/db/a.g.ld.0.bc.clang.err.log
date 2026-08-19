@@ -1,0 +1,3 @@
+remark: ../Array_with_pragma/Array/3array_elements_index/array.c:6:0: Applying array_partition to 'arr': Complete partitioning on dimension 1.
+remark: ../Array_with_pragma/Array/3array_elements_index/array.c:6:0: Applying array_partition to 'arr2': Complete partitioning on dimension 1.
+remark: ../Array_with_pragma/Array/3array_elements_index/array.c:6:0: Applying array_partition to 'arr3': Complete partitioning on dimension 1.

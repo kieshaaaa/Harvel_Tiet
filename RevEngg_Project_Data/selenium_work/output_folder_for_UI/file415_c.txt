@@ -1,0 +1,79 @@
+Certainly! Below are three different versions of the provided C program that converts a decimal number to its octal equivalent. Each version varies in its approach while adhering to your constraints.
+
+### Version 1: Simplified Loop and Variable Initialization
+```c
+#include <stdio.h>
+
+int main() {
+    int decimal;
+    int octal = 0;
+    int placeValue = 1;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    while (decimal != 0) {
+        octal += (decimal % 8) * placeValue;
+        decimal /= 8;
+        placeValue *= 10;
+    }
+
+    int result = octal;
+    printf("Octal number: ");
+    printf("%d\n", result);
+    return 0;
+}
+```
+
+### Version 2: Using a `for` Loop Instead of `while`
+```c
+#include <stdio.h>
+
+int main() {
+    int decimal;
+    int octal = 0;
+    int placeValue = 1;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    for (; decimal > 0; decimal /= 8) {
+        octal += (decimal % 8) * placeValue;
+        placeValue *= 10;
+    }
+
+    int result = octal;
+    printf("Octal number: ");
+    printf("%d\n", result);
+    return 0;
+}
+```
+
+### Version 3: Bitwise Operations for Increased Clarity
+Given the restrictions, I'll use a straightforward approach without bitwise operations but introduce a different logic structure for clarity.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int decimal;
+    int octal = 0;
+    int placeValue = 1;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    do {
+        int lastDigit = decimal % 8;
+        octal += lastDigit * placeValue;
+        placeValue *= 10;
+        decimal /= 8;
+    } while (decimal > 0);
+
+    printf("Octal number: ");
+    printf("%d\n", octal);
+    return 0;
+}
+```
+
+Each of these versions converts decimal numbers to octal while meeting your specified restrictions. The primary adjustments include variations in loop structure and variable manipulation, avoiding the usage of disallowed features and focusing on straightforward, procedural conversion logic.

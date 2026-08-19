@@ -1,0 +1,110 @@
+### Version 1: Using `scanf` instead of `gets` and using `while` loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int countDigits = 0, countAlphabet = 0, countSpecialChar = 0, countSpaces = 0;
+    int counter = 0;
+
+    printf("Enter a string: ");
+    scanf("%[^\n]%*c", str); // Read until newline is encountered
+
+    while (str[counter] != '\0') { // Use '\0' for the null character
+
+        if (str[counter] >= '0' && str[counter] <= '9')
+            countDigits++;
+        else if ((str[counter] >= 'A' && str[counter] <= 'Z') || (str[counter] >= 'a' && str[counter] <= 'z'))
+            countAlphabet++;
+        else if (str[counter] == ' ')
+            countSpaces++;
+        else
+            countSpecialChar++;
+
+        counter++;
+    }
+
+    printf("\nDigits: %d", countDigits);
+    printf("\nAlphabets: %d", countAlphabet);
+    printf("\nSpaces: %d", countSpaces);
+    printf("\nSpecial Characters: %d", countSpecialChar);
+
+    return 0;
+}
+```
+
+### Version 2: Using `for` loop with character array initialization
+
+```c
+#include <stdio.h>
+
+int main() {
+    char str[100] = ""; // Initialize string with empty
+    int countDigits = 0, countAlphabet = 0, countSpecialChar = 0, countSpaces = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]s", str); // Space before % to consume any leading whitespace
+
+    for (int i = 0; str[i] != '\0'; i++) { // Direct use of '\0'
+
+        char ch = str[i]; // Working with a copy of each character
+        if (ch >= '0' && ch <= '9')
+            countDigits++;
+        else if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+            countAlphabet++;
+        else if (ch == ' ')
+            countSpaces++;
+        else
+            countSpecialChar++;
+    }
+
+    printf("\nDigits: %d", countDigits);
+    printf("\nAlphabets: %d", countAlphabet);
+    printf("\nSpaces: %d", countSpaces);
+    printf("\nSpecial Characters: %d", countSpecialChar);
+
+    return 0;
+}
+```
+
+### Version 3: Streamlining with switch-case
+
+```c
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int countDigits = 0, countAlphabet = 0, countSpecialChar = 0, countSpaces = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]s", str);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        switch (str[i]) {
+            case '0' ... '9':
+                countDigits++;
+                break;
+            case 'A' ... 'Z':
+            case 'a' ... 'z':
+                countAlphabet++;
+                break;
+            case ' ':
+                countSpaces++;
+                break;
+            default:
+                countSpecialChar++;
+                break;
+        }
+    }
+
+    printf("\nDigits: %d", countDigits);
+    printf("\nAlphabets: %d", countAlphabet);
+    printf("\nSpaces: %d", countSpaces);
+    printf("\nSpecial Characters: %d", countSpecialChar);
+
+    return 0;
+}
+```
+
+Each version refines the approach slightly, while adhering to your constraints and avoiding the specified programming features.

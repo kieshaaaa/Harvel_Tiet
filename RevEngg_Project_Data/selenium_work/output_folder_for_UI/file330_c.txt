@@ -1,0 +1,68 @@
+### Version 1: Simplified HCF Calculation
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("Enter first number :: ");
+    scanf("%d", &a);
+    printf("Enter second number :: ");
+    scanf("%d", &b);
+
+    while(a != b) {
+        if(a > b) {
+            a = a - b;
+        } else {
+            b = b - a;
+        }
+    }
+    printf("HCF (Highest Common Factor) is: %d\n", a);
+    return 0;
+}
+```
+
+### Version 2: Using a For Loop
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, hcf, min;
+    printf("Enter first number :: ");
+    scanf("%d", &a);
+    printf("Enter second number :: ");
+    scanf("%d", &b);
+
+    min = (a < b) ? a : b;
+
+    for(hcf = min; hcf >= 1; hcf--) {
+        if(a % hcf == 0 && b % hcf == 0) {
+            break;
+        }
+    }
+    printf("HCF (Highest Common Factor) is: %d\n", hcf);
+    return 0;
+}
+```
+
+### Version 3: Inline HCF Calculation
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, temp;
+    printf("Enter first number :: ");
+    scanf("%d", &a);
+    printf("Enter second number :: ");
+    scanf("%d", &b);
+
+    while(b != 0) {
+        temp = a;
+        a = b;
+        b = temp % b;
+    }
+    printf("HCF (Highest Common Factor) is: %d\n", a);
+    return 0;
+}
+```
+
+Each version offers a unique approach to calculate the HCF (Highest Common Factor) of two numbers, following the constraints you've specified.

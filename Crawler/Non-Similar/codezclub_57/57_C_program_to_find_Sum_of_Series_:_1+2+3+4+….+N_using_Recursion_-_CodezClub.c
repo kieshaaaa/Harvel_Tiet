@@ -1,0 +1,48 @@
+/* Source: https://www.codezclub.com/c-find-sum-of-all-natural-numbers-1-to-n/ */
+/* C program to find sum of Series : 1+2+3+4+....+N */
+
+
+#include<stdio.h>
+int series(int n);
+int rseries(int n);
+
+int main( )
+{
+        int n;
+        printf("Enter number of terms : ");
+        scanf("%d", &n);
+
+        printf("\b\b Using Recursion :: \n");
+        series_sum = series(n);
+        printf("\b\b = %d\n", series_sum);      
+
+        rseries_sum = rseries(n);
+        printf("\b\b = %d\n\n\n", rseries_sum);
+
+        return 0;
+}/*End of main()*/
+
+/*Iterative function*/
+int series(int n)
+{
+        int i, sum=0;
+        for(i=1; i<=n; i++)
+        {
+                printf("%d + ", i);
+                sum+=i;
+        }
+        return sum;
+}/*End of series()*/
+
+/*Recursive function*/
+int rseries(int n)
+{
+        int sum;
+        if(n == 0)
+        {
+                return 0;
+        }
+        sum = (n + rseries(n-1));
+        printf("%d + ",n);
+        return sum;
+}/*End of rseries()*/

@@ -1,0 +1,118 @@
+Certainly! Here are three different versions of a C program to sort an array in descending order, adhering to your guidelines:
+
+### Version 1: Using Selection Sort Algorithm
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], size, i, j, maxIdx, temp;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    printf("\nEnter elements in array:\n");
+    for (i = 0; i < size; i++) {
+        printf("Enter %d element: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = 0; i < size - 1; i++) {
+        maxIdx = i;
+        for (j = i + 1; j < size; j++) {
+            if (arr[j] > arr[maxIdx]) {
+                maxIdx = j;
+            }
+        }
+        if (maxIdx != i) {
+            temp = arr[i];
+            arr[i] = arr[maxIdx];
+            arr[maxIdx] = temp;
+        }
+    }
+
+    printf("\nArray in descending order: ");
+    for (i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using Bubble Sort Algorithm with Early Stopping
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], size, i, temp, needToSort;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    printf("\nEnter elements in array:\n");
+    for (i = 0; i < size; i++) {
+        printf("Enter %d element: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    do {
+        needToSort = 0;
+        for (i = 0; i < size - 1; i++) {
+            if (arr[i] < arr[i + 1]) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                needToSort = 1;
+            }
+        }
+    } while (needToSort);
+
+    printf("\nArray in descending order: ");
+    for (i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using Insertion Sort Algorithm
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[100], size, i, j, key;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    printf("\nEnter elements in array:\n");
+    for (i = 0; i < size; i++) {
+        printf("Enter %d element: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = 1; i < size; i++) {
+        key = arr[i];
+        j = i - 1;
+        
+        while (j >= 0 && arr[j] < key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+
+    printf("\nArray in descending order: ");
+    for (i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+```
+
+Each of these versions utilizes a different sorting algorithm while adhering to your constraints.

@@ -1,0 +1,76 @@
+### Version 1: Direct Assignment and Calculations
+
+```c
+#include <stdio.h>
+
+int main() {
+    float length = 5.0; // Direct assignment
+    float width = 3.0;  // Direct assignment
+    float height = 2.0; // Direct assignment
+    float totalEdgeLength;
+
+    // Calculate the total length of all edges
+    totalEdgeLength = 4 * (length + width + height);
+
+    // Display the total edge length
+    printf("Total edge length (Perimeter) of the cuboid: ");
+    printf("%.2f\n", totalEdgeLength);
+
+    return 0;
+}
+```
+
+### Version 2: Compact User Input
+
+```c
+#include <stdio.h>
+
+int main() {
+    float length, width, height, totalEdgeLength;
+
+    // Compact input
+    printf("Enter length, width, and height of the cuboid separated by spaces: ");
+    scanf("%f %f %f", &length, &width, &height);
+
+    // Calculate the total length of all edges
+    totalEdgeLength = 4 * (length + width + height);
+
+    // Display the total edge length
+    printf("Total edge length (Perimeter) of the cuboid: ");
+    printf("%.2f\n", totalEdgeLength);
+
+    return 0;
+}
+```
+
+### Version 3: User Input in a Loop
+
+```c
+#include <stdio.h>
+
+int main() {
+    float dimensions[3]; // 0: length, 1: width, 2: height
+    const char* dimensionNames[] = {"length", "width", "height"};
+    float totalEdgeLength = 0.0;
+    
+    // Loop for input
+    for (int i = 0; i < 3; i++) {
+        printf("Enter the %s of the cuboid: ", dimensionNames[i]);
+        scanf("%f", &dimensions[i]);
+    }
+
+    // Calculate the total length of all edges
+    for (int i = 0; i < 3; i++) {
+        totalEdgeLength += dimensions[i];
+    }
+    totalEdgeLength *= 4;
+
+    // Display the total edge length
+    printf("Total edge length (Perimeter) of the cuboid: ");
+    printf("%.2f\n", totalEdgeLength);
+
+    return 0;
+}
+```
+
+Each version offers a different approach to obtaining or setting the dimensions of the cuboid, while maintaining the core functionality and constraints you outlined.

@@ -1,0 +1,133 @@
+### Version 1: Iterative Approach to Generate Patterns
+
+```c
+#include<stdio.h>
+
+int main() {
+    int n, i, j;
+    printf("Enter how many lines you want to print? ");
+    scanf("%d", &n);
+
+    // Pattern 1
+    printf("\n------------ Pattern 1 ----------- \n\n");
+    for(i = 1; i <= n; i++) {
+        for(j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+
+    // Pattern 2
+    printf("\n------------ Pattern 2 ----------- \n\n");
+    for(i = n; i >= 1; i--) {
+        for(j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+
+    // Pattern 3
+    printf("\n------------ Pattern 3 ----------- \n\n");
+    for(i = n; i >= 1; i--) {
+        for(j = i; j >= 1; j--) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using Nested Loops for Patterns with Space Padding
+
+```c
+#include<stdio.h>
+
+int main() {
+    int n, i, j, k;
+    printf("Enter how many lines you want to print? ");
+    scanf("%d", &n);
+
+    // Pattern 1 with leading spaces
+    printf("\n------------ Pattern 1 ----------- \n\n");
+    for(i = 1; i <= n; i++) {
+        for(k = n; k > i; k--) {
+            printf("  ");
+        }
+        for(j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+
+    // Inverted Pattern 2 with leading spaces
+    printf("\n------------ Pattern 2 ----------- \n\n");
+    for(i = n; i >= 1; i--) {
+        for(k = n; k > i; k--) {
+            printf("  ");
+        }
+        for(j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+
+    // Pattern 3 with numbers in reverse
+    printf("\n------------ Pattern 3 ----------- \n\n");
+    for(i = 1; i <= n; i++) {
+        for(k = 1; k < i; k++) {
+            printf("  ");
+        }
+        for(j = i; j >= 1; j--) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Printing Patterns with Incremented Row Number
+
+```c
+#include<stdio.h>
+
+int main() {
+    int n, i, j;
+    printf("Enter how many lines you want to print? ");
+    scanf("%d", &n);
+
+    // Pattern 1: Incrementing number in each row
+    printf("\n------------ Pattern 1 ----------- \n\n");
+    for(i = 1; i <= n; i++) {
+        for(j = 1; j <= i; j++) {
+            printf("%d ", i);
+        }
+        printf("\n");
+    }
+
+    // Pattern 2: Reverse incrementing number in each row
+    printf("\n------------ Pattern 2 ----------- \n\n");
+    for(i = n; i >= 1; i--) {
+        for(j = 1; j <= i; j++) {
+            printf("%d ", i);
+        }
+        printf("\n");
+    }
+
+    // Pattern 3: Incremented numbers but in reverse order for each row
+    printf("\n------------ Pattern 3 ----------- \n\n");
+    for(i = n; i >= 1; i--) {
+        for(j = i; j >= 1; j--) {
+            printf("%d ", i);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+These versions each present a different take on the original task, focusing on iterative loops to generate patterns and avoiding recursion, dynamic memory allocation, and other excluded features.

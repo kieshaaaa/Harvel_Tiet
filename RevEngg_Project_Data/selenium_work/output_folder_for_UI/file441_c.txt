@@ -1,0 +1,91 @@
+### Version 1: Inline Prime Check
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 2; i <= n; i++) {
+        int isComposite = 0;
+        for (int j = 2; j*j <= i; j++) {
+            if (i % j == 0) {
+                isComposite = 1;
+                break;
+            }
+        }
+        count += isComposite;
+    }
+
+    printf("Number of composite numbers till ");
+    printf("%d", n);
+    printf(": ");
+    printf("%d\n", count);
+
+    return 0;
+}
+```
+
+### Version 2: Using a Different Loop Structure
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 2; i <= n; i++) {
+        int isComposite = 0;
+        int j = 2;
+        while (j*j <= i && !isComposite) {
+            if (i % j == 0) {
+                isComposite = 1;
+            }
+            j++;
+        }
+        if (isComposite) count++;
+    }
+
+    printf("Number of composite numbers till ");
+    printf("%d", n);
+    printf(": ");
+    printf("%d\n", count);
+
+    return 0;
+}
+```
+
+### Version 3: Optimizing Loop Start for Checking Composites
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 4; i <= n; i++) { // Start from 4, as 2 and 3 are primes
+        int isComposite = 0;
+        for (int j = 2; (j*j <= i) && !isComposite; j++) {
+            if (i % j == 0) {
+                isComposite = 1;
+            }
+        }
+        count += isComposite;
+    }
+
+    printf("Number of composite numbers till ");
+    printf("%d", n);
+    printf(": ");
+    printf("%d\n", count);
+
+    return 0;
+}
+```
+
+Each version provides a different approach or a slight optimization to count composite numbers up to the given number `n`, adhering to the constraints specified.

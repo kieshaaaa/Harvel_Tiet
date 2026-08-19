@@ -1,0 +1,57 @@
+Certainly! I'll provide you with three alternative versions of the original C program. Each of these will also read an integer from the user and print the number without its last digit, adhering to your constraints.
+
+### Version 1: Using `scanf` and `printf` with minimal changes
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, result;
+    printf("\nEnter An Integer => ");
+    scanf("%d", &num);
+    result = num / 10;
+    printf("Without last Digit => ");
+    printf("%d \n", result);
+    return 0;
+}
+```
+
+### Version 2: Adding an additional step for clarity
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    int divisor = 10;
+    int result;
+
+    printf("\nEnter An Integer => ");
+    scanf("%d", &num);
+    result = num / divisor;
+    printf("Without last Digit => ");
+    printf("%d \n", result);
+
+    return 0;
+}
+```
+
+### Version 3: Using `float` for division and then casting back to `int`
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    float tempResult;
+    printf("\nEnter An Integer => ");
+    scanf("%d", &num);
+    tempResult = num / 10.0f; // Division with float
+    printf("Without last Digit => ");
+    printf("%d \n", (int)tempResult); // Casting back to int
+
+    return 0;
+}
+```
+
+Each version adheres to your specified constraints, varying slightly in approach to demonstrate different aspects of C programming while achieving the same outcome.

@@ -1,0 +1,10 @@
+/home/virubuntu/Change_tcl_xilinx/pragma_partition_array_elements_index_main/solution1/csynth.tcl:14:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=processArray_XLX_SEP_ PragmaOptions=name=processArray_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=processArray
+        ^
+/home/virubuntu/Change_tcl_xilinx/pragma_partition_array_elements_index_main/solution1/directives.tcl:6:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=processArray_XLX_SEP_ PragmaOptions=name=processArray_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=processArray
+        ^
+/home/virubuntu/Change_tcl_xilinx/pragma_partition_array_elements_index_main/solution1/directives.tcl:7:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=processArray_XLX_SEP_ PragmaOptions=cyclic dim=1 factor=2 variable=arr_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE ARRAY_PARTITION cyclic dim=1 factor=2 variable=arr
+        ^
+3 warnings generated.

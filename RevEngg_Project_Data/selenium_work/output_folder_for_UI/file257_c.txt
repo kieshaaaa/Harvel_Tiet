@@ -1,0 +1,73 @@
+Certainly! Given your constraints, I will create three different versions of the provided C program to check whether a given year is a leap year or not, without using the features you've asked to avoid.
+
+### Version 1: Simplified if-else logic
+
+```c
+#include <stdio.h>
+
+int main() {
+    int year;
+    printf("\nEnter an year to check whether it is a leap year or not => ");
+    scanf("%d", &year);
+
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        printf("\n%d is a Leap Year", year);
+    } else {
+        printf("\n%d is not a Leap Year", year);
+    }
+
+    return 0;
+}
+```
+
+### Version 2: Using a variable to store the leap year status
+
+```c
+#include <stdio.h>
+
+int main() {
+    int year, isLeapYear = 0;
+    printf("\nEnter an year to check whether it is a leap year or not => ");
+    scanf("%d", &year);
+
+    if (year % 400 == 0) {
+        isLeapYear = 1;
+    } else if (year % 100 == 0) {
+        isLeapYear = 0;
+    } else if (year % 4 == 0) {
+        isLeapYear = 1;
+    }
+
+    if (isLeapYear) {
+        printf("\n%d is a Leap Year", year);
+    } else {
+        printf("\n%d is not a Leap Year", year);
+    }
+
+    return 0;
+}
+```
+
+### Version 3: Using ternary operator
+
+```c
+#include <stdio.h>
+
+int main() {
+    int year;
+    printf("\nEnter an year to check whether it is a leap year or not => ");
+    scanf("%d", &year);
+
+    int leap = (year % 400 == 0) ? 1 : ((year % 100 == 0) ? 0 : ((year % 4 == 0) ? 1 : 0));
+
+    if (leap) {
+        printf("\n%d is a Leap Year", year);
+    } else {
+        printf("\n%d is not a Leap Year", year);
+    }
+
+    return 0;
+}
+```
+
+Each version approaches the problem a little differently but adheres to your constraints, avoiding the use of advanced features or modifications.

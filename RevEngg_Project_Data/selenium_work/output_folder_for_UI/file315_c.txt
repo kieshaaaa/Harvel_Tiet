@@ -1,0 +1,47 @@
+Certainly, following your constraints, here are three different versions of the program that convert speed from meters per second (m/s) to miles per hour (mph) without using the techniques and features you've requested to avoid:
+
+### Version 1: Inline Variable Declaration
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Enter speed in meters per second: ");
+    float mps;
+    scanf("%f", &mps);
+    float mph = mps * 2.236;
+    printf("Speed in mph is: %f\n", mph);
+    return 0;
+}
+```
+
+### Version 2: Separate Conversion Step
+```c
+#include <stdio.h>
+
+int main() {
+    float mps, mph;
+    printf("Enter speed in meters per second: ");
+    scanf("%f", &mps);
+    mph = mps * 2.236;
+    printf("Speed in mph is: ");
+    printf("%f\n", mph);
+    return 0;
+}
+```
+
+### Version 3: Use of Constants for Conversion Factor
+```c
+#include <stdio.h>
+
+int main() {
+    const float conversionFactor = 2.236;
+    float mps, mph;
+    printf("Enter speed in meters per second: ");
+    scanf("%f", &mps);
+    mph = mps * conversionFactor;
+    printf("Speed in mph is: %f\n", mph);
+    return 0;
+}
+```
+
+Each of these versions adheres to your constraints while offering a slight variation in structure or approach to the solution.

@@ -1,0 +1,68 @@
+**Version 1: Using the `pow` function for squaring**
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float radius, surfaceArea;
+    float pi = 3.14159;
+
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    surfaceArea = 4 * pi * pow(radius, 2);
+
+    printf("Surface area of the sphere: ");
+    printf("%.2f\n", surfaceArea);
+
+    return 0;
+}
+```
+
+**Version 2: Incorporating `#define` for π**
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159
+
+int main() {
+    float radius, surfaceArea;
+
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    surfaceArea = 4 * PI * radius * radius;
+
+    printf("Surface area of the sphere: ");
+    printf("%.2f\n", surfaceArea);
+
+    return 0;
+}
+```
+
+**Version 3: Separating the calculation from the assignment**
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float radius;
+    float pi = 3.14159;
+    float squareRadius, surfaceArea;
+
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    squareRadius = radius * radius;
+    surfaceArea = 4 * pi * squareRadius;
+
+    printf("Surface area of the sphere: ");
+    printf("%.2f\n", surfaceArea);
+
+    return 0;
+}
+```
